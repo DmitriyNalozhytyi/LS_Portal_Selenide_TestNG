@@ -17,7 +17,7 @@ public class AuthorizationPage extends ParentPage {
 
 
     @FindBy(id = "i0116")
-    private WebElement inputEmail;
+    private WebElement InputEmail;
 
     @FindBy(id = "idSIButton9")
     private WebElement BtnNext;
@@ -25,11 +25,18 @@ public class AuthorizationPage extends ParentPage {
     @FindBy(id = "aadTileTitle")
     private WebElement BtnWorkAccount;
 
+    @FindBy(id = "i0118")
+    private WebElement InputPassword;
+
 
 
     public void insertEmail(String email) {
-        actions.insertText(inputEmail,email);
+        actions.insertText(InputEmail,email);
         //InputEmail.sendKeys("vadim.kornienko@lizard-soft.com");
+    }
+
+    public void insertPassword(String password){
+        actions.insertText(InputPassword,password);
     }
 
     public void pressBtnNext() {
