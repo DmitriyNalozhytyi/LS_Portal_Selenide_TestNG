@@ -5,7 +5,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.AllNewsPage;
 import pages.AuthorizationPage;
+import pages.MainPage;
+import pages.NewNewsPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +18,9 @@ public class ParentTest {
     WebDriver webDriver;
     protected AuthorizationPage authorizationPage;
     protected Actions actions;
+    protected MainPage mainPage;
+    protected AllNewsPage allNewsPage;
+    protected NewNewsPage newNewsPage;
 
 
     @Before
@@ -27,6 +33,10 @@ public class ParentTest {
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         authorizationPage = new AuthorizationPage(webDriver);
         actions = new Actions(webDriver);
+        mainPage = new MainPage(webDriver);
+        allNewsPage = new AllNewsPage(webDriver);
+        newNewsPage = new NewNewsPage(webDriver);
+
     }
 
     @After

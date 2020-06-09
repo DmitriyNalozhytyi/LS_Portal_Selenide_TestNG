@@ -1,14 +1,17 @@
 package libs;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Actions {
     WebDriver webDriver;
     WebDriverWait wait;
+
 
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -28,6 +31,7 @@ public class Actions {
         }
     }
 
+
     public void insertText(WebElement element, String text){
         try {
             wait(element);
@@ -38,4 +42,9 @@ public class Actions {
             Assert.fail("Can`t insert text in field " + e);
         }
     }
+    /*public void chouseElemenFromListByIndex(){
+        webDriver.findElements(By.cssSelector(selector));
+    }
+
+     */
 }
