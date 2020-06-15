@@ -5,10 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.AllNewsPage;
-import pages.AuthorizationPage;
-import pages.MainPage;
-import pages.NewNewsPage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -36,6 +33,7 @@ public class ParentTest {
         mainPage = new MainPage(webDriver);
         allNewsPage = new AllNewsPage(webDriver);
         newNewsPage = new NewNewsPage(webDriver);
+        loremIpsum = new LoremIpsum(webDriver);
 
     }
 
