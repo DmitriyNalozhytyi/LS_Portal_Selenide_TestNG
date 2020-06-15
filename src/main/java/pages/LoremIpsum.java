@@ -15,7 +15,7 @@ public class LoremIpsum extends ParentPage {
     @FindBy(css = "input#generate")
     public WebElement btnGenerateLipsun;
 
-    public String loremIpsum() throws InterruptedException {
+    public String lorem() throws InterruptedException {
         String a = "window.open('https://ru.lipsum.com/','_blank');";
         ((JavascriptExecutor)webDriver).executeScript(a);
         ArrayList<String> tabs = new ArrayList<String>(webDriver.getWindowHandles());

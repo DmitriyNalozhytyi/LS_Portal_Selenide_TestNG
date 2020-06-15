@@ -15,7 +15,7 @@ public class CreateNewNewsTest extends ParentTest {
         //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         //LocalDateTime currentTime = LocalDateTime.now();
         //actions.loremIpsum();
-
+        //loremIpsum.lorem();
         authorizationPage.authorization();
         mainPage.GoToAllNews();
         //Thread.sleep(5000);
@@ -27,7 +27,7 @@ public class CreateNewNewsTest extends ParentTest {
         newNewsPage.writeTitle("Test " + actions.currentTime());
         Thread.sleep(1000);
         newNewsPage.addImageToSlider();
-        newNewsPage.writeDescription(actions.loremIpsum());
+        newNewsPage.writeDescription(loremIpsum.lorem());
         newNewsPage.selectTA();
         newNewsPage.writeTag("#Test");
         newNewsPage.selectContentType();
