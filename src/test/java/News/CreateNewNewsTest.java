@@ -1,18 +1,13 @@
 package News;
 
-import libs.Actions;
 import org.junit.Test;
-import pages.NewNewsPage;
 import parentTest.ParentTest;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class CreateNewNewsTest extends ParentTest {
 
     @Test
     public void createNewNews() throws InterruptedException {
-        authorizationPage.authorization();
+        //authorizationPage.authorization();
         mainPage.GoToAllNews();
         allNewsPage.enterTextInToFieldClerk();
         //allNewsPage.choosePublicationTypeNews();

@@ -3,8 +3,8 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
-public class NewNewsPage extends ParentPage {
-    public NewNewsPage(WebDriver webDriver) {
+public class CreateNewsPage extends ParentPage {
+    public CreateNewsPage(WebDriver webDriver) {
         super(webDriver);
     }
 
@@ -57,7 +57,7 @@ public class NewNewsPage extends ParentPage {
 
     public void addImageToSlider() throws InterruptedException {
         btnEditSlider.click();
-        inputAddImage.sendKeys("D:/OneDrive - Lizard Soft/Test Pictures/Normal size/" + actions.randomNumber30() + ".jpg");
+        inputAddImage.sendKeys("D:/OneDrive - Lizard Soft/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg");
         Thread.sleep(1000);
         btnSaveImage.click();
     }

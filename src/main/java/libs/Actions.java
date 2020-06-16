@@ -25,7 +25,17 @@ public class Actions {
     }
 
     public void wait(WebElement element) {
+
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void waitToBeVisible(WebElement element) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+        } catch (Exception e){
+            Assert.fail("Can`t find field " + element + "! Exception: " + e);
+        }
+
     }
 
     public void click(WebElement element) {
@@ -33,7 +43,7 @@ public class Actions {
             wait(element);
             element.click();
         } catch (Exception e) {
-            Assert.fail("Can`t click on element" + e);
+            Assert.fail("Can`t click on element " + e);
         }
     }
 
@@ -55,7 +65,7 @@ public class Actions {
         return dtf.format(now);
     }
 
-    public int randomNumber30(){
+    /*public int randomNumber30(){
         int a = 1; // Начальное значение диапазона - "от"
         int b = 30; // Конечное значение диапазона - "до"
 
@@ -71,7 +81,17 @@ public class Actions {
         int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
         System.out.println("1-ое случайное число: " + random_number1);
         return random_number1;
+    }*/
+
+    public int randomNumber(int a, int b){
+        //int a = 1; // Начальное значение диапазона - "от"
+        //int b = 5; // Конечное значение диапазона - "до"
+
+        int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
+        System.out.println("1-ое случайное число: " + random_number1);
+        return random_number1;
     }
+
 
 
     /*public void chouseElemenFromListByIndex(){

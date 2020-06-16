@@ -1,5 +1,6 @@
 package pages;
 
+import libs.Actions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,11 +19,14 @@ public class AllNewsPage extends ParentPage {
     @FindBy(className = "create-btn")
     private WebElement btnCreate;
 
+
     public void clickOnRBtnNewNews() {
+
         actions.click(rbtnNewNews);
     }
 
     public void ClickOnBtnCreate() {
+
         actions.click(btnCreate);
     }
 
@@ -48,5 +52,9 @@ public class AllNewsPage extends ParentPage {
             // printErrorAndStopTest(e);
         }
 
+    }
+    public void selectRandomNews(){
+        //div:nth-of-type(1) > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link
+        webDriver.findElement(By.cssSelector("div:nth-of-type(" + actions.randomNumber(1, 15) + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
     }
 }
