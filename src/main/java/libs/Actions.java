@@ -93,8 +93,27 @@ public class Actions {
     }
 
 
+    public boolean existsElement(WebElement element) {
+        try {
+            element.click();
+            //webDriver.findElement(By.cssSelector(element));
+        } catch (Exception e) {
+            System.out.println("Element is not present ");
+            return false;
+        }
 
-    /*public void chouseElemenFromListByIndex(){
+        return true;
+    }
+
+    public void selectRandomNews(){
+        //div:nth-of-type(1) > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link
+        webDriver.findElement(By.cssSelector("div:nth-of-type(" + randomNumber(1, 15) + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
+    }
+
+
+
+
+    /*public void chooseElementFromListByIndex(){
         webDriver.findElements(By.cssSelector(selector));
     }
 

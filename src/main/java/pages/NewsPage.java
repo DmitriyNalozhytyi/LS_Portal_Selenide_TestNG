@@ -66,6 +66,21 @@ public class NewsPage extends ParentPage {
     @FindBy(css = "#content-editable")
     public WebElement inputComment;
 
+    @FindBy(css = "._link-dashboard.bottom")
+    public WebElement btnSendComment;
+
+    @FindBy(css = "app-comment-item:nth-of-type(1) .ng-star-inserted.user-comment__add-emoji-wrapper > .mat-button.ng-star-inserted.user-comment__send-subcomment")
+    public WebElement btnReplyToComment;
+
+    @FindBy(css = ".subcomment-container #content-editable")
+    public WebElement inputCommentReply;
+
+    @FindBy(css = ".subcomment-container ._link-dashboard")
+    public WebElement btnSendCommentReply;
+
+    @FindBy(css = "span:nth-of-type(2) > .breadcrumb__link")
+    public WebElement btnBackToAllNews;
+
     public void checkTA(){
         actions.waitToBeVisible(fieldTA);
     }
@@ -121,5 +136,26 @@ public class NewsPage extends ParentPage {
 
     public void checkComments(){
         actions.waitToBeVisible(counterComments);
+        actions.waitToBeVisible(btnSendComment);
     }
+
+    public void writeComment(String testComment){
+        actions.insertText(inputComment, testComment);
+    }
+
+    public void writeCommentReply(String testComment) {
+        //actions.click(btnReplyToComment);
+        //WebElement element = btnReplyToComment;
+        if (actions.existsElement(btnReplyToComment) == true) {
+            actions.insertText(inputCommentReply, testComment);
+            actions.click(btnSendCommentReply);
+        } else {
+             System.out.println("element not present -- so it entered the else loop");
+             actions.click(btnBackToAllNews);
+             actions.selectRandomNews();
+             writeCommentReply(testComment);
+
+        }
+    }
+
 }

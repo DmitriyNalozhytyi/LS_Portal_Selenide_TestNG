@@ -10,9 +10,17 @@ public class MainPage extends ParentPage {
     }
 
     @FindBy(className = "_link-dashboard")
-    private WebElement BtnAllnews;
+    private WebElement btnAllnews;
 
-    public void GoToAllNews(){
-        actions.click(BtnAllnews);
+    @FindBy(className = "a > img")
+    public WebElement btnMainLogo;
+
+    public void goToAllNews(){
+
+        actions.click(btnAllnews);
+    }
+
+    public void goToMainPage(){
+        actions.click(btnMainLogo);
     }
 }

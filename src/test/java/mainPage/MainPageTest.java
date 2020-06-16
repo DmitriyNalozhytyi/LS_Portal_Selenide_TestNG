@@ -10,6 +10,6 @@ public class MainPageTest extends ParentTest {
     public void OpenAllNews(){
         authorizationPage.authorization();
         //Thread.sleep(5000);
-        mainPage.GoToAllNews();
+        mainPage.goToAllNews();
     }
 }
