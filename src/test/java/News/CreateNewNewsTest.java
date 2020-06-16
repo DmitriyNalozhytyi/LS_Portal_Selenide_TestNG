@@ -12,13 +12,8 @@ public class CreateNewNewsTest extends ParentTest {
 
     @Test
     public void createNewNews() throws InterruptedException {
-        //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        //LocalDateTime currentTime = LocalDateTime.now();
-        //actions.loremIpsum();
-        //loremIpsum.lorem();
         authorizationPage.authorization();
         mainPage.GoToAllNews();
-        //Thread.sleep(5000);
         allNewsPage.enterTextInToFieldClerk();
         //allNewsPage.choosePublicationTypeNews();
         //allNewsPage.clickOnRBtnNewNews();

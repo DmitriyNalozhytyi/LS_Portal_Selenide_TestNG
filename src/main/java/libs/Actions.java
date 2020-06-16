@@ -55,9 +55,18 @@ public class Actions {
         return dtf.format(now);
     }
 
-    public int randomNumber(){
+    public int randomNumber30(){
         int a = 1; // Начальное значение диапазона - "от"
         int b = 30; // Конечное значение диапазона - "до"
+
+        int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
+        System.out.println("1-ое случайное число: " + random_number1);
+        return random_number1;
+    }
+
+    public int randomNumber5(){
+        int a = 1; // Начальное значение диапазона - "от"
+        int b = 5; // Конечное значение диапазона - "до"
 
         int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
         System.out.println("1-ое случайное число: " + random_number1);
