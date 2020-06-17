@@ -14,10 +14,10 @@ public class AllNewsPage extends ParentPage {
     }
 
     @FindBy(className = "mat-radio-label-content")
-    private WebElement rbtnNewNews;
+    public WebElement rbtnNewNews;
 
     @FindBy(className = "create-btn")
-    private WebElement btnCreate;
+    public WebElement btnCreate;
 
 
     public void clickOnRBtnNewNews() {

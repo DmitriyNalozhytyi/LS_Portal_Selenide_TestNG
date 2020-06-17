@@ -13,6 +13,7 @@ import pages.ParentPage;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Actions {
     WebDriver webDriver;
@@ -94,14 +95,13 @@ public class Actions {
 
 
     public boolean existsElement(WebElement element) {
+        webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
             element.click();
-            //webDriver.findElement(By.cssSelector(element));
         } catch (Exception e) {
             System.out.println("Element is not present ");
             return false;
         }
-
         return true;
     }
 
@@ -116,6 +116,5 @@ public class Actions {
     /*public void chooseElementFromListByIndex(){
         webDriver.findElements(By.cssSelector(selector));
     }
-
      */
 }

@@ -144,18 +144,16 @@ public class NewsPage extends ParentPage {
     }
 
     public void writeCommentReply(String testComment) {
-        //actions.click(btnReplyToComment);
-        //WebElement element = btnReplyToComment;
         if (actions.existsElement(btnReplyToComment) == true) {
             actions.insertText(inputCommentReply, testComment);
             actions.click(btnSendCommentReply);
         } else {
              System.out.println("element not present -- so it entered the else loop");
              actions.click(btnBackToAllNews);
+             mainPage.goToMainPage();
+             //allNewsPage.selectRandomNews();
              actions.selectRandomNews();
              writeCommentReply(testComment);
-
         }
     }
-
 }
