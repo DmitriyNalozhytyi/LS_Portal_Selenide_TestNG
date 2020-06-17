@@ -154,7 +154,7 @@ public class NewsPage extends ParentPage {
         actions.click(btnBackToAllNews);
         //mainPage.goToMainPage();
         //allNewsPage.selectRandomNews();
-        actions.selectNewsByCounter();
+        actions.selectNewsByCounter(testComment, btnReplyToComment);
         //actions.selectRandomNews();
         writeCommentReply(testComment);
         }
