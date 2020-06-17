@@ -110,7 +110,7 @@ public class Actions {
 
 
 
-        for (i = 2; i <= 15; i++){
+        for (i = 1; i <= 15; i++){
             webDriver.findElement(By.cssSelector("div:nth-of-type(" + i + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
             if (webDriver.findElements(By.cssSelector("app-comment-item:nth-of-type(1) .ng-star-inserted.user-comment__add-emoji-wrapper > .mat-button.ng-star-inserted.user-comment__send-subcomment")).size() > 0){
                 find = true;
