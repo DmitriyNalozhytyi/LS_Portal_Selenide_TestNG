@@ -104,11 +104,9 @@ public class Actions {
         webDriver.findElement(By.cssSelector("div:nth-of-type(" + randomNumber(1, 15) + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
     }
 
-    public void selectNewsByCounter(String testcomment, WebElement element){
+    public void searchNewsWithComment(String testcomment, WebElement element){
         int i = 1;
         boolean find = false;
-
-
 
         for (i = 1; i <= 15; i++){
             webDriver.findElement(By.cssSelector("div:nth-of-type(" + i + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();

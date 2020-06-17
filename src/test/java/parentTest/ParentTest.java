@@ -20,6 +20,7 @@ public class ParentTest {
     protected CreateNewsPage newNewsPage;
     protected LoremIpsum loremIpsum;
     protected NewsPage newsPage;
+    protected AllArticlesPage allArticlesPage;
 
 
     @Before
@@ -37,6 +38,8 @@ public class ParentTest {
         newNewsPage = new CreateNewsPage(webDriver);
         loremIpsum = new LoremIpsum(webDriver);
         newsPage = new NewsPage(webDriver);
+        allArticlesPage = new AllArticlesPage(webDriver);
+
         authorizationPage.authorization();
     }
 

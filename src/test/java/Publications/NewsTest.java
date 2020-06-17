@@ -1,7 +1,6 @@
-package News;
+package Publications;
 
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 import parentTest.ParentTest;
 
 public class NewsTest extends ParentTest {
@@ -10,9 +9,9 @@ public class NewsTest extends ParentTest {
     public void createNewNews() throws InterruptedException {
         //authorizationPage.authorization();
         mainPage.goToAllNews();
-        allNewsPage.enterTextInToFieldClerk();
+        //allNewsPage.enterTextInToFieldClerk();
         //allNewsPage.choosePublicationTypeNews();
-        //allNewsPage.clickOnRBtnNewNews();
+        allNewsPage.clickOnRBtnNewNews();
         allNewsPage.ClickOnBtnCreate();
         //newNewsPage.chooseDate();
         newNewsPage.writeTitle("Test " + actions.currentTime());
