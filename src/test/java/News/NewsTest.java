@@ -55,7 +55,8 @@ public class NewsTest extends ParentTest {
     @Test
     public void writeCommentReply() throws InterruptedException {
         mainPage.goToAllNews();
-        allNewsPage.selectRandomNews();
+        //allNewsPage.selectRandomNews();
+        //actions.selectNewsByCounter();
         newsPage.writeCommentReply(loremIpsum.getLorem(1, 2));
     }
 }

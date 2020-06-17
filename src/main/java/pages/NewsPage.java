@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -144,16 +145,18 @@ public class NewsPage extends ParentPage {
     }
 
     public void writeCommentReply(String testComment) {
+
         if (actions.existsElement(btnReplyToComment) == true) {
             actions.insertText(inputCommentReply, testComment);
             actions.click(btnSendCommentReply);
         } else {
-             System.out.println("element not present -- so it entered the else loop");
-             actions.click(btnBackToAllNews);
-             mainPage.goToMainPage();
-             //allNewsPage.selectRandomNews();
-             actions.selectRandomNews();
-             writeCommentReply(testComment);
+        System.out.println("element not present -- so it entered the else loop");
+        actions.click(btnBackToAllNews);
+        //mainPage.goToMainPage();
+        //allNewsPage.selectRandomNews();
+        actions.selectNewsByCounter();
+        //actions.selectRandomNews();
+        writeCommentReply(testComment);
         }
     }
 }
