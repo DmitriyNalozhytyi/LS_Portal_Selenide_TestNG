@@ -20,6 +20,7 @@ public class Actions {
     WebDriverWait wait;
 
 
+
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
         wait = new WebDriverWait(webDriver, 15);
@@ -36,7 +37,6 @@ public class Actions {
         } catch (Exception e){
             Assert.fail("Can`t find field " + element + "! Exception: " + e);
         }
-
     }
 
     public void click(WebElement element) {
@@ -108,6 +108,16 @@ public class Actions {
     public void selectRandomNews(){
         //div:nth-of-type(1) > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link
         webDriver.findElement(By.cssSelector("div:nth-of-type(" + randomNumber(1, 15) + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
+    }
+
+    public int selectNewsByCounter(){
+        int counter = 0;
+        for (int i = 1; i <15; i++){
+            webDriver.findElement(By.cssSelector("div:nth-of-type(" + i + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
+
+        }
+
+        return counter;
     }
 
 
