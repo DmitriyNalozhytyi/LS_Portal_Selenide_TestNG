@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 public class ParentPage {
     WebDriver webDriver;
     Actions actions;
+    MainPage mainPage;
+    AllNewsPage allNewsPage;
 
     public ParentPage(WebDriver webDriver) {
         this.webDriver = webDriver;

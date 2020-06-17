@@ -28,8 +28,6 @@ public class AuthorizationPage extends ParentPage {
     @FindBy(id = "i0118")
     private WebElement InputPassword;
 
-
-
     public void insertEmail(String email) {
         actions.insertText(InputEmail,email);
         //InputEmail.sendKeys("vadim.kornienko@lizard-soft.com");
@@ -45,5 +43,14 @@ public class AuthorizationPage extends ParentPage {
 
     public void pressBtnWorkAccount() {
         actions.click(BtnWorkAccount);
+    }
+
+    public void authorization(){
+        openPage();
+        insertEmail("dev-testuser3@dev.lizard.net.ua");
+        pressBtnNext();
+        insertPassword("Pa$$w0rd");
+        pressBtnNext();
+        pressBtnNext();
     }
 }
