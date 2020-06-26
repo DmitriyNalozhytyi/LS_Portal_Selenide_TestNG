@@ -57,7 +57,7 @@ public class CreateNewsPage extends ParentPage {
 
     public void addImageToSlider() throws InterruptedException {
         btnEditSlider.click();
-        inputAddImage.sendKeys("D:/OneDrive - Lizard Soft/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg");
+        inputAddImage.sendKeys("D:/OneDrive - Lizard Soft/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg"); //Выбираем рандомную фотку в указанном диапазоне
         Thread.sleep(1000);
         btnSaveImage.click();
     }

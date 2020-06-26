@@ -20,18 +20,17 @@ public class LoremIpsum extends ParentPage {
     public WebElement inputNumParagraphs;
 
     public String getLorem(int a, int b) throws InterruptedException {
+        //Получаем случайный текст с сайта lipsum.com
         String lipsumcom = "window.open('https://ru.lipsum.com/','_blank');";
         ((JavascriptExecutor)webDriver).executeScript(lipsumcom);
-        ArrayList<String> tabs = new ArrayList<String>(webDriver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<String>(webDriver.getWindowHandles()); //Открываем новую вкладку браузера
         webDriver.switchTo().window(tabs.get(1));
-        //Thread.sleep(1500);
-        //webDriver.switchTo().activeElement();
         Thread.sleep(1000);
         inputNumParagraphs.clear();
-        inputNumParagraphs.sendKeys("" + actions.randomNumber(a, b));
+        inputNumParagraphs.sendKeys("" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев в диапазоне от a до b
         btnGenerateLipsun.click();
         Thread.sleep(2000);
-        String lipsum = webDriver.findElement(By.cssSelector("#lipsum")).getText();
+        String lipsum = webDriver.findElement(By.cssSelector("#lipsum")).getText(); //Записываем полученный текст в переменную
         webDriver.close();
         webDriver.switchTo().window(tabs.get(0));
         return lipsum;

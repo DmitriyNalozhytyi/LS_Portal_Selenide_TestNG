@@ -144,11 +144,12 @@ public class NewsPage extends ParentPage {
     }
 
     public void writeCommentReply(String testComment) {
-
+        //Если на странице новости есть коммент - написать к нему ответ
         if (actions.existsElement(btnReplyToComment) == true) {
             actions.insertText(inputCommentReply, testComment);
             actions.click(btnSendCommentReply);
         } else {
+            //Если коммента нет - ныряем в цикл поиска коммента
         System.out.println("element not present -- so it entered the else loop");
         actions.click(btnBackToAllNews);
         //mainPage.goToMainPage();

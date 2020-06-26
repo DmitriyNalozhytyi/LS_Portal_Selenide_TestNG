@@ -89,6 +89,7 @@ public class Actions {
 
 
     public boolean existsElement(WebElement element) {
+        //Проверка наличия элемента на странице
         webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
             element.click();
@@ -105,6 +106,7 @@ public class Actions {
     }
 
     public void searchNewsWithComment(String testcomment, WebElement element){
+        //Проверка наличия комментария в новости
         int i = 1;
         boolean find = false;
 
