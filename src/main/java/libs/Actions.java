@@ -89,6 +89,7 @@ public class Actions {
 
 
     public boolean existsElement(WebElement element) {
+        //Проверка наличия элемента на странице
         webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
             element.click();
@@ -104,11 +105,10 @@ public class Actions {
         webDriver.findElement(By.cssSelector("div:nth-of-type(" + randomNumber(1, 15) + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
     }
 
-    public void selectNewsByCounter(String testcomment, WebElement element){
+    public void searchNewsWithComment(String testcomment, WebElement element){
+        //Проверка наличия комментария в новости
         int i = 1;
         boolean find = false;
-
-
 
         for (i = 1; i <= 15; i++){
             webDriver.findElement(By.cssSelector("div:nth-of-type(" + i + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();

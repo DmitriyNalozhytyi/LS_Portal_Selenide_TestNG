@@ -4,11 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NewsPage extends ParentPage {
-    public NewsPage(WebDriver webDriver) {
+public class ArticlesPage extends ParentPage {
+    public ArticlesPage(WebDriver webDriver) {
         super(webDriver);
     }
-
     @FindBy(css = ".detail-wrapper__quote")
     public WebElement fieldNewsTitle;
 
@@ -80,83 +79,4 @@ public class NewsPage extends ParentPage {
 
     @FindBy(css = "span:nth-of-type(2) > .breadcrumb__link")
     public WebElement btnBackToAllNews;
-
-    public void checkTA(){
-        actions.waitToBeVisible(fieldTA);
-    }
-
-    public void checkTitle(){
-        actions.waitToBeVisible(fieldNewsTitle);
-    }
-
-    public void checkImage(){
-        actions.waitToBeVisible(fieldImage);
-    }
-
-    public void checkDescription(){
-        actions.waitToBeVisible(fieldDescription);
-    }
-
-    public void checkTag(){
-        actions.waitToBeVisible(fieldTag);
-    }
-
-    public void checkViews(){
-        actions.waitToBeVisible(iconViews);
-        actions.waitToBeVisible(counterViews);
-    }
-
-    public void checkEditButton(){
-        actions.waitToBeVisible(btnEditNews);
-    }
-
-    public void checkDeleteButton(){
-        actions.waitToBeVisible(btnDeleteNews);
-    }
-
-    public void checkDate(){
-        actions.waitToBeVisible(fieldDate);
-    }
-
-    public void checkPreviousNewsButton(){
-        actions.waitToBeVisible(iconPrevious);
-        actions.waitToBeVisible(btnPrevious);
-    }
-
-    public void checkNextNewsButton(){
-        actions.waitToBeVisible(iconNext);
-        actions.waitToBeVisible(btnNext);
-    }
-
-    public void checkLikes(){
-        actions.waitToBeVisible(counterLike);
-        actions.waitToBeVisible(btnLike);
-        actions.waitToBeVisible(iconLike);
-    }
-
-    public void checkComments(){
-        actions.waitToBeVisible(counterComments);
-        actions.waitToBeVisible(btnSendComment);
-    }
-
-    public void writeComment(String testComment){
-        actions.insertText(inputComment, testComment);
-    }
-
-    public void writeCommentReply(String testComment) {
-        //Если на странице новости есть коммент - написать к нему ответ
-        if (actions.existsElement(btnReplyToComment) == true) {
-            actions.insertText(inputCommentReply, testComment);
-            actions.click(btnSendCommentReply);
-        } else {
-            //Если коммента нет - ныряем в цикл поиска коммента
-        System.out.println("element not present -- so it entered the else loop");
-        actions.click(btnBackToAllNews);
-        //mainPage.goToMainPage();
-        //allNewsPage.selectRandomNews();
-        actions.searchNewsWithComment(testComment, btnReplyToComment);
-        //actions.selectRandomNews();
-        writeCommentReply(testComment);
-        }
-    }
 }

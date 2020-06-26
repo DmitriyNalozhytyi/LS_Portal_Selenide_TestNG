@@ -13,7 +13,7 @@ public class AllNewsPage extends ParentPage {
         super(webDriver);
     }
 
-    @FindBy(className = "mat-radio-label-content")
+    @FindBy(css = "[for='mat-radio-2-input'] .mat-radio-label-content")
     public WebElement rbtnNewNews;
 
     @FindBy(className = "create-btn")
