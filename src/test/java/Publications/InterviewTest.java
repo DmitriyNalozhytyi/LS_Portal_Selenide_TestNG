@@ -3,12 +3,11 @@ package Publications;
 import org.junit.Test;
 import parentTest.ParentTest;
 
-public class ArticlesTest extends ParentTest {
+public class InterviewTest extends ParentTest {
     @Test
-    public void createNewArticle() throws InterruptedException {
-        mainPage.goToAllArticles();
-        articlesPageAll.clickOnRBtnNewArticle();
-        articlesPageAll.clickOnBtnCreate();
+    public void createNewInterview() throws InterruptedException {
+        mainPage.goToAllInterview();
+        interviewPageAll.selectPublicationTypeInterview();
         createNewPublicationPage.writeHeadline("Test " + actions.currentTime());
         createNewPublicationPage.writeTitle("Test " + actions.currentTime());
         Thread.sleep(1000);
@@ -16,16 +15,14 @@ public class ArticlesTest extends ParentTest {
         createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));
         createNewPublicationPage.selectRandomTA();
         createNewPublicationPage.selectRandomContentType();
-        createNewPublicationPage.selectRandomRubric();
-        createNewPublicationPage.selectSubrubric();
         createNewPublicationPage.writeTag("#Test");
         createNewPublicationPage.saveAndPublish();
     }
 
     @Test
-    public void checkArticle(){
-        mainPage.goToAllArticles();
-        articlesPageAll.selectRandomArticle();
+    public void checkNews(){
+        mainPage.goToAllNews();
+        newsPageAll.selectRandomNews();
         newsPage.checkDate();
         newsPage.checkTA();
         newsPage.checkDeleteButton();

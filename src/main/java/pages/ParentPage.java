@@ -8,7 +8,7 @@ public class ParentPage {
     WebDriver webDriver;
     Actions actions;
     MainPage mainPage;
-    AllNewsPage allNewsPage;
+    NewsPageAll newsPageAll;
 
     public ParentPage(WebDriver webDriver) {
         this.webDriver = webDriver;

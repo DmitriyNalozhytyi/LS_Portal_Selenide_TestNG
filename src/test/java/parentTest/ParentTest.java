@@ -16,15 +16,16 @@ public class ParentTest {
     protected AuthorizationPage authorizationPage;
     protected Actions actions;
     protected MainPage mainPage;
-    protected AllNewsPage allNewsPage;
+    protected NewsPageAll newsPageAll;
     protected CreateNewPublicationPage createNewPublicationPage;
     protected LoremIpsum loremIpsum;
     protected NewsPage newsPage;
-    protected AllArticlesPage allArticlesPage;
+    protected ArticlesPageAll articlesPageAll;
+    protected InterviewPageAll interviewPageAll;
 
 
     @Before
-    public void setUp(){
+    public void setUp() throws InterruptedException {
         File driver = new File("./src/drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", driver.getAbsolutePath());
 
@@ -34,11 +35,12 @@ public class ParentTest {
         authorizationPage = new AuthorizationPage(webDriver);
         actions = new Actions(webDriver);
         mainPage = new MainPage(webDriver);
-        allNewsPage = new AllNewsPage(webDriver);
+        newsPageAll = new NewsPageAll(webDriver);
         createNewPublicationPage = new CreateNewPublicationPage(webDriver);
         loremIpsum = new LoremIpsum(webDriver);
         newsPage = new NewsPage(webDriver);
-        allArticlesPage = new AllArticlesPage(webDriver);
+        articlesPageAll = new ArticlesPageAll(webDriver);
+        interviewPageAll = new InterviewPageAll(webDriver);
 
         authorizationPage.authorization();
     }

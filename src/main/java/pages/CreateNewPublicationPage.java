@@ -75,25 +75,28 @@ public class CreateNewPublicationPage extends ParentPage {
         btnSaveImage.click();
     }
 
-    public void writeDescription(String test_description) throws InterruptedException {
+    public void writeDescription(String test_description) {
         webDriver.switchTo().frame(inputDescription);
         webDriver.switchTo().activeElement().sendKeys(test_description);
         webDriver.switchTo().defaultContent();
     }
 
-    public void selectTA(){
+    public void selectRandomTA(){
         inputTA.click();
-        webDriver.switchTo().activeElement().sendKeys(Keys.ARROW_DOWN);
-        webDriver.switchTo().activeElement().sendKeys(Keys.ENTER);
+        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(2, 29) + ") > .mat-option-text")).click();
+        //webDriver.switchTo().activeElement().sendKeys(Keys.ARROW_DOWN);
+        //webDriver.switchTo().activeElement().sendKeys(Keys.ENTER);
     }
 
-    public void selectContentType(){
-        rbtnContentType.click();
+    public void selectRandomContentType(){
+        webDriver.findElement(By.cssSelector("mat-radio-button:nth-of-type(" + actions.randomNumber(1, 3) + ")  .mat-radio-label-content")).click();
+        //rbtnContentType.click();
     }
 
-    public void selectRubric() throws InterruptedException {
+    public void selectRandomRubric() throws InterruptedException {
         inputRubric.click();
-        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(1) > span > div")).click();
+        Thread.sleep(500);
+        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(1, 6) + ") > span > div")).click();
         Thread.sleep(500);
     }
 

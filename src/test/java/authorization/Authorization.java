@@ -6,7 +6,7 @@ import parentTest.ParentTest;
 public class Authorization extends ParentTest {
 
     @Test
-    public void validLogin(){
+    public void validLogin() throws InterruptedException {
         authorizationPage.openPage();
         authorizationPage.insertEmail("dev-testuser3@dev.lizard.net.ua");
         authorizationPage.pressBtnNext();
