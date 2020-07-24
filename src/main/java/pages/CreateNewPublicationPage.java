@@ -3,8 +3,8 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
-public class CreateNewsPage extends ParentPage {
-    public CreateNewsPage(WebDriver webDriver) {
+public class CreateNewPublicationPage extends ParentPage {
+    public CreateNewPublicationPage(WebDriver webDriver) {
         super(webDriver);
     }
 
@@ -44,11 +44,24 @@ public class CreateNewsPage extends ParentPage {
     @FindBy(css = ".img-buttons > button:nth-of-type(2)")
     private WebElement btnSaveImage;
 
+    @FindBy(css = "[formcontrolname='headline']")
+    public WebElement inputHeadline;
+
+    @FindBy(css = "[formcontrolname='rubric']")
+    public WebElement inputRubric;
+
+    @FindBy(css = "[formcontrolname='subRubric']")
+    public WebElement inputSubrubric;
+
 
     public void chooseDate() {
         btnDateIcon.click();
         btnChooseDay.click();
         btnConfirmDay.click();
+    }
+
+    public void writeHeadline(String text) {
+        inputHeadline.sendKeys(text);
     }
 
     public void writeTitle(String text) {
@@ -76,6 +89,18 @@ public class CreateNewsPage extends ParentPage {
 
     public void selectContentType(){
         rbtnContentType.click();
+    }
+
+    public void selectRubric() throws InterruptedException {
+        inputRubric.click();
+        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(1) > span > div")).click();
+        Thread.sleep(500);
+    }
+
+    public void selectSubrubric() throws InterruptedException {
+        inputSubrubric.click();
+        Thread.sleep(500);
+        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(2) > .mat-option-text")).click();
     }
 
     public void writeTag(String test) {

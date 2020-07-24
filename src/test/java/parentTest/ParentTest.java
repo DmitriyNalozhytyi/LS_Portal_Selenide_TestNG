@@ -17,7 +17,7 @@ public class ParentTest {
     protected Actions actions;
     protected MainPage mainPage;
     protected AllNewsPage allNewsPage;
-    protected CreateNewsPage newNewsPage;
+    protected CreateNewPublicationPage createNewPublicationPage;
     protected LoremIpsum loremIpsum;
     protected NewsPage newsPage;
     protected AllArticlesPage allArticlesPage;
@@ -35,7 +35,7 @@ public class ParentTest {
         actions = new Actions(webDriver);
         mainPage = new MainPage(webDriver);
         allNewsPage = new AllNewsPage(webDriver);
-        newNewsPage = new CreateNewsPage(webDriver);
+        createNewPublicationPage = new CreateNewPublicationPage(webDriver);
         loremIpsum = new LoremIpsum(webDriver);
         newsPage = new NewsPage(webDriver);
         allArticlesPage = new AllArticlesPage(webDriver);

@@ -14,14 +14,14 @@ public class NewsTest extends ParentTest {
         allNewsPage.clickOnRBtnNewNews();
         allNewsPage.ClickOnBtnCreate();
         //newNewsPage.chooseDate();
-        newNewsPage.writeTitle("Test " + actions.currentTime());
+        createNewPublicationPage.writeTitle("Test " + actions.currentTime());
         Thread.sleep(1000);
-        newNewsPage.addImageToSlider();
-        newNewsPage.writeDescription(loremIpsum.getLorem(1, 5));
-        newNewsPage.selectTA();
-        newNewsPage.writeTag("#Test");
-        newNewsPage.selectContentType();
-        newNewsPage.saveAndPublish();
+        createNewPublicationPage.addImageToSlider();
+        createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));
+        createNewPublicationPage.selectTA();
+        createNewPublicationPage.writeTag("#Test");
+        createNewPublicationPage.selectContentType();
+        createNewPublicationPage.saveAndPublish();
     }
 
     @Test
