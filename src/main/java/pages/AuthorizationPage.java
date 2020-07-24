@@ -33,7 +33,8 @@ public class AuthorizationPage extends ParentPage {
         //InputEmail.sendKeys("vadim.kornienko@lizard-soft.com");
     }
 
-    public void insertPassword(String password){
+    public void insertPassword(String password) throws InterruptedException {
+        Thread.sleep(500);
         actions.insertText(InputPassword,password);
     }
 
@@ -45,7 +46,7 @@ public class AuthorizationPage extends ParentPage {
         actions.click(BtnWorkAccount);
     }
 
-    public void authorization(){
+    public void authorization() throws InterruptedException {
         openPage();
         insertEmail("dev-testuser3@dev.lizard.net.ua");
         pressBtnNext();

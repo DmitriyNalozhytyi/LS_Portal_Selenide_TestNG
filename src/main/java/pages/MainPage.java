@@ -18,13 +18,21 @@ public class MainPage extends ParentPage {
     @FindBy(css = "[href='\\/articles'] ._link-dashboard")
     public WebElement btnAllArticles;
 
+    @FindBy(css = "[href='\\/interview-top-manager'] ._link-dashboard")
+    public WebElement btnAllInterview;
+
     public void goToAllNews(){
 
         actions.click(btnAllNews);
     }
 
     public void goToAllArticles(){
+
         actions.click(btnAllArticles);
+    }
+
+    public void goToAllInterview(){
+        actions.click(btnAllInterview);
     }
 
     public void goToMainPage(){

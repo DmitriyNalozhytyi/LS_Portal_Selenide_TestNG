@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class AllNewsPage extends ParentPage {
-    public AllNewsPage(WebDriver webDriver) {
+public class NewsPageAll extends ParentPage {
+    public NewsPageAll(WebDriver webDriver) {
         super(webDriver);
     }
 
@@ -25,7 +25,7 @@ public class AllNewsPage extends ParentPage {
         actions.click(rbtnNewNews);
     }
 
-    public void ClickOnBtnCreate() {
+    public void clickOnBtnCreate() {
 
         actions.click(btnCreate);
     }

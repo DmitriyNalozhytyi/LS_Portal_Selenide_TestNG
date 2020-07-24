@@ -107,7 +107,8 @@ public class Actions {
 
     public void searchNewsWithComment(String testcomment, WebElement element){
         //Проверка наличия комментария в новости
-        int i = 1;
+        int i;
+        i = 1;
         boolean find = false;
 
         for (i = 1; i <= 15; i++){
@@ -125,9 +126,6 @@ public class Actions {
 
         //return counter;
     }
-
-
-
 
     /*public void chooseElementFromListByIndex(){
         webDriver.findElements(By.cssSelector(selector));
