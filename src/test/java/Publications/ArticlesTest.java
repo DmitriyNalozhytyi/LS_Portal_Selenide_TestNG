@@ -22,7 +22,6 @@ public class ArticlesTest extends ParentTest {
         createNewPublicationPage.saveAndPublish();
         newsPage.checkTitle();
     }
-    //qwerty
 
     @Test
     public void checkArticle(){
