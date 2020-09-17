@@ -6,10 +6,8 @@ import parentTest.ParentTest;
 
 public class MainPageTest extends ParentTest {
 
-    @Test
+    //@Test
     public void OpenAllNews() throws InterruptedException {
-        authorizationPage.authorization();
-        //Thread.sleep(5000);
         mainPage.goToAllNews();
     }
 }

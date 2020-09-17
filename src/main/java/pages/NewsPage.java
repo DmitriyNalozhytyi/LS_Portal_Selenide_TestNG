@@ -18,7 +18,7 @@ public class NewsPage extends ParentPage {
     @FindBy(css = ".text-block__article-text p")
     public WebElement fieldDescription;
 
-    @FindBy(css = ".tag-block__wrapper .default_link")
+    @FindBy(css = ".tag-block__wrapper")
     public WebElement fieldTag;
 
     @FindBy(css = ".detail-wrapper__tags-item_link .default_link")

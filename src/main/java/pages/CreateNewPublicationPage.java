@@ -70,7 +70,7 @@ public class CreateNewPublicationPage extends ParentPage {
 
     public void addImageToSlider() throws InterruptedException {
         btnEditSlider.click();
-        inputAddImage.sendKeys("D:/OneDrive - Lizard Soft/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg"); //Выбираем рандомную фотку в указанном диапазоне
+        inputAddImage.sendKeys("C:/Users/vkor2/OneDrive - Lizard Soft/Test Item/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg"); //Выбираем рандомную фотку в указанном диапазоне
         Thread.sleep(1000);
         btnSaveImage.click();
     }
@@ -82,8 +82,10 @@ public class CreateNewPublicationPage extends ParentPage {
     }
 
     public void selectRandomTA(){
+        WebElement selectTA;
         inputTA.click();
-        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(2, 29) + ") > .mat-option-text")).click();
+        selectTA = webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(2, 29) + ") > .mat-option-text"));
+        actions.click(selectTA);
         //webDriver.switchTo().activeElement().sendKeys(Keys.ARROW_DOWN);
         //webDriver.switchTo().activeElement().sendKeys(Keys.ENTER);
     }

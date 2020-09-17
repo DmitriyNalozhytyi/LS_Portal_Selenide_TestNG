@@ -15,8 +15,9 @@ public class InterviewTest extends ParentTest {
         createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));
         createNewPublicationPage.selectRandomTA();
         createNewPublicationPage.selectRandomContentType();
-        createNewPublicationPage.writeTag("#Test");
+        createNewPublicationPage.writeTag("#ATest");
         createNewPublicationPage.saveAndPublish();
+        newsPage.checkTitle();
     }
 
     @Test
@@ -44,6 +45,7 @@ public class InterviewTest extends ParentTest {
         newsPageAll.selectRandomNews();
         newsPage.writeComment(loremIpsum.getLorem(1, 2));
         newsPage.btnSendComment.click();
+        newsPage.checkTitle();
     }
 
     @Test
@@ -52,5 +54,6 @@ public class InterviewTest extends ParentTest {
         //allNewsPage.selectRandomNews();
         //actions.selectNewsByCounter();
         newsPage.writeCommentReply(loremIpsum.getLorem(1, 2));
+        newsPage.checkTitle();
     }
 }

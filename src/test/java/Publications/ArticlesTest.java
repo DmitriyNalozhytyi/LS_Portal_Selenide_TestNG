@@ -18,8 +18,9 @@ public class ArticlesTest extends ParentTest {
         createNewPublicationPage.selectRandomContentType();
         createNewPublicationPage.selectRandomRubric();
         createNewPublicationPage.selectSubrubric();
-        createNewPublicationPage.writeTag("#Test");
+        createNewPublicationPage.writeTag("#ATest");
         createNewPublicationPage.saveAndPublish();
+        newsPage.checkTitle();
     }
 
     @Test
@@ -47,6 +48,7 @@ public class ArticlesTest extends ParentTest {
         newsPageAll.selectRandomNews();
         newsPage.writeComment(loremIpsum.getLorem(1, 2));
         newsPage.btnSendComment.click();
+        newsPage.checkTitle();
     }
 
     @Test
@@ -55,5 +57,6 @@ public class ArticlesTest extends ParentTest {
         //allNewsPage.selectRandomNews();
         //actions.selectNewsByCounter();
         newsPage.writeCommentReply(loremIpsum.getLorem(1, 2));
+        newsPage.checkTitle();
     }
 }
