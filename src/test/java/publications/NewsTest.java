@@ -1,4 +1,4 @@
-package Publications;
+package publications;
 
 import org.junit.Test;
 import parentTest.ParentTest;
@@ -11,7 +11,7 @@ public class NewsTest extends ParentTest {
         newsPageAll.clickOnRBtnNewNews();
         newsPageAll.clickOnBtnCreate();
         //newNewsPage.chooseDate();
-        createNewPublicationPage.writeTitle("Test " + actions.currentTime());
+        createNewPublicationPage.writeTitle("ATest " + actions.currentTime());
         Thread.sleep(1000);
         createNewPublicationPage.addImageToSlider();
         createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));

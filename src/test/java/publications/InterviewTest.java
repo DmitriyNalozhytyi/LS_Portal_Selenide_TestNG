@@ -1,4 +1,4 @@
-package Publications;
+package publications;
 
 import org.junit.Test;
 import parentTest.ParentTest;
@@ -8,8 +8,8 @@ public class InterviewTest extends ParentTest {
     public void createNewInterview() throws InterruptedException {
         mainPage.goToAllInterview();
         interviewPageAll.selectPublicationTypeInterview();
-        createNewPublicationPage.writeHeadline("Test " + actions.currentTime());
-        createNewPublicationPage.writeTitle("Test " + actions.currentTime());
+        createNewPublicationPage.writeHeadline("ATest " + actions.currentTime());
+        createNewPublicationPage.writeTitle("ATest " + actions.currentTime());
         Thread.sleep(1000);
         createNewPublicationPage.addImageToSlider();
         createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));

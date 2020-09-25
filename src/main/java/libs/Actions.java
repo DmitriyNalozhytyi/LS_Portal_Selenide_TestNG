@@ -19,12 +19,13 @@ public class Actions {
         this.webDriver = webDriver;
         wait = new WebDriverWait(webDriver, 15);
     }
-
     public void wait(WebElement element) {
-
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
+    public void refreshPage(){
+        //webDriver.navigate().refresh();
+        webDriver.navigate().to(webDriver.getCurrentUrl());
+    }
     public void waitToBeVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
@@ -32,7 +33,6 @@ public class Actions {
             Assert.fail("Can`t find field " + element + "! Exception: " + e);
         }
     }
-
     public void click(WebElement element) {
         try {
             wait(element);
@@ -41,25 +41,21 @@ public class Actions {
             Assert.fail("Can`t click on element " + e);
         }
     }
-
-
     public void insertText(WebElement element, String text) {
         try {
             wait(element);
             element.clear();
             element.sendKeys(text);
-            System.out.println("find done");
+            System.out.println("Text inserted");
         } catch (Exception e) {
             Assert.fail("Can`t insert text in field " + e);
         }
     }
-
     public String currentTime() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
     }
-
     /*public int randomNumber30(){
         int a = 1; // Начальное значение диапазона - "от"
         int b = 30; // Конечное значение диапазона - "до"
@@ -68,7 +64,6 @@ public class Actions {
         System.out.println("1-ое случайное число: " + random_number1);
         return random_number1;
     }
-
     public int randomNumber5(){
         int a = 1; // Начальное значение диапазона - "от"
         int b = 5; // Конечное значение диапазона - "до"
@@ -77,17 +72,14 @@ public class Actions {
         System.out.println("1-ое случайное число: " + random_number1);
         return random_number1;
     }*/
-
     public int randomNumber(int a, int b){
         //int a = 1; // Начальное значение диапазона - "от"
         //int b = 5; // Конечное значение диапазона - "до"
 
-        int random_number1 = a + (int) (Math.random() * b); // Генерация 1-го числа
-        System.out.println("1-ое случайное число: " + random_number1);
+        int random_number1 = a + (int) (Math.random() * b); // Генерация числа
+        System.out.println("Random number is: " + random_number1);
         return random_number1;
     }
-
-
     public boolean existsElement(WebElement element) {
         //Проверка наличия элемента на странице
         webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -99,12 +91,10 @@ public class Actions {
         }
         return true;
     }
-
     public void selectRandomNews(){
         //div:nth-of-type(1) > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link
         webDriver.findElement(By.cssSelector("div:nth-of-type(" + randomNumber(1, 15) + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
     }
-
     public void searchNewsWithComment(String testcomment, WebElement element){
         //Проверка наличия комментария в новости
         int i;
@@ -121,12 +111,9 @@ public class Actions {
             //webDriver.findElement(By.cssSelector("span:nth-of-type(2) > .breadcrumb__link")).click();
             //webDriver.findElement(By.cssSelector("div:nth-of-type(" + i + ") > app-item .item-block__leading-paragraph.news_top_cont_lea > .default_link")).click();
             //webDriver.findElement(By.cssSelector("app-comment-item:nth-of-type(1) .ng-star-inserted.user-comment__add-emoji-wrapper > .mat-button.ng-star-inserted.user-comment__send-subcomment"));
-
         }
-
         //return counter;
     }
-
     /*public void chooseElementFromListByIndex(){
         webDriver.findElements(By.cssSelector(selector));
     }

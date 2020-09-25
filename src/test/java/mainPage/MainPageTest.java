@@ -7,7 +7,7 @@ import parentTest.ParentTest;
 public class MainPageTest extends ParentTest {
 
     //@Test
-    public void OpenAllNews() throws InterruptedException {
+    public void openAllNews() throws InterruptedException {
         mainPage.goToAllNews();
     }
 }

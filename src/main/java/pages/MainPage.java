@@ -21,6 +21,12 @@ public class MainPage extends ParentPage {
     @FindBy(css = "[href='\\/interview-top-manager'] ._link-dashboard")
     public WebElement btnAllInterview;
 
+    @FindBy(css = ".fa-pencil-alt.fas")
+    public WebElement btnGridSliderEdit;
+
+    @FindBy(css = "[href='\\/photogallery'] ._link-dashboard")
+    public WebElement btnAllAlbums;
+
     public void goToAllNews(){
 
         actions.click(btnAllNews);
@@ -37,5 +43,13 @@ public class MainPage extends ParentPage {
 
     public void goToMainPage(){
         actions.click(btnMainLogo);
+    }
+
+    public void goToGridSliderEdit(){
+        actions.click(btnGridSliderEdit);
+    }
+
+    public void goToAllAlbums(){
+        actions.click(btnAllAlbums);
     }
 }
