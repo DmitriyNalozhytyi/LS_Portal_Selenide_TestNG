@@ -23,8 +23,8 @@ public class CreateNewPublicationPage extends ParentPage {
     @FindBy(className = "form_cont_img")
     private WebElement btnEditSlider;
 
-    @FindBy(css = "input[type='file']")
-    private WebElement inputAddImage;
+    @FindBy(css = "app-file-image-uploader-singleton > input[type='file']")
+    WebElement inputDownloadImage;
     
     @FindBy(css = "[frameborder]")
     private WebElement inputDescription;
@@ -70,7 +70,7 @@ public class CreateNewPublicationPage extends ParentPage {
 
     public void addImageToSlider() throws InterruptedException {
         btnEditSlider.click();
-        inputAddImage.sendKeys("C:/Users/vkor2/OneDrive - Lizard Soft/Test Item/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg"); //Выбираем рандомную фотку в указанном диапазоне
+        inputDownloadImage.sendKeys("C:/Users/vkor2/OneDrive - Lizard Soft/Test Item/Test Pictures/Normal size/" + actions.randomNumber(1, 30) + ".jpg"); //Выбираем рандомную фотку в указанном диапазоне
         Thread.sleep(1000);
         btnSaveImage.click();
     }

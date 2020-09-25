@@ -22,6 +22,9 @@ public class ParentTest {
     protected NewsPage newsPage;
     protected ArticlesPageAll articlesPageAll;
     protected InterviewPageAll interviewPageAll;
+    protected GridSliderPageEdit gridSliderPageEdit;
+    protected PhotogallaryPageAll photogallaryPageAll;
+    protected PhotogallaryPageAlbum photogallaryPageAlbum;
 
 
     @Before
@@ -41,12 +44,15 @@ public class ParentTest {
         newsPage = new NewsPage(webDriver);
         articlesPageAll = new ArticlesPageAll(webDriver);
         interviewPageAll = new InterviewPageAll(webDriver);
+        gridSliderPageEdit = new GridSliderPageEdit(webDriver);
+        photogallaryPageAll = new PhotogallaryPageAll(webDriver);
+        photogallaryPageAlbum = new PhotogallaryPageAlbum(webDriver);
 
         authorizationPage.authorization();
     }
 
     @After
     public void tearDown(){
-        webDriver.quit();
+        //webDriver.quit();
     }
 }
