@@ -10,10 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
+import org.apache.log4j.Logger;
 
 public class Actions {
     WebDriver webDriver;
     WebDriverWait wait;
+
+    // выбираем: Logger (org.apache.log4j)
+    // создаем объект, который будет писать нам лог
+    Logger logger = Logger.getLogger(getClass());
 
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -26,7 +31,12 @@ public class Actions {
         //webDriver.navigate().refresh();
         webDriver.navigate().to(webDriver.getCurrentUrl());
     }
-    public void waitToBeVisible(WebElement element) {
+
+    public void waitUntilBecomeClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void waitUntilBecomeVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e){
@@ -118,4 +128,32 @@ public class Actions {
         webDriver.findElements(By.cssSelector(selector));
     }
      */
+
+    public void switchTo1stFrameOf2(WebElement element) {
+        try {
+            webDriver.switchTo().defaultContent();
+            Thread.sleep(1000);
+            webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 2);
+            logger.info("Frame was changed");
+            //   System.out.println("Frame was changed");
+        } catch (Exception e) {
+            logger.info("Can't switch to frame");
+            printErrorAndStopTest(e);
+        }
+    }
+
+    private void printErrorAndStopTest(Exception e) {
+        logger.info("Can't work with element" + e);
+        // Assert.fail - безусловная остановка теста
+        Assert.fail("Can't work with element" + e);
+    }
+
+    public void switchToDefaultContentFromFrame(){
+        try {
+            webDriver.switchTo().defaultContent();
+        }catch (Exception e){
+            System.out.println("Can't switch to default content from iframe");
+        }
+    }
+
 }

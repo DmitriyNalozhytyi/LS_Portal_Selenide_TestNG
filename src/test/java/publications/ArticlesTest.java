@@ -6,6 +6,7 @@ import parentTest.ParentTest;
 public class ArticlesTest extends ParentTest {
     @Test
     public void createNewArticle() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser4@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllArticles();
         articlesPageAll.clickOnRBtnNewArticle();
         articlesPageAll.clickOnBtnCreate();

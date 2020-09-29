@@ -25,6 +25,9 @@ public class ParentTest {
     protected GridSliderPageEdit gridSliderPageEdit;
     protected PhotogallaryPageAll photogallaryPageAll;
     protected PhotogallaryPageAlbum photogallaryPageAlbum;
+    protected CreateNewFeedback_Page_MainModerator createNewFeedback_Page_MainModerator;
+    protected ViewListOfFeedbacks_Page_MainModerator viewListOfFeedbacks_page_mainModerator;
+
 
 
     @Before
@@ -47,8 +50,10 @@ public class ParentTest {
         gridSliderPageEdit = new GridSliderPageEdit(webDriver);
         photogallaryPageAll = new PhotogallaryPageAll(webDriver);
         photogallaryPageAlbum = new PhotogallaryPageAlbum(webDriver);
+        createNewFeedback_Page_MainModerator = new CreateNewFeedback_Page_MainModerator(webDriver);
+        viewListOfFeedbacks_page_mainModerator = new ViewListOfFeedbacks_Page_MainModerator(webDriver);
 
-        authorizationPage.authorization();
+//        authorizationPage.authorization();
     }
 
     @After
