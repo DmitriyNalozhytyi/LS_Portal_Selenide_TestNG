@@ -82,61 +82,61 @@ public class NewsPage extends ParentPage {
     public WebElement btnBackToAllNews;
 
     public void checkTA(){
-        actions.waitToBeVisible(fieldTA);
+        actions.waitUntilBecomeVisible(fieldTA);
     }
 
     public void checkTitle(){
-        actions.waitToBeVisible(fieldNewsTitle);
+        actions.waitUntilBecomeVisible(fieldNewsTitle);
     }
 
     public void checkImage(){
-        actions.waitToBeVisible(fieldImage);
+        actions.waitUntilBecomeVisible(fieldImage);
     }
 
     public void checkDescription(){
-        actions.waitToBeVisible(fieldDescription);
+        actions.waitUntilBecomeVisible(fieldDescription);
     }
 
     public void checkTag(){
-        actions.waitToBeVisible(fieldTag);
+        actions.waitUntilBecomeVisible(fieldTag);
     }
 
     public void checkViews(){
-        actions.waitToBeVisible(iconViews);
-        actions.waitToBeVisible(counterViews);
+        actions.waitUntilBecomeVisible(iconViews);
+        actions.waitUntilBecomeVisible(counterViews);
     }
 
     public void checkEditButton(){
-        actions.waitToBeVisible(btnEditNews);
+        actions.waitUntilBecomeVisible(btnEditNews);
     }
 
     public void checkDeleteButton(){
-        actions.waitToBeVisible(btnDeleteNews);
+        actions.waitUntilBecomeVisible(btnDeleteNews);
     }
 
     public void checkDate(){
-        actions.waitToBeVisible(fieldDate);
+        actions.waitUntilBecomeVisible(fieldDate);
     }
 
     public void checkPreviousNewsButton(){
-        actions.waitToBeVisible(iconPrevious);
-        actions.waitToBeVisible(btnPrevious);
+        actions.waitUntilBecomeVisible(iconPrevious);
+        actions.waitUntilBecomeVisible(btnPrevious);
     }
 
     public void checkNextNewsButton(){
-        actions.waitToBeVisible(iconNext);
-        actions.waitToBeVisible(btnNext);
+        actions.waitUntilBecomeVisible(iconNext);
+        actions.waitUntilBecomeVisible(btnNext);
     }
 
     public void checkLikes(){
-        actions.waitToBeVisible(counterLike);
-        actions.waitToBeVisible(btnLike);
-        actions.waitToBeVisible(iconLike);
+        actions.waitUntilBecomeVisible(counterLike);
+        actions.waitUntilBecomeVisible(btnLike);
+        actions.waitUntilBecomeVisible(iconLike);
     }
 
     public void checkComments(){
-        actions.waitToBeVisible(counterComments);
-        actions.waitToBeVisible(btnSendComment);
+        actions.waitUntilBecomeVisible(counterComments);
+        actions.waitUntilBecomeVisible(btnSendComment);
     }
 
     public void writeComment(String testComment){

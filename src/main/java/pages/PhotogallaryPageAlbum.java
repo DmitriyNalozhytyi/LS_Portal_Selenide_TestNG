@@ -30,13 +30,13 @@ public class PhotogallaryPageAlbum extends ParentPage {
      */
 
     public void checkAlbumTitle(){
-        actions.waitToBeVisible(fieldAlbumTitle);
+        actions.waitUntilBecomeVisible(fieldAlbumTitle);
     }
     public void checkAlbumDescription(){
-        actions.waitToBeVisible(fieldAlbumDescription);
+        actions.waitUntilBecomeVisible(fieldAlbumDescription);
     }
     public void checkPhotoInAlbum(){
-        actions.waitToBeVisible(fieldImage);
+        actions.waitUntilBecomeVisible(fieldImage);
     }
 
     public void downloadImageToAlbum() throws InterruptedException {

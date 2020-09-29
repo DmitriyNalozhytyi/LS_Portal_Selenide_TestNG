@@ -46,12 +46,19 @@ public class AuthorizationPage extends ParentPage {
         actions.click(BtnWorkAccount);
     }
 
-    public void authorization() throws InterruptedException {
-        openPage();
-        insertEmail("dev-testuser3@dev.lizard.net.ua");
-        pressBtnNext();
-        insertPassword("Pa$$w0rd");
-        pressBtnNext();
-        pressBtnNext();
+    public void authorization(String Email, String Pass) throws InterruptedException {
+
+
+        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net");
+        actions.waitUntilBecomeVisible(InputEmail);
+        actions.insertText(InputEmail,Email);
+        actions.waitUntilBecomeClickable(BtnNext);
+        actions.click(BtnNext);
+        actions.waitUntilBecomeVisible(InputPassword);
+        actions.insertText(InputPassword,Pass);
+        actions.waitUntilBecomeClickable(BtnNext);
+        actions.click(BtnNext);
+        actions.waitUntilBecomeClickable(BtnNext);
+        actions.click(BtnNext);
     }
 }
