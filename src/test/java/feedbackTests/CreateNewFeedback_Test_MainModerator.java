@@ -9,19 +9,36 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest {
     public void createNewFeedback_Portal_Management_MH() throws InterruptedException {
 
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
         createNewFeedback_Page_MainModerator.choose_CommunicationChannelField();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
         createNewFeedback_Page_MainModerator.clickOnSendBtn();
-        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated();
-      //  viewListOfFeedbacks_page_mainModerator.III();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+    }
 
-    //    viewListOfFeedbacks_page_mainModerator.test();
+    @Test
+    public void createNewFeedbackFromFeedbackList() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
+        mainPage.navigateVievListOfFeedbacksPage();
+         viewListOfFeedbacks_page_mainModerator.clickOnCreateBtn();
+    }
 
-       // viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-
+    @Test
+    public void openFeedbackInFAQ () throws InterruptedException {
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.openTopicProductFAQ();
+        createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
 
     }
+
+  /*  @Test
+    public void openLastCreatedFeedbackBy_MainModerator() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
+        mainPage.navigateVievListOfFeedbacksPage();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedbackBy_MainModerator();
+    }*/
 
 
 
