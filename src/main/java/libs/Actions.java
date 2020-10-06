@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 
@@ -22,7 +23,7 @@ public class Actions {
 
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
-        wait = new WebDriverWait(webDriver, 15);
+        wait = new WebDriverWait(webDriver, 60);
     }
     public void wait(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -35,6 +36,10 @@ public class Actions {
     public void waitUntilBecomeClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
+
+
+
 
     public void waitUntilBecomeVisible(WebElement element) {
         try {
@@ -131,9 +136,25 @@ public class Actions {
 
     public void switchTo1stFrameOf2(WebElement element) {
         try {
-            webDriver.switchTo().defaultContent();
             Thread.sleep(1000);
+            webDriver.switchTo().defaultContent();
+            System.out.println("switch to default content");
+            Thread.sleep(5000);
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 2);
+            System.out.println("switch to 1st frame of 2");
+            logger.info("Frame was changed");
+               System.out.println("Frame was changed");
+        } catch (Exception e) {
+            logger.info("Can't switch to frame");
+            System.out.println("Can't switch to frame");
+            printErrorAndStopTest(e);
+        }
+    }
+    public void switchTo2ndFrameOf2(WebElement element) {
+        try {
+            webDriver.switchTo().defaultContent();
+            // Thread.sleep(1000);
+            webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
             logger.info("Frame was changed");
             //   System.out.println("Frame was changed");
         } catch (Exception e) {
@@ -154,6 +175,35 @@ public class Actions {
         }catch (Exception e){
             System.out.println("Can't switch to default content from iframe");
         }
+    }
+
+    public void waitUntilVisibilityOfAllelements(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+    }
+
+    public void clickOnLastElementCloseBtn() throws InterruptedException {
+        Thread.sleep(5000);
+        List<WebElement> CommunicationChannelDDList = webDriver.findElements(By.className("popup-feedback__close"));
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        logger.info(CommunicationChannelDDList.size() + " - number of closeBtn");
+        System.out.println(CommunicationChannelDDList.size() + " - number of DD");
+
+        if (CommunicationChannelDDList.size() > 0) {
+            CommunicationChannelDDList.get(CommunicationChannelDDList.size() - 1).click();
+            System.out.println("last close btn clicked");
+        } else {
+            //logger.info("!!! number of same elements '0'!!! ");
+            System.out.println("!!! number of same elements '0'!!!");
+        }
+    }
+
+    public void exitTest() {
+        webDriver.quit();
     }
 
 }

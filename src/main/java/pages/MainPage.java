@@ -52,4 +52,13 @@ public class MainPage extends ParentPage {
     public void goToAllAlbums(){
         actions.click(btnAllAlbums);
     }
+
+    public void navigateToCreateNewFeedbackPage() {
+        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback");
+    }
+
+    public void navigateVievListOfFeedbacksPage() {
+        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list");
+    }
 }
+
