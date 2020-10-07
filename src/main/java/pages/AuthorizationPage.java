@@ -61,4 +61,18 @@ public class AuthorizationPage extends ParentPage {
         actions.waitToBeClickable(BtnNext);
         actions.click(BtnNext);
     }
+
+    public void ReAuthorization(String Email, String Pass) throws InterruptedException {
+        actions.waitUntilBecomeVisible(InputEmail);
+        actions.insertText(InputEmail,Email);
+        actions.waitUntilBecomeClickable(BtnNext);
+        actions.click(BtnNext);
+        Thread.sleep(2000);
+        actions.waitUntilBecomeVisible(InputPassword);
+        actions.insertText(InputPassword,Pass);
+        actions.waitUntilBecomeClickable(BtnNext);
+        actions.click(BtnNext);
+        /*actions.waitUntilBecomeClickable(BtnNext);
+        actions.click(BtnNext);*/
+    }
 }
