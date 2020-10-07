@@ -44,9 +44,9 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         System.out.println(CommunicationChannelDDList.size() + " - number of DD");
 
         if (CommunicationChannelDDList.size() > 0) {
-            actions.waitUntilBecomeClickable(DDlist);
+            actions.waitToBeClickable(DDlist);
             CommunicationChannelDDList.get(CommunicationChannelDDList.size() - 3).click();
-            actions.waitUntilBecomeClickable(portalChannel);
+            actions.waitToBeClickable(portalChannel);
             actions.click(portalChannel);
             System.out.println("portalChannel choosed");
         } else {
@@ -66,7 +66,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
             TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
             System.out.println("Topic_DD clicked");
-            actions.waitUntilBecomeClickable(prodaction);
+            actions.waitToBeClickable(prodaction);
             actions.click(prodaction);
             System.out.println("prodaction choosed");
         } else {
@@ -77,13 +77,13 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     public void enterTextInTo_AppealField(String text) {
         actions.switchTo1stFrameOf2(appealField);
-        actions.waitUntilBecomeVisible(appealField);
+        actions.waitToBeVisible(appealField);
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
     }
 
     public void clickOnSendBtn() {
-        actions.waitUntilBecomeClickable(sendBtn);
+        actions.waitToBeClickable(sendBtn);
         actions.click(sendBtn);
 
     }
