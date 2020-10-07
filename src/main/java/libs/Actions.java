@@ -32,11 +32,11 @@ public class Actions {
         webDriver.navigate().to(webDriver.getCurrentUrl());
     }
 
-    public void waitUntilBecomeClickable(WebElement element) {
+    public void waitToBeClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void waitUntilBecomeVisible(WebElement element) {
+    public void waitToBeVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e){

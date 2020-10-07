@@ -35,7 +35,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
 
     public String closePopUpFeedbackCreated() throws InterruptedException {
-        actions.waitUntilBecomeVisible(textFeedbackNumber);
+        actions.waitToBeVisible(textFeedbackNumber);
         //  Thread.sleep(2000);
         titleText = webDriver.findElement(By.className("popup-feedback_bold-text")).getText();
         logger.info("text recoded" + titleText);
