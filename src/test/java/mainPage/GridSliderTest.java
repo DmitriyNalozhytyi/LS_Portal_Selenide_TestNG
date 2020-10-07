@@ -4,8 +4,9 @@ import org.junit.Test;
 import parentTest.ParentTest;
 
 public class GridSliderTest extends ParentTest {
-    @Test
+    //@Test
     public void EditGridSlider() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToGridSliderEdit();
         gridSliderPageEdit.deleteRandomBlock();
         gridSliderPageEdit.addNewColorBlock();
@@ -20,6 +21,7 @@ public class GridSliderTest extends ParentTest {
 
     @Test
     public void addBlockWithImage() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToGridSliderEdit();
         gridSliderPageEdit.deleteRandomBlock();
         gridSliderPageEdit.addNewBlockWithImage();

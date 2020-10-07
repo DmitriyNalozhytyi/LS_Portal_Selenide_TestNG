@@ -23,7 +23,7 @@ public class Actions {
 
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
-        wait = new WebDriverWait(webDriver, 60);
+        wait = new WebDriverWait(webDriver, 15);
     }
     public void wait(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -33,15 +33,11 @@ public class Actions {
         webDriver.navigate().to(webDriver.getCurrentUrl());
     }
 
-    public void waitUntilBecomeClickable(WebElement element) {
+    public void waitToBeClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-
-
-
-
-    public void waitUntilBecomeVisible(WebElement element) {
+    public void waitToBeVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e){

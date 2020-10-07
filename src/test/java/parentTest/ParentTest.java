@@ -55,10 +55,11 @@ public class ParentTest {
         viewListOfFeedbacks_page_mainModerator = new ViewListOfFeedbacks_Page_MainModerator(webDriver);
 
 //        authorizationPage.authorization();
+        //authorizationPage.authorization();
     }
 
     @After
     public void tearDown(){
-        //webDriver.quit();
+        webDriver.quit();
     }
 }

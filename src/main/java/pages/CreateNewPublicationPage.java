@@ -23,7 +23,7 @@ public class CreateNewPublicationPage extends ParentPage {
     @FindBy(className = "form_cont_img")
     private WebElement btnEditSlider;
 
-    @FindBy(css = "app-file-image-uploader-singleton > input[type='file']")
+    @FindBy(css = "input[type='file']")
     WebElement inputDownloadImage;
     
     @FindBy(css = "[frameborder]")
@@ -114,6 +114,6 @@ public class CreateNewPublicationPage extends ParentPage {
     }
 
     public void saveAndPublish() {
-        btnSave.click();
+        actions.click(btnSave);
     }
 }

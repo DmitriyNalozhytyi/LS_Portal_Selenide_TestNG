@@ -55,7 +55,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
 
     public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
-        actions.waitUntilBecomeVisible(textFeedbackNumber);
+        actions.waitToBeVisible(textFeedbackNumber);
         //  Thread.sleep(2000);
         titleText = webDriver.findElement(By.className("popup-feedback_bold-text")).getText();
         logger.info("text recoded" + titleText);
@@ -66,7 +66,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void clickOnCreateBtn() {
-       actions.waitUntilBecomeClickable(createNewFeedbackBtn);
+       actions.waitToBeClickable(createNewFeedbackBtn);
         actions.click(createNewFeedbackBtn);
     }
 
@@ -77,7 +77,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) {
         actions.switchTo2ndFrameOf2(appealField);
-        actions.waitUntilBecomeVisible(appealField);
+        actions.waitToBeVisible(appealField);
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
     }
@@ -106,7 +106,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public void enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
 
         actions.switchTo2ndFrameOf2(appealField);
-        actions.waitUntilBecomeVisible(appealField);
+        actions.waitToBeVisible(appealField);
         System.out.println("visible");
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();

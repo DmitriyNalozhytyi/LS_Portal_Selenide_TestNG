@@ -6,6 +6,7 @@ import parentTest.ParentTest;
 public class InterviewTest extends ParentTest {
     @Test
     public void createNewInterview() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllInterview();
         interviewPageAll.selectPublicationTypeInterview();
         createNewPublicationPage.writeHeadline("ATest " + actions.currentTime());
@@ -21,7 +22,8 @@ public class InterviewTest extends ParentTest {
     }
 
     @Test
-    public void checkNews(){
+    public void checkInterview() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         newsPageAll.selectRandomNews();
         newsPage.checkDate();
@@ -41,6 +43,7 @@ public class InterviewTest extends ParentTest {
 
     @Test
     public void writeComment() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         newsPageAll.selectRandomNews();
         newsPage.writeComment(loremIpsum.getLorem(1, 2));
@@ -50,6 +53,7 @@ public class InterviewTest extends ParentTest {
 
     @Test
     public void writeCommentReply() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         //allNewsPage.selectRandomNews();
         //actions.selectNewsByCounter();

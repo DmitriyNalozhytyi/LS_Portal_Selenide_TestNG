@@ -7,6 +7,7 @@ public class NewsTest extends ParentTest {
 
     @Test
     public void createNewNews() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         newsPageAll.clickOnRBtnNewNews();
         newsPageAll.clickOnBtnCreate();
@@ -23,7 +24,8 @@ public class NewsTest extends ParentTest {
     }
 
     @Test
-    public void checkNews(){
+    public void checkNews() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         newsPageAll.selectRandomNews();
         newsPage.checkDate();
@@ -43,6 +45,7 @@ public class NewsTest extends ParentTest {
 
     @Test
     public void writeComment() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         newsPageAll.selectRandomNews();
         newsPage.writeComment(loremIpsum.getLorem(1, 2));
@@ -52,6 +55,7 @@ public class NewsTest extends ParentTest {
 
     @Test
     public void writeCommentReply() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         //allNewsPage.selectRandomNews();
         //actions.selectNewsByCounter();

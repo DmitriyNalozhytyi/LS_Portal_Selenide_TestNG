@@ -6,7 +6,7 @@ import parentTest.ParentTest;
 public class ArticlesTest extends ParentTest {
     @Test
     public void createNewArticle() throws InterruptedException {
-        authorizationPage.authorization("dev-testuser4@dev.lizard.net.ua","Pa$$w0rd");
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllArticles();
         articlesPageAll.clickOnRBtnNewArticle();
         articlesPageAll.clickOnBtnCreate();
@@ -25,7 +25,8 @@ public class ArticlesTest extends ParentTest {
     }
 
     @Test
-    public void checkArticle(){
+    public void checkArticle() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllArticles();
         articlesPageAll.selectRandomArticle();
         newsPage.checkDate();
@@ -45,6 +46,7 @@ public class ArticlesTest extends ParentTest {
 
     @Test
     public void writeComment() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         newsPageAll.selectRandomNews();
         newsPage.writeComment(loremIpsum.getLorem(1, 2));
@@ -54,6 +56,7 @@ public class ArticlesTest extends ParentTest {
 
     @Test
     public void writeCommentReply() throws InterruptedException {
+        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllNews();
         //allNewsPage.selectRandomNews();
         //actions.selectNewsByCounter();
