@@ -1,9 +1,12 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
@@ -28,7 +31,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(className = "popup-feedback__close")
     private WebElement closePopUpBtn;
 
-    @FindBy(className = "mat-button")
+    @FindBy(className = "feedback-button")
     private WebElement publishInFAQ;
 
     /*@FindBy(className = "mat-button-wrapper")
@@ -50,9 +53,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(id = "tinymce")
     public WebElement appealField;
 
-
   private String titleText;
-
+    public String titleText2;
 
     public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
         actions.waitUntilBecomeVisible(textFeedbackNumber);
@@ -60,7 +62,6 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         titleText = webDriver.findElement(By.className("popup-feedback_bold-text")).getText();
         logger.info("text recoded" + titleText);
         System.out.println("text recoded" + titleText);
-
         actions.click(closePopUpAfterCreateFeedback);
         return this.titleText;
     }
@@ -76,7 +77,23 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) {
-        actions.switchTo2ndFrameOf2(appealField);
+
+        try {
+            List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
+            System.out.println(frames.size() + " - number of frames");
+
+           if (frames.size() > 0) {
+               actions.switchTo2ndFrameOf2(appealField);
+           }else {
+               actions.switchTo1stFrameOf1(appealField);
+           }
+        }catch (Exception e){
+            System.out.println("no frames");
+            actions.printErrorAndStopTest(e);
+          //  Assert.fail("Can`t click on element " + e);
+
+        }
+//        actions.switchTo2ndFrameOf2(appealField);
         actions.waitUntilBecomeVisible(appealField);
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
@@ -87,6 +104,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void closePopUp() throws InterruptedException {
+      Thread.sleep(2000);
         actions.clickOnLastElementCloseBtn();
     }
 
@@ -98,23 +116,41 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         actions.click(accountBtn);
         actions.click(exitFromAccount);
         actions.click(changeAccount);
-
-
-
     }
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
-
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitUntilBecomeVisible(appealField);
         System.out.println("visible");
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
 
-
-
-
     }
+
+  /*     public String enterTextInTo_AppealField_FeedbackCard_status_New_Apprower() {
+               actions.switchTo2ndFrameOf2(appealField);
+               actions.waitUntilBecomeVisible(appealField);
+               System.out.println("visible");
+               String titleText2 = "*****" + actions.currentTime();
+               actions.insertText(appealField,titleText2);
+               actions.switchToDefaultContentFromFrame();
+               System.out.println("write a value to a variable titleText2 = " + titleText2 );
+
+        return this.titleText2;
+
+    }*/
+
+
+
+   /* public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
+        actions.waitUntilBecomeVisible(textFeedbackNumber);
+        //  Thread.sleep(2000);
+        titleText = webDriver.findElement(By.className("popup-feedback_bold-text")).getText();
+        logger.info("text recoded" + titleText);
+        System.out.println("text recoded" + titleText);
+        actions.click(closePopUpAfterCreateFeedback);
+        return this.titleText;
+    }*/
 
     public void closeFeedbackCard() throws InterruptedException {
         actions.clickOnLastElementCloseBtn();
