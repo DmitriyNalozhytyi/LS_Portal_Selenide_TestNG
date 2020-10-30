@@ -116,4 +116,6 @@ public class CreateNewPublicationPage extends ParentPage {
     public void saveAndPublish() {
         actions.click(btnSave);
     }
+
+
 }

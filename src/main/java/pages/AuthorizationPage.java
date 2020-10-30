@@ -52,25 +52,25 @@ public class AuthorizationPage extends ParentPage {
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net");
         actions.waitToBeVisible(InputEmail);
         actions.insertText(InputEmail,Email);
-        actions.waitToBeClickable(BtnNext);
+        actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);
         actions.waitToBeVisible(InputPassword);
         actions.insertText(InputPassword,Pass);
-        actions.waitToBeClickable(BtnNext);
+        actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);
-        actions.waitToBeClickable(BtnNext);
+        actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);
     }
 
     public void ReAuthorization(String Email, String Pass) throws InterruptedException {
         actions.waitToBeVisible(InputEmail);
         actions.insertText(InputEmail,Email);
-        actions.waitToBeClickable(BtnNext);
+        actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);
         Thread.sleep(2000);
         actions.waitToBeVisible(InputPassword);
         actions.insertText(InputPassword,Pass);
-        actions.waitToBeClickable(BtnNext);
+        actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);
         /*actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);*/

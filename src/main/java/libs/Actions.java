@@ -23,7 +23,7 @@ public class Actions {
 
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
-        wait = new WebDriverWait(webDriver, 15);
+        wait = new WebDriverWait(webDriver, 60);
     }
     public void wait(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -33,7 +33,7 @@ public class Actions {
         webDriver.navigate().to(webDriver.getCurrentUrl());
     }
 
-    public void waitToBeClickable(WebElement element) {
+    public void waitUntilBecomeClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -130,9 +130,9 @@ public class Actions {
     }
      */
 
-    public void switchTo1stFrameOf2(WebElement element) {
-        try {
-            Thread.sleep(1000);
+    public void switchTo1stFrameOf2(WebElement element) throws InterruptedException {
+      /*  try {
+            Thread.sleep(2000);
             webDriver.switchTo().defaultContent();
             System.out.println("switch to default content");
             Thread.sleep(5000);
@@ -144,10 +144,18 @@ public class Actions {
             logger.info("Can't switch to frame");
             System.out.println("Can't switch to frame");
             printErrorAndStopTest(e);
-        }
+        }*/
+        Thread.sleep(2000);
+        webDriver.switchTo().defaultContent();
+        System.out.println("switch to default content");
+        Thread.sleep(5000);
+        webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 2);
+        System.out.println("switch to 1st frame of 2");
+        logger.info("Frame was changed");
+        System.out.println("Frame was changed");
     }
     public void switchTo2ndFrameOf2(WebElement element) {
-        try {
+      /*  try {
             webDriver.switchTo().defaultContent();
             // Thread.sleep(1000);
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
@@ -156,11 +164,17 @@ public class Actions {
         } catch (Exception e) {
             logger.info("Can't switch to frame");
             printErrorAndStopTest(e);
-        }
+        }*/
+        webDriver.switchTo().defaultContent();
+        // Thread.sleep(1000);
+        webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
+        logger.info("Frame was changed");
+        System.out.println("Frame was changed");
     }
 
-    private void printErrorAndStopTest(Exception e) {
+    public void printErrorAndStopTest(Exception e) {
         logger.info("Can't work with element" + e);
+        System.out.println("Can't work with element" + e);
         // Assert.fail - безусловная остановка теста
         Assert.fail("Can't work with element" + e);
     }
@@ -169,12 +183,15 @@ public class Actions {
         try {
             webDriver.switchTo().defaultContent();
         }catch (Exception e){
+
             System.out.println("Can't switch to default content from iframe");
+            printErrorAndStopTest(e);
         }
     }
 
     public void waitUntilVisibilityOfAllelements(WebElement element) {
         wait.until(ExpectedConditions.visibilityOfAllElements(element));
+
     }
 
     public void clickOnLastElementCloseBtn() throws InterruptedException {
@@ -202,4 +219,33 @@ public class Actions {
         webDriver.quit();
     }
 
+    public boolean isElementPresent(WebElement element) {
+        try {
+            boolean isDisplayed = element.isDisplayed();
+            logger.info("Element is displayed -->" + isDisplayed);
+            return element.isDisplayed();
+            //return isDisplayed;
+        } catch (Exception e) {
+            logger.info("Element is displayed --> false");
+            return false;
+        }
+    }
+
+    public void switchTo1stFrameOf1(WebElement appealField) {
+     /*   try {
+            webDriver.switchTo().defaultContent();
+            // Thread.sleep(1000);
+            webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
+            logger.info("Frame was changed");
+            //   System.out.println("Frame was changed");
+        } catch (Exception e) {
+            logger.info("Can't switch to frame");
+            printErrorAndStopTest(e);
+        }*/
+        webDriver.switchTo().defaultContent();
+        // Thread.sleep(1000);
+        webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
+        logger.info("Frame was changed");
+        System.out.println("Frame was changed");
+    }
 }
