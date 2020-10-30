@@ -37,7 +37,7 @@ public class Actions {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void waitUntilBecomeVisible(WebElement element) {
+    public void waitToBeVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e){

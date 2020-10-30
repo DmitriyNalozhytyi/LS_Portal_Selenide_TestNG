@@ -75,7 +75,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
             System.out.println("Topic_DD clicked");
             actions.waitUntilBecomeClickable(prodaction);
-            actions.waitUntilBecomeVisible(prodaction);
+            actions.waitToBeVisible(prodaction);
             actions.waitUntilBecomeClickable(prodaction);
             actions.click(prodaction);
             System.out.println("prodaction choosed");
@@ -87,7 +87,9 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     }
 
     public void enterTextInTo_AppealField(String text) {
-
+     /*   actions.switchTo1stFrameOf2(appealField);
+        actions.waitToBeVisible(appealField);
+*/
         try {
             List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
             System.out.println(frames.size() + " - number of frames AppealField byMainModerator");
@@ -105,13 +107,13 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
         }
     //    actions.switchTo1stFrameOf2(appealField);
-        actions.waitUntilBecomeVisible(appealField);
+        actions.waitToBeVisible(appealField);
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
     }
 
     public void clickOnSendBtn() {
-        actions.waitUntilBecomeClickable(sendBtn);
+        actions.waitToBeVisible(sendBtn);
         actions.click(sendBtn);
 
     }

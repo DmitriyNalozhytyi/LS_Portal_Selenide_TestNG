@@ -10,7 +10,7 @@ import static junit.framework.TestCase.assertTrue;
 public class FlowFeedback extends ParentTest {
 
 
-    @Test  //ok
+    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
     public void createFeedback_Approve_PublishFAQ_Management_MH_byMainModerator() throws InterruptedException {
 
         //    STEP 1 - create feedback and remember feedback number
@@ -36,8 +36,6 @@ public class FlowFeedback extends ParentTest {
 
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
        // assertTrue(webdriver.findElement(By.cssSelector(".title")).getText().contains("text"));
-
-        //textInAppealField
     }
 
     @Test
