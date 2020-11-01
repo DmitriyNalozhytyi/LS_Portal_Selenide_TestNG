@@ -2,6 +2,7 @@ package libs;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -248,4 +249,22 @@ public class Actions {
         logger.info("Frame was changed");
         System.out.println("Frame was changed");
     }
+
+    public void insertTextInToPeopePickerFieldUsingEnter(WebElement element, String text) {
+        try {
+           // Thread.sleep(2000);
+            element.clear();
+            element.sendKeys(text);
+           // Thread.sleep(2000);
+            element.sendKeys(Keys.ENTER);
+            // Thread.sleep(5000);
+            logger.info(text + "was input into element");
+            // System.out.println(text + "was input into element");
+        } catch (Exception e) {
+            System.out.println("Can't enter text in to fieldExecutor" + e);
+            printErrorAndStopTest(e);
+        }
+
+    }
+
 }

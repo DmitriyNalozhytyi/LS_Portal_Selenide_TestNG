@@ -162,6 +162,45 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    public void choose_Rundom_TopicField() throws InterruptedException {
+
+        List<WebElement> TopicFieldDDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
+
+
+        Thread.sleep(2000);
+        if (TopicFieldDDList.size() > 0) {
+            //   actions.waitUntilBecomeClickable(DDlist);
+            actions.waitUntilVisibilityOfAllelements(DDlist);
+
+            TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
+            System.out.println("Topic_DD clicked");
+
+            actions.waitUntilBecomeClickable(prodaction);
+            actions.waitToBeVisible(prodaction);
+            actions.waitUntilBecomeClickable(prodaction);
+
+           // WebElement selectRundonTopic = webDriver.findElement(By.id("mat-option-" + actions.randomNumber(26, 38)));
+            //mat-option:nth-of-type(3)  .tooltip-wrapper
+            WebElement selectRundonTopic = webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(1, 13) + ")  .tooltip-wrapper"));
+
+
+
+            System.out.println("locator="+selectRundonTopic);
+            actions.click(selectRundonTopic);
+
+         //   actions.randomNumber(1,13);
+
+            /*actions.click(prodaction);
+            System.out.println("prodaction choosed");*/
+
+        } else {
+            //         logger.info("!!! number of same elements '0'!!! ");
+            System.out.println("!!! number of same elements '0'!!!");
+
+        }
+
+    }
+
 
 
    /* public boolean isFeedbackInFAQList() {

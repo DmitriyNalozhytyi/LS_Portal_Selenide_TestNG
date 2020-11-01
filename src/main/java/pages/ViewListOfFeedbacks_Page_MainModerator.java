@@ -2,9 +2,11 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -21,6 +23,25 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     @FindBy(css = "div[role='group']")
     private WebElement appealFieldForApprover;
+
+    @FindBy(css = "[for='mat-checkbox-2-input'] .mat-checkbox-inner-container")
+    private WebElement checkBoxNewFeedbackCard;
+
+    @FindBy(className = "readonly")
+    private WebElement reasonForReturnField;
+
+    @FindBy(css = "[for='mat-checkbox-2-input'] .mat-checkbox-inner-container")
+    private WebElement assignResponsibleChackBox;
+
+    @FindBy(css = "input[role='combobox']")
+    private WebElement newApproverField;
+
+
+
+   // @FindBy(id = "mat-option-12")
+
+    @FindBy(css ="mat-option#mat-option-0")
+    private WebElement chooseApproverInPeoplePeackerField;
 
     public ViewListOfFeedbacks_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
@@ -101,6 +122,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public void clickOnSendBtn() {
         actions.click(sendBtn);
+
     }
 
     public void closePopUp() throws InterruptedException {
@@ -154,6 +176,52 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public void closeFeedbackCard() throws InterruptedException {
         actions.clickOnLastElementCloseBtn();
+    }
+
+    public boolean checkFeedbackIsCreated() {
+        // open last Created Feedback
+        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/"+titleText);
+        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/"+titleText);
+
+        if (
+                webDriver.findElement(By.className("feedback-button")).isDisplayed()){
+
+
+            System.out.println("TRUE. button send is displayed. Feedback is Created");
+            return true;
+
+        }else {
+            System.out.println("FALSE. button send is NOT displayed. Feedback is NOT Created");
+            return false;
+        }
+
+    }
+
+    public void chooseCheckBoxToBackMM() {
+       /* Select checkBox = new Select(webDriver.findElement(By.className("mat-checkbox-frame")));
+        checkBox.selectByIndex(1);*/
+       actions.click(checkBoxNewFeedbackCard);
+    }
+
+    public void inputReasonForReturn() {
+        actions.insertText(reasonForReturnField, "UUUYUYUYUY");
+    }
+
+    public void assignNewResponsible() {
+        actions.click(assignResponsibleChackBox);
+    }
+
+    public void chooseNewApprover(String text) throws InterruptedException {
+
+      //  actions.insertTextInToPeopePickerFieldUsingEnter(newApproverField,text);
+        actions.insertText(newApproverField,text);
+       // actions.waitUntilBecomeClickable(chooseApproverInPeoplePeackerField);
+        actions.click(chooseApproverInPeoplePeackerField);
+       // actions.waitUntilBecomeClickable(sendBtn);
+         Thread.sleep(2000);
+       /* actions.insertText(newApproverField, text);
+        webDriver.findElement(By.cssSelector("input[role='combobox']")).sendKeys(Keys.ENTER);*/
+
     }
 
 //    find last created feedback in list of reedbacks
