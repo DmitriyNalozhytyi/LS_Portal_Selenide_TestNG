@@ -13,6 +13,10 @@ import static junit.framework.TestCase.assertTrue;
 
 public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
+   // @FindBy(id = "mat-option-11")
+    @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
+    private WebElement directionManagementCompany;
+
     public CreateNewFeedback_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
     }
@@ -41,17 +45,17 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
      String titleText2;
 
 
-    public void choose_CommunicationChannelField() throws InterruptedException {
+    public void choose_CommunicationChannel_Portal() throws InterruptedException {
 
-        List<WebElement> CommunicationChannelDDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
+        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
         actions.waitUntilVisibilityOfAllelements(DDlist);
 
-        logger.info(CommunicationChannelDDList.size() + " - number of DD");
-        System.out.println(CommunicationChannelDDList.size() + " - number of DD");
+        logger.info(DDList.size() + " - number of DD");
+        System.out.println(DDList.size() + " - number of DD");
 
-        if (CommunicationChannelDDList.size() > 0) {
+        if (DDList.size() > 0) {
             actions.waitUntilBecomeClickable(DDlist);
-            CommunicationChannelDDList.get(CommunicationChannelDDList.size() - 3).click();
+            DDList.get(DDList.size() - 3).click();
             actions.waitUntilBecomeClickable(portalChannel);
             actions.click(portalChannel);
             System.out.println("portalChannel choosed");
@@ -150,8 +154,6 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
         if (
             webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
-
-
             System.out.println("TRUEEE");
             return true;
 
@@ -199,6 +201,27 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
         }
 
+    }
+
+    public void choose_Direction_ManagementCompany_Field() throws InterruptedException {
+
+        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
+        actions.waitUntilVisibilityOfAllelements(DDlist);
+
+        logger.info(DDList.size() + " - number of DD");
+        System.out.println(DDList.size() + " - number of DD");
+
+        if (DDList.size() > 0) {
+            actions.waitUntilBecomeClickable(DDlist);
+            DDList.get(DDList.size() - 2).click();
+            actions.waitUntilBecomeClickable(directionManagementCompany);
+            actions.click(directionManagementCompany);
+            System.out.println("directionManagement choosed");
+            Thread.sleep(2000);
+        } else {
+            //logger.info("!!! number of same elements '0'!!! ");
+            System.out.println("!!! number of same elements '0'!!!");
+        }
     }
 
 

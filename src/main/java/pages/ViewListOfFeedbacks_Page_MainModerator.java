@@ -18,11 +18,11 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(id = "otherTileText")
     private WebElement changeAccount;
 
-    @FindBy(id = "tinyMceArea")
-    private WebElement vvv;
+   /* @FindBy(id = "tinyMceArea")
+    private WebElement vvv;*/
 
-    @FindBy(css = "div[role='group']")
-    private WebElement appealFieldForApprover;
+  /*  @FindBy(css = "div[role='group']")
+    private WebElement appealFieldForApprover;*/
 
     @FindBy(css = "[for='mat-checkbox-2-input'] .mat-checkbox-inner-container")
     private WebElement checkBoxNewFeedbackCard;
@@ -37,15 +37,20 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     private WebElement newApproverField;
 
 
+    // @FindBy(id = "mat-option-12")
 
-   // @FindBy(id = "mat-option-12")
-
-    @FindBy(css ="mat-option#mat-option-0")
+    @FindBy(css = "mat-option#mat-option-0")
     private WebElement chooseApproverInPeoplePeackerField;
+
+
+
+    @FindBy(css = "div[role='group']")
+    private WebElement appealFieldBackedToMM;
 
     public ViewListOfFeedbacks_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
     }
+
     @FindBy(className = "feedback-button")
     private WebElement sendBtn;
 
@@ -65,16 +70,16 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(className = "popup-feedback__button-close")
     private WebElement closePopUpAfterCreateFeedback;
 
-    @FindBy (className = "popup-feedback_bold-text")
+    @FindBy(className = "popup-feedback_bold-text")
     private WebElement textFeedbackNumber;
 
-    @FindBy (className = "new-feedback-button__text")
+    @FindBy(className = "new-feedback-button__text")
     private WebElement createNewFeedbackBtn;
 
     @FindBy(id = "tinymce")
     public WebElement appealField;
 
-  private String titleText;
+    private String titleText;
     public String titleText2;
 
     public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
@@ -88,13 +93,13 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void clickOnCreateBtn() {
-       actions.waitUntilBecomeClickable(createNewFeedbackBtn);
+        actions.waitUntilBecomeClickable(createNewFeedbackBtn);
         actions.click(createNewFeedbackBtn);
     }
 
     public void openLastCreatedFeedback() {
-        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/"+titleText);
-        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/"+titleText);
+        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
+        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
     }
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) {
@@ -103,15 +108,15 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
             List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
             System.out.println(frames.size() + " - number of frames");
 
-           if (frames.size() > 0) {
-               actions.switchTo2ndFrameOf2(appealField);
-           }else {
-               actions.switchTo1stFrameOf1(appealField);
-           }
-        }catch (Exception e){
+            if (frames.size() > 0) {
+                actions.switchTo2ndFrameOf2(appealField);
+            } else {
+                actions.switchTo1stFrameOf1(appealField);
+            }
+        } catch (Exception e) {
             System.out.println("no frames");
             actions.printErrorAndStopTest(e);
-          //  Assert.fail("Can`t click on element " + e);
+            //  Assert.fail("Can`t click on element " + e);
 
         }
 //        actions.switchTo2ndFrameOf2(appealField);
@@ -126,7 +131,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void closePopUp() throws InterruptedException {
-      Thread.sleep(2000);
+        Thread.sleep(2000);
         actions.clickOnLastElementCloseBtn();
     }
 
@@ -180,17 +185,17 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public boolean checkFeedbackIsCreated() {
         // open last Created Feedback
-        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/"+titleText);
-        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/"+titleText);
+        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
+        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
 
         if (
-                webDriver.findElement(By.className("feedback-button")).isDisplayed()){
+                webDriver.findElement(By.className("feedback-button")).isDisplayed()) {
 
 
             System.out.println("TRUE. button send is displayed. Feedback is Created");
             return true;
 
-        }else {
+        } else {
             System.out.println("FALSE. button send is NOT displayed. Feedback is NOT Created");
             return false;
         }
@@ -200,7 +205,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public void chooseCheckBoxToBackMM() {
        /* Select checkBox = new Select(webDriver.findElement(By.className("mat-checkbox-frame")));
         checkBox.selectByIndex(1);*/
-       actions.click(checkBoxNewFeedbackCard);
+        actions.click(checkBoxNewFeedbackCard);
     }
 
     public void inputReasonForReturn() {
@@ -213,16 +218,46 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public void chooseNewApprover(String text) throws InterruptedException {
 
-      //  actions.insertTextInToPeopePickerFieldUsingEnter(newApproverField,text);
-        actions.insertText(newApproverField,text);
-       // actions.waitUntilBecomeClickable(chooseApproverInPeoplePeackerField);
+        //  actions.insertTextInToPeopePickerFieldUsingEnter(newApproverField,text);
+        actions.insertText(newApproverField, text);
+        // actions.waitUntilBecomeClickable(chooseApproverInPeoplePeackerField);
         actions.click(chooseApproverInPeoplePeackerField);
-       // actions.waitUntilBecomeClickable(sendBtn);
-         Thread.sleep(2000);
+        // actions.waitUntilBecomeClickable(sendBtn);
+        Thread.sleep(2000);
        /* actions.insertText(newApproverField, text);
         webDriver.findElement(By.cssSelector("input[role='combobox']")).sendKeys(Keys.ENTER);*/
 
     }
+
+    public void enterTextInTo_AppealField_FeedbackCard_status_New_BackFromAp_ByMM(String text) throws InterruptedException {
+
+        Thread.sleep(3000);
+      //  actions.waitUntilBecomeClickable(sendBtn);
+       // actions.waitToBeVisible(appealField);
+        actions.switchTo2ndFrameOf2(appealField);
+        actions.waitToBeVisible(appealField);
+        System.out.println("visible");
+        actions.insertText(appealField, text);
+        actions.switchToDefaultContentFromFrame();
+
+      /*  Thread.sleep(2000);
+    //    actions.waitToBeVisible(sendBtn);
+
+        try {
+            List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
+            System.out.println(frames.size() + " - number of frames");
+
+            if (frames.size() > 0) {
+                actions.switchTo2ndFrameOf2(appealFieldBackedToMM);
+            } else {
+                actions.switchTo1stFrameOf2(appealFieldBackedToMM);
+            }
+        } catch (Exception e) {
+            System.out.println("no frames");
+            actions.printErrorAndStopTest(e);
+            //  Assert.fail("Can`t click on element " + e);
+*/
+        }
 
 //    find last created feedback in list of reedbacks
 
@@ -243,5 +278,6 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         Thread.sleep(20000);
         webDriver.findElement(By.xpath("//*[contains(text(),'"+titleText.trim()+"')]")).click();
     }*/
-}
+    }
+
 

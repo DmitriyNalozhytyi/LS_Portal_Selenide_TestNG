@@ -173,6 +173,15 @@ public class Actions {
         System.out.println("Frame was changed");
     }
 
+    public void switchTo2ndFrameOf3(WebElement element) {
+
+        webDriver.switchTo().defaultContent();
+        // Thread.sleep(1000);
+        webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 2);
+        logger.info("Frame was changed");
+        System.out.println("Frame was changed");
+    }
+
     public void printErrorAndStopTest(Exception e) {
         logger.info("Can't work with element" + e);
         System.out.println("Can't work with element" + e);
