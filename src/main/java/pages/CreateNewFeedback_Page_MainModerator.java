@@ -17,6 +17,21 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
     private WebElement directionManagementCompany;
 
+    @FindBy(css = ".mat-datepicker-toggle > .mat-icon-button")
+    private WebElement dateIcon;
+
+    @FindBy(css = "tr:nth-of-type(2) > td:nth-of-type(1) > .mat-calendar-body-cell-content")
+    private WebElement dateInCalendar;
+
+    @FindBy(css = "input[role='combobox']")
+    private WebElement speakerPeoplePickekField;
+
+    @FindBy(css = ".modern-option__title")
+    private WebElement chooseSpeakerInPeoplePeackerField;
+
+    @FindBy (css = ".dark-border.feedback-placeholder.main-input.ng-invalid.ng-pristine.ng-untouched")
+    private WebElement countOfPeopleField;
+
     public CreateNewFeedback_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
     }
@@ -29,6 +44,9 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     @FindBy(id = "mat-option-0")
     public WebElement portalChannel;
+
+    @FindBy(id = "mat-option-3")
+    public WebElement personalMeetings;
 
     @FindBy(id = "mat-option-28")
     public WebElement prodaction;
@@ -222,6 +240,60 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             //logger.info("!!! number of same elements '0'!!! ");
             System.out.println("!!! number of same elements '0'!!!");
         }
+    }
+
+    public void choose_CommunicationChannel_PersMeet() throws InterruptedException {
+
+        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
+        actions.waitUntilVisibilityOfAllelements(DDlist);
+
+        logger.info(DDList.size() + " - number of DD");
+        System.out.println(DDList.size() + " - number of DD");
+
+        if (DDList.size() > 0) {
+            actions.waitUntilBecomeClickable(DDlist);
+            DDList.get(DDList.size() - 3).click();
+            actions.waitUntilBecomeClickable(personalMeetings);
+            actions.click(personalMeetings);
+            System.out.println("personal meetings Channel choosed");
+            Thread.sleep(2000);
+        } else {
+            //logger.info("!!! number of same elements '0'!!! ");
+            System.out.println("!!! number of same elements '0'!!!");
+        }
+    }
+
+    public void chooseDate() {
+        actions.click(dateIcon);
+        actions.click(dateInCalendar);
+
+    }
+
+    public void chooseSpeakerInPeolePeakerField(String text) throws InterruptedException {
+
+        actions.insertText(speakerPeoplePickekField, text);
+        Thread.sleep(1000);
+        actions.click(chooseSpeakerInPeoplePeackerField);
+        Thread.sleep(2000);
+
+
+    }
+
+    public void insertCountOfPeopleField(String text) {
+        actions.insertText(countOfPeopleField,text);
+    }
+
+    public boolean isBtnDeleteIsPresent() {
+        if (
+                webDriver.findElement(By.cssSelector(".dynamic-form-button.feedback-button__gray.mat-button")).isDisplayed()){
+            System.out.println("TRUEEE");
+            return true;
+
+        }else {
+            System.out.println("FALSEE");
+            return false;
+        }
+
     }
 
 
