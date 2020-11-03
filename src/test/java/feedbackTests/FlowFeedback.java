@@ -9,8 +9,9 @@ public class FlowFeedback extends ParentTest {
 
     /*
     MM - Main Moderator
-    M - Moderator
-    Ap - Approver
+    M - Moderator ( dev-testuser11@dev.lizard.net.ua   MMK  Восьмирко Дмитрий Семенович )
+    Ap - Approver ( dev-testuser10@dev.lizard.net.ua   MMK  Сокирко Елена Викторовна)
+                  ( dev-testuser14@dev.lizard.net.ua   AZK  Верезумская Ирина Викторовна)
     */
 
     /*
@@ -21,12 +22,25 @@ public class FlowFeedback extends ParentTest {
     TEST-CASE 3:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
     TEST-CASE 4:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
 
-   - TEST-CASE 5:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
+    TEST-CASE 5:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
     TEST-CASE 6:  createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyMM__PubFAQ
-   - TEST-CASE 7:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
-   - TEST-CASE 8:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ
+    TEST-CASE 7:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
+    TEST-CASE 8:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ
+
+     TEST-CASE 9*:  createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ
+   - TEST-CASE 10*:  createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyM__PubFAQ
+   - TEST-CASE 11*:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ
+   - TEST-CASE 12*:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByM__ApproveByNewAp_ApprovebyM__PubFAQ
+   - TEST-CASE 13*:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ
+
+
 
     TEST-CASE 9:  createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM
+    TEST-CASE 10: createFeedbackByMM_InfoConsLine_Management_MH__ApprovebyMM
+    TEST-CASE 11: createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM
+
+
+
 
 
 
@@ -429,6 +443,49 @@ public class FlowFeedback extends ParentTest {
 
     }
 
+    //TEST-CASE 9*
+
+    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ() throws InterruptedException {
+
+        //    STEP 1 - create feedback by Main Moderator (MMK) and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+
+        createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
+
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+       // Thread.sleep(2000);
+
+        //    STEP 2 - open last created feedback and approve By Moderator MMK
+
+        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
+        authorizationPage.ReAuthorization("dev-testuser11@dev.lizard.net.ua", "Pa$$w0rd");
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+
+        // viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("test - Main Moderator - approve - status New" + actions.currentTime());
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("Main!");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+
+        //    STEP 3 - puplish in FAQ
+        viewListOfFeedbacks_page_mainModerator.publishInFAQ();
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.openTopicProductFAQ();
+        createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
+        //createNewPublicationPage.checkTextFromAppealFieldExistInFAQ();
+
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        // assertTrue(webdriver.findElement(By.cssSelector(".title")).getText().contains("text"));
+    }
+
+
+    /////
+
     //TEST-CASE 9
 
     @Test
@@ -439,7 +496,7 @@ public class FlowFeedback extends ParentTest {
         mainPage.navigateToCreateNewFeedbackPage();
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
-        createNewFeedback_Page_MainModerator.chooseSpeakerInPeolePeakerField("Сокирко Елена Викторовна");
+        createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
         createNewFeedback_Page_MainModerator.insertCountOfPeopleField("5");
 
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -459,9 +516,66 @@ public class FlowFeedback extends ParentTest {
     }
 
 
+    //TEST-CASE 10
+
+    @Test
+    public void createFeedbackByMM_InfoConsLine_Management_MH__ApprovebyMM() throws InterruptedException {
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
+        createNewFeedback_Page_MainModerator.chooseDate();
+        createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
+        createNewFeedback_Page_MainModerator.insertPhoneNumber("+(380)999-77-77");
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback and approve
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        // viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("test - Main Moderator - approve - status New" + actions.currentTime());
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("Main");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+
+        checkExpectedResult("feedback is not approve Fail test", createNewFeedback_Page_MainModerator.isBtnDeleteIsPresent());
+        // assertTrue(webdriver.findElement(By.cssSelector(".title")).getText().contains("text"));
+    }
+
+    //TEST-CASE 11
+
+    @Test
+    public void createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM() throws InterruptedException {
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
+        createNewFeedback_Page_MainModerator.chooseDate();
+        createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback and approve
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        // viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("test - Main Moderator - approve - status New" + actions.currentTime());
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("Main");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+
+        checkExpectedResult("feedback is not approve Fail test", createNewFeedback_Page_MainModerator.isBtnDeleteIsPresent());
+        // assertTrue(webdriver.findElement(By.cssSelector(".title")).getText().contains("text"));
+    }
+
 
 /*
-    //NEGATIVE MODERATOR dev-testuser14 (AZS) не должен видеть обращение по направлению Руководству другого предприятия (ММК), даже если он ответственный
+
+
+ //NEGATIVE MODERATOR dev-testuser14 (AZS) не должен видеть обращение по направлению Руководству другого предприятия (ММК), даже если он ответственный
 
     @Test // (need add time in AppealField to Check real feedbak in FAQ)!!!!!!!!!!!!!!!!!!!
     public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ() throws InterruptedException {
@@ -526,7 +640,10 @@ public class FlowFeedback extends ParentTest {
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
 
-    }*/
+    }
+*/
+
+
 
 
 

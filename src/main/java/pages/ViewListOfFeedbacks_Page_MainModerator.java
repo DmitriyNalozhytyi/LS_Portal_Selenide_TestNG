@@ -47,6 +47,9 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(css = "div[role='group']")
     private WebElement appealFieldBackedToMM;
 
+    @FindBy(css = "[frameborder]")
+    private WebElement frameInFeedbackCardStatusNew;
+
     public ViewListOfFeedbacks_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
     }
@@ -102,7 +105,10 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
     }
 
-    public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) {
+    public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) throws InterruptedException {
+
+        actions.waitToBeVisible(frameInFeedbackCardStatusNew);
+        //Thread.sleep(3000);
 
         try {
             List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
@@ -140,6 +146,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void exitFromAccount() throws InterruptedException {
+       //проверочка - след строчка
+        actions.waitToBeVisible(accountBtn);
         actions.click(accountBtn);
         actions.click(exitFromAccount);
         actions.click(changeAccount);

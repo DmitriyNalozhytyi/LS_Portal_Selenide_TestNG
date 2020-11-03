@@ -32,6 +32,15 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy (css = ".dark-border.feedback-placeholder.main-input.ng-invalid.ng-pristine.ng-untouched")
     private WebElement countOfPeopleField;
 
+    @FindBy(css = "mat-option:nth-of-type(5) > .mat-option-text")
+    private WebElement infoConsLine;
+
+    @FindBy(css = "[placeholder='Введите номер телефона']")
+    private WebElement phoneField;
+
+    @FindBy(css = "mat-option:nth-of-type(6) > .mat-option-text")
+    private WebElement corpMassMedia;
+
     public CreateNewFeedback_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
     }
@@ -269,7 +278,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
-    public void chooseSpeakerInPeolePeakerField(String text) throws InterruptedException {
+    public void chooseSpeakerOrInitiatorInPeolePeakerField(String text) throws InterruptedException {
 
         actions.insertText(speakerPeoplePickekField, text);
         Thread.sleep(1000);
@@ -292,6 +301,53 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }else {
             System.out.println("FALSEE");
             return false;
+        }
+
+    }
+
+    public void choose_CommunicationChannel_InfoConsLine() throws InterruptedException {
+
+        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
+        actions.waitUntilVisibilityOfAllelements(DDlist);
+
+        logger.info(DDList.size() + " - number of DD");
+        System.out.println(DDList.size() + " - number of DD");
+
+        if (DDList.size() > 0) {
+            actions.waitUntilBecomeClickable(DDlist);
+            DDList.get(DDList.size() - 3).click();
+            actions.waitUntilBecomeClickable(infoConsLine);
+            actions.click(infoConsLine);
+            System.out.println("personal meetings Channel choosed");
+            Thread.sleep(2000);
+        } else {
+            //logger.info("!!! number of same elements '0'!!! ");
+            System.out.println("!!! number of same elements '0'!!!");
+        }
+
+    }
+
+    public void insertPhoneNumber(String text) {
+        actions.insertText(phoneField, text);
+    }
+
+    public void choose_CommunicationChannel_CorpMassMedia() throws InterruptedException {
+        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
+        actions.waitUntilVisibilityOfAllelements(DDlist);
+
+        logger.info(DDList.size() + " - number of DD");
+        System.out.println(DDList.size() + " - number of DD");
+
+        if (DDList.size() > 0) {
+            actions.waitUntilBecomeClickable(DDlist);
+            DDList.get(DDList.size() - 3).click();
+            actions.waitUntilBecomeClickable(corpMassMedia);
+            actions.click(corpMassMedia);
+            System.out.println("personal meetings Channel choosed");
+            Thread.sleep(2000);
+        } else {
+            //logger.info("!!! number of same elements '0'!!! ");
+            System.out.println("!!! number of same elements '0'!!!");
         }
 
     }
