@@ -78,18 +78,17 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.waitUntilVisibilityOfAllelements(DDlist);
 
         logger.info(DDList.size() + " - number of DD");
-        System.out.println(DDList.size() + " - number of DD");
 
         if (DDList.size() > 0) {
             actions.waitUntilBecomeClickable(DDlist);
             DDList.get(DDList.size() - 3).click();
             actions.waitUntilBecomeClickable(portalChannel);
             actions.click(portalChannel);
-            System.out.println("portalChannel choosed");
+            logger.info("portalChannel choosed");
             Thread.sleep(2000);
         } else {
             //logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+            logger.info("!!! number of same elements '0'");
         }
     }
 
@@ -104,15 +103,15 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             actions.waitUntilVisibilityOfAllelements(DDlist);
 
             TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
-            System.out.println("Topic_DD clicked");
+            logger.info("Topic_DD clicked");
             actions.waitUntilBecomeClickable(prodaction);
             actions.waitToBeVisible(prodaction);
             actions.waitUntilBecomeClickable(prodaction);
             actions.click(prodaction);
-            System.out.println("prodaction choosed");
+            logger.info("prodaction choosed");
         } else {
    //         logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+            logger.info("!!! number of same elements '0'!!!");
 
         }
     }
@@ -123,7 +122,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 */
         try {
             List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
-            System.out.println(frames.size() + " - number of frames AppealField byMainModerator");
+           logger.info(frames.size() + " - number of frames AppealField byMainModerator");
 
             if (frames.size() == 1) {
                 actions.switchTo1stFrameOf1(appealField);
@@ -132,7 +131,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
                 actions.switchTo1stFrameOf2(appealField);
             }
         }catch (Exception e){
-            System.out.println("no frames");
+            logger.info("no frames");
            actions.printErrorAndStopTest(e);
             //Assert.fail("Can`t click on element " + e);
 
@@ -160,14 +159,12 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             e.printStackTrace();
         }
         logger.info(List.size() + " - number of elements");
-        System.out.println(List.size() + " - number of element");
 
         if (List.size() > 0) {
             List.get(List.size() - 11).click();
-            System.out.println("last close btn clicked");
+            logger.info("last close btn clicked");
         } else {
-            //logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+            logger.info("!!! number of same elements '0'!!! ");
         }
     }
 
@@ -181,11 +178,11 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
         if (
             webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
-            System.out.println("TRUEEE");
+            logger.info("TRUE");
             return true;
 
         }else {
-            System.out.println("FALSEE");
+            logger.info("FALSEE");
             return false;
         }
 
@@ -202,7 +199,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             actions.waitUntilVisibilityOfAllelements(DDlist);
 
             TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
-            System.out.println("Topic_DD clicked");
+           logger.info("Topic_DD clicked");
 
             actions.waitUntilBecomeClickable(prodaction);
             actions.waitToBeVisible(prodaction);
@@ -212,9 +209,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             //mat-option:nth-of-type(3)  .tooltip-wrapper
             WebElement selectRundonTopic = webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(1, 13) + ")  .tooltip-wrapper"));
 
-
-
-            System.out.println("locator="+selectRundonTopic);
+            logger.info("locator="+selectRundonTopic);
             actions.click(selectRundonTopic);
 
          //   actions.randomNumber(1,13);
@@ -223,9 +218,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             System.out.println("prodaction choosed");*/
 
         } else {
-            //         logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
-
+            logger.info("!!! number of same elements '0'!!! ");
         }
 
     }
@@ -236,18 +229,16 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.waitUntilVisibilityOfAllelements(DDlist);
 
         logger.info(DDList.size() + " - number of DD");
-        System.out.println(DDList.size() + " - number of DD");
 
         if (DDList.size() > 0) {
             actions.waitUntilBecomeClickable(DDlist);
             DDList.get(DDList.size() - 2).click();
             actions.waitUntilBecomeClickable(directionManagementCompany);
             actions.click(directionManagementCompany);
-            System.out.println("directionManagement choosed");
+           logger.info("directionManagement choosed");
             Thread.sleep(2000);
         } else {
-            //logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+            logger.info("!!! number of same elements '0'!!! ");
         }
     }
 
@@ -257,18 +248,17 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.waitUntilVisibilityOfAllelements(DDlist);
 
         logger.info(DDList.size() + " - number of DD");
-        System.out.println(DDList.size() + " - number of DD");
+        logger.info(DDList.size() + " - number of DD");
 
         if (DDList.size() > 0) {
             actions.waitUntilBecomeClickable(DDlist);
             DDList.get(DDList.size() - 3).click();
             actions.waitUntilBecomeClickable(personalMeetings);
             actions.click(personalMeetings);
-            System.out.println("personal meetings Channel choosed");
+            logger.info("personal meetings Channel choosed");
             Thread.sleep(2000);
         } else {
-            //logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+            logger.info("!!! number of same elements '0'!!! ");
         }
     }
 
@@ -284,8 +274,6 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         Thread.sleep(1000);
         actions.click(chooseSpeakerInPeoplePeackerField);
         Thread.sleep(2000);
-
-
     }
 
     public void insertCountOfPeopleField(String text) {
@@ -295,14 +283,13 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     public boolean isBtnDeleteIsPresent() {
         if (
                 webDriver.findElement(By.cssSelector(".dynamic-form-button.feedback-button__gray.mat-button")).isDisplayed()){
-            System.out.println("TRUEEE");
+           logger.info("TRUE");
             return true;
 
         }else {
-            System.out.println("FALSEE");
+            logger.info("FALSE");
             return false;
         }
-
     }
 
     public void choose_CommunicationChannel_InfoConsLine() throws InterruptedException {
@@ -311,18 +298,17 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.waitUntilVisibilityOfAllelements(DDlist);
 
         logger.info(DDList.size() + " - number of DD");
-        System.out.println(DDList.size() + " - number of DD");
 
         if (DDList.size() > 0) {
             actions.waitUntilBecomeClickable(DDlist);
             DDList.get(DDList.size() - 3).click();
             actions.waitUntilBecomeClickable(infoConsLine);
             actions.click(infoConsLine);
-            System.out.println("personal meetings Channel choosed");
+            logger.info("personal meetings Channel choosed");
             Thread.sleep(2000);
         } else {
             //logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+           logger.info("!!! number of same elements '0'!!!");
         }
 
     }
@@ -336,18 +322,17 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.waitUntilVisibilityOfAllelements(DDlist);
 
         logger.info(DDList.size() + " - number of DD");
-        System.out.println(DDList.size() + " - number of DD");
 
         if (DDList.size() > 0) {
             actions.waitUntilBecomeClickable(DDlist);
             DDList.get(DDList.size() - 3).click();
             actions.waitUntilBecomeClickable(corpMassMedia);
             actions.click(corpMassMedia);
-            System.out.println("personal meetings Channel choosed");
+            logger.info("personal meetings Channel choosed");
             Thread.sleep(2000);
         } else {
             //logger.info("!!! number of same elements '0'!!! ");
-            System.out.println("!!! number of same elements '0'!!!");
+            logger.info("!!! number of same elements '0'!!!");
         }
 
     }

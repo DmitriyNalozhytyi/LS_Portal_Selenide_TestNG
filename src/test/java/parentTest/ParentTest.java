@@ -1,6 +1,7 @@
 package parentTest;
 
 import libs.Actions;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,6 +14,11 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class ParentTest {
+
+    // подключаем Logger - создаем объект, который будет писать лог
+
+    Logger logger = Logger.getLogger(getClass());
+
 
     WebDriver webDriver;
     protected AuthorizationPage authorizationPage;

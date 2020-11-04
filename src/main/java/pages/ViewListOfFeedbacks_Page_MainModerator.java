@@ -90,7 +90,6 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         //  Thread.sleep(2000);
         titleText = webDriver.findElement(By.className("popup-feedback_bold-text")).getText();
         logger.info("text recoded" + titleText);
-        System.out.println("text recoded" + titleText);
         actions.click(closePopUpAfterCreateFeedback);
         return this.titleText;
     }
@@ -102,7 +101,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public void openLastCreatedFeedback() {
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
-        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
+        logger.info("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
     }
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) throws InterruptedException {
@@ -112,7 +111,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
         try {
             List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
-            System.out.println(frames.size() + " - number of frames");
+           logger.info(frames.size() + " - number of frames");
 
             if (frames.size() > 0) {
                 actions.switchTo2ndFrameOf2(appealField);
@@ -120,7 +119,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
                 actions.switchTo1stFrameOf1(appealField);
             }
         } catch (Exception e) {
-            System.out.println("no frames");
+            logger.info("no frames");
             actions.printErrorAndStopTest(e);
             //  Assert.fail("Can`t click on element " + e);
 
@@ -156,7 +155,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public void enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
-        System.out.println("visible");
+        logger.info(appealField+ "visible");
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
 
@@ -194,17 +193,16 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public boolean checkFeedbackIsCreated() {
         // open last Created Feedback
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
-        System.out.println("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
+     logger.info("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
 
         if (
                 webDriver.findElement(By.className("feedback-button")).isDisplayed()) {
 
-
-            System.out.println("TRUE. button send is displayed. Feedback is Created");
+            logger.info("TRUE. button send is displayed. Feedback is Created");
             return true;
 
         } else {
-            System.out.println("FALSE. button send is NOT displayed. Feedback is NOT Created");
+           logger.info("FALSE. button send is NOT displayed. Feedback is NOT Created");
             return false;
         }
 
@@ -244,7 +242,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
        // actions.waitToBeVisible(appealField);
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
-        System.out.println("visible");
+        logger.info(appealField + "visible");
         actions.insertText(appealField, text);
         actions.switchToDefaultContentFromFrame();
 
