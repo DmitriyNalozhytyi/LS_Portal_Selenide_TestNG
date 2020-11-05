@@ -281,7 +281,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     }
 
     public boolean isBtnDeleteIsPresent() {
-        if (
+       /* if (
                 webDriver.findElement(By.cssSelector(".dynamic-form-button.feedback-button__gray.mat-button")).isDisplayed()){
            logger.info("TRUE");
             return true;
@@ -289,7 +289,16 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }else {
             logger.info("FALSE");
             return false;
-        }
+        }*/
+
+       try {
+           webDriver.findElement(By.cssSelector(".dynamic-form-button.feedback-button__gray.mat-button")).isDisplayed();
+               logger.info("TRUE");
+               return true;
+       }catch (Exception e){
+           logger.info("FALSE");
+           return false;
+       }
     }
 
     public void choose_CommunicationChannel_InfoConsLine() throws InterruptedException {
