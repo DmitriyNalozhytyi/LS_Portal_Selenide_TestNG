@@ -8,6 +8,8 @@ import static junit.framework.TestCase.assertTrue;
 public class FlowFeedback extends ParentTest {
 
     /*
+    https://metinvest-intranet-tests.azurewebsites.net/admin/responsibles
+
     MM - Main Moderator
     M - Moderator ( dev-testuser11@dev.lizard.net.ua   MMK  Восьмирко Дмитрий Семенович )
     Ap - Approver ( dev-testuser10@dev.lizard.net.ua   MMK  Сокирко Елена Викторовна)
@@ -54,15 +56,16 @@ public class FlowFeedback extends ParentTest {
     TEST-CASE 20:  createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyM
     TEST-CASE 21: createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyM
     TEST-CASE 22: createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyM
-///
+
     BLOCK 3: FLOW. AUTHOR - MM, DIFFERENT OF PORTAL, DELETE FEEDBACK(only for MM) AND CHECK THAT FEEDBACK DELETED
 
-    TEST-CASE 23:  createFeedbackByMM_Portal_Management_MH__ApprovebyMM_DeleteFeedbackByMM
-    TEST-CASE 24:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM_DeleteFeedbackByMM
-
-    TEST-CASE 17:  createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyMM
-    TEST-CASE 18: createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM
-    TEST-CASE 19: createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyMM
+    TEST-CASE 23:  createFeedbackByMM_Portal_Management_MH__DeleteFeedbackByMM_StatusNew
+    TEST-CASE 24:  createFeedbackByMM_Portal_Management_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
+    TEST-CASE 25:  createFeedbackByMM_Portal_Management_MH__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproved
+///
+    TEST-CASE 26:  createFeedbackByMM_Management_Company_MH__DeleteFeedbackByMM_StatusNew
+    TEST-CASE 27:  createFeedbackByMM_Management_Company_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
+    TEST-CASE 28:  createFeedbackByMM_Management_Company_MH__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproved
 
 
 
@@ -1009,9 +1012,207 @@ public class FlowFeedback extends ParentTest {
         // assertTrue(webdriver.findElement(By.cssSelector(".title")).getText().contains("text"));
     }
 
+   /* ///
+    BLOCK 3: FLOW. AUTHOR - MM, DIFFERENT OF PORTAL, DELETE FEEDBACK(only for MM) AND CHECK THAT FEEDBACK DELETED
+
+    TEST-CASE 23:  createFeedbackByMM_Portal_Management_MH__DeleteFeedbackByMM_StatusNew
+    TEST-CASE 24:  createFeedbackByMM_Portal_Management_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
+    TEST-CASE 25:  createFeedbackByMM_Portal_Management_MH__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproved
+
+    TEST-CASE 26:  createFeedbackByMM_Management_Company_MH__DeleteFeedbackByMM_StatusNew
+    TEST-CASE 27:  createFeedbackByMM_Management_Company_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
+    TEST-CASE 28:  createFeedbackByMM_Management_Company_MH__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproved*/
+
+
+
+
+//TEST-CASE 23
+
+    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Portal_Management_MH__DeleteFeedbackByMM_StatusNew() throws InterruptedException {
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback and delete By MainModerator
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        viewListOfFeedbacks_page_mainModerator.deleteFeedbackStatusNew();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        checkExpectedResult("feedback is not deleted", viewListOfFeedbacks_page_mainModerator.isFeedbackDeleted());
+
+    }
+
+    //TEST-CASE 24
+
+    @Test //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Portal_Management_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval() throws InterruptedException {
+
+        //  https://metinvest-intranet-tests.azurewebsites.net/admin/responsibles
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback by Approver
+        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
+        authorizationPage.ReAuthorization("dev-testuser10@dev.lizard.net.ua", "Pa$$w0rd");
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+
+        //    STEP 3 - approve feedback by Approver
+
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        Thread.sleep(2000);
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+        viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
+
+        //    STEP 4 - open last approved by Approver feedback and delete by Main Moderator and publish
+        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
+        authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        viewListOfFeedbacks_page_mainModerator.deleteFeedbackStatusOnApprovalOrApproved();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        checkExpectedResult("feedback is not deleted", viewListOfFeedbacks_page_mainModerator.isFeedbackDeleted());
+
+
+    }
+
+    //TEST-CASE 25
+
+    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__DeleteFeedbackByMM_StatusOnApproved() throws InterruptedException {
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback and approve
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        // viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("test - Main Moderator - approve - status New" + actions.currentTime());
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("Main");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+
+        //    STEP 3 - delete by MM
+        viewListOfFeedbacks_page_mainModerator.deleteFeedbackStatusOnApprovalOrApproved();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        checkExpectedResult("feedback is not deleted", viewListOfFeedbacks_page_mainModerator.isFeedbackDeleted());
+
+    }
+
+//TEST-CASE 26
+
+    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Management_Company_MH__DeleteFeedbackByMM_StatusNew() throws InterruptedException {
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+        createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback and delete By MainModerator
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        viewListOfFeedbacks_page_mainModerator.deleteFeedbackStatusNew();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        checkExpectedResult("feedback is not deleted", viewListOfFeedbacks_page_mainModerator.isFeedbackDeleted());
+
+    }
+
+    //TEST-CASE 27
+
+    @Test //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Management_Company_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval() throws InterruptedException {
+
+        //  https://metinvest-intranet-tests.azurewebsites.net/admin/responsibles
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+        createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback by Approver
+        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
+        authorizationPage.ReAuthorization("dev-testuser10@dev.lizard.net.ua", "Pa$$w0rd");
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+
+        //    STEP 3 - approve feedback by Approver
+
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        Thread.sleep(2000);
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+        viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
+
+        //    STEP 4 - open last approved by Approver feedback and delete by Main Moderator and publish
+        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
+        authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        viewListOfFeedbacks_page_mainModerator.deleteFeedbackStatusOnApprovalOrApproved();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        checkExpectedResult("feedback is not deleted", viewListOfFeedbacks_page_mainModerator.isFeedbackDeleted());
+
+
+    }
+
+    //TEST-CASE 28
+
+    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
+    public void createFeedbackByMM_Management_Company_MH__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproved() throws InterruptedException {
+
+        //    STEP 1 - create feedback and remember feedback number
+        authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
+        mainPage.navigateToCreateNewFeedbackPage();
+        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+        createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
+        createNewFeedback_Page_MainModerator.choose_TopicField();
+        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback and approve
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        // viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("test - Main Moderator - approve - status New" + actions.currentTime());
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New("Main");
+        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
+        viewListOfFeedbacks_page_mainModerator.closePopUp();
+
+        //    STEP 3 - delete by MM
+        viewListOfFeedbacks_page_mainModerator.deleteFeedbackStatusOnApprovalOrApproved();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        checkExpectedResult("feedback is not deleted", viewListOfFeedbacks_page_mainModerator.isFeedbackDeleted());
+
+    }
+
 
 /*
-
 
  //NEGATIVE MODERATOR dev-testuser14 (AZS) не должен видеть обращение по направлению Руководству другого предприятия (ММК), даже если он ответственный
 

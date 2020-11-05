@@ -1,12 +1,9 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -49,6 +46,15 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     @FindBy(css = "[frameborder]")
     private WebElement frameInFeedbackCardStatusNew;
+
+    @FindBy(css = ".dynamic-form-button.feedback-button__gray.mat-button > .mat-button-wrapper")
+    private WebElement deleteFeedbackBtn;
+
+    @FindBy(css = ".confirm-dialog__button.confirm-dialog__button_confirm.feedback-button.mat-button.mat-primary")
+    private WebElement approveDeletingFeedbackBtnStatusOnApprovalOrApproved;
+
+    @FindBy(css = ".confirm-dialog__button.confirm-dialog__button_confirm.mat-button.mat-primary")
+    private WebElement approveDeletingFeedbackBtnStatusNew;
 
     public ViewListOfFeedbacks_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
@@ -264,6 +270,33 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
             //  Assert.fail("Can`t click on element " + e);
 */
         }
+
+    public void deleteFeedbackStatusOnApprovalOrApproved() throws InterruptedException {
+        actions.waitUntilBecomeClickable(deleteFeedbackBtn);
+        actions.click(deleteFeedbackBtn);
+        actions.waitUntilBecomeClickable(approveDeletingFeedbackBtnStatusOnApprovalOrApproved);
+        actions.click(approveDeletingFeedbackBtnStatusOnApprovalOrApproved);
+        Thread.sleep(2000);
+    }
+
+    public boolean isFeedbackDeleted() {
+        try {
+            webDriver.findElement(By.cssSelector(".dynamic-form-button.feedback-button__gray.mat-button")).isDisplayed();
+            logger.info("FALSE");
+            return false;
+        }catch (Exception e){
+            logger.info("TRUE");
+            return true;
+        }
+    }
+
+    public void deleteFeedbackStatusNew() throws InterruptedException {
+        actions.waitUntilBecomeClickable(deleteFeedbackBtn);
+        actions.click(deleteFeedbackBtn);
+        actions.waitUntilBecomeClickable(approveDeletingFeedbackBtnStatusNew);
+        actions.click(approveDeletingFeedbackBtnStatusNew);
+        Thread.sleep(2000);
+    }
 
 //    find last created feedback in list of reedbacks
 
