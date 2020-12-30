@@ -3,6 +3,7 @@ package pages;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -345,6 +346,84 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
 
     }
+
+    public boolean isField_TopicField_Required() throws InterruptedException {
+        actions.click(sendBtn);
+
+
+
+        if (
+                webDriver.findElement(By.className("feedback-button")).isDisplayed()){
+            logger.info("FIELD TopicField IS  REQUIRED");
+            return true;
+
+        }else {
+            logger.info("FIELD TopicField IS NOT REQUIRED");
+            return false;
+        }
+
+
+    }
+
+    public void clearField_AppealField() {
+
+        try {
+            List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
+            logger.info(frames.size() + " - number of frames AppealField byMainModerator");
+
+            if (frames.size() == 1) {
+                actions.switchTo1stFrameOf1(appealField);
+                webDriver.findElement(By.id("tinymce")).clear();
+                webDriver.findElement(By.id("tinymce")).sendKeys("\b\b\b\b\b\b");
+
+            }else {
+
+                actions.switchTo1stFrameOf2(appealField);
+                webDriver.findElement(By.id("tinymce")).clear();
+                webDriver.findElement(By.id("tinymce")).sendKeys("\b\b\b\b\b\b");
+            }
+        }catch (Exception e){
+            logger.info("no frames");
+            actions.printErrorAndStopTest(e);
+            //Assert.fail("Can`t click on element " + e);
+
+        }
+        //    actions.switchTo1stFrameOf2(appealField);
+        actions.waitToBeVisible(appealField);
+        webDriver.findElement(By.id("tinymce")).clear();
+        actions.switchToDefaultContentFromFrame();
+
+    }
+
+    public boolean isField_AppealField_Required() {
+        actions.click(sendBtn);
+
+        if (
+                webDriver.findElement(By.className("feedback-button")).isDisplayed()){
+            logger.info("FIELD AppealField IS  REQUIRED");
+            return true;
+
+        }else {
+            logger.info("FIELD AppealField IS NOT REQUIRED");
+            return false;
+        }
+
+    }
+
+    public boolean isField_Speaker_Required() {
+        actions.click(sendBtn);
+
+        if (
+                webDriver.findElement(By.className("feedback-button")).isDisplayed()){
+            logger.info("FIELD Speaker IS  REQUIRED");
+            return true;
+
+        }else {
+            logger.info("FIELD Speaker IS NOT REQUIRED");
+            return false;
+        }
+    }
+
 
 
 

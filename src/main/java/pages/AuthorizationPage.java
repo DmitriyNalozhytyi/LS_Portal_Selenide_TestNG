@@ -49,7 +49,7 @@ public class AuthorizationPage extends ParentPage {
     public void authorization(String Email, String Pass) throws InterruptedException {
 
 
-        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net");
+        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net");
         actions.waitToBeVisible(InputEmail);
         actions.insertText(InputEmail,Email);
         actions.waitUntilBecomeClickable(BtnNext);

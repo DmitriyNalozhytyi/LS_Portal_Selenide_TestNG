@@ -54,7 +54,7 @@ public class MainPage extends ParentPage {
     }
 
     public void navigateToCreateNewFeedbackPage() {
-        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback");
+        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/feedback");
     }
 
     public void navigateVievListOfFeedbacksPage() {

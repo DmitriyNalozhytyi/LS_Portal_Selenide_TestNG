@@ -106,8 +106,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void openLastCreatedFeedback() {
-        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
-        logger.info("https://metinvest-intranet-tests.azurewebsites.net/feedback/list/" + titleText);
+        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
+        logger.info("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
     }
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) throws InterruptedException {
