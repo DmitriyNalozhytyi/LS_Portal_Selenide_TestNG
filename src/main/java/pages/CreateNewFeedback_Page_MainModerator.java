@@ -61,6 +61,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy(id = "mat-option-28")
     public WebElement prodaction;
 
+
     @FindBy(id = "tinymce")
     public WebElement appealField;
 
@@ -81,6 +82,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         logger.info(DDList.size() + " - number of DD");
 
         if (DDList.size() > 0) {
+            Thread.sleep(3000);
             actions.waitUntilBecomeClickable(DDlist);
             DDList.get(DDList.size() - 3).click();
             actions.waitUntilBecomeClickable(portalChannel);
@@ -105,11 +107,26 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
             TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
             logger.info("Topic_DD clicked");
+
+          // цыкл. костыль с ожиданием
+            Thread.sleep(2000);
+
+            if (prodaction.isDisplayed()) {
+            Thread.sleep(1000);
             actions.waitUntilBecomeClickable(prodaction);
             actions.waitToBeVisible(prodaction);
             actions.waitUntilBecomeClickable(prodaction);
             actions.click(prodaction);
             logger.info("prodaction choosed");
+            }else {
+                Thread.sleep(1000);
+                actions.waitUntilBecomeClickable(prodaction);
+                actions.click(prodaction);
+                logger.info("prodaction choosed2");
+            }
+
+
+
         } else {
    //         logger.info("!!! number of same elements '0'!!! ");
             logger.info("!!! number of same elements '0'!!!");
@@ -175,8 +192,8 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.click(lastFeedbackInTopicProductFAQ);
     }
 
-    public boolean isFeedbackInFAQList() {
-
+    public boolean isFeedbackInFAQList() throws InterruptedException {
+        Thread.sleep(2000);
         if (
             webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
             logger.info("TRUE");

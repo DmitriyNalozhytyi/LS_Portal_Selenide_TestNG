@@ -7,12 +7,12 @@ import static junit.framework.TestCase.assertTrue;
 
 public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest {
 
-    /* 20.12.2020
-    https://metinvest-intranet-tests.azurewebsites.net/admin/responsibles
+    /* 31.12.2020
+    https://metinvest-intranet-test.azurewebsites.net/ru/admin/responsibles
 
     MM - Main Moderator
-    M - Moderator ( dev-testuser11@dev.lizard.net.ua   MMK  Восьмирко Дмитрий Семенович )
-    Ap - Approver ( dev-testuser10@dev.lizard.net.ua   MMK  Сокирко Елена Викторовна) или Цыганок Юрий Борисович?!
+    M - Moderator ( dev-testuser11@dev.lizard.net.ua   MMK Решетняк Алексей Николаевич )
+    Ap - Approver ( dev-testuser10@dev.lizard.net.ua   MMK  Цыганок Юрий Борисович)
 
 
     for NEGETIVE cases

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
-    @FindBy(css = ".log_out a")
+    @FindBy(css = ".right_box .menu-item:nth-of-type(4) a")
     private WebElement exitFromAccount;
 
     @FindBy(id = "otherTileText")
@@ -66,7 +66,10 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(className = "popup-feedback__close")
     private WebElement closePopUpBtn;
 
-    @FindBy(className = "feedback-button")
+   /* @FindBy(className = "feedback-button")
+    private WebElement publishInFAQ;*/
+
+    @FindBy(css = ".dynamic-form-button.feedback-button.mat-button")
     private WebElement publishInFAQ;
 
     /*@FindBy(className = "mat-button-wrapper")
