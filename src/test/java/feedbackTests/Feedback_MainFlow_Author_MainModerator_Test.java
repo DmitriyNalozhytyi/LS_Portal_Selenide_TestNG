@@ -7,7 +7,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest {
 
-    /* 31.12.2020 +
+    /* 31.12.2020 +++
     https://metinvest-intranet-test.azurewebsites.net/ru/admin/responsibles
 
     MM - Main Moderator
