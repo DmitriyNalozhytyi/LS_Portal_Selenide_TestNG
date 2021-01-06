@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,10 +54,12 @@ public class MainPage extends ParentPage {
         actions.click(btnAllAlbums);
     }
 
+    @Step
     public void navigateToCreateNewFeedbackPage() {
         webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/feedback");
     }
 
+    @Step
     public void navigateVievListOfFeedbacksPage() {
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list");
     }
