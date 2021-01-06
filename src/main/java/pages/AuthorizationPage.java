@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,26 +29,30 @@ public class AuthorizationPage extends ParentPage {
     @FindBy(id = "i0118")
     private WebElement InputPassword;
 
+    @Step
     public void insertEmail(String email) {
         actions.insertText(InputEmail,email);
         //InputEmail.sendKeys("vadim.kornienko@lizard-soft.com");
     }
 
+    @Step
     public void insertPassword(String password) throws InterruptedException {
         Thread.sleep(500);
         actions.insertText(InputPassword,password);
     }
 
+    @Step
     public void pressBtnNext() {
         actions.click(BtnNext);
     }
 
+    @Step
     public void pressBtnWorkAccount() {
         actions.click(BtnWorkAccount);
     }
 
+    @Step
     public void authorization(String Email, String Pass) throws InterruptedException {
-
 
         webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net");
         actions.waitToBeVisible(InputEmail);
@@ -62,6 +67,7 @@ public class AuthorizationPage extends ParentPage {
         actions.click(BtnNext);
     }
 
+    @Step
     public void ReAuthorization(String Email, String Pass) throws InterruptedException {
         actions.waitToBeVisible(InputEmail);
         actions.insertText(InputEmail,Email);

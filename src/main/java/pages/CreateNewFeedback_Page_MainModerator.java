@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -73,7 +74,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
      String titleText2;
 
-
+    @Step
     public void choose_CommunicationChannel_Portal() throws InterruptedException {
 
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -95,6 +96,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     }
 
+    @Step
     public void choose_TopicField() throws InterruptedException {
 
         List<WebElement> TopicFieldDDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -108,11 +110,10 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             TopicFieldDDList.get(TopicFieldDDList.size() - 1).click();
             logger.info("Topic_DD clicked");
 
-          // цыкл. костыль с ожиданием
+          // цикл. костыль с ожиданием
             Thread.sleep(2000);
 
-            if (prodaction.isDisplayed()) {
-            Thread.sleep(1000);
+            if (prodaction.isDisplayed()) { Thread.sleep(1000);
             actions.waitUntilBecomeClickable(prodaction);
             actions.waitToBeVisible(prodaction);
             actions.waitUntilBecomeClickable(prodaction);
@@ -134,6 +135,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     }
 
+    @Step
     public void enterTextInTo_AppealField(String text) {
      /*   actions.switchTo1stFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
@@ -160,13 +162,14 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.switchToDefaultContentFromFrame();
     }
 
+    @Step
     public void clickOnSendBtn() {
         actions.waitToBeVisible(sendBtn);
         actions.click(sendBtn);
 
     }
 
-
+    @Step
     public void openTopicProductFAQ() throws InterruptedException {
         Thread.sleep(5000);
         List<WebElement> List = webDriver.findElements(By.className("accordion"));
@@ -186,12 +189,14 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     }
 
+    @Step
     public void openLastFeebbackInTopicProductFAQ() throws InterruptedException {
         Thread.sleep(3000);
         actions.waitUntilBecomeClickable(lastFeedbackInTopicProductFAQ);
         actions.click(lastFeedbackInTopicProductFAQ);
     }
 
+    @Step
     public boolean isFeedbackInFAQList() throws InterruptedException {
         Thread.sleep(2000);
         if (
@@ -206,6 +211,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public void choose_Rundom_TopicField() throws InterruptedException {
 
         List<WebElement> TopicFieldDDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -241,6 +247,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public void choose_Direction_ManagementCompany_Field() throws InterruptedException {
 
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -260,6 +267,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     }
 
+    @Step
     public void choose_CommunicationChannel_PersMeet() throws InterruptedException {
 
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -280,12 +288,14 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     }
 
+    @Step
     public void chooseDate() {
         actions.click(dateIcon);
         actions.click(dateInCalendar);
 
     }
 
+    @Step
     public void chooseSpeakerOrInitiatorInPeolePeakerField(String text) throws InterruptedException {
 
         actions.insertText(speakerPeoplePickekField, text);
@@ -294,10 +304,12 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         Thread.sleep(2000);
     }
 
+    @Step
     public void insertCountOfPeopleField(String text) {
         actions.insertText(countOfPeopleField,text);
     }
 
+    @Step
     public boolean isBtnDeleteIsPresent() {
        /* if (
                 webDriver.findElement(By.cssSelector(".dynamic-form-button.feedback-button__gray.mat-button")).isDisplayed()){
@@ -319,6 +331,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
        }
     }
 
+    @Step
     public void choose_CommunicationChannel_InfoConsLine() throws InterruptedException {
 
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -340,10 +353,12 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public void insertPhoneNumber(String text) {
         actions.insertText(phoneField, text);
     }
 
+    @Step
     public void choose_CommunicationChannel_CorpMassMedia() throws InterruptedException {
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
         actions.waitUntilVisibilityOfAllelements(DDlist);
@@ -364,11 +379,9 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public boolean isField_TopicField_Required() throws InterruptedException {
         actions.click(sendBtn);
-
-
-
         if (
                 webDriver.findElement(By.className("feedback-button")).isDisplayed()){
             logger.info("FIELD TopicField IS  REQUIRED");
@@ -382,6 +395,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public void clearField_AppealField() {
 
         try {
@@ -412,6 +426,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public boolean isField_AppealField_Required() {
         actions.click(sendBtn);
 
@@ -427,6 +442,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
+    @Step
     public boolean isField_Speaker_Required() {
         actions.click(sendBtn);
 
