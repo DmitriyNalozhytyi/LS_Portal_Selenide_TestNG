@@ -24,17 +24,16 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest {
 
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.navigateToCreateNewFeedbackPage();
-        createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
-        createNewFeedback_Page_MainModerator.choose_Rundom_TopicField();
-        createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
+    //    createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
+      //  createNewFeedback_Page_MainModerator.choose_Rundom_TopicField();
+        //createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
         createNewFeedback_Page_MainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
-        // viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.checkFeedbackIsCreated();
     }
 
 
-    @Test
+  /*  @Test
     public void createNewFeedbackFromFeedbackList() throws InterruptedException {
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.navigateVievListOfFeedbacksPage();
@@ -56,6 +55,6 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest {
       //feedback visible in FAQ
 
 
-    }
+    }*/
 
 }
