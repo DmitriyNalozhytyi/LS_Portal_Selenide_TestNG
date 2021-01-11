@@ -4,8 +4,8 @@ import org.junit.Test;
 import parentTest.ParentTest;
 
 public class CreateNewFeedback_Test_MainModerator extends ParentTest {
-
-    @Test
+//
+ /*   @Test
     public void createNewFeedback__Portal__Management_MH__Topic_Production() throws InterruptedException {
 
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
@@ -15,10 +15,11 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest {
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
         createNewFeedback_Page_MainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
-       // viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
+        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.checkFeedbackIsCreated();
-    }
+    }*/
 
+///////
     @Test
     public void createNewFeedback__Portal__Management_MH__Topic_Rundom() throws InterruptedException {
 
@@ -27,10 +28,11 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest {
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Rundom_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
-       // createNewFeedback_Page_MainModerator.clickOnSendBtn();
+        createNewFeedback_Page_MainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         viewListOfFeedbacks_page_mainModerator.checkFeedbackIsCreated();
     }
+
 
 /*
 
