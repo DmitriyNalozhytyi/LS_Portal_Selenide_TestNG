@@ -3783,3 +3783,17 @@ Session ID: ba3535c464776e64abd71da3b13f24a1
 2021-11-01 12:38:57   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2077
 2021-11-01 12:39:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
 2021-11-01 12:39:20   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-12-01 10:45:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : 3 - number of DD
+2021-12-01 10:45:52   INFO [pages.CreateNewFeedback_Page_MainModerator] : portalChannel choosed
+2021-12-01 10:45:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : Topic_DD clicked
+2021-12-01 10:47:28   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-12-01 10:54:24   INFO [pages.CreateNewFeedback_Page_MainModerator] : 3 - number of DD
+2021-12-01 10:54:28   INFO [pages.CreateNewFeedback_Page_MainModerator] : portalChannel choosed
+2021-12-01 10:54:32   INFO [pages.CreateNewFeedback_Page_MainModerator] : Topic_DD clicked
+2021-12-01 10:54:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : locator=[[ChromeDriver: chrome on WINDOWS (b14d89854b37bad9772f67777faebabc)] -> css selector: mat-option:nth-of-type(2)  .tooltip-wrapper]
+2021-12-01 10:54:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : 2 - number of frames AppealField byMainModerator
+2021-12-01 10:54:40   INFO [libs.Actions] : Frame was changed
+2021-12-01 10:54:42   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2091
+2021-12-01 10:54:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2091
+2021-12-01 10:54:48   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
+2021-12-01 10:54:49   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
