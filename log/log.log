@@ -4007,3 +4007,34 @@ Session ID: c26e1e4b4748e02b7488c70acc85e7e9
 2021-14-01 10:48:03   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2127
 2021-14-01 10:48:11   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
 2021-14-01 10:48:12   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-14-01 11:13:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : 3 - number of DD
+2021-14-01 11:13:37   INFO [pages.CreateNewFeedback_Page_MainModerator] : portalChannel choosed
+2021-14-01 11:13:41   INFO [pages.CreateNewFeedback_Page_MainModerator] : Topic_DD clicked
+2021-14-01 11:13:42   INFO [pages.CreateNewFeedback_Page_MainModerator] : locator=[[ChromeDriver: chrome on WINDOWS (6281fb8f097a25625ec6591e0e6f6eeb)] -> css selector: mat-option:nth-of-type(4)  .tooltip-wrapper]
+2021-14-01 11:13:42   INFO [pages.CreateNewFeedback_Page_MainModerator] : 2 - number of frames AppealField byMainModerator
+2021-14-01 11:13:49   INFO [libs.Actions] : Frame was changed
+2021-14-01 11:13:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2131
+2021-14-01 11:13:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2131
+2021-14-01 11:14:03   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
+2021-14-01 11:14:03   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-14-01 13:01:29   INFO [pages.CreateNewFeedback_Page_MainModerator] : 3 - number of DD
+2021-14-01 13:01:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : portalChannel choosed
+2021-14-01 13:01:37   INFO [pages.CreateNewFeedback_Page_MainModerator] : Topic_DD clicked
+2021-14-01 13:01:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : locator=[[ChromeDriver: chrome on WINDOWS (0fd1453646d1672a0f019967a6fda555)] -> css selector: mat-option:nth-of-type(8)  .tooltip-wrapper]
+2021-14-01 13:01:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : 2 - number of frames AppealField byMainModerator
+2021-14-01 13:01:45   INFO [libs.Actions] : Frame was changed
+2021-14-01 13:01:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2138
+2021-14-01 13:01:53   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2138
+2021-14-01 13:01:57   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
+2021-14-01 13:01:58   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-14-01 13:10:53   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-14-01 13:12:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : 3 - number of DD
+2021-14-01 13:12:11   INFO [pages.CreateNewFeedback_Page_MainModerator] : portalChannel choosed
+2021-14-01 13:12:15   INFO [pages.CreateNewFeedback_Page_MainModerator] : Topic_DD clicked
+2021-14-01 13:12:15   INFO [pages.CreateNewFeedback_Page_MainModerator] : locator=[[ChromeDriver: chrome on WINDOWS (5c855bfd729190f0a3dfdcfec1d5d99e)] -> css selector: mat-option:nth-of-type(13)  .tooltip-wrapper]
+2021-14-01 13:12:16   INFO [pages.CreateNewFeedback_Page_MainModerator] : 2 - number of frames AppealField byMainModerator
+2021-14-01 13:12:23   INFO [libs.Actions] : Frame was changed
+2021-14-01 13:12:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2140
+2021-14-01 13:12:28   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2140
+2021-14-01 13:12:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
+2021-14-01 13:12:31   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
