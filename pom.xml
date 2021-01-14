@@ -286,8 +286,25 @@
                         <systemProperties>
                             <property>
                                 <name>allure.results.directory</name>
-                                <value>${project.build.directory}/allure-results</value>
+
+                                <!--old-->
+                               <!-- <value>${project.build.directory}/allure-results</value>-->
+
+                             <!--new-->
+                                <value>target/allure-results</value>
+
                             </property>
+
+
+
+                            <property>
+                                <name>allure.link.issue.pattern</name>
+                                <value>https://example.org/issue/{}</value>
+                            </property>
+
+
+
+
                         </systemProperties>
                     </configuration>
                     <dependencies>
