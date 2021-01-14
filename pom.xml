@@ -21,19 +21,36 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <aspectj.version>1.8.9</aspectj.version>
+<!--old-->
+      <!--  <aspectj.version>1.8.9</aspectj.version>-->
         <compiler.version>1.7</compiler.version>
 
+<!--new-->
+        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+        <aspectj.version>1.8.10</aspectj.version>
+     <!--   <allure-junit4.version>2.6.0</allure-junit4.version>-->
+        <allure-junit4.version>2.13.8</allure-junit4.version>
 
     </properties>
 
 
 
+
+
+        <!--old-->
+      <!--  <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            &lt;!&ndash; <scope>test</scope>, тут удаляем строчку&ndash;&gt;
+        </dependency>-->
+
+    <!--new-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.13.1</version>
             <!-- <scope>test</scope>, тут удаляем строчку-->
         </dependency>
 
@@ -114,22 +131,27 @@
         Данный адаптер позволяет собирать информацию из тестов, разработанных с использованием фреймворка Junit4.  -->
 
 
-
+<!--old-->
       <!--  <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>2.0-BETA13</version>
         </dependency>
 -->
-
-                <dependency>
+<!--test new-->
+               <!-- <dependency>
                     <groupId>io.qameta.allure</groupId>
                     <artifactId>allure-junit4</artifactId>
                     <version>2.13.8</version>
-                    <scope>test</scope>
+                 &lt;!&ndash;   <scope>test</scope>&ndash;&gt;
                 </dependency>
-
-
+-->
+        <!--new-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>${allure-junit4.version}</version>
+        </dependency>
 
                 <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
        <!-- <dependency>
@@ -182,7 +204,6 @@
                     <version>2.22.1</version>
 
 
-
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -207,9 +228,9 @@
                 </plugin>
 
 
+<!--old-->
 
-
-                 <plugin>
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.20</version>
@@ -244,38 +265,30 @@
                             <version>${aspectj.version}</version>
                         </dependency>
                     </dependencies>
-                </plugin>
+                </plugin>-->
 
-              <!--  <plugin>
+
+<!--new-->
+
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.20</version>
+                    <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <testFailureIgnore>false</testFailureIgnore>
-                        <argLine>
-                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                        </argLine>
+                        <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                         <properties>
                             <property>
                                 <name>listener</name>
                                 <value>io.qameta.allure.junit4.AllureJunit4</value>
                             </property>
                         </properties>
-
-
                         <systemProperties>
                             <property>
                                 <name>allure.results.directory</name>
                                 <value>${project.build.directory}/allure-results</value>
                             </property>
-                            <property>
-                                <name>allure.link.issue.pattern</name>
-                                <value>https://example.org/issue/{}</value>
-                            </property>
                         </systemProperties>
-
-
-
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -284,19 +297,27 @@
                             <version>${aspectj.version}</version>
                         </dependency>
                     </dependencies>
-                </plugin>-->
+                </plugin>
 
 
 
 
+<!--old-->
 
-
-
-                <plugin>
+               <!-- <plugin>
                     <groupId>io.qameta.allure</groupId>
                     <artifactId>allure-maven</artifactId>
                     <version>2.8</version>
+                </plugin>-->
+<!--new-->
+                <plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>2.10.0</version>
                 </plugin>
+
+
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
