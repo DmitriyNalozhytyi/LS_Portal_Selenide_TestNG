@@ -331,6 +331,18 @@
                     <groupId>io.qameta.allure</groupId>
                     <artifactId>allure-maven</artifactId>
                     <version>2.10.0</version>
+
+
+                    <!--new-->
+                    <configuration>
+                        <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+                        <!--<properties>-->
+                        <!--<allure.results.directory>target/allure-results</allure.results.directory>-->
+                        <!--</properties>-->
+                    </configuration>
+
+
+
                 </plugin>
 
 
