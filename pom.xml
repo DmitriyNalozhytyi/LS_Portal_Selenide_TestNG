@@ -333,9 +333,17 @@
                     <version>2.10.0</version>
 
 
+
+
                     <!--new-->
                     <configuration>
                         <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+
+                        <!--new new-->
+                        <reportVersion>2.10.0</reportVersion>
+
+
+
                         <!--<properties>-->
                         <!--<allure.results.directory>target/allure-results</allure.results.directory>-->
                         <!--</properties>-->
