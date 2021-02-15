@@ -12,7 +12,6 @@
 
 
         <!--
-
         2)3)Для использования возможности языка Java 7 ( -source 1.7 ),
         а также хотите, чтобы скомпилированные классы были совместимы
         с JVM 1.7 ( -target 1.7 ),  добавляем два следующих свойства,
@@ -21,31 +20,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-<!--old-->
-      <!--  <aspectj.version>1.8.9</aspectj.version>-->
+        <aspectj.version>1.8.10</aspectj.version>
         <compiler.version>1.7</compiler.version>
 
-<!--new-->
-        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-        <aspectj.version>1.8.10</aspectj.version>
-     <!--   <allure-junit4.version>2.6.0</allure-junit4.version>-->
         <allure-junit4.version>2.13.8</allure-junit4.version>
+        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
 
     </properties>
 
-
-
-
-
-        <!--old-->
-      <!--  <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            &lt;!&ndash; <scope>test</scope>, тут удаляем строчку&ndash;&gt;
-        </dependency>-->
-
-    <!--new-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -131,34 +113,12 @@
         Данный адаптер позволяет собирать информацию из тестов, разработанных с использованием фреймворка Junit4.  -->
 
 
-<!--old-->
-      <!--  <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit4</artifactId>
-            <version>2.0-BETA13</version>
-        </dependency>
--->
-<!--test new-->
-               <!-- <dependency>
-                    <groupId>io.qameta.allure</groupId>
-                    <artifactId>allure-junit4</artifactId>
-                    <version>2.13.8</version>
-                 &lt;!&ndash;   <scope>test</scope>&ndash;&gt;
-                </dependency>
--->
-        <!--new-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>${allure-junit4.version}</version>
         </dependency>
 
-                <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
-       <!-- <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-maven</artifactId>
-            <version>2.8</version>
-        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <!--Gson - это библиотека Java с открытым исходным кодом,
@@ -173,12 +133,14 @@
             <version>2.8.5</version>
         </dependency>
 
-        <dependency>
+
+        <!--  пока закомичу-->
+       <!-- <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-java-commons</artifactId>
             <version>2.13.8</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 
@@ -275,6 +237,8 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
+                        <parallel>classes</parallel>
+                        <threadCount>2</threadCount>
                         <testFailureIgnore>false</testFailureIgnore>
                         <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                         <properties>
@@ -286,25 +250,15 @@
                         <systemProperties>
                             <property>
                                 <name>allure.results.directory</name>
-
                                 <!--old-->
-                               <!-- <value>${project.build.directory}/allure-results</value>-->
-
+                                <value>${project.build.directory}/allure-results</value>
                              <!--new-->
-                                <value>target/allure-results</value>
-
+                               <!-- <value>target/allure-results</value>-->
                             </property>
-
-
-
                             <property>
                                 <name>allure.link.issue.pattern</name>
                                 <value>https://example.org/issue/{}</value>
                             </property>
-
-
-
-
                         </systemProperties>
                     </configuration>
                     <dependencies>
@@ -316,44 +270,15 @@
                     </dependencies>
                 </plugin>
 
-
-
-
-<!--old-->
-
-               <!-- <plugin>
-                    <groupId>io.qameta.allure</groupId>
-                    <artifactId>allure-maven</artifactId>
-                    <version>2.8</version>
-                </plugin>-->
-<!--new-->
                 <plugin>
                     <groupId>io.qameta.allure</groupId>
                     <artifactId>allure-maven</artifactId>
                     <version>2.10.0</version>
-
-
-
-
-                    <!--new-->
                     <configuration>
                         <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
-
-                        <!--new new-->
                         <reportVersion>2.10.0</reportVersion>
-
-
-
-                        <!--<properties>-->
-                        <!--<allure.results.directory>target/allure-results</allure.results.directory>-->
-                        <!--</properties>-->
                     </configuration>
-
-
-
                 </plugin>
-
-
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -363,6 +288,7 @@
                         <target>1.8</target>
                     </configuration>
                 </plugin>
+
             </plugins>
         </pluginManagement>
         <resources>
