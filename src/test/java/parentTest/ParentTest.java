@@ -12,6 +12,7 @@ import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -54,6 +55,11 @@ public class ParentTest {
     @BeforeClass
     public static void openSite() {
         openBrowser(Config.HostsData.METINVEST.value[0]);
+    }
+
+    @AfterClass
+    public void tearsDown() {
+        WebDriverRunner.getWebDriver().quit();
     }
 
     @Rule

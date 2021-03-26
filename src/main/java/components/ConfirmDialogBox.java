@@ -21,6 +21,7 @@ public class ConfirmDialogBox {
     public void confirm(boolean isConfirm) {
         if (isConfirm) {
             confirmButton().click();
+            container.waitUntil(Condition.disappears,25000);
         }
     }
 

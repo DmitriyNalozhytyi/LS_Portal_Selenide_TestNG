@@ -9,7 +9,7 @@
     </listeners>
 -->
 
-    <test name="Auth" group-by-instances="true">
+    <test name="Auth" group-by-instances="false">
         <classes>
             <class name="recruiters.ValidationTest" />
             <class name="recruiters.AddRecruiterTest" />
