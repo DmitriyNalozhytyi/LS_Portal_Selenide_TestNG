@@ -5,9 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PhotogallaryPageAlbum extends ParentPage {
-    public PhotogallaryPageAlbum(WebDriver webDriver) {
-        super(webDriver);
-    }
     @FindBy(css = ".headline__text")
     public WebElement fieldAlbumTitle;
     @FindBy(css = ".album__album-description")

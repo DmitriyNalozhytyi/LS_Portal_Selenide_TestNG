@@ -6,9 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PhotogallaryPageAll extends ParentPage {
-    public PhotogallaryPageAll(WebDriver webDriver) {
-        super(webDriver);
-    }
     @FindBy(css = ".body-firstAlbum-block > div > div:nth-of-type(1)")
     public WebElement btnCreateNewAlbum;
     @FindBy(css = ".textarea-album-name__wrapper #words")

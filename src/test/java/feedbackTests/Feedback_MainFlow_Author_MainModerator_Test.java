@@ -2,10 +2,11 @@ package feedbackTests;
 
 import org.junit.Test;
 import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest {
+public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD {
 
     /* 31.12.2020 +++  21
     https://metinvest-intranet-test.azurewebsites.net/ru/admin/responsibles

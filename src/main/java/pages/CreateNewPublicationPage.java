@@ -4,10 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 public class CreateNewPublicationPage extends ParentPage {
-    public CreateNewPublicationPage(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     @FindBy(className = "date_icon")
     private WebElement btnDateIcon;
 

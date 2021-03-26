@@ -7,9 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class GridSliderPageEdit extends ParentPage {
-    public GridSliderPageEdit(WebDriver webDriver) {
-        super(webDriver);
-    }
 
     @FindBy(css = ".block-form-enrichment > button:nth-of-type(1)")
     WebElement btnAddNewBlockWithImage;

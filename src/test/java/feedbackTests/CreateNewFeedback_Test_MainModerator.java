@@ -2,8 +2,9 @@ package feedbackTests;
 
 import org.junit.Test;
 import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
-public class CreateNewFeedback_Test_MainModerator extends ParentTest {
+public class CreateNewFeedback_Test_MainModerator extends ParentTest_OLD {
 //
  /*   @Test
     public void createNewFeedback__Portal__Management_MH__Topic_Production() throws InterruptedException {

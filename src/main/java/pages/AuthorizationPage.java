@@ -1,84 +1,69 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
+import config.Config;
+import constants.USERS;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorizationPage extends ParentPage {
 
-
-    public AuthorizationPage(WebDriver webDriver) {
-        super(webDriver);
-    }
-
-    public void openPage() {
-        webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/");
-    }
-
-
-    @FindBy(id = "i0116")
-    private WebElement InputEmail;
-
-    @FindBy(id = "idSIButton9")
-    private WebElement BtnNext;
-
-    @FindBy(id = "aadTileTitle")
-    private WebElement BtnWorkAccount;
-
-    @FindBy(id = "i0118")
-    private WebElement InputPassword;
+    private final SelenideElement inputEmail = $("#i0116");
+    private final SelenideElement btnNext = $("#idSIButton9");
+    private final SelenideElement btnWorkAccount = $("#aadTileTitle");
+    private final SelenideElement inputPassword = $("#i0118");
 
     @Step
     public void insertEmail(String email) {
-        actions.insertText(InputEmail,email);
+        actions.insertText(inputEmail,email);
         //InputEmail.sendKeys("vadim.kornienko@lizard-soft.com");
     }
 
     @Step
     public void insertPassword(String password) throws InterruptedException {
         Thread.sleep(500);
-        actions.insertText(InputPassword,password);
+        actions.insertText(inputPassword,password);
     }
 
     @Step
     public void pressBtnNext() {
-        actions.click(BtnNext);
+        actions.click(btnNext);
     }
 
     @Step
     public void pressBtnWorkAccount() {
-        actions.click(BtnWorkAccount);
+        actions.click(btnWorkAccount);
     }
 
-    @Step
-    public void authorization(String Email, String Pass) throws InterruptedException {
-
-        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net");
-        actions.waitToBeVisible(InputEmail);
-        actions.insertText(InputEmail,Email);
-        actions.waitUntilBecomeClickable(BtnNext);
-        actions.click(BtnNext);
-        actions.waitToBeVisible(InputPassword);
-        actions.insertText(InputPassword,Pass);
-        actions.waitUntilBecomeClickable(BtnNext);
-        actions.click(BtnNext);
-        actions.waitUntilBecomeClickable(BtnNext);
-        actions.click(BtnNext);
+    @Step("{0} / {1}")
+    public void authorization(String Email, String Pass) {
+        actions.insertText(inputEmail,Email)
+               .click(btnNext)
+               .insertText(inputPassword,Pass)
+               .click(btnNext)
+               .click(btnNext);
     }
 
     @Step
     public void ReAuthorization(String Email, String Pass) throws InterruptedException {
-        actions.waitToBeVisible(InputEmail);
-        actions.insertText(InputEmail,Email);
-        actions.waitUntilBecomeClickable(BtnNext);
-        actions.click(BtnNext);
+        actions.waitToBeVisible(inputEmail);
+        actions.insertText(inputEmail,Email);
+        actions.waitUntilBecomeClickable(btnNext);
+        actions.click(btnNext);
         Thread.sleep(2000);
-        actions.waitToBeVisible(InputPassword);
-        actions.insertText(InputPassword,Pass);
-        actions.waitUntilBecomeClickable(BtnNext);
-        actions.click(BtnNext);
+        actions.waitToBeVisible(inputPassword);
+        actions.insertText(inputPassword,Pass);
+        actions.waitUntilBecomeClickable(btnNext);
+        actions.click(btnNext);
         /*actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);*/
+    }
+
+    @Step("Login as {0}")
+    public void loginAs(USERS users) {
+        switch (users){
+            case DEV_TESTUSER15: authorization(Config.HostsData.METINVEST.value[1], Config.HostsData.METINVEST.value[2]);
+        }
     }
 }

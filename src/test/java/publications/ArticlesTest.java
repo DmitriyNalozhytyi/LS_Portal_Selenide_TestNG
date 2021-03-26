@@ -1,9 +1,10 @@
 package publications;
 
 import org.junit.Test;
-import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
-public class ArticlesTest extends ParentTest {
+@Deprecated
+public class ArticlesTest extends ParentTest_OLD {
     @Test
     public void createNewArticle() throws InterruptedException {
         authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");

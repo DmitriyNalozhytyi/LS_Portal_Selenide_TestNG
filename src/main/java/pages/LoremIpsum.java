@@ -9,8 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 
 public class LoremIpsum extends ParentPage {
-    public LoremIpsum(WebDriver webDriver) {
-        super(webDriver);
+    public LoremIpsum() {
+
     }
 
     @FindBy(css = "input#generate")

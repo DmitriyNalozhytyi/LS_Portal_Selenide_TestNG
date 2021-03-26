@@ -5,10 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class NewsPage extends ParentPage {
-    public NewsPage(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     @FindBy(css = ".detail-wrapper__quote")
     public WebElement fieldNewsTitle;
 

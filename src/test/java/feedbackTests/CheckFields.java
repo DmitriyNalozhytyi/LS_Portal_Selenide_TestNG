@@ -3,8 +3,9 @@ package feedbackTests;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
-public class CheckFields extends ParentTest {
+public class CheckFields extends ParentTest_OLD {
 
 //CheckFields_Feedback_Author_MainModerator_Test
 

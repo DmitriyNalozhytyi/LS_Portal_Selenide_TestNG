@@ -1,9 +1,9 @@
 package mainPage;
 
 import org.junit.Test;
-import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
-public class GridSliderTest extends ParentTest {
+public class GridSliderTest extends ParentTest_OLD {
     //@Test
     public void EditGridSlider() throws InterruptedException {
         authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");

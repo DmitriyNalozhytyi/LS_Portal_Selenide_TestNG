@@ -56,10 +56,6 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(css = ".confirm-dialog__button.confirm-dialog__button_confirm.mat-button.mat-primary")
     private WebElement approveDeletingFeedbackBtnStatusNew;
 
-    public ViewListOfFeedbacks_Page_MainModerator(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     @FindBy(className = "feedback-button")
     private WebElement sendBtn;
 

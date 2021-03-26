@@ -1,9 +1,10 @@
 package publications;
 
 import org.junit.Test;
-import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
-public class NewsTest extends ParentTest {
+@Deprecated
+public class NewsTest extends ParentTest_OLD {
 
     @Test
     public void createNewNews() throws InterruptedException {

@@ -1,9 +1,9 @@
 package mainPage;
 
 import org.junit.Test;
-import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
-public class PhotogallaryTest extends ParentTest {
+public class PhotogallaryTest extends ParentTest_OLD {
 
     @Test
     public void createNewAlbum() throws InterruptedException {

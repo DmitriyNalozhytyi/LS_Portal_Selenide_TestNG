@@ -9,9 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class NewsPageAll extends ParentPage {
-    public NewsPageAll(WebDriver webDriver) {
-        super(webDriver);
-    }
 
     @FindBy(css = "[for='mat-radio-2-input'] .mat-radio-label-content")
     public WebElement rbtnNewNews;

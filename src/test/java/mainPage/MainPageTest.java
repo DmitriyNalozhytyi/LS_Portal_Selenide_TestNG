@@ -1,10 +1,9 @@
 package mainPage;
 
-import org.junit.Test;
-import parentTest.ParentTest;
+import parentTest.ParentTest_OLD;
 
 
-public class MainPageTest extends ParentTest {
+public class MainPageTest extends ParentTest_OLD {
 
     //@Test
     public void openAllNews() throws InterruptedException {

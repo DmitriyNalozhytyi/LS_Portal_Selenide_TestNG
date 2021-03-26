@@ -4068,3 +4068,41 @@ Session ID: c26e1e4b4748e02b7488c70acc85e7e9
 2021-15-01 17:55:45   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : https://metinvest-intranet-tests.azurewebsites.net/feedback/list/2165
 2021-15-01 17:55:48   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : TRUE. button send is displayed. Feedback is Created
 2021-15-01 17:55:49   INFO [feedbackTests.CreateNewFeedback_Test_MainModerator] : Finished test: feedbackTests.CreateNewFeedback_Test_MainModerator::createNewFeedback__Portal__Management_MH__Topic_Rundom
+2021-16-03 15:14:54   INFO [recruiters.AddRecruiterTest] : Driver for screenshot not found
+2021-16-03 15:14:54   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:14:54  ERROR [recruiters.AddRecruiterTest] : java.lang.NullPointerException
+2021-16-03 15:20:55   INFO [recruiters.AddRecruiterTest] : Driver for screenshot not found
+2021-16-03 15:20:55   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:20:55  ERROR [recruiters.AddRecruiterTest] : java.lang.NullPointerException
+2021-16-03 15:26:37   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:28:53   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:38:15   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:38:58   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:51:51   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:52:29   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-16-03 15:53:50   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-18-03 12:29:45   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
+2021-18-03 13:55:00   INFO [mainPage.GridSliderTest] : Finished test: mainPage.GridSliderTest::addBlockWithImage
+2021-18-03 13:55:12   INFO [publications.InterviewTest] : Finished test: publications.InterviewTest::checkInterview
+2021-18-03 13:56:10   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::checkArticle
+2021-18-03 13:56:10   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM
+2021-18-03 13:56:10   INFO [mainPage.PhotogallaryTest] : Finished test: mainPage.PhotogallaryTest::createNewAlbum
+2021-18-03 13:56:10   INFO [publications.NewsTest] : Finished test: publications.NewsTest::writeComment
+2021-18-03 13:56:10   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_CorpMassMedia_Management_MH__DeleteFeedbackByMM_StatusNew
+2021-18-03 13:57:12   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_Management_Company_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
+2021-18-03 13:57:13   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
+2021-18-03 13:57:14   INFO [publications.NewsTest] : Finished test: publications.NewsTest::createNewNews
+2021-18-03 13:57:15   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
+2021-18-03 13:57:17   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM
+2021-18-03 13:57:17   INFO [publications.NewsTest] : Finished test: publications.NewsTest::checkNews
+2021-18-03 13:57:18   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_MH__DeleteFeedbackByMM_StatusNew
+2021-18-03 13:57:18   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
+2021-18-03 13:57:19   INFO [publications.NewsTest] : Finished test: publications.NewsTest::writeCommentReply
+2021-18-03 13:57:19   INFO [publications.InterviewTest] : Finished test: publications.InterviewTest::createNewInterview
+2021-18-03 13:57:20   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM_DeleteFeedbackByMM_StatusApproved
+2021-18-03 13:57:20   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::writeComment
+2021-18-03 13:57:21   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ
+2021-18-03 13:57:24   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
+2021-18-03 13:57:24   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::createNewArticle
+2021-18-03 13:57:25   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ
+2021-18-03 13:57:26   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::writeCommentReply

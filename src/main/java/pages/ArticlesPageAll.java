@@ -6,9 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ArticlesPageAll extends ParentPage {
-    public ArticlesPageAll(WebDriver webDriver) {
-        super(webDriver);
-    }
     @FindBy(css = "[for='mat-radio-3-input'] .mat-radio-label-content")
     public WebElement rbtnNewArticle;
 

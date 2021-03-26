@@ -1,5 +1,7 @@
 package libs;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -25,6 +27,10 @@ public class Actions {
     public Actions(WebDriver webDriver) {
         this.webDriver = webDriver;
         wait = new WebDriverWait(webDriver, 60);
+    }
+
+    public Actions() {
+
     }
     public void wait(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -276,5 +282,37 @@ public class Actions {
 
     }
 
+    //====================== NEW ACTIONS
+
+    public Actions insertText(SelenideElement element, String text) {
+        try {
+            element.waitUntil(Condition.appear,5000).val(text);
+            System.out.println("Text '" + text + "' inserted ");
+        } catch (Exception e) {
+            Assert.fail("Can`t insert text in field " + e);
+        }
+
+        return this;
+    }
+
+    public Actions click(SelenideElement element) {
+        try {
+            element.click();
+        } catch (Exception e) {
+            Assert.fail("Can`t click on element " + e);
+        }
+
+        return this;
+    }
+
+    public Actions selectOption(SelenideElement element) {
+        try {
+            element.click();
+            System.out.println("Element '" + element + "' selected ");
+        } catch (Exception e) {
+            Assert.fail("The element missing in the list" + e);
+        }
+        return this;
+    }
 
 }

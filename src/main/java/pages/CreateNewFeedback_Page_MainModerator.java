@@ -43,10 +43,10 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy(css = "mat-option:nth-of-type(6) > .mat-option-text")
     private WebElement corpMassMedia;
 
-    public CreateNewFeedback_Page_MainModerator(WebDriver webDriver) {
+    /*public CreateNewFeedback_Page_MainModerator(WebDriver webDriver) {
         super(webDriver);
     }
-
+*/
     @FindBy(css = "div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-item.single")
     private WebElement lastFeedbackInTopicProductFAQ;
 

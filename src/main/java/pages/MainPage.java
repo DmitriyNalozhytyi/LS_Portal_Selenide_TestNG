@@ -1,14 +1,12 @@
 package pages;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class MainPage extends ParentPage {
-    public MainPage(WebDriver webDriver) {
-        super(webDriver);
-    }
 
     @FindBy(className = "_link-dashboard")
     public WebElement btnAllNews;
@@ -62,6 +60,12 @@ public class MainPage extends ParentPage {
     @Step
     public void navigateVievListOfFeedbacksPage() {
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list");
+    }
+
+    @Step("Open recruiters page")
+    public void goToRecruiterPage() {
+        open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters");
+//        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters");
     }
 }
 

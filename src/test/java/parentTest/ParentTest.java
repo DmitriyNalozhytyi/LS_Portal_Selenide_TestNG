@@ -1,92 +1,59 @@
 package parentTest;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
+import config.Config;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import libs.Actions;
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.*;
+import org.testng.annotations.BeforeClass;
 
-import java.io.File;
-import java.util.concurrent.TimeUnit;
+import static com.codeborne.selenide.Selenide.open;
 
 public class ParentTest {
-
-    // подключаем Logger - создаем объект, который будет писать лог
-
     Logger logger = Logger.getLogger(getClass());
 
+    public static void initDriver() {
 
-    WebDriver webDriver;
-    protected AuthorizationPage authorizationPage;
-    protected Actions actions;
-    protected MainPage mainPage;
-    protected NewsPageAll newsPageAll;
-    protected CreateNewPublicationPage createNewPublicationPage;
-    protected LoremIpsum loremIpsum;
-    protected NewsPage newsPage;
-    protected ArticlesPageAll articlesPageAll;
-    protected InterviewPageAll interviewPageAll;
-    protected GridSliderPageEdit gridSliderPageEdit;
-    protected PhotogallaryPageAll photogallaryPageAll;
-    protected PhotogallaryPageAlbum photogallaryPageAlbum;
-    protected CreateNewFeedback_Page_MainModerator createNewFeedback_Page_MainModerator;
-    protected ViewListOfFeedbacks_Page_MainModerator viewListOfFeedbacks_page_mainModerator;
+        WebDriverManager.chromedriver().clearDriverCache();
+        WebDriverManager.chromedriver().setup();
 
 
+        Configuration.headless=false;
+        Configuration.browserSize = "1800x1080"; // or try "1280x1024";
+        Configuration.startMaximized=false;
 
-    @Before
-    public void setUp() throws InterruptedException {
-        File driver = new File("./src/drivers/chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", driver.getAbsolutePath());
-
-        webDriver = new ChromeDriver();
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        authorizationPage = new AuthorizationPage(webDriver);
-        actions = new Actions(webDriver);
-        mainPage = new MainPage(webDriver);
-        newsPageAll = new NewsPageAll(webDriver);
-        createNewPublicationPage = new CreateNewPublicationPage(webDriver);
-        loremIpsum = new LoremIpsum(webDriver);
-        newsPage = new NewsPage(webDriver);
-        articlesPageAll = new ArticlesPageAll(webDriver);
-        interviewPageAll = new InterviewPageAll(webDriver);
-        gridSliderPageEdit = new GridSliderPageEdit(webDriver);
-        photogallaryPageAll = new PhotogallaryPageAll(webDriver);
-        photogallaryPageAlbum = new PhotogallaryPageAlbum(webDriver);
-        createNewFeedback_Page_MainModerator = new CreateNewFeedback_Page_MainModerator(webDriver);
-        viewListOfFeedbacks_page_mainModerator = new ViewListOfFeedbacks_Page_MainModerator(webDriver);
-
-//        authorizationPage.authorization();
-        //authorizationPage.authorization();
+        System.setProperty("chromeoptions.args", "--disable-gpu");
+        System.setProperty("chromeoptions.args", "--no-sandbox");
+        System.setProperty("chromeoptions.args", "--disable-dev-shm-usage");
+        System.setProperty("chromeoptions.args", "--incognito");
+        System.setProperty("chromeoptions.args", "--start-maximized");
+        Configuration.browserCapabilities.setCapability("acceptSslCerts", true);
+        Configuration.browserCapabilities.setCapability("acceptInsecureCerts", true);
 
 
-
-
-
+//        System.setProperty("chromeoptions.args", "--single-process");
+//        Configuration.browserCapabilities.setCapability("--disable-gpu", true);
+//        Configuration.browserCapabilities.setCapability("--no-sandbox", true);
+        //        System.setProperty("--ignore-certificate-errors", "false");
     }
 
-    @After
-
-    @Step
-    public void tearDown()
-    {
-        webDriver.quit();
+    @Step("Open site page and close pop-ups if they appear")
+    public static void openBrowser(String url) {
+        initDriver();
+        open(url);
+//        new JSWaiter(new WebDriverWait(getWebDriver(), 10000)).waitJS();
     }
-    @Step
-    protected void checkExpectedResult(String message, boolean actualResult){
-        Assert.assertEquals(message, true, actualResult);
+
+    @BeforeClass
+    public static void openSite() {
+        openBrowser(Config.HostsData.METINVEST.value[0]);
     }
 
     @Rule
@@ -101,22 +68,20 @@ public class ParentTest {
             return screenShot;
         }
         public void screenshot() {
-            if (webDriver == null) {
+            if ( WebDriverRunner.getWebDriver() == null) {
                 logger.info("Driver for screenshot not found");
                 return;
             }
-            saveScreenshot(((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES));
+            saveScreenshot(((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES));
         }
         @Override
         protected void finished(Description description) {
             logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
             try {
-                webDriver.quit();
+                WebDriverRunner.getWebDriver().quit();
             } catch (Exception e) {
                 logger.error(e);
             }
         }
     };
-
-
 }
