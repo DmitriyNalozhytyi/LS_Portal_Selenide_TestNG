@@ -8,7 +8,7 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
-import pages.vacancy.recruiter.RecruiterPage;
+import pages.recruiter.RecruiterPage;
 import parentTest.ParentTest;
 
 import static org.junit.Assume.assumeTrue;

@@ -70,5 +70,13 @@ public class MainPage extends ParentPage {
         open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters");
 //        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters");
     }
+
+    /**
+     * Open vacancy management page "admin/vacancy"
+     */
+    @Step("Opn Vacancy management page")
+    public void goToVacancyManagement() {
+        open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy");
+    }
 }
 

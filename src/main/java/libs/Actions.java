@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 
+import static com.codeborne.selenide.Selenide.$;
+
 public class Actions {
     WebDriver webDriver;
     WebDriverWait wait;
@@ -289,12 +291,13 @@ public class Actions {
     /**
      * Enter the text in the web input elements
      * @param element selector of the element where a text should be entered on
-     * @param text the text that should be entered in
+     * @param text the text that should be entered in the field
+     * @param fieldName the name of field that will be shown in the log
      */
-    public Actions enterText(SelenideElement element, String text) {
+    public Actions enterText(SelenideElement element, String text, String fieldName) {
         try {
             element.waitUntil(Condition.appear,5000).val(text);
-            System.out.println("Text '" + text + "' inserted ");
+            System.out.println("Text '" + text + "' inserted into " + fieldName);
         } catch (Exception e) {
             Assert.fail("Can`t insert text in field " + e);
         }
@@ -331,4 +334,30 @@ public class Actions {
         return this;
     }
 
+    /**
+     * Action for radio button
+     * @param element selector to find this element
+     * @param value value that should be selected
+     * @param fieldName the name of field
+     */
+    public Actions selectRadio(SelenideElement element, String value, String fieldName) {
+        try {
+            element.click();
+            System.out.println("Element '" + value + "' selected for " + fieldName);
+        } catch (Exception e) {
+            Assert.fail("The element missing in the list" + e);
+        }
+        return this;
+    }
+
+    public Actions dropdown(String fieldName, String value, SelenideElement element) {
+        try {
+            element.click();
+            $(".mat-select-content").findAll(".ng-star-inserted").find(Condition.matchText(value)).click();
+            System.out.println("Element '" + value + "' selected for " + fieldName);
+        } catch (Exception e) {
+            Assert.fail("The element missing in the list" + e);
+        }
+        return this;
+    }
 }

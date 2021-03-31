@@ -36,7 +36,10 @@ public class Config {
         METINVEST(new String[] {
                 getInstance().config.getProperty(ConfigType.DEV_HOST),
                 getInstance().config.getProperty(ConfigType.DEV_TESTUSER15_LOGIN),
-                getInstance().config.getProperty(ConfigType.DEV_TESTUSER15_PASSWORD)
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER15_PASSWORD),
+
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER14_LOGIN),
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER14_PASSWORD),
             }
         );
 

@@ -8,8 +8,8 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
-import pages.vacancy.recruiter.AddRecruiterPage;
-import pages.vacancy.recruiter.RecruiterPage;
+import pages.recruiter.AddRecruiterPage;
+import pages.recruiter.RecruiterPage;
 import parentTest.ParentTest;
 
 @Epic("Recruiter")

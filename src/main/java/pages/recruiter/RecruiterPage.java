@@ -1,4 +1,4 @@
-package pages.vacancy.recruiter;
+package pages.recruiter;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

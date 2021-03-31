@@ -15,8 +15,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
-import pages.vacancy.recruiter.AddRecruiterPage;
-import pages.vacancy.recruiter.RecruiterPage;
+import pages.recruiter.AddRecruiterPage;
+import pages.recruiter.RecruiterPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

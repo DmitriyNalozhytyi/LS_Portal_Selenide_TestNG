@@ -38,9 +38,9 @@ public class AuthorizationPage extends ParentPage {
 
     @Step("{0} / {1}")
     public void authorization(String Email, String Pass) {
-        actions.enterText(inputEmail,Email)
+        actions.enterText(inputEmail, Email, "login")
                .click(btnNext, "Next")
-               .enterText(inputPassword,Pass)
+               .enterText(inputPassword,Pass, "password")
                .click(btnNext,"Next")
                .click(btnNext, "Next");
     }
@@ -67,7 +67,8 @@ public class AuthorizationPage extends ParentPage {
     @Step("Login as {0}")
     public void loginAs(USERS users) {
         switch (users){
-            case DEV_TESTUSER15: authorization(Config.HostsData.METINVEST.value[1], Config.HostsData.METINVEST.value[2]);
+            case DEV_TESTUSER15: authorization(Config.HostsData.METINVEST.value[1], Config.HostsData.METINVEST.value[2]); break;
+            case DEV_TESTUSER14: authorization(Config.HostsData.METINVEST.value[3], Config.HostsData.METINVEST.value[4]); break;
         }
     }
 }

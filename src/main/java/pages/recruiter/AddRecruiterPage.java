@@ -1,4 +1,4 @@
-package pages.vacancy.recruiter;
+package pages.recruiter;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -32,7 +32,7 @@ public class AddRecruiterPage {
     @Step("Select {0}")
     public AddRecruiterPage selectRecruiter(String text) {
         new Actions()
-                .enterText(inptRecruiter,text)
+                .enterText(inptRecruiter,text, "ФИО")
                 .selectOption(getOptionToSelect());
         sleep(1000);
         return this;
