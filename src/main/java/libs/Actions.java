@@ -51,6 +51,7 @@ public class Actions {
             Assert.fail("Can`t find field " + element + "! Exception: " + e);
         }
     }
+
     public void click(WebElement element) {
         try {
             wait(element);
@@ -59,7 +60,8 @@ public class Actions {
             Assert.fail("Can`t click on element " + e);
         }
     }
-    public void insertText(WebElement element, String text) {
+    @Deprecated
+    public void enterText(WebElement element, String text) {
         try {
             wait(element);
             element.clear();
@@ -284,7 +286,12 @@ public class Actions {
 
     //====================== NEW ACTIONS
 
-    public Actions insertText(SelenideElement element, String text) {
+    /**
+     * Enter the text in the web input elements
+     * @param element selector of the element where a text should be entered on
+     * @param text the text that should be entered in
+     */
+    public Actions enterText(SelenideElement element, String text) {
         try {
             element.waitUntil(Condition.appear,5000).val(text);
             System.out.println("Text '" + text + "' inserted ");
@@ -295,16 +302,25 @@ public class Actions {
         return this;
     }
 
-    public Actions click(SelenideElement element) {
+    /**
+     * Web element that should be clicked on
+     * @param element selector of an element
+     * @param text the name of element that displays in the log
+     */
+    public Actions click(SelenideElement element, String text) {
         try {
             element.click();
         } catch (Exception e) {
-            Assert.fail("Can`t click on element " + e);
+            Assert.fail("Can`t click on element " + text + " " + e);
         }
 
         return this;
     }
 
+    /**
+     * Select option from the drop down menu
+     * @param element element that should be selected
+     */
     public Actions selectOption(SelenideElement element) {
         try {
             element.click();

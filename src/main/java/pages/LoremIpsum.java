@@ -1,8 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -39,7 +37,7 @@ public class LoremIpsum extends ParentPage {
         ArrayList<String> tabs = new ArrayList<String>(webDriver.getWindowHandles()); //Открываем новую вкладку браузера
         webDriver.switchTo().window(tabs.get(1)); //Переключаем фокус на новую складку
         Thread.sleep(1000); //Читаем молитву
-        actions.insertText(inputAmount, "" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев/слов/байт/списков в диапазоне от a до b
+        actions.enterText(inputAmount, "" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев/слов/байт/списков в диапазоне от a до b
         btnGenerateLipsun.click();
         Thread.sleep(2000);
         String lipsum = lipsumText.getText(); //Записываем полученный текст в переменную
@@ -55,7 +53,7 @@ public class LoremIpsum extends ParentPage {
         webDriver.switchTo().window(tabs.get(1)); //Переключаем фокус на новую складку
         Thread.sleep(1000); //Читаем молитву
         actions.click(rbtnSelectTypeBytes); //Выбираем количество чего мы хотим сгенерировать (абзацев, слов, байт, списков)
-        actions.insertText(inputAmount, "" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев/слов/байт/списков в диапазоне от a до b
+        actions.enterText(inputAmount, "" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев/слов/байт/списков в диапазоне от a до b
         btnGenerateLipsun.click();
         Thread.sleep(2000);
         String lipsum = lipsumText.getText(); //Записываем полученный текст в переменную
@@ -71,7 +69,7 @@ public class LoremIpsum extends ParentPage {
         webDriver.switchTo().window(tabs.get(1)); //Переключаем фокус на новую складку
         Thread.sleep(1000); //Читаем молитву
         actions.click(rbtnSelectTypeWords); //Выбираем количество чего мы хотим сгенерировать (абзацев, слов, байт, списков)
-        actions.insertText(inputAmount, "" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев/слов/байт/списков в диапазоне от a до b
+        actions.enterText(inputAmount, "" + actions.randomNumber(a, b)); //Выбираем количество генерируемых абзацев/слов/байт/списков в диапазоне от a до b
         btnGenerateLipsun.click();
         Thread.sleep(2000);
         String lipsum = lipsumText.getText(); //Записываем полученный текст в переменную

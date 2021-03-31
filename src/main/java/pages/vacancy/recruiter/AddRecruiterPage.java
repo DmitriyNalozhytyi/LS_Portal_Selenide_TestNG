@@ -32,15 +32,15 @@ public class AddRecruiterPage {
     @Step("Select {0}")
     public AddRecruiterPage selectRecruiter(String text) {
         new Actions()
-                .insertText(inptRecruiter,text)
+                .enterText(inptRecruiter,text)
                 .selectOption(getOptionToSelect());
         sleep(1000);
         return this;
     }
 
     @Step("Click the button {0}")
-    public AddRecruiterPage clickButton(SelenideElement name) {
-        new Actions().click(name);
+    public AddRecruiterPage clickButton(String name, SelenideElement element) {
+        new Actions().click(element, name);
         return this;
     }
 

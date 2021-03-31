@@ -62,6 +62,9 @@ public class MainPage extends ParentPage {
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list");
     }
 
+    /**
+     * Open recruiter page
+     */
     @Step("Open recruiters page")
     public void goToRecruiterPage() {
         open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters");

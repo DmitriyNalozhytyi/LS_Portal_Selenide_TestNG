@@ -22,13 +22,13 @@ public class AddRecruiterTest extends ParentTest {
 
         new RecruiterPage()
                 .isPageOpens()
-                .clickButton(Button.ADD_RECRUITER);
+                .clickButton("Добавить рекрутера",Button.ADD_RECRUITER);
 
         new AddRecruiterPage()
                 .isPageOpens()
                 .selectRecruiter(Data.RECRUITER_1)
-                .clickButton(Button.SAVE_RECRUITER)
-                .checkPopUpMessage(Messages.RECRUITER_SAVED)
+                .clickButton("Сохранить", Button.SAVE_RECRUITER)
+                .checkPopUpMessage(SuccessMessages.RECRUITER_SAVED)
                 .closePopUp();
 
         new RecruiterPage()
@@ -41,12 +41,12 @@ public class AddRecruiterTest extends ParentTest {
 
         new RecruiterPage()
                 .isPageOpens()
-                .clickButton(Button.ADD_RECRUITER);
+                .clickButton("Добавить рекрутера",Button.ADD_RECRUITER);
 
         new AddRecruiterPage()
                 .isPageOpens()
                 .selectRecruiter(Data.RECRUITER_1)
-                .clickButton(Button.SAVE_RECRUITER)
-                .checkValidationMessage(ErorMeggage.RECRUITER_ALREADY_EXISTS);
+                .clickButton("Сохранить", Button.SAVE_RECRUITER)
+                .checkValidationMessage(ErrorMessage.RECRUITER_ALREADY_EXISTS);
     }
 }

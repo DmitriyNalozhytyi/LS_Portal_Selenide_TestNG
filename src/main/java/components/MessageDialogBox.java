@@ -3,8 +3,6 @@ package components;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-import java.awt.*;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class MessageDialogBox {

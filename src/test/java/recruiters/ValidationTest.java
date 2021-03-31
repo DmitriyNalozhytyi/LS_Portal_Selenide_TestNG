@@ -1,9 +1,8 @@
 package recruiters;
 
 import constants.Button;
-import constants.ErorMeggage;
+import constants.ErrorMessage;
 import constants.USERS;
-import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
@@ -25,12 +24,12 @@ public class ValidationTest extends ParentTest {
 
         new RecruiterPage()
                 .isPageOpens()
-                .clickButton(Button.ADD_RECRUITER);
+                .clickButton("Добавить рекрутера", Button.ADD_RECRUITER);
 
         new AddRecruiterPage()
                 .isPageOpens()
-                .clickButton(Button.SAVE_RECRUITER)
-                .checkValidationMessage(ErorMeggage.FIELD_IS_REQUIRED);
+                .clickButton("Сохранить", Button.SAVE_RECRUITER)
+                .checkValidationMessage(ErrorMessage.FIELD_IS_REQUIRED);
 
 
     }

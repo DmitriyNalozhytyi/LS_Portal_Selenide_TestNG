@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -136,13 +135,13 @@ public class NewsPage extends ParentPage {
     }
 
     public void writeComment(String testComment){
-        actions.insertText(inputComment, testComment);
+        actions.enterText(inputComment, testComment);
     }
 
     public void writeCommentReply(String testComment) {
         //Если на странице новости есть коммент - написать к нему ответ
         if (actions.existsElement(btnReplyToComment) == true) {
-            actions.insertText(inputCommentReply, testComment);
+            actions.enterText(inputCommentReply, testComment);
             actions.click(btnSendCommentReply);
         } else {
             //Если коммента нет - ныряем в цикл поиска коммента

@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -39,15 +38,15 @@ public class PhotogallaryPageAll extends ParentPage {
     }
 
     public void writeTitle(String text){
-        actions.insertText(inputTitle, text);
+        actions.enterText(inputTitle, text);
     }
 
     public void writeShortDescription(String text){
-        actions.insertText(inputShortDescription, text);
+        actions.enterText(inputShortDescription, text);
     }
 
     public void writeDescription(String text){
-        actions.insertText(inputDescription, text);
+        actions.enterText(inputDescription, text);
     }
 
     public void chooseTypeOfEvent(){

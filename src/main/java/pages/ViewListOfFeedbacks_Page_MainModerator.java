@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -131,7 +130,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         }
 //        actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
-        actions.insertText(appealField, text);
+        actions.enterText(appealField, text);
         actions.switchToDefaultContentFromFrame();
     }
 
@@ -161,7 +160,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
         logger.info(appealField+ "visible");
-        actions.insertText(appealField, text);
+        actions.enterText(appealField, text);
         actions.switchToDefaultContentFromFrame();
 
     }
@@ -220,7 +219,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public void inputReasonForReturn() {
-        actions.insertText(reasonForReturnField, "UUUYUYUYUY");
+        actions.enterText(reasonForReturnField, "UUUYUYUYUY");
     }
 
     public void assignNewResponsible() {
@@ -230,7 +229,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public void chooseNewApprover(String text) throws InterruptedException {
 
         //  actions.insertTextInToPeopePickerFieldUsingEnter(newApproverField,text);
-        actions.insertText(newApproverField, text);
+        actions.enterText(newApproverField, text);
         // actions.waitUntilBecomeClickable(chooseApproverInPeoplePeackerField);
         actions.click(chooseApproverInPeoplePeackerField);
         // actions.waitUntilBecomeClickable(sendBtn);
@@ -248,7 +247,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
         logger.info(appealField + "visible");
-        actions.insertText(appealField, text);
+        actions.enterText(appealField, text);
         actions.switchToDefaultContentFromFrame();
 
       /*  Thread.sleep(2000);

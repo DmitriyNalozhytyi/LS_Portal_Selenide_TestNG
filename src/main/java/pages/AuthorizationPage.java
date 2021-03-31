@@ -16,14 +16,14 @@ public class AuthorizationPage extends ParentPage {
 
     @Step
     public void insertEmail(String email) {
-        actions.insertText(inputEmail,email);
+        actions.enterText(inputEmail,email);
         //InputEmail.sendKeys("vadim.kornienko@lizard-soft.com");
     }
 
     @Step
     public void insertPassword(String password) throws InterruptedException {
         Thread.sleep(500);
-        actions.insertText(inputPassword,password);
+        actions.enterText(inputPassword,password);
     }
 
     @Step
@@ -38,28 +38,32 @@ public class AuthorizationPage extends ParentPage {
 
     @Step("{0} / {1}")
     public void authorization(String Email, String Pass) {
-        actions.insertText(inputEmail,Email)
-               .click(btnNext)
-               .insertText(inputPassword,Pass)
-               .click(btnNext)
-               .click(btnNext);
+        actions.enterText(inputEmail,Email)
+               .click(btnNext, "Next")
+               .enterText(inputPassword,Pass)
+               .click(btnNext,"Next")
+               .click(btnNext, "Next");
     }
 
     @Step
     public void ReAuthorization(String Email, String Pass) throws InterruptedException {
         actions.waitToBeVisible(inputEmail);
-        actions.insertText(inputEmail,Email);
+        actions.enterText(inputEmail,Email);
         actions.waitUntilBecomeClickable(btnNext);
         actions.click(btnNext);
         Thread.sleep(2000);
         actions.waitToBeVisible(inputPassword);
-        actions.insertText(inputPassword,Pass);
+        actions.enterText(inputPassword,Pass);
         actions.waitUntilBecomeClickable(btnNext);
         actions.click(btnNext);
         /*actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);*/
     }
 
+    /**
+     * To login to the system
+     * @param users The value of user's login name and password that are used for authorisation in the system (e.g DEV_TESTUSER15)
+     */
     @Step("Login as {0}")
     public void loginAs(USERS users) {
         switch (users){

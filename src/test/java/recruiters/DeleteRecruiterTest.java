@@ -1,9 +1,8 @@
 package recruiters;
 
 import constants.Data;
-import constants.Messages;
+import constants.SuccessMessages;
 import constants.USERS;
-import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
@@ -26,7 +25,7 @@ public class DeleteRecruiterTest extends ParentTest {
 
         new RecruiterPage()
                 .delete(Data.RECRUITER_1)
-                .checkPopUpMessage(Messages.RECRUITER_DELETED)
+                .checkPopUpMessage(SuccessMessages.RECRUITER_DELETED)
                 .closePopUp()
                 .checkIfRecruiterDeleted(Data.RECRUITER_1);
     }

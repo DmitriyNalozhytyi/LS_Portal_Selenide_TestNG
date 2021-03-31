@@ -3,10 +3,6 @@ package components;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import pages.vacancy.recruiter.RecruiterPage;
-
-import java.awt.*;
-import java.nio.channels.SelectableChannel;
 
 import static com.codeborne.selenide.Selenide.$;
 

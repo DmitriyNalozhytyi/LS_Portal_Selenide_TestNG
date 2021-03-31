@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -59,15 +58,15 @@ public class GridSliderPageEdit extends ParentPage {
     }
 
     public void writeTitle(String text){
-        actions.insertText(inputHeadline, text);
+        actions.enterText(inputHeadline, text);
     }
 
     public void writeDescription(String text){
-        actions.insertText(inputDescription, text);
+        actions.enterText(inputDescription, text);
     }
 
     public void writeLink(String text){
-        actions.insertText(inputLink, text);
+        actions.enterText(inputLink, text);
     }
 
     public void selectRandomIcon(){
@@ -76,7 +75,7 @@ public class GridSliderPageEdit extends ParentPage {
     }
 
     public void selectColor(){
-        actions.insertText(inputColor, "#ffffff" + Keys.ENTER);
+        actions.enterText(inputColor, "#ffffff" + Keys.ENTER);
     }
 
     public void clickSaveBlock(){

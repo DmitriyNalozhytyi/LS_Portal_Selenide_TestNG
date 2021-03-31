@@ -2,10 +2,7 @@ package pages;
 
 import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -158,7 +155,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     //    actions.switchTo1stFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
-        actions.insertText(appealField, text);
+        actions.enterText(appealField, text);
         actions.switchToDefaultContentFromFrame();
     }
 
@@ -298,7 +295,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @Step
     public void chooseSpeakerOrInitiatorInPeolePeakerField(String text) throws InterruptedException {
 
-        actions.insertText(speakerPeoplePickekField, text);
+        actions.enterText(speakerPeoplePickekField, text);
         Thread.sleep(1000);
         actions.click(chooseSpeakerInPeoplePeackerField);
         Thread.sleep(2000);
@@ -306,7 +303,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     @Step
     public void insertCountOfPeopleField(String text) {
-        actions.insertText(countOfPeopleField,text);
+        actions.enterText(countOfPeopleField,text);
     }
 
     @Step
@@ -355,7 +352,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     @Step
     public void insertPhoneNumber(String text) {
-        actions.insertText(phoneField, text);
+        actions.enterText(phoneField, text);
     }
 
     @Step
