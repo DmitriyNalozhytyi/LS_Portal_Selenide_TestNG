@@ -2,6 +2,7 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import components.Table;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
@@ -29,5 +30,24 @@ public class VacancyPage {
     @Step("Click the button {0}")
     public void clickButton(String name, SelenideElement element) {
         new Actions().click(element,name);
+    }
+
+    /**
+     * Switch tabs on Vacancy Management page
+     * @param name tab name like "Черновик", "Открытые"
+     * @param element  the selector of button as SelenideElement. It should be provided from Tabs.*
+     */
+    @Step("Switch to tab {0}")
+    public VacancyPage switchTo(String name, SelenideElement element) {
+        new Actions().click(element,name);
+        return this;
+    }
+
+    /**
+     * Check if vacancy presents in the table
+     * @param vacancyName tha name of vacancy
+     */
+    public void checkForVacancy(String vacancyName) {
+        Assert.assertEquals( new Table().getCellValue(1,2), vacancyName, vacancyName + "cannot be found");
     }
 }

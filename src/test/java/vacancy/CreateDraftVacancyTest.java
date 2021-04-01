@@ -14,6 +14,7 @@ import static utils.DateTime.getDate;
 
 @Epic("Vacancy")
 public class CreateDraftVacancyTest extends ParentTest {
+    private final String vacancyName = USERS.DEV_TESTUSER14+"_VACANCY_DRAFT_" + getDate("dd/mm/YYYY", 5);
 
 
     @Story("Create vacancy")
@@ -29,7 +30,7 @@ public class CreateDraftVacancyTest extends ParentTest {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, USERS.DEV_TESTUSER14+"_VACANCY_DRAFT_" + getDate("dd/mm/YYYY", 5))
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
                 .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
                 .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
                 .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
@@ -39,10 +40,10 @@ public class CreateDraftVacancyTest extends ParentTest {
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-        /*new VacancyPage()
+        new VacancyPage()
                 .isPageOpens()
-                .switchToTab()
-                .checkForVacancy();*/
+                .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .checkForVacancy(vacancyName);
 
     }
 }
