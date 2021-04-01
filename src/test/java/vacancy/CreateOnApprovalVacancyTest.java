@@ -18,7 +18,7 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
 
 
     @Story("Create vacancy")
-    @Test(description = "Create vacancy on approval as recruiter")
+    @Test(description = "Create and publish a vacancy")
     public void addVacancyOnApprovalAsRecruiter() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 

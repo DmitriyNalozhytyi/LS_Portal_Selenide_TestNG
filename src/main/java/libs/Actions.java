@@ -353,7 +353,7 @@ public class Actions {
     public Actions dropdown(String fieldName, String value, SelenideElement element) {
         try {
             element.click();
-            $(".mat-select-content").findAll(".ng-star-inserted").find(Condition.matchText(value)).click();
+            $(".mat-select-content").waitUntil(Condition.appear,10000).findAll(".ng-star-inserted").find(Condition.matchText(value)).click();
             System.out.println("Element '" + value + "' selected for " + fieldName);
         } catch (Exception e) {
             Assert.fail("The element missing in the list" + e);

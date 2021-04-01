@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MessageDialogBox {
-    private final SelenideElement container = $(".confirm-dialog");
+    private final SelenideElement container = $(".confirm-dialog").waitUntil(Condition.appear,15000);
 
     private SelenideElement messageElement() {
         return container.find(".confirm-dialog__title").waitUntil(Condition.appear,25000);

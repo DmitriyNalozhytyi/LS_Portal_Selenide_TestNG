@@ -3,6 +3,7 @@
 
 <suite name="Asabix" thread-count="1" parallel="classes">
     <suite-files>
-        <suite-file path="Store.xml"/>
+        <suite-file path="Recruiters.xml"/>
+        <suite-file path="Vacancy.xml"/>
     </suite-files>
 </suite>
