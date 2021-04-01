@@ -2,20 +2,25 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import constants.USERS;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selectors.byAttribute;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CreateVacancyPage {
     private final SelenideElement pageContainer = $(".news.reuse-wrapper.mat-card");
+    private final SelenideElement inptResponce = $(".main-input.vacancy-input.ng-pristine.ng-invalid");
 
     private SelenideElement pageTitle() {
         return pageContainer.find(".vacancy-header__title").waitUntil(Condition.appear,10000);
+    }
+
+    private SelenideElement getOptionToSelect() {
+        return $("#mat-autocomplete-1").find(byAttribute("tabindex","0")).waitUntil(Condition.appear,10000);
     }
 
     /**
@@ -70,5 +75,21 @@ public class CreateVacancyPage {
     @Step("Click the button {0}")
     public void clickButton(String name, SelenideElement element) {
         new Actions().click(element,name);
+    }
+
+    /**
+     * Set responsible person. Only for superviser or admin
+     * @param user set the user
+     * @param responsibleUser  the user who is response for hire
+     */
+    @Step("Select responsible user {1}")
+    public CreateVacancyPage selectResponsibleForSW(USERS user, String responsibleUser) {
+        if (user.equals(USERS.DEV_TESTUSER15)) {
+            new Actions()
+                    .enterText(inptResponce, responsibleUser, "Введите Ф.И.О. руководителя")
+                    .selectOption(getOptionToSelect());
+            sleep(1000);
+        }
+        return this;
     }
 }

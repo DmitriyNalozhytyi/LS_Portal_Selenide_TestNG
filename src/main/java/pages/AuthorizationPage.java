@@ -9,10 +9,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorizationPage extends ParentPage {
 
-    private final SelenideElement inputEmail = $("#i0116");
-    private final SelenideElement btnNext = $("#idSIButton9");
-    private final SelenideElement btnWorkAccount = $("#aadTileTitle");
-    private final SelenideElement inputPassword = $("#i0118");
+    private final SelenideElement inputEmail                = $("#i0116");
+    private final SelenideElement btnNext                   = $("#idSIButton9");
+    private final SelenideElement btnWorkAccount            = $("#aadTileTitle");
+    private final SelenideElement inputPassword             = $("#i0118");
+    private final SelenideElement btnAccount                = $(".head_right").find(".mat-button-wrapper").find("div");
+    private final SelenideElement btnExit                   = $(".right_box .menu-item:nth-of-type(4) a");
+    private final SelenideElement changeAccount             = $("#otherTileText");
 
     @Step
     public void insertEmail(String email) {
@@ -38,11 +41,15 @@ public class AuthorizationPage extends ParentPage {
 
     @Step("{0} / {1}")
     public void authorization(String Email, String Pass) {
+        logOut();
         actions.enterText(inputEmail, Email, "login")
                .click(btnNext, "Next")
                .enterText(inputPassword,Pass, "password")
-               .click(btnNext,"Next")
-               .click(btnNext, "Next");
+               .click(btnNext,"Next");
+
+        if (btnNext.exists()) {
+               actions.click(btnNext, "Next");
+        }
     }
 
     @Step
@@ -58,6 +65,15 @@ public class AuthorizationPage extends ParentPage {
         actions.click(btnNext);
         /*actions.waitUntilBecomeClickable(BtnNext);
         actions.click(BtnNext);*/
+    }
+
+    @Step
+    public void logOut() {
+        if (btnAccount.exists()) {
+            actions.click(btnAccount, "User account")
+                    .click(btnExit, "Exit")
+                    .click(changeAccount, "Change account");
+        }
     }
 
     /**
