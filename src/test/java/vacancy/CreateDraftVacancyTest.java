@@ -7,14 +7,16 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
+import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyPage;
 import parentTest.ParentTest;
+import utils.CustomRandom;
 
 import static utils.DateTime.getDate;
 
 @Epic("Vacancy")
 public class CreateDraftVacancyTest extends ParentTest {
-    private final String vacancyName = USERS.DEV_TESTUSER14+"_VACANCY_DRAFT_" + getDate("dd/mm/YYYY", 5);
+    private final String vacancyName = USERS.DEV_TESTUSER14+"_VACANCY_DRAFT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
 
     @Story("Create vacancy")
@@ -39,6 +41,8 @@ public class CreateDraftVacancyTest extends ParentTest {
                 .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagement();
 
         new VacancyPage()
                 .isPageOpens()

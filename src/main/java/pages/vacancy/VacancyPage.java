@@ -48,6 +48,6 @@ public class VacancyPage {
      * @param vacancyName tha name of vacancy
      */
     public void checkForVacancy(String vacancyName) {
-        Assert.assertEquals( new Table().getCellValue(1,2), vacancyName, vacancyName + "cannot be found");
+        Assert.assertEquals( new Table().getCellValue(1,1), vacancyName, vacancyName + "cannot be found");
     }
 }
