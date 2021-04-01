@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Store" thread-count="1" parallel="false">
+
+<!--
+    <listeners>
+        <listener class-name="path/to/Listeners"/>
+    </listeners>
+-->
+
+    <test name="Auth" group-by-instances="false">
+        <classes>
+            <class name="vacancy.CreateDraftVacancyTest" />
+            <class name="vacancy.CreateOnApprovalVacancyTest" />
+            <class name="vacancy.CreateAndApproveVacancyTest" />
+        </classes>
+    </test>
+
+
+</suite>

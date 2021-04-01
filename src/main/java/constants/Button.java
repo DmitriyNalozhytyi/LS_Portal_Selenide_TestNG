@@ -9,4 +9,5 @@ public interface Button {
     SelenideElement SAVE_RECRUITER           = $(".vacancy-publish-button.add-dialog__button_cancel");
     SelenideElement CREATE_VACANCY           = $(".vacancies-header__button");
     SelenideElement SAVE_VACANCY             = $(".vacancy-save-button");
+    SelenideElement ON_APPROVAL_VACANCY      = $(".vacancy-publish-button");
 }

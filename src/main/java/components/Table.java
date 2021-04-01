@@ -32,4 +32,8 @@ public class Table {
     public void delete(String name) {
         deleteElement(name).click();
     }
+
+    public SelenideElement getElement(int row, int col) {
+        return cell(row-1,col-1);
+    }
 }
