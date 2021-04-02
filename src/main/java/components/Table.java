@@ -34,6 +34,6 @@ public class Table {
     }
 
     public SelenideElement getElement(int row, int col) {
-        return cell(row-1,col-1);
+        return cell(row-1,col-1).waitUntil(Condition.appears, 15000);
     }
 }

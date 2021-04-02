@@ -12,6 +12,9 @@ import pages.vacancy.VacancyPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
 
+/**
+ * addDraftVacancy() - Verify that recruiter and admin can create a draft vacancy
+ */
 
 @Epic("Vacancy")
 public class CreateDraftVacancyTest extends ParentTest {
@@ -47,7 +50,7 @@ public class CreateDraftVacancyTest extends ParentTest {
                 .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
                 .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
-                .selectResponsibleForSW(user, Data.RECRUITER_1)
+                .selectResponsibleForSW(user, Data.RECRUITER_2)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
         new MainPage().goToVacancyManagement();
@@ -55,6 +58,7 @@ public class CreateDraftVacancyTest extends ParentTest {
         new VacancyPage()
                 .isPageOpens()
                 .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .search(user+vacancyName)
                 .checkForVacancy(user+vacancyName);
     }
 }

@@ -321,7 +321,7 @@ public class Actions {
     }
 
     /**
-     * Select option from the drop down menu
+     * Select option from the picket element
      * @param element element that should be selected
      */
     public Actions selectOption(SelenideElement element) {
@@ -350,6 +350,12 @@ public class Actions {
         return this;
     }
 
+    /**
+     * Select option from the dropdown menu
+     * @param fieldName the name of field
+     * @param value value that should be selected
+     * @param element selector to find this element
+     */
     public Actions dropdown(String fieldName, String value, SelenideElement element) {
         try {
             element.click();

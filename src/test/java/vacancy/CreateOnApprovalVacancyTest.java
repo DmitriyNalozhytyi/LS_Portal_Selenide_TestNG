@@ -11,6 +11,10 @@ import pages.vacancy.VacancyPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
 
+/**
+ * addVacancyOnApprovalAsRecruiter() - Verify that recruiter is able to create a vacancy and this vacancy has the status On Approval
+ */
+
 
 @Epic("Vacancy")
 public class CreateOnApprovalVacancyTest extends ParentTest {
