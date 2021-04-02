@@ -56,8 +56,9 @@ public class VacancyPage {
      * Check if vacancy presents in the table
      * @param vacancyName tha name of vacancy
      */
-    public void checkForVacancy(String vacancyName) {
+    public VacancyPage checkForVacancy(String vacancyName) {
         Assert.assertEquals( new Table().getCellValue(1,1), vacancyName, vacancyName + "cannot be found");
+        return this;
     }
 
     /**
@@ -68,6 +69,7 @@ public class VacancyPage {
     @Step("Select {1} for {0}")
     public VacancyPage selectActionFor(String vacancyName, VacancyAction action) {
         search(vacancyName);
+        sleep(3000);
 
         switch (action) {
             case EDIT: vacancyMenu().selectAction(getActions(1));
@@ -104,6 +106,8 @@ public class VacancyPage {
                 .click(searchElement,"Поиск по вакансиям")
                 .enterText(searchInput,text,"Поиск вакансий");
         searchInput.sendKeys(Keys.ENTER);
+        new Actions()
+                .click(searchElement,"Поиск по вакансиям");
         return this;
     }
 }

@@ -3,6 +3,7 @@ package vacancy;
 import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
@@ -13,18 +14,34 @@ import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**
- * addVacancyAndOpenAsRecruiter() - create vacancy as recruiter and that change the status to Open as admin and check if this vacancy is in the list of Opened tab.
- * addVacancyAsAdminAndPublish()  - create vacancy as admin and that change the status to Open as admin and check if this vacancy is in the list of Opened tab.
+ * moveOpenedVacancyToArchive()         - verify that vacancy is moved to archive from opened vacancy when admin changes the status to SUSPENDED, CLOSED, CANCELED
+ * moveVacancyFromOnApprovalToArchive() - verify that vacancy is moved to archive from on approval vacancy when admin changes the status to CANCELED
  */
 
 @Epic("Vacancy")
-public class CreateAndApproveVacancyTest extends ParentTest {
+public class ArchiveStatusOfVacancyTest extends ParentTest {
 
+    @DataProvider(name = "listOfStatusesOfOpened")
+    public Object[][] listOfStatusesOfOpened() {
 
-    @Story("Create vacancy")
-    @Test(description = "Create vacancy as recruiter and approve as admin")
-    public void addVacancyAsRecruiterAndPublish() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        return new Object[][]{
+                {VacancyStatus.SUSPENDED, USERS.DEV_TESTUSER14+"_SUSPENDED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {VacancyStatus.CLOSED, USERS.DEV_TESTUSER14+"_CLOSED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {VacancyStatus.CANCELED_ON_OPENED, USERS.DEV_TESTUSER14+"_CANCELED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+        };
+    }
+
+    @DataProvider(name = "listOfStatusesOnApproval")
+    public Object[][] listOfStatusesOnApproval() {
+
+        return new Object[][]{
+                {VacancyStatus.CANCELED_ON_APPROVAL, USERS.DEV_TESTUSER14+"_CANCELED_VACANCY_FROM_ON_APPROVAL_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+        };
+    }
+
+    @Story("Move vacancy to archive")
+    @Test(description = "Move opened vacancy to archive", dataProvider = "listOfStatusesOfOpened")
+    public void moveOpenedVacancyToArchive(int vacancyStatus, String vacancyName) {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
         new MainPage().goToVacancyManagement();
@@ -74,6 +91,20 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .isPageOpens()
                 .switchTo("Открытые", Tabs.VACANCY_OPENED)
                 .search(vacancyName)
+                .checkForVacancy(vacancyName)
+                .selectActionFor(vacancyName, VacancyAction.EDIT);
+
+        new VacancyEdit()
+                .isPageOpens()
+                .changeStatus("Статус", "Приостановлена", vacancyStatus)
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
@@ -82,17 +113,15 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new VacancyPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
     }
 
-    @Story("Create vacancy")
-    @Test(description = "Create vacancy as admin and approve as admin")
-    public void addVacancyAsAdminAndPublish() {
-        String vacancyName = USERS.DEV_TESTUSER15 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
-
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+    @Story("Move vacancy to archive")
+    @Test(description = "Move vacancy from on approval to archive", dataProvider = "listOfStatusesOnApproval")
+    public void moveVacancyFromOnApprovalToArchive(int vacancyStatus, String vacancyName) {
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
         new MainPage().goToVacancyManagement();
 
@@ -110,15 +139,48 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
                 .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
-                .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);
+                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
 
         new MainPage().goToVacancyManagement();
 
         new VacancyPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .selectActionFor(vacancyName, VacancyAction.EDIT);
+
+        new VacancyEdit()
+                .isPageOpens()
+                .changeStatus("Статус", "Отменена", vacancyStatus)
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
     }
+
 }

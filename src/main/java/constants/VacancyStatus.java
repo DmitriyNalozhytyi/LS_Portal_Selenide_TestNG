@@ -1,10 +1,9 @@
 package constants;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selenide.$$;
-
 public interface VacancyStatus {
-    SelenideElement OPEN                = $$("app-radio-select-field").get(0).findAll("button").get(1).waitUntil(Condition.appear,10000);
+    int SUSPENDED               = 1;
+    int OPEN                    = 1;
+    int CLOSED                  = 2;
+    int CANCELED_ON_OPENED      = 3;
+    int CANCELED_ON_APPROVAL    = 2;
 }

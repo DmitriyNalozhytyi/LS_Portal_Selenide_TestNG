@@ -10,4 +10,5 @@ public interface Button {
     SelenideElement CREATE_VACANCY           = $(".vacancies-header__button");
     SelenideElement SAVE_VACANCY             = $(".vacancy-save-button");
     SelenideElement ON_APPROVAL_VACANCY      = $(".vacancy-publish-button");
+    SelenideElement SAVE_AND_PUBLISH_VACANCY = $(".vacancy-publish-button");
 }
