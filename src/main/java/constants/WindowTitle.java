@@ -6,4 +6,5 @@ public interface WindowTitle {
     String VACANCY_MANAGEMENT           = "Управление вакансиями";
     String NEW_VACANCY_PAGE             = "Новая вакансия";
     String VACANCY_EDIT                 = "Редактирование вакансии";
+    String RESPONSE_OF_CANDIDATE        = "Отклик кандидата:";
 }

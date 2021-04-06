@@ -3,6 +3,7 @@ package vacancy;
 import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
@@ -10,11 +11,11 @@ import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
+import utils.TestListeners;
 
 /**
  * addVacancyOnApprovalAsRecruiter() - Verify that recruiter is able to create a vacancy and this vacancy has the status On Approval
  */
-
 
 @Epic("Vacancy")
 public class CreateOnApprovalVacancyTest extends ParentTest {

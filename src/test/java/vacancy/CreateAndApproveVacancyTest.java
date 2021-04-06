@@ -3,6 +3,7 @@ package vacancy;
 import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
@@ -11,6 +12,7 @@ import pages.vacancy.VacancyEdit;
 import pages.vacancy.VacancyPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
+import utils.TestListeners;
 
 /**
  * addVacancyAndOpenAsRecruiter() - create vacancy as recruiter and that change the status to Open as admin and check if this vacancy is in the list of Opened tab.
