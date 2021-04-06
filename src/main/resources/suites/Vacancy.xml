@@ -3,13 +3,7 @@
 
 <suite name="Store" thread-count="1" parallel="false">
 
-<!--
-    <listeners>
-        <listener class-name="path/to/Listeners"/>
-    </listeners>
--->
-
-    <test name="Auth" group-by-instances="false">
+    <test name="Vacancy" group-by-instances="true">
         <classes>
             <class name="vacancy.CreateDraftVacancyTest" />
             <class name="vacancy.CreateOnApprovalVacancyTest" />
@@ -18,5 +12,10 @@
         </classes>
     </test>
 
+    <test name="Responses and Recommendations" group-by-instances="true">
+        <classes>
+            <class name="vacancy.VacancyResponseTest" />
+        </classes>
+    </test>
 
 </suite>
