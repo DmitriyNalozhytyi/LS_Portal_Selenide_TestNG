@@ -156,12 +156,6 @@
             <version>2.13.8</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-selenide</artifactId>
-            <version>2.13.8</version>
-            <scope>compile</scope>
-        </dependency>
 
     </dependencies>
 
