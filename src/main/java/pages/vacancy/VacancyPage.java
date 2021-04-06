@@ -59,7 +59,8 @@ public class VacancyPage {
      * @param vacancyName tha name of vacancy
      */
     public VacancyPage checkForVacancy(String vacancyName) {
-        Assert.assertEquals( new Table().getCellValue(1,1), vacancyName, vacancyName + "cannot be found");
+        sleep(2000);
+        Assert.assertEquals( new Table().getCellValue(1,1), vacancyName, "The name of vacancy");
         return this;
     }
 
@@ -110,6 +111,7 @@ public class VacancyPage {
         searchInput.sendKeys(Keys.ENTER);
         new Actions()
                 .click(searchElement,"Поиск по вакансиям");
+        sleep(2000);
         return this;
     }
 

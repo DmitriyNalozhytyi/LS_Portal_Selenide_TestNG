@@ -54,7 +54,7 @@ public class VacancyDetailPage {
     @Step("Fill in the application form")
     private VacancyDetailPage fillTheForm() {
         new Actions()
-                .enterText(Fields.JOB_APPLICANT_PHONE, "+380698956214", "Телефон")
+                .enterText(Fields.JOB_APPLICANT_PHONE.waitUntil(Condition.appears,10000), "+380698956214", "Телефон")
                 .enterTextInTinyMCE(Fields.ACCOMPANYING_TEXT, "Сопроводительный текст", "Сопроводительный текст")
                 .click(Button.APPLY_WITHOUT_RESUME, "Откликнуться без резюме")
                 .click(Button.AGREEMENT, "Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных");
