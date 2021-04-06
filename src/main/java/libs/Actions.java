@@ -297,7 +297,7 @@ public class Actions {
      */
     public Actions enterText(SelenideElement element, String text, String fieldName) {
         try {
-            element.waitUntil(Condition.appear,5000).val(text);
+            element.waitUntil(Condition.appear,10000).val(text);
             System.out.println("Text '" + text + "' inserted into " + fieldName);
         } catch (Exception e) {
             Assert.fail("Can`t insert text in field " + e);

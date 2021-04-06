@@ -29,7 +29,7 @@ import utils.CustomRandom;
 @Story("Responses")
 public class VacancyResponseTest extends ParentTest {
 
-    @Test(description = "Send application")
+   @Test(description = "Send application")
     public void sendApplication() {
         String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_SEND_APPLICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 

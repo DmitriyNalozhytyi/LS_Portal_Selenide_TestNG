@@ -54,7 +54,7 @@ public class VacancyDetailPage {
     @Step("Fill in the application form")
     private VacancyDetailPage fillTheForm() {
         new Actions()
-                .enterText(Fields.JOB_APPLICANT_PHONE.waitUntil(Condition.appears,10000), "+380698956214", "Телефон")
+                .enterText(Fields.JOB_APPLICANT_PHONE, "+380698956214", "Телефон")
                 .enterTextInTinyMCE(Fields.ACCOMPANYING_TEXT, "Сопроводительный текст", "Сопроводительный текст")
                 .click(Button.APPLY_WITHOUT_RESUME, "Откликнуться без резюме")
                 .click(Button.AGREEMENT, "Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных");
@@ -86,7 +86,6 @@ public class VacancyDetailPage {
      */
     @Step("Verify for status {0}")
     public VacancyDetailPage checkForResponseStatus(String status) {
-        sleep(2000);
         Assert.assertEquals(new Table().getCellValue(1,3), status, "The status");
         return this;
     }
