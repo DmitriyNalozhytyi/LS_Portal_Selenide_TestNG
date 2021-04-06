@@ -51,7 +51,7 @@ public class CreateVacancyPage {
      */
     @Step("Select {1} for {0}")
     public CreateVacancyPage setValueFor(String fieldName, String value, SelenideElement element) {
-        new Actions().selectRadio(element,value,fieldName);
+        new Actions().selectRadioButton(element,value,fieldName);
         return this;
     }
 

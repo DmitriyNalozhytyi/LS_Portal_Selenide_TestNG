@@ -14,9 +14,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import utils.TestListeners;
 
 import static com.codeborne.selenide.Selenide.open;
 
+@Listeners(TestListeners.class)
 public class ParentTest {
     Logger logger = Logger.getLogger(getClass());
 

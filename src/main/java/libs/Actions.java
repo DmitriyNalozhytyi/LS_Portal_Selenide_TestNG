@@ -1,6 +1,7 @@
 package libs;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -340,7 +341,7 @@ public class Actions {
      * @param value value that should be selected
      * @param fieldName the name of field
      */
-    public Actions selectRadio(SelenideElement element, String value, String fieldName) {
+    public Actions selectRadioButton(SelenideElement element, String value, String fieldName) {
         try {
             element.click();
             System.out.println("Element '" + value + "' selected for " + fieldName);
@@ -363,6 +364,28 @@ public class Actions {
             System.out.println("Element '" + value + "' selected for " + fieldName);
         } catch (Exception e) {
             Assert.fail("The element missing in the list" + e);
+        }
+        return this;
+    }
+
+    /**
+     * insert a text in TinyMCE element
+     * @param element selector to find this element
+     * @param value value that should be selected
+     * @param fieldName the name of field
+     * @return
+     */
+    public Actions enterTextInTinyMCE(SelenideElement element, String value, String fieldName) {
+        try {
+            Selenide.switchTo().defaultContent();
+            Selenide.switchTo().frame(element);
+            SelenideElement body = $(By.tagName("body"));
+            Selenide.executeJavaScript("arguments[0].innerHTML=arguments[1]", body, value);
+            body.click();
+            Selenide.switchTo().defaultContent();
+            System.out.println("The text '" + value + "' was entered into " + fieldName);
+        } catch (Exception e) {
+            Assert.fail("The element missing " + e);
         }
         return this;
     }

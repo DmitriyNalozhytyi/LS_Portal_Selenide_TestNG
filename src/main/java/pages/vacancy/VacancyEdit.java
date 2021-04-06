@@ -37,7 +37,7 @@ public class VacancyEdit {
      */
     @Step("Approve and publish the vacancy")
     public VacancyEdit changeStatus(String fieldName, String value, int status) {
-        new Actions().selectRadio(getStatusButton(status),value,fieldName);
+        new Actions().selectRadioButton(getStatusButton(status),value,fieldName);
         return this;
     }
 

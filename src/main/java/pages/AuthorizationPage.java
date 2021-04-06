@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import config.Config;
 import constants.USERS;
@@ -72,7 +73,7 @@ public class AuthorizationPage extends ParentPage {
         if (btnAccount.exists()) {
             actions.click(btnAccount, "User account")
                     .click(btnExit, "Exit")
-                    .click(changeAccount, "Change account");
+                    .click(changeAccount.waitUntil(Condition.appears,10000), "Change account");
         }
     }
 

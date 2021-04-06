@@ -3,18 +3,19 @@ package pages.vacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.Table;
-import constants.VacancyAction;
-import constants.WindowTitle;
+import constants.*;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import pages.AuthorizationPage;
+import pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class VacancyPage {
     private final SelenideElement pageContainer             = $(".news.reuse-wrapper");
-    private final SelenideElement pageTitle                 = pageContainer.find(".vacancies-header__title").waitUntil(Condition.appear,10000);
+    private final SelenideElement pageTitle                 = pageContainer.find(".vacancies-header__title").waitUntil(Condition.appear,30000);
     private final SelenideElement searchElement             = pageContainer.find(".toggle-search__submit-wrapper");
     private final SelenideElement searchInput               = pageContainer.find(".toggle-search__input");
 
@@ -25,8 +26,9 @@ public class VacancyPage {
     /**
      * Check if Vacancy management page opens
      */
+    @Step("Verify that page opens")
     public VacancyPage isPageOpens() {
-        Assert.assertEquals(pageTitle.getText(),  WindowTitle.VACANCY_MANAGEMENT, WindowTitle.VACANCY_MANAGEMENT + "cannot be found" );
+        Assert.assertEquals(pageTitle.getText(),  WindowTitle.VACANCY_MANAGEMENT, "The page title" );
         return this;
     }
 
@@ -62,9 +64,9 @@ public class VacancyPage {
     }
 
     /**
-     * Set action for vacancy
+     * Select action for vacancy like delete, copy, edit
      * @param vacancyName the name of vacancy
-     * @param action action name from VacancyAction list
+     * @param action name of action. The list of actions can be found in VacancyAction
      */
     @Step("Select {1} for {0}")
     public VacancyPage selectActionFor(String vacancyName, VacancyAction action) {
@@ -78,7 +80,7 @@ public class VacancyPage {
     }
 
     /**
-     * Open vacancy menu
+     * Open vacancy menu. It is tree vertical dots in the beginning of the records of the table
      */
     @Step("Open vacancy menu")
     public VacancyPage vacancyMenu() {
@@ -87,7 +89,7 @@ public class VacancyPage {
     }
 
     /**
-     * Select action for a vacancy
+     * Select action from the vacancy menu
      * @param action action from the list as SelenideElement
      */
     @Step
@@ -109,5 +111,81 @@ public class VacancyPage {
         new Actions()
                 .click(searchElement,"Поиск по вакансиям");
         return this;
+    }
+
+    /**
+     * Create and approve a vacancy. This method can be used in case to check issues connected to a vacancy like sharing, job application, recommendation and so on.
+     * @param admin admin account who approve the vacancy. The list of users can be found in USERS
+     * @param vacancyName the name of vacancy
+     */
+    @Step("Create and approve the vacancy {1}")
+    public VacancyPage createAndApproveVacancy(USERS admin, String vacancyName) {
+
+        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
+                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
+                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
+                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
+                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+
+        new AuthorizationPage().loginAs(admin);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .selectActionFor(vacancyName, VacancyAction.EDIT);
+
+        new VacancyEdit()
+                .isPageOpens()
+                .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+
+        new MainPage().goToVacancyManagement();
+
+        new VacancyPage()
+                .isPageOpens()
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        return this;
+    }
+
+    /**
+     * It opens the vacancy page details. It is not required to call search() method in the code as it included in this method
+     * @param name the name of vacancy
+     */
+    @Step("Select {0} to open vacancy page details")
+    public void openVacancyDetails(String name) {
+        search(name);
+        new Table().getElement(1,2).click();
     }
 }

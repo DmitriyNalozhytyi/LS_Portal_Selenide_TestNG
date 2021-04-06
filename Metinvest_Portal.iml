@@ -100,5 +100,6 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents.client5:httpclient5:5.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents.core5:httpcore5:5.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-simple:1.7.30" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-selenide:2.13.8" level="project" />
   </component>
 </module>
