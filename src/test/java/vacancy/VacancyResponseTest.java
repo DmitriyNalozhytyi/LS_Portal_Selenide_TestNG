@@ -47,7 +47,7 @@ public class VacancyResponseTest extends ParentTest {
                 .sendApplication();
     }
 
-    @Test(description = "Check for status NEW")
+    @Test(description = "Check the status NEW")
     public void checkForStatusNew() {
         String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_NEW_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
@@ -67,7 +67,7 @@ public class VacancyResponseTest extends ParentTest {
                 .checkForResponseStatus(Status.NEW);
     }
 
-    @Test(description = "Check for status VIEWED")
+    @Test(description = "Check the status VIEWED")
     public void checkForStatusViewed() {
         String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_VIEWED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
@@ -89,7 +89,7 @@ public class VacancyResponseTest extends ParentTest {
                 .checkForResponseStatus(Status.VIEWED);
     }
 
-    @Test(description = "Check for status DECLINED")
+    @Test(description = "Check the status DECLINED")
     public void checkForStatusOnApproval() {
         String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
@@ -111,7 +111,7 @@ public class VacancyResponseTest extends ParentTest {
                 .checkForResponseStatus(Status.ON_APPROVAL);
     }
 
-    @Test(description = "Check for status ACCEPTED")
+    @Test(description = "Check the status ACCEPTED")
     public void checkForStatusAccepted() {
         String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_ACCEPTED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
