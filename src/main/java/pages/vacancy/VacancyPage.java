@@ -2,6 +2,7 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import components.PagePreLoader;
 import components.Table;
 import constants.*;
 import io.qameta.allure.Step;
@@ -28,6 +29,7 @@ public class VacancyPage {
      */
     @Step("Verify that page opens")
     public VacancyPage isPageOpens() {
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle.getText(),  WindowTitle.VACANCY_MANAGEMENT, "The page title" );
         return this;
     }
@@ -109,9 +111,9 @@ public class VacancyPage {
                 .click(searchElement,"Поиск по вакансиям")
                 .enterText(searchInput,text,"Поиск вакансий");
         searchInput.sendKeys(Keys.ENTER);
+        new PagePreLoader().waitToLoad();
         new Actions()
                 .click(searchElement,"Поиск по вакансиям");
-        sleep(2000);
         return this;
     }
 

@@ -21,4 +21,6 @@ public interface Button {
     SelenideElement MISMATCHED_QUALIFICATION        = $(".reject-card__radiobuttons.mat-radio-group").findAll("mat-radio-button").get(0);
     SelenideElement RESPONSE_ON_APPROVAL            = $(".response-dialog__button.vacancy-publish-button");
     SelenideElement RESPONSE_CANDIDATE_ACCEPT       = $(".response-dialog__button.vacancy-publish-button");
+    SelenideElement RECOMMEND_COLLEAGUE             = $(".vacancy-buttons__recommend.vacancy-save-button.mat-button");
+    SelenideElement SEND_RECOMMENDATION             = $(".recommend-dialog__button.vacancy-publish-button.mat-button");
 }

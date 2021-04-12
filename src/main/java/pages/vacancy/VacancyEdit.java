@@ -2,6 +2,7 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import components.PagePreLoader;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
@@ -25,6 +26,7 @@ public class VacancyEdit {
      * Check if page opens
      */
     public VacancyEdit isPageOpens() {
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle().getText(),  WindowTitle.VACANCY_EDIT, WindowTitle.VACANCY_EDIT + "cannot be found" );
         return this;
     }

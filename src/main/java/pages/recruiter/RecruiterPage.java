@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.ConfirmDialogBox;
 import components.MessageDialogBox;
+import components.PagePreLoader;
 import components.Table;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
@@ -28,6 +29,7 @@ public class RecruiterPage {
      * Check if recruiter page opens
      */
     public RecruiterPage isPageOpens() {
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle.getText(),  WindowTitle.LIST_OF_RECRUITERS, WindowTitle.LIST_OF_RECRUITERS + "cannot be found" );
         return this;
     }

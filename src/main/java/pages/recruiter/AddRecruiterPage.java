@@ -3,6 +3,7 @@ package pages.recruiter;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.MessageDialogBox;
+import components.PagePreLoader;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
@@ -25,6 +26,7 @@ public class AddRecruiterPage {
     }
 
     public AddRecruiterPage isPageOpens() {
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(dialogTitle.getText(), WindowTitle.ADD_RECRUITER, WindowTitle.ADD_RECRUITER + " cannot be found");
         return this;
     }
