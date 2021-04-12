@@ -15,6 +15,7 @@
     <test name="Responses and Recommendations" group-by-instances="true">
         <classes>
             <class name="vacancy.VacancyResponseTest" />
+            <class name="vacancy.VacancyRecommendationTest" />
         </classes>
     </test>
 
