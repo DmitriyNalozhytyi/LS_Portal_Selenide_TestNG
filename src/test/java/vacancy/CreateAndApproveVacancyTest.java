@@ -3,7 +3,6 @@ package vacancy;
 import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
@@ -12,7 +11,6 @@ import pages.vacancy.VacancyEdit;
 import pages.vacancy.VacancyPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
-import utils.TestListeners;
 
 /**
  * addVacancyAndOpenAsRecruiter() - create vacancy as recruiter and that change the status to Open as admin and check if this vacancy is in the list of Opened tab.
@@ -110,7 +108,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
                 .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
                 .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);

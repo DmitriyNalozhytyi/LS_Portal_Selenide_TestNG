@@ -2,6 +2,7 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import components.PagePreLoader;
 import constants.USERS;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
@@ -19,14 +20,11 @@ public class CreateVacancyPage {
         return pageContainer.find(".vacancy-header__title").waitUntil(Condition.appear,10000);
     }
 
-    private SelenideElement getOptionToSelect() {
-        return $("#mat-autocomplete-1").find(byAttribute("tabindex","0")).waitUntil(Condition.appear,10000);
-    }
-
     /**
      * Check if page to create a vacancy opens
      */
     public CreateVacancyPage isCreateVacancyPage() {
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle().getText(),  WindowTitle.NEW_VACANCY_PAGE, WindowTitle.NEW_VACANCY_PAGE + "cannot be found" );
         return this;
     }
@@ -85,10 +83,7 @@ public class CreateVacancyPage {
     @Step("Select responsible user {1}")
     public CreateVacancyPage selectResponsibleForSW(USERS user, String responsibleUser) {
         if (user.equals(USERS.DEV_TESTUSER15)) {
-            new Actions()
-                    .enterText(inptResponce, responsibleUser, "Введите Ф.И.О. руководителя")
-                    .selectOption(getOptionToSelect());
-            sleep(1000);
+            new Actions().picketUser(inptResponce,responsibleUser, "Введите Ф.И.О. руководителя");
         }
         return this;
     }

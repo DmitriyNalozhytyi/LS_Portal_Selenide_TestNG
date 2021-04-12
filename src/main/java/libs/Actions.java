@@ -17,7 +17,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 
+import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class Actions {
     WebDriver webDriver;
@@ -387,6 +389,13 @@ public class Actions {
         } catch (Exception e) {
             Assert.fail("The element missing " + e);
         }
+        return this;
+    }
+
+    public Actions picketUser(SelenideElement element, String user, String fieldName) {
+        enterText(element, user, fieldName);
+        selectOption($("mat-option").waitUntil(Condition.appear,10000));
+        sleep(1000);
         return this;
     }
 }

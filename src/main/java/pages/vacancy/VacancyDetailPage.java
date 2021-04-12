@@ -2,16 +2,13 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import components.DialogBox;
-import components.MessageDialogBox;
-import components.Table;
+import components.*;
 import constants.*;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class VacancyDetailPage {
     private final SelenideElement pageContainer = $(".vacancy");
@@ -31,6 +28,7 @@ public class VacancyDetailPage {
      */
     @Step("Verify that page opens")
     public VacancyDetailPage isPageOpens() {
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle().getText(),  vacancyName, "The title of the page" );
         return this;
     }
@@ -109,18 +107,84 @@ public class VacancyDetailPage {
         return this;
     }
 
+    /**
+     * Open the dialog box of candidate response
+     */
+    @Step("Open candidate response dialog box")
+    public VacancyDetailPage openRecommendationWindow() {
+        new Table().getElement(1,2).click();
+        Assert.assertTrue(new DialogBox().getTitle().contains(WindowTitle.RECOMMENDATION_OF_CANDIDATE),"The window title "+ WindowTitle.RESPONSE_OF_CANDIDATE);
+        return this;
+    }
+
+    /**
+     * Close the dialog box of candidate response
+     */
+    @Step("Close candidate response dialog box")
+    public VacancyDetailPage closeRecommendationWindow() {
+        new DialogBox().close();
+        return this;
+    }
+
     public VacancyDetailPage responseActions(ResponseActions action) {
         switch (action) {
             case DECLINE:       declineResponse(); break;
             case ON_APPROVAL:   clickButton("На рассмотрение", Button.RESPONSE_ON_APPROVAL); break;
             case ACCEPT:        clickButton("Кандидат принят", Button.RESPONSE_CANDIDATE_ACCEPT); break;
         }
+
+        new DialogBox().waitForClose();
         return this;
     }
 
+    /**
+     * Decline response
+     */
     private void declineResponse() {
         clickButton("Отклонить", Button.RESPONSE_DECLINE);
         new Actions().selectRadioButton(Button.MISMATCHED_QUALIFICATION, "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1","Выберите причину отклонения");
         clickButton("Отправить", Button.SEND_APPLICATION);
+    }
+
+    /**
+     * Recommend a colleague
+     * @param name the name of colleague to recommend
+     */
+    @Step("Recommend {0}")
+    public VacancyDetailPage recommendColleague(String name) {
+        clickButton("Рекомендовать коллегу", Button.RECOMMEND_COLLEAGUE);
+        new ColleagueRecommendationDialogBox()
+                .isPageOpens()
+                .selectColleague(name)
+                .setValueFor("Телефон", "+380985987421", Fields.JOB_APPLICANT_PHONE)
+                .setTextInMultiLine("Сопроводительный текст", "Сопроводительный текст", Fields.ACCOMPANYING_TEXT)
+                .clickButton("Отправить", Button.SEND_RECOMMENDATION);
+
+        Assert.assertEquals(new MessageDialogBox().getMessage(), SuccessMessages.RECOMMENDATION_SENT, "The message");
+        new MessageDialogBox().close();
+
+        return this;
+    }
+
+    /**
+     * Verify if the candidate in the list of candidates
+     * @param name the name of candidate. The list of candidates can be found in Data.
+     */
+    @Step("Check if recommendation added")
+    public void checkIfRecommendationAdded(String name) {
+        clickButton("Отклики", Button.VACANCY_RESPONSES);
+        openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS);
+        Assert.assertEquals(new Table().getCellValue(1,1), name, "The candidate ");
+    }
+
+    /**
+     *  Open tabs oon the vacancy detail page
+     * @param name name of tab "Рекомендации", "Отклики"
+     * @param element selector of the element. For Tabs use Tabs.
+     */
+    @Step("Open tab {0}")
+    public VacancyDetailPage openTab(String name, SelenideElement element) {
+        clickButton(name, element);
+        return this;
     }
 }
