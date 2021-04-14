@@ -19,4 +19,12 @@
         </classes>
     </test>
 
+    <test name="Sharing" group-by-instances="true">
+        <classes>
+            <class name="vacancy.sharing.VacancySharingTest" />
+            <class name="vacancy.sharing.ResponseSharingTest" />
+            <class name="vacancy.sharing.RecommendationSharingTest" />
+        </classes>
+    </test>
+
 </suite>

@@ -299,7 +299,7 @@ public class Actions {
      */
     public Actions enterText(SelenideElement element, String text, String fieldName) {
         try {
-            element.waitUntil(Condition.appear,10000).val(text);
+            element.waitUntil(Condition.appears,10000).val(text);
             System.out.println("Text '" + text + "' inserted into " + fieldName);
         } catch (Exception e) {
             Assert.fail("Can`t insert text in field " + e);
@@ -392,6 +392,12 @@ public class Actions {
         return this;
     }
 
+    /**
+     * Select user from the list
+     * @param element selector to find this element
+     * @param user user to be selected
+     * @param fieldName the name of field
+     */
     public Actions picketUser(SelenideElement element, String user, String fieldName) {
         enterText(element, user, fieldName);
         selectOption($("mat-option").waitUntil(Condition.appear,10000));

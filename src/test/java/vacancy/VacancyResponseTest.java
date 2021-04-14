@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
-import pages.vacancy.VacancyPage;
+import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
 
@@ -35,9 +35,9 @@ public class VacancyResponseTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
@@ -53,9 +53,9 @@ public class VacancyResponseTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
@@ -73,9 +73,9 @@ public class VacancyResponseTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
@@ -84,7 +84,7 @@ public class VacancyResponseTest extends ParentTest {
                 .isPageOpens()
                 .sendApplication()
                 .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openResponseWindow()
+                .openResponseDetails()
                 .closeResponseWindow()
                 .checkForResponseStatus(Status.VIEWED);
     }
@@ -95,9 +95,9 @@ public class VacancyResponseTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
@@ -106,7 +106,7 @@ public class VacancyResponseTest extends ParentTest {
                 .isPageOpens()
                 .sendApplication()
                 .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openResponseWindow()
+                .openResponseDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .checkForResponseStatus(Status.ON_APPROVAL);
     }
@@ -117,9 +117,9 @@ public class VacancyResponseTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
@@ -128,9 +128,9 @@ public class VacancyResponseTest extends ParentTest {
                 .isPageOpens()
                 .sendApplication()
                 .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openResponseWindow()
+                .openResponseDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
-                .openResponseWindow()
+                .openResponseDetails()
                 .responseActions(ResponseActions.ACCEPT)
                 .checkForResponseStatus(Status.ACCEPTED);
     }

@@ -74,8 +74,16 @@ public class MainPage extends ParentPage {
      * Open vacancy management page "admin/vacancy"
      */
     @Step("Open Vacancy management page")
-    public void goToVacancyManagement() {
+    public void goToVacancyManagementPage() {
         open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy");
+    }
+
+    /**
+     * Open vacancy page "/vacancy"
+     */
+    @Step("Open vacancy page")
+    public void goToVacancyPage() {
+        open("https://metinvest-intranet-test.azurewebsites.net/ru/vacancy");
     }
 }
 

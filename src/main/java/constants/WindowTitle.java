@@ -9,4 +9,8 @@ public interface WindowTitle {
     String RESPONSE_OF_CANDIDATE        = "Отклик кандидата:";
     String RECOMMEND_COLLEAGUE          = "Рекомендовать коллегу";
     String RECOMMENDATION_OF_CANDIDATE  = "Рекомендация кандидата:";
+    String SHARE_VACANCY                = "Поделиться вакансией";
+    String VACANCY                      = "Вакансии";
+    String SHARE_RESPONSE               = "Поделиться откликом";
+    String SHARE_RECOMMEND              = "Поделиться откликом";
 }

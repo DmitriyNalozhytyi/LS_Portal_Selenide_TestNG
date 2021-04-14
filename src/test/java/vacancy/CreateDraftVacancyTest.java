@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
-import pages.vacancy.VacancyPage;
+import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
 
@@ -34,9 +34,9 @@ public class CreateDraftVacancyTest extends ParentTest {
     public void addDraftVacancy(USERS user, String vacancyName) {
         new AuthorizationPage().loginAs(user);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .clickButton("Создать вакансию", Button.CREATE_VACANCY);
 
@@ -53,9 +53,9 @@ public class CreateDraftVacancyTest extends ParentTest {
                 .selectResponsibleForSW(user, Data.RECRUITER_2)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Черновики", Tabs.VACANCY_DRAFT)
                 .search(user+vacancyName)

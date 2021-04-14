@@ -92,7 +92,7 @@ public class VacancyDetailPage {
      * Open the dialog box of candidate response
      */
     @Step("Open candidate response dialog box")
-    public VacancyDetailPage openResponseWindow() {
+    public VacancyDetailPage openResponseDetails() {
         new Table().getElement(1,2).click();
         Assert.assertTrue(new DialogBox().getTitle().contains(WindowTitle.RESPONSE_OF_CANDIDATE),"The window title "+ WindowTitle.RESPONSE_OF_CANDIDATE);
         return this;
@@ -111,7 +111,7 @@ public class VacancyDetailPage {
      * Open the dialog box of candidate response
      */
     @Step("Open candidate response dialog box")
-    public VacancyDetailPage openRecommendationWindow() {
+    public VacancyDetailPage openRecommendationDetails() {
         new Table().getElement(1,2).click();
         Assert.assertTrue(new DialogBox().getTitle().contains(WindowTitle.RECOMMENDATION_OF_CANDIDATE),"The window title "+ WindowTitle.RESPONSE_OF_CANDIDATE);
         return this;

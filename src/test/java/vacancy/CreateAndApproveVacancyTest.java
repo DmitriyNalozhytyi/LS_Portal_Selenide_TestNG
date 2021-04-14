@@ -8,7 +8,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyEdit;
-import pages.vacancy.VacancyPage;
+import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
 
@@ -27,9 +27,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
         String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .clickButton("Создать вакансию", Button.CREATE_VACANCY);
 
@@ -45,9 +45,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .search(vacancyName)
@@ -56,9 +56,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
@@ -68,9 +68,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Открытые", Tabs.VACANCY_OPENED)
                 .search(vacancyName)
@@ -78,9 +78,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Открытые", Tabs.VACANCY_OPENED)
                 .search(vacancyName)
@@ -94,9 +94,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .clickButton("Создать вакансию", Button.CREATE_VACANCY);
 
@@ -113,9 +113,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Открытые", Tabs.VACANCY_OPENED)
                 .search(vacancyName)

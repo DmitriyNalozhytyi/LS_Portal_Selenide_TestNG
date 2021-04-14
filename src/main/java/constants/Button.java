@@ -3,6 +3,7 @@ package constants;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public interface Button {
     SelenideElement ADD_RECRUITER                   = $(".vacancies-header__button");
@@ -23,4 +24,8 @@ public interface Button {
     SelenideElement RESPONSE_CANDIDATE_ACCEPT       = $(".response-dialog__button.vacancy-publish-button");
     SelenideElement RECOMMEND_COLLEAGUE             = $(".vacancy-buttons__recommend.vacancy-save-button.mat-button");
     SelenideElement SEND_RECOMMENDATION             = $(".recommend-dialog__button.vacancy-publish-button.mat-button");
+    SelenideElement VACANCY_SHARE_VMP               = $$(".vacancy-header__button.vacancy-header__button_share").get(1);
+    SelenideElement VACANCY_SHARE                   = $(".vacancy-header__button.vacancy-header__button_share");
+    SelenideElement VACANCY_SEND                    = $(".dynamic-form-button.mat-button.vacancy-publish-button");
+    SelenideElement RESPONSE_SHARE                  = $$(".vacancy-cancel-button.response-dialog__button").get(0);
 }
