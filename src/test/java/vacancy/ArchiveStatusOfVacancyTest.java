@@ -9,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyEdit;
-import pages.vacancy.VacancyPage;
+import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
 
@@ -44,9 +44,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     public void moveOpenedVacancyToArchive(int vacancyStatus, String vacancyName) {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .clickButton("Создать вакансию", Button.CREATE_VACANCY);
 
@@ -62,9 +62,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .search(vacancyName)
@@ -73,9 +73,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
@@ -85,9 +85,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Открытые", Tabs.VACANCY_OPENED)
                 .search(vacancyName)
@@ -99,9 +99,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Приостановлена", vacancyStatus)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyName)
@@ -109,9 +109,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyName)
@@ -123,9 +123,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     public void moveVacancyFromOnApprovalToArchive(int vacancyStatus, String vacancyName) {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .clickButton("Создать вакансию", Button.CREATE_VACANCY);
 
@@ -141,9 +141,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .search(vacancyName)
@@ -152,9 +152,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
@@ -164,9 +164,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Отменена", vacancyStatus)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyName)
@@ -174,9 +174,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyName)

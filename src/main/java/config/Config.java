@@ -40,6 +40,9 @@ public class Config {
 
                 getInstance().config.getProperty(ConfigType.DEV_TESTUSER14_LOGIN),
                 getInstance().config.getProperty(ConfigType.DEV_TESTUSER14_PASSWORD),
+
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER4_LOGIN),
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER4_PASSWORD),
             }
         );
 

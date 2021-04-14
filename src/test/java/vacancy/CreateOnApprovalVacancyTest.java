@@ -3,15 +3,13 @@ package vacancy;
 import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
-import pages.vacancy.VacancyPage;
+import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
-import utils.TestListeners;
 
 /**
  * addVacancyOnApprovalAsRecruiter() - Verify that recruiter is able to create a vacancy and this vacancy has the status On Approval
@@ -27,9 +25,9 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
     public void addVacancyOnApprovalAsRecruiter() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .clickButton("Создать вакансию", Button.CREATE_VACANCY);
 
@@ -45,9 +43,9 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
                 .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
                 .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
 
-        new MainPage().goToVacancyManagement();
+        new MainPage().goToVacancyManagementPage();
 
-        new VacancyPage()
+        new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .checkForVacancy(vacancyName);
