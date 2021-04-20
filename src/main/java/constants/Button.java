@@ -28,4 +28,6 @@ public interface Button {
     SelenideElement VACANCY_SHARE                   = $(".vacancy-header__button.vacancy-header__button_share");
     SelenideElement VACANCY_SEND                    = $(".dynamic-form-button.mat-button.vacancy-publish-button");
     SelenideElement RESPONSE_SHARE                  = $$(".vacancy-cancel-button.response-dialog__button").get(0);
+    SelenideElement VACANCY_APPLICATION_CANCEL      = $(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel");
+    SelenideElement VACANCY_RECOMMENDATION_CANCEL   = $(".vacancy-cancel-button.recommend-dialog__button.recommend-dialog__button_cancel");
 }

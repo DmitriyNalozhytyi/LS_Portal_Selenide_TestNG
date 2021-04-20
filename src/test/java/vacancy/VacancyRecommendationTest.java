@@ -87,7 +87,7 @@ public class VacancyRecommendationTest extends ParentTest {
                 .clickButton("Отклики", Button.VACANCY_RESPONSES)
                 .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
                 .openRecommendationDetails()
-                .closeRecommendationWindow()
+                .closeRecommendationDetails()
                 .checkForResponseStatus(Status.VIEWED);
     }
 

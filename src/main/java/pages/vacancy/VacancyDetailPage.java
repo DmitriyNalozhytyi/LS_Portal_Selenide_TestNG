@@ -9,6 +9,7 @@ import libs.Actions;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class VacancyDetailPage {
     private final SelenideElement pageContainer = $(".vacancy");
@@ -17,8 +18,13 @@ public class VacancyDetailPage {
 
     public VacancyDetailPage(String vacancyName) {
         this.vacancyName = vacancyName;
+        closeVacancyApplicationWindow();
+        closeColleagueRecommendationWindow();
     }
 
+    /**
+     * Get page title
+     */
     private SelenideElement pageTitle() {
         return pageContainer.find(".vacancy-header__info-title").waitUntil(Condition.appears,10000);
     }
@@ -102,7 +108,7 @@ public class VacancyDetailPage {
      * Close the dialog box of candidate response
      */
     @Step("Close candidate response dialog box")
-    public VacancyDetailPage closeResponseWindow() {
+    public VacancyDetailPage closeResponseDetails() {
         new DialogBox().close();
         return this;
     }
@@ -121,11 +127,16 @@ public class VacancyDetailPage {
      * Close the dialog box of candidate response
      */
     @Step("Close candidate response dialog box")
-    public VacancyDetailPage closeRecommendationWindow() {
+    public VacancyDetailPage closeRecommendationDetails() {
         new DialogBox().close();
         return this;
     }
 
+    /**
+     * Actions for response
+     * @param action the action for response. For actions use ResponseActions.
+     */
+    @Step("Select action {0}")
     public VacancyDetailPage responseActions(ResponseActions action) {
         switch (action) {
             case DECLINE:       declineResponse(); break;
@@ -187,4 +198,62 @@ public class VacancyDetailPage {
         clickButton(name, element);
         return this;
     }
+
+    /**
+     * Close the vacancy application window
+     */
+    public VacancyDetailPage closeVacancyApplicationWindow() {
+        sleep(500);
+        if (Button.VACANCY_APPLICATION_CANCEL.exists()) {
+            new Actions().click(Button.VACANCY_APPLICATION_CANCEL, "Отменить");
+        }
+        return this;
+    }
+
+    public VacancyDetailPage closeColleagueRecommendationWindow() {
+        sleep(500);
+        if (Button.VACANCY_RECOMMENDATION_CANCEL.exists()) {
+            new Actions().click(Button.VACANCY_RECOMMENDATION_CANCEL, "Отменить");
+        }
+        return this;
+    }
+
+    /**
+     * Enter the text into Tiny MCE editor
+     * @param field field name
+     * @param text the text that should be inserted
+     * @param element selector of the element. For Tiny MCE editor use Fields.
+     */
+    @Step("Enter the text {1} into {0}")
+    public VacancyDetailPage setTinyMCEText(String field, String text, SelenideElement element) {
+        new Actions().enterTextInTinyMCE(element, text, field);
+        return this;
+    }
+
+    /**
+     * Check field validation
+     * @param field field name like "Телефон"
+     * @param element Selenide element to find this field
+     */
+    @Step("Check the validation message for {0}")
+    public VacancyDetailPage checkValidationMessage(String field, String expectedValidationMessage, SelenideElement element) {
+            String actualValidationMessage = element.parent().find("mat-error").getText();
+            Assert.assertEquals(actualValidationMessage, expectedValidationMessage, "Thr message for "+field);
+        return this;
+    }
+
+    /**
+     * Check if validation message absence. It uses for cases when it is need to check that validation message is not appeared. E.g.
+     * @param field field name
+     * @param element Selenide element to find this field
+     */
+    @Step("Check the validation message absence for {0}")
+    public VacancyDetailPage checkValidationMessageAbsence(String field, SelenideElement element) {
+        Assert.assertFalse(element.parent().find("mat-error").exists(), "The validation message for " + field);
+        return this;
+    }
+
+
+
+
 }

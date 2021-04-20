@@ -67,8 +67,9 @@ public class ShareDialogBox {
      */
     @Step("open tab{0}")
     public ShareDialogBox openTab(String field, SelenideElement element) {
+        sleep(500);
         new Actions().click(element, field);
-        sleep(1000);
+        sleep(500);
         return this;
     }
 

@@ -2,7 +2,7 @@ package utils;
 
 public class CustomRandom {
 
-    private static final String text = "1234567890-=!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}asdfghjkl;'\\ASDFGHJKL:\"|zxcvbnm,./ZXCVBNM<>?";
+    private static final String text = "1234567890-=!@#$%^&*()_+ qwertyuiop[]QWERTYUIOP{}asdfghjkl;'\\ASDFGHJKL:\"|zxcvbnm,./ZXCVBNM<>?";
     public static final  String PSWD_TEXT = "1234567890qwertyuiopQWERTYUIOPasdfghjklASDFGHJKLzxcvbnmZXCVBNM";
     public static final  String ALPHABET_TEXT = "qwertyuiopQWERTYUIOPasdfghjklASDFGHJKLzxcvbnmZXCVBNM";
     public static final  String ALPHABET_UPPER_CASE = "ABCDEFGHIKLMNOPQRSTVXYZ";

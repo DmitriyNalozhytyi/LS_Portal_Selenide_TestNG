@@ -1,7 +1,8 @@
 package feedbackTests;
 
-import org.junit.Test;
+
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 import parentTest.ParentTest;
 import parentTest.ParentTest_OLD;
 
