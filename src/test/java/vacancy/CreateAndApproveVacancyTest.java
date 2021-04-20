@@ -17,6 +17,8 @@ import utils.CustomRandom;
  * addVacancyAsAdminAndPublish()  - create vacancy as admin and that change the status to Open as admin and check if this vacancy is in the list of Opened tab.
  */
 
+//TODO - create and save (not to publish) a vacancy as supervisor
+
 @Epic("Vacancy")
 public class CreateAndApproveVacancyTest extends ParentTest {
 

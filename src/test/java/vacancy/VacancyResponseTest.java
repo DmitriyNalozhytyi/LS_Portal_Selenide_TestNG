@@ -85,7 +85,7 @@ public class VacancyResponseTest extends ParentTest {
                 .sendApplication()
                 .clickButton("Отклики", Button.VACANCY_RESPONSES)
                 .openResponseDetails()
-                .closeResponseWindow()
+                .closeResponseDetails()
                 .checkForResponseStatus(Status.VIEWED);
     }
 

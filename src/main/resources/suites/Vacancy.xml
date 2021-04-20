@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Store" thread-count="1" parallel="false">
+<suite name="Vacancy" thread-count="1" parallel="false">
 
-    <test name="Vacancy" group-by-instances="true">
+    <test name="Statuses" group-by-instances="true">
         <classes>
             <class name="vacancy.CreateDraftVacancyTest" />
             <class name="vacancy.CreateOnApprovalVacancyTest" />
@@ -24,6 +24,13 @@
             <class name="vacancy.sharing.VacancySharingTest" />
             <class name="vacancy.sharing.ResponseSharingTest" />
             <class name="vacancy.sharing.RecommendationSharingTest" />
+        </classes>
+    </test>
+
+    <test name="Validation" group-by-instances="true">
+        <classes>
+            <class name="vacancy.validation.ColleagueRecommendationFormValidationTest" />
+            <class name="vacancy.validation.VacancyApplicationFormValidationTest" />
         </classes>
     </test>
 
