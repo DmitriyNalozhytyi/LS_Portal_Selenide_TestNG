@@ -3,7 +3,7 @@
 
 <suite name="Vacancy" thread-count="1" parallel="false">
 
-    <test name="Statuses" group-by-instances="true">
+    <test name="Statuses" enabled="true" group-by-instances="true">
         <classes>
             <class name="vacancy.CreateDraftVacancyTest" />
             <class name="vacancy.CreateOnApprovalVacancyTest" />
@@ -12,14 +12,14 @@
         </classes>
     </test>
 
-    <test name="Responses and Recommendations" group-by-instances="true">
+    <test name="Responses and Recommendations" enabled="true" group-by-instances="true">
         <classes>
             <class name="vacancy.VacancyResponseTest" />
             <class name="vacancy.VacancyRecommendationTest" />
         </classes>
     </test>
 
-    <test name="Sharing" group-by-instances="true">
+    <test name="Sharing" enabled="true" group-by-instances="true">
         <classes>
             <class name="vacancy.sharing.VacancySharingTest" />
             <class name="vacancy.sharing.ResponseSharingTest" />
@@ -27,10 +27,30 @@
         </classes>
     </test>
 
-    <test name="Validation" group-by-instances="true">
+    <test name="Validation" enabled="true" group-by-instances="true">
         <classes>
             <class name="vacancy.validation.ColleagueRecommendationFormValidationTest" />
             <class name="vacancy.validation.VacancyApplicationFormValidationTest" />
+        </classes>
+    </test>
+
+    <test name="Actions" enabled="true" group-by-instances="true">
+        <classes>
+            <class name="vacancy.actions.archive.RecruiterCanceledVacancyActionsTest" />
+            <class name="vacancy.actions.archive.RecruiterClosedVacancyActionsTest" />
+            <class name="vacancy.actions.archive.RecruiterSuspendedVacancyActionsTest" />
+            <class name="vacancy.actions.archive.SupervisorCanceledVacancyActionsTest" />
+            <class name="vacancy.actions.archive.SupervisorClosedVacancyActionsTest" />
+            <class name="vacancy.actions.archive.SupervisorSuspendedVacancyActionsTest" />
+
+            <class name="vacancy.actions.draft.RecruiterDraftVacancyActionsTest" />
+            <class name="vacancy.actions.draft.SupervisorDraftVacancyActionsTest" />
+
+            <class name="vacancy.actions.onApproval.RecruiterOnApprovalVacancyActionsTest" />
+            <class name="vacancy.actions.onApproval.SupervisorOnApprovalVacancyActionsTest" />
+
+            <class name="vacancy.actions.open.RecruiterOpenVacancyActionsTest" />
+            <class name="vacancy.actions.open.SupervisorOpenVacancyActionsTest" />
         </classes>
     </test>
 

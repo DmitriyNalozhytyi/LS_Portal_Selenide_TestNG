@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Asabix" thread-count="1" parallel="classes">
+<suite name="LZ_Soft" thread-count="1" parallel="classes">
     <suite-files>
         <suite-file path="Recruiters.xml"/>
         <suite-file path="Vacancy.xml"/>

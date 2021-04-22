@@ -1,5 +1,5 @@
 package constants;
 
 public enum VacancyAction {
-    EDIT;
+    COPY, DELETE, DELETE_CLOSED_VACANCY, EDIT
 }
