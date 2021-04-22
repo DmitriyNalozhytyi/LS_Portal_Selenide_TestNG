@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
-import pages.vacancy.VacancyEdit;
+import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
@@ -65,7 +65,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
-        new VacancyEdit()
+        new VacancyEditPage()
                 .isPageOpens()
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);

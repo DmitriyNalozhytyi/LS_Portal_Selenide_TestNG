@@ -3,13 +3,13 @@ package pages.vacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.PagePreLoader;
+import constants.Input;
 import constants.USERS;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CreateVacancyPage {
@@ -85,6 +85,12 @@ public class CreateVacancyPage {
         if (user.equals(USERS.DEV_TESTUSER15)) {
             new Actions().picketUser(inptResponce,responsibleUser, "Введите Ф.И.О. руководителя");
         }
+        return this;
+    }
+
+    public CreateVacancyPage checkForVacancyName(String expectedName) {
+        String actualName = Input.VACANCY_NAME.getValue();
+        Assert.assertEquals(actualName, expectedName, expectedName);
         return this;
     }
 }

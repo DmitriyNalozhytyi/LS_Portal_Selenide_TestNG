@@ -11,7 +11,7 @@ import org.testng.Assert;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class VacancyEdit {
+public class VacancyEditPage extends CreateVacancyPage{
     private final SelenideElement pageContainer             = $(".news.reuse-wrapper.mat-card");
 
     private SelenideElement pageTitle() {
@@ -25,7 +25,7 @@ public class VacancyEdit {
     /**
      * Check if page opens
      */
-    public VacancyEdit isPageOpens() {
+    public VacancyEditPage isPageOpens() {
         new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle().getText(),  WindowTitle.VACANCY_EDIT, WindowTitle.VACANCY_EDIT + "cannot be found" );
         return this;
@@ -38,7 +38,7 @@ public class VacancyEdit {
      * @param status the status of a vacancy SUSPENDED, CLOSE, CANCEL
      */
     @Step("Approve and publish the vacancy")
-    public VacancyEdit changeStatus(String fieldName, String value, int status) {
+    public VacancyEditPage changeStatus(String fieldName, String value, int status) {
         new Actions().selectRadioButton(getStatusButton(status),value,fieldName);
         return this;
     }

@@ -2,6 +2,7 @@ package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import components.ConfirmDialogBox;
 import components.PagePreLoader;
 import components.Table;
 import constants.*;
@@ -25,9 +26,9 @@ public class VacancyManagementPage {
     }
 
     /**
-     * Check if Vacancy management page opens
+     * Check if Vacancy Management page opens
      */
-    @Step("Verify that page opens")
+    @Step("Verify that Vacancy Management page opens")
     public VacancyManagementPage isPageOpens() {
         new PagePreLoader().waitToLoad();
         Assert.assertEquals(pageTitle.getText(),  WindowTitle.VACANCY_MANAGEMENT, "The page title" );
@@ -66,6 +67,11 @@ public class VacancyManagementPage {
         return this;
     }
 
+    public void checkForVacancyAbsence(String vacancyName) {
+        sleep(2000);
+        Assert.assertFalse( new Table().isContentPresent(), "The name of vacancy");
+    }
+
     /**
      * Select action for vacancy like delete, copy, edit
      * @param vacancyName the name of vacancy
@@ -77,7 +83,14 @@ public class VacancyManagementPage {
         sleep(3000);
 
         switch (action) {
-            case EDIT: vacancyMenu().selectAction(getActions(1));
+            case COPY   : vacancyMenu().selectAction(getActions(0)); break;
+            case EDIT   : vacancyMenu().selectAction(getActions(1)); break;
+            case DELETE :
+                vacancyMenu().selectAction(getActions(2));
+                new ConfirmDialogBox().isDialogOpen().confirm(true); break;
+            case DELETE_CLOSED_VACANCY:
+                vacancyMenu().selectAction(getActions(1));
+                new ConfirmDialogBox().isDialogOpen().confirm(true); break;
         }
         return this;
     }
@@ -157,7 +170,7 @@ public class VacancyManagementPage {
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
-        new VacancyEdit()
+        new VacancyEditPage()
                 .isPageOpens()
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                 .clickButton("Сохранить", Button.SAVE_VACANCY);
@@ -183,6 +196,183 @@ public class VacancyManagementPage {
         return this;
     }
 
+    public VacancyManagementPage createVacancyASSupervisor(String vacancyName) {
+
+        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
+                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
+                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
+                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
+                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        return this;
+    }
+
+    public VacancyManagementPage createVacancyAsRecruiter(String vacancyName) {
+        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setValueFor("Тип вакансии", "Для всех", VacancyType.FOR_ALL)
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
+                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
+                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
+                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
+                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        return this;
+    }
+
+    public VacancyManagementPage createDraftVacancyAsSupervisor(String vacancyName) {
+
+        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
+                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
+                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
+                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
+                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .clickButton("Сохранить и опубликовать", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+        return this;
+    }
+
+    public VacancyManagementPage createDraftVacancyAsRecruiter(String vacancyName) {
+
+        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
+                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
+                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
+                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
+                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .clickButton("Сохранить и опубликовать", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        return this;
+    }
+
+    public VacancyManagementPage createVacancyForArchiveASSupervisor(String vacancyName, String statusName, int status) {
+        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
+                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
+                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
+                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
+                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName)
+                .selectActionFor(vacancyName, VacancyAction.EDIT);
+
+        new VacancyEditPage()
+                .isPageOpens()
+                .changeStatus("Статус", statusName, status)
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+
+        return this;
+    }
+
+    public VacancyManagementPage createVacancyForArchiveASRecruiter(String vacancyName, String statusName, int status) {
+
+        createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName)
+                .selectActionFor(vacancyName, VacancyAction.EDIT);
+
+        new VacancyEditPage()
+                .isPageOpens()
+                .changeStatus("Статус", statusName, status)
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .search(vacancyName)
+                .checkForVacancy(vacancyName);
+        return this;
+    }
+
     /**
      * It opens the vacancy page details. It is not required to call search() method in the code as it included in this method
      * @param name the name of vacancy
@@ -192,4 +382,7 @@ public class VacancyManagementPage {
         search(name);
         new Table().getElement(1,2).click();
     }
+
+
+
 }
