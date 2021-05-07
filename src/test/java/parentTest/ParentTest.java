@@ -20,7 +20,7 @@ import utils.TestListeners;
 import static com.codeborne.selenide.Selenide.open;
 
 @Listeners(TestListeners.class)
-public class ParentTest {
+public abstract class ParentTest {
     Logger logger = Logger.getLogger(getClass());
 
     public static void initDriver() {
