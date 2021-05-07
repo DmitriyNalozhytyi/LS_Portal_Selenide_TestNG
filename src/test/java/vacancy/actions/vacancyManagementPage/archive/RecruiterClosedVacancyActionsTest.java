@@ -1,4 +1,4 @@
-package vacancy.actions.archive;
+package vacancy.actions.vacancyManagementPage.archive;
 
 import constants.*;
 import io.qameta.allure.Epic;
@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
-import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;

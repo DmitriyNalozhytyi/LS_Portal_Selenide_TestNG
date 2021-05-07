@@ -15,7 +15,7 @@ public class AuthorizationPage extends ParentPage {
     private final SelenideElement btnWorkAccount            = $("#aadTileTitle");
     private final SelenideElement inputPassword             = $("#i0118");
     private final SelenideElement btnAccount                = $(".head_right").find(".mat-button-wrapper").find("div");
-    private final SelenideElement btnExit                   = $(".right_box .menu-item:nth-of-type(4) a");
+    private final SelenideElement btnExit                   = $(".right_box .menu-item:nth-of-type(2) a");
     private final SelenideElement changeAccount             = $("#otherTileText");
 
     @Step

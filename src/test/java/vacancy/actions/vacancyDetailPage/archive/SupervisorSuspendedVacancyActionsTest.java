@@ -1,4 +1,4 @@
-package vacancy.actions.open;
+package vacancy.actions.vacancyDetailPage.archive;
 
 import constants.*;
 import io.qameta.allure.Epic;
@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
+import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
@@ -19,13 +20,13 @@ import utils.CustomRandom;
  * supervisorCanEditVacancy()       - verify that supervisor can edit a vacancy<br>
  */
 @Epic("Vacancy")
-@Feature("Actions for vacancies in status OPENED")
-public class SupervisorOpenVacancyActionsTest extends ParentTest {
+@Feature("Actions for vacancies in status SUSPENDED on vacancy details page")
+public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
 
     @Story("Copy vacancy")
     @Test(description = "Verify that supervisor can create a copy of a vacancy")
     public void supervisorCanCopyVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_COPY_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
@@ -33,25 +34,30 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyASSupervisor(vacancyName);
+                .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .selectActionFor(vacancyName, VacancyAction.COPY);
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .openVacancyDetails(vacancyName);
+
+        new VacancyDetailPage(vacancyName)
+                .isPageOpens()
+                .vacancyAction(VacancyAction.COPY);
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
                 .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("На утверждение", Button.SAVE_AND_PUBLISH_VACANCY);
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -66,13 +72,22 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyASSupervisor(vacancyName);
+                .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .selectActionFor(vacancyName, VacancyAction.DELETE)
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .openVacancyDetails(vacancyName);
+
+        new VacancyDetailPage(vacancyName)
+                .isPageOpens()
+                .vacancyAction(VacancyAction.DELETE);
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE_VMP)
                 .search(vacancyName)
                 .checkForVacancyAbsence(vacancyName);
     }
@@ -88,24 +103,29 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyASSupervisor(vacancyName);
+                .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .selectActionFor(vacancyName, VacancyAction.EDIT);
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .openVacancyDetails(vacancyName);
+
+        new VacancyDetailPage(vacancyName)
+                .isPageOpens()
+                .vacancyAction(VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
                 .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("На утверждение", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

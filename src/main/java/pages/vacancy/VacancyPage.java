@@ -1,7 +1,9 @@
 package pages.vacancy;
 
 import com.codeborne.selenide.SelenideElement;
+import components.ConfirmDialogBox;
 import components.PagePreLoader;
+import constants.Button;
 import constants.Filter;
 import constants.WindowTitle;
 import io.qameta.allure.Step;
@@ -65,5 +67,29 @@ public class VacancyPage {
     @Step("Open details of {0}")
     public void openVacancyDetails(String name) {
         new Actions().click(getVacancy(), name);
+    }
+
+    public void copyVacancy() {
+        new Actions().click(Button.COPY_VACANCY_ON_VP, "Копировать Вакансию");
+    }
+
+    public void editVacancy() {
+        new Actions().click(Button.EDIT_VACANCY_ON_VP, "Редактровать Вакансию");
+    }
+
+    public void checkForVacancy(String vacancyName) {
+        new PagePreLoader().waitToLoad();
+        Assert.assertEquals(getVacancy().getText(), vacancyName, "The vacancy");
+    }
+
+    public VacancyPage deleteVacancy() {
+        new Actions().click(Button.DELETE_VACANCY_ON_VP, "Редактровать Вакансию");
+        new ConfirmDialogBox().confirm(true);
+        return this;
+    }
+
+    public void checkForVacancyAbsence() {
+        new PagePreLoader().waitToLoad();
+        Assert.assertFalse(getVacancy().exists(), "The vacancy");
     }
 }
