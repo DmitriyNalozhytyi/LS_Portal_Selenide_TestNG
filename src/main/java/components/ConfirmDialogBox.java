@@ -10,7 +10,13 @@ public class ConfirmDialogBox {
     private final SelenideElement container = $(".confirm-dialog");
 
     private SelenideElement confirmButton() {
-        return container.find(".vacancy-publish-button");
+        if (container.find(".vacancy-publish-button").exists()) {
+            return container.find(".vacancy-publish-button");
+        } else if (container.find(".confirm-dialog__button_confirm").exists()) {
+            return container.find(".confirm-dialog__button_confirm");
+        } else {
+            return null;
+        }
     }
 
     public ConfirmDialogBox isDialogOpen() {

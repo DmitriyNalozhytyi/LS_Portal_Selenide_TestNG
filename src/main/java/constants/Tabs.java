@@ -14,4 +14,5 @@ public interface Tabs {
     SelenideElement VACANCY_SHARE_BY_EMAIL          = $("#mat-tab-label-1-1");
     SelenideElement VACANCY_DRAFT_VMP               = $("#mat-tab-label-1-2");
     SelenideElement VACANCY_ARCHIVE_VMP             = $("#mat-tab-label-1-3");
+    SelenideElement TOOLTIP_RU                      = $(".mat-tab-label-container .mat-tab-list"). findAll(".mat-tab-label").get(1);
 }

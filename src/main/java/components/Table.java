@@ -40,4 +40,8 @@ public class Table {
     public boolean isContentPresent() {
         return container.find("tbody").find("tr").exists();
     }
+
+    public SelenideElement getRowByValue(String value) {
+        return rows().find(Condition.matchText(value));
+    }
 }
