@@ -30,6 +30,7 @@ public class ManageTooltipTest extends ParentTest {
 
     @Test(description = "Edit Tooltip", dependsOnMethods = "createTooltip")
     public void editTooltip() {
+        new MainPage().goToTooltipPage();
 
         new TooltipPage()
                 .isPageOpens()

@@ -3,6 +3,8 @@ package pages.tooltip;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.ConfirmDialogBox;
+import components.PagePreLoader;
+import components.Pagination;
 import components.Table;
 import constants.Button;
 import constants.Fields;
@@ -21,10 +23,33 @@ public class TooltipPage {
     private final SelenideElement container = $("._b");
     private final SelenideElement btnAdd  = Button.TOOLTIP_ADD;
     private final SelenideElement btnSave = Button.TOOLTIP_SAVE;
+    int editElement                       = 0;
+    int deleteElement                     = 1;
+
+    private SelenideElement findTooltip(String name) {
+        SelenideElement find = $(withText(name));
+        do {
+            if ($(withText(name)).isDisplayed()) {
+                find = new Table().getRowByValue(name);
+                break;
+            }
+            if (!new Pagination().isNexButtonActive()) {
+                break;
+            }
+            new Pagination().next();
+        }
+        while (!new Pagination().isNexButtonActive() | !find.isDisplayed());
+
+        return find;
+    }
+
+    private SelenideElement getActionButtonFor(String name, int action) {
+        return findTooltip(name).findAll("td").get(0).findAll("button").get(action);
+    }
 
     @Step("Check if tooltip page opened")
     public TooltipPage isPageOpens() {
-        Assert.assertTrue(container.exists(), "Tooltip page");
+        Assert.assertTrue(container.waitUntil(Condition.appears,10000).exists(), "Tooltip page");
         return this;
     }
 
@@ -55,7 +80,9 @@ public class TooltipPage {
     @Step("Check if tooltip was created")
     public void checkIfTooltipCreated(Language language, String tooltipName) {
         new MainPage().switchAppToLang(language);
-        Assert.assertTrue($(withText(tooltipName)).waitUntil(Condition.appears,10000).exists(), tooltipName);
+        new PagePreLoader().waitToLoad();
+
+        Assert.assertTrue(findTooltip(tooltipName).isDisplayed(), tooltipName);
     }
 
     /**
@@ -67,7 +94,8 @@ public class TooltipPage {
     public void checkIfTooltipDeleted(Language language, String tooltipName) {
         new MainPage().switchAppToLang(language);
         sleep(2000);
-        Assert.assertFalse($(withText(tooltipName)).exists(), tooltipName);
+        new PagePreLoader().waitToLoad();
+        Assert.assertFalse(findTooltip(tooltipName).isDisplayed(), tooltipName);
     }
 
     /**
@@ -78,8 +106,8 @@ public class TooltipPage {
     @Step("Delete tooltip {1}")
     public TooltipPage deleteTooltip(Language language, String tooltipName) {
         new MainPage().switchAppToLang(language);
-        SelenideElement deleteElement = new Table().getRowByValue(tooltipName).findAll("td").get(0).findAll("button").get(1);
-        deleteElement.click();
+        sleep(2000);
+        getActionButtonFor(tooltipName,deleteElement).click();
         new ConfirmDialogBox().confirm(true);
         return this;
     }
@@ -93,9 +121,7 @@ public class TooltipPage {
      */
     @Step("Edit tooltip {1} with new data")
     public TooltipPage editTooltip(Language language, String oldName, String newName, String text) {
-        SelenideElement editElement = new Table().getRowByValue(oldName).findAll("td").get(0).findAll("button").get(0);
-
-        editElement.click();
+        getActionButtonFor(oldName,editElement).click();
 
         new TooltipDialogBox()
                 .isDialogBoxOpened()
@@ -105,4 +131,5 @@ public class TooltipPage {
                 .clickButton(btnSave, "Сохранить");
         return this;
     }
+
 }
