@@ -77,7 +77,9 @@ public class ShareDialogBox {
      * Enter the text into input
      * @param field field name
      * @param element Selenide element to find this field. The list of fields can be found in Fields.
+     * @param value value to enter
      */
+    @Step("Enter text {1} into the field {0}")
     public ShareDialogBox setTextFor(String field, String value, SelenideElement element) {
         new Actions().enterText(element, value, field);
         return this;
