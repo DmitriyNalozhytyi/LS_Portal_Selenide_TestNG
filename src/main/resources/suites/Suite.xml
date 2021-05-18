@@ -2,6 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="LZ_Soft" thread-count="1" parallel="classes">
+    <listeners>
+        <listener class-name="utils.listeners.AnnotationTransformer"/>
+    </listeners>
+
     <suite-files>
         <suite-file path="Recruiters.xml"/>
         <suite-file path="Vacancy.xml"/>
