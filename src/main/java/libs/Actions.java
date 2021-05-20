@@ -18,8 +18,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 
 import static com.codeborne.selenide.Selectors.byAttribute;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 public class Actions {
     WebDriver webDriver;
@@ -57,14 +56,18 @@ public class Actions {
         }
     }
 
+
     public void click(WebElement element) {
         try {
-            wait(element);
+            //wait(element);
             element.click();
         } catch (Exception e) {
             Assert.fail("Can`t click on element " + e);
         }
     }
+
+
+
     @Deprecated
     public void enterText(WebElement element, String text) {
         try {
@@ -168,22 +171,21 @@ public class Actions {
         logger.info("Frame was changed");
         System.out.println("Frame was changed");
     }
-    public void switchTo2ndFrameOf2(WebElement element) {
-      /*  try {
-            webDriver.switchTo().defaultContent();
-            // Thread.sleep(1000);
-            webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
-            logger.info("Frame was changed");
-            //   System.out.println("Frame was changed");
-        } catch (Exception e) {
-            logger.info("Can't switch to frame");
-            printErrorAndStopTest(e);
-        }*/
-        webDriver.switchTo().defaultContent();
+    public Actions switchTo2ndFrameOf2(WebElement element) {
+
+       /* webDriver.switchTo().defaultContent();
         // Thread.sleep(1000);
         webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
         logger.info("Frame was changed");
-        System.out.println("Frame was changed");
+        System.out.println("Frame was changed");*/
+
+        List<SelenideElement> frames = $$(By.tagName("iframe"));
+        logger.info(frames.size() + " - number of frames");
+        Selenide.switchTo().defaultContent();
+        Selenide.switchTo().frame(frames.size() - 1);
+        logger.info("choosed 2nd frame");
+        return this;
+
     }
 
     public void switchTo2ndFrameOf3(WebElement element) {
@@ -204,10 +206,10 @@ public class Actions {
 
     public void switchToDefaultContentFromFrame(){
         try {
-            webDriver.switchTo().defaultContent();
+            Selenide.switchTo().defaultContent();
         }catch (Exception e){
 
-            System.out.println("Can't switch to default content from iframe");
+            logger.info("Can't switch to default content from iframe");
             printErrorAndStopTest(e);
         }
     }
@@ -217,7 +219,7 @@ public class Actions {
 
     }
 
-    public void clickOnLastElementCloseBtn() throws InterruptedException {
+  /*  public void clickOnLastElementCloseBtn() throws InterruptedException {
         Thread.sleep(5000);
         List<WebElement> CommunicationChannelDDList = webDriver.findElements(By.className("popup-feedback__close"));
 
@@ -236,6 +238,21 @@ public class Actions {
             //logger.info("!!! number of same elements '0'!!! ");
             System.out.println("!!! number of same elements '0'!!!");
         }
+    }*/
+
+    public void clickOnLastElementCloseBtn()  {
+
+        List<SelenideElement> CommunicationChannelDDList = $$(".popup-feedback__close");
+        logger.info(CommunicationChannelDDList.size() + " - number of closeBtn");
+
+        try {
+            CommunicationChannelDDList.get(CommunicationChannelDDList.size() - 1).click();
+            logger.info("last close btn clicked");
+        }catch (Exception e){
+            logger.info("can not find " + CommunicationChannelDDList);
+        }
+
+
     }
 
     public void exitTest() {

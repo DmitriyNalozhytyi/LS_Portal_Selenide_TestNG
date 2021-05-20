@@ -4,15 +4,36 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+import libs.Actions;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
+
+import static com.codeborne.selenide.Selenide.*;
+import static junit.framework.TestCase.assertTrue;
+
+import java.util.List;
+
+
 
 public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
-    @FindBy(css = ".right_box .menu-item:nth-of-type(4) a")
-    private WebElement exitFromAccount;
+  /*  @FindBy(css = ".right_box .menu-item:nth-of-type(4) a")
+    private WebElement exitFromAccount;*/
 
-    @FindBy(id = "otherTileText")
-    private WebElement changeAccount;
+    private final SelenideElement exitFromAccount = $(".left-icon-item_exit");
+
+    /*@FindBy(id = "otherTileText")
+    private WebElement changeAccount;*/
+
+    private final SelenideElement changeAccount = $("#otherTileText");
 
    /* @FindBy(id = "tinyMceArea")
     private WebElement vvv;*/
@@ -55,8 +76,10 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(css = ".confirm-dialog__button.confirm-dialog__button_confirm.mat-button.mat-primary")
     private WebElement approveDeletingFeedbackBtnStatusNew;
 
-    @FindBy(className = "feedback-button")
-    private WebElement sendBtn;
+    /*@FindBy(className = "feedback-button")
+    private WebElement sendBtn;*/
+
+    private final SelenideElement sendBtn = $(".feedback-button");
 
     @FindBy(className = "popup-feedback__close")
     private WebElement closePopUpBtn;
@@ -64,18 +87,25 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
    /* @FindBy(className = "feedback-button")
     private WebElement publishInFAQ;*/
 
-    @FindBy(css = ".dynamic-form-button.feedback-button.mat-button")
-    private WebElement publishInFAQ;
+    /*@FindBy(css = ".dynamic-form-button.feedback-button.mat-button")
+    private WebElement publishInFAQ;*/
+
+    private final SelenideElement publishInFAQ = $(".dynamic-form-button.feedback-button.mat-button");
 
     /*@FindBy(className = "mat-button-wrapper")
     private WebElement accountBtn;*/
 
-    @FindBy(css = ".mat-button-wrapper div")
-    private WebElement accountBtn;
+   /* @FindBy(css = ".mat-button-wrapper div")
+    private WebElement accountBtn;*/
+
+    private final SelenideElement accountBtn = $(".mat-button-wrapper div");
 
 
-    @FindBy(className = "popup-feedback__button-close")
-    private WebElement closePopUpAfterCreateFeedback;
+   /* @FindBy(className = "popup-feedback__button-close")
+    private WebElement closePopUpAfterCreateFeedback;*/
+
+    private final SelenideElement closePopUpAfterCreateFeedback = $(".popup-feedback__button-close");
+
 
     @FindBy(className = "popup-feedback_bold-text")
     private WebElement textFeedbackNumber;
@@ -83,19 +113,31 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     @FindBy(className = "new-feedback-button__text")
     private WebElement createNewFeedbackBtn;
 
-    @FindBy(id = "tinymce")
-    public WebElement appealField;
+   /* @FindBy(id = "tinymce")
+    public WebElement appealField;*/
 
-    private String titleText;
+    private final SelenideElement appealField = $("#tinymce");
+
+    public static String titleText;
     public String titleText2;
 
-    public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
+
+ /*   public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
         actions.waitToBeVisible(textFeedbackNumber);
         //  Thread.sleep(2000);
         titleText = webDriver.findElement(By.className("popup-feedback_bold-text")).getText();
         logger.info("text recoded" + titleText);
         actions.click(closePopUpAfterCreateFeedback);
         return this.titleText;
+    }*/
+
+    public String  closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
+    //public  ViewListOfFeedbacks_Page_MainModerator closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
+        titleText= $(".popup-feedback_bold-text").getText();
+        logger.info("text recoded" + titleText);
+        actions.click(closePopUpAfterCreateFeedback);
+        return this.titleText;
+       // return this;
     }
 
     public void clickOnCreateBtn() {
@@ -103,10 +145,18 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         actions.click(createNewFeedbackBtn);
     }
 
+    /*JUnit
     public void openLastCreatedFeedback() {
         webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
         logger.info("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
+    }*/
+    public ViewListOfFeedbacks_Page_MainModerator openLastCreatedFeedback() {
+        open("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
+        logger.info("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
+        return this;
     }
+
+
 
     public void enterTextInTo_AppealField_FeedbackCard_status_New(String text) throws InterruptedException {
 
@@ -134,34 +184,47 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         actions.switchToDefaultContentFromFrame();
     }
 
-    public void clickOnSendBtn() {
+    public ViewListOfFeedbacks_Page_MainModerator clickOnSendBtn() {
         actions.click(sendBtn);
+        return this;
 
     }
 
-    public void closePopUp() throws InterruptedException {
+    public ViewListOfFeedbacks_Page_MainModerator closePopUp() throws InterruptedException {
         Thread.sleep(2000);
         actions.clickOnLastElementCloseBtn();
+        return this;
     }
 
-    public void publishInFAQ() {
-        actions.click(publishInFAQ);
+    public ViewListOfFeedbacks_Page_MainModerator publishInFAQ() {
+        actions.click(publishInFAQ, "publishInFAQ");
+        return this;
     }
 
-    public void exitFromAccount() throws InterruptedException {
-       //проверочка - след строчка
-        actions.waitToBeVisible(accountBtn);
-        actions.click(accountBtn);
-        actions.click(exitFromAccount);
-        actions.click(changeAccount);
+    public ViewListOfFeedbacks_Page_MainModerator exitFromAccount() {
+
+        actions.click(accountBtn,"accountBtn");
+        actions.click(exitFromAccount,"exitFromAccount");
+        actions.click(changeAccount,"changeAccount");
+        return this;
     }
 
-    public void enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
+    /*public void enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
         logger.info(appealField+ "visible");
         actions.enterText(appealField, text);
         actions.switchToDefaultContentFromFrame();
+
+    }*/
+
+    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
+        actions.switchTo2ndFrameOf2(appealField);
+     //   actions.enterText(appealField, text);
+        actions.enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
+        actions.switchToDefaultContentFromFrame();
+
+        return this;
 
     }
 
@@ -190,8 +253,10 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         return this.titleText;
     }*/
 
-    public void closeFeedbackCard() throws InterruptedException {
+    public ViewListOfFeedbacks_Page_MainModerator closeFeedbackCard() throws InterruptedException {
+       Thread.sleep(2000);
         actions.clickOnLastElementCloseBtn();
+        return this;
     }
 
     public boolean checkFeedbackIsCreated() {

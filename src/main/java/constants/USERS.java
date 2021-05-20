@@ -3,5 +3,8 @@ package constants;
 public enum USERS {
     DEV_TESTUSER15,
     DEV_TESTUSER14,
-    DEV_TESTUSER4
+    DEV_TESTUSER4,
+    DEV_TESTUSER10,
+    DEV_TESTUSER11,
+    DEV_TESTUSER12
 }

@@ -28,8 +28,9 @@ public class ParentTest {
         WebDriverManager.chromedriver().clearDriverCache();
         WebDriverManager.chromedriver().setup();
 
+        Configuration.holdBrowserOpen = true;
+        Configuration.headless=false;
 
-        Configuration.headless=true;
         Configuration.browserSize = "1800x1080"; // or try "1280x1024";
         Configuration.startMaximized=false;
 
@@ -60,10 +61,10 @@ public class ParentTest {
         openBrowser(Config.HostsData.METINVEST.value[0]);
     }
 
-    @AfterClass
+   /* @AfterClass
     public void tearsDown() {
         WebDriverRunner.getWebDriver().quit();
-    }
+    }*/
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {

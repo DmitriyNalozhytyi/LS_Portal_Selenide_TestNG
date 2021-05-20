@@ -102,6 +102,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
         mainPage.navigateToCreateNewFeedbackPage();
+
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());

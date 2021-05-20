@@ -15,7 +15,8 @@ public class AuthorizationPage extends ParentPage {
     private final SelenideElement btnWorkAccount            = $("#aadTileTitle");
     private final SelenideElement inputPassword             = $("#i0118");
     private final SelenideElement btnAccount                = $(".head_right").find(".mat-button-wrapper").find("div");
-    private final SelenideElement btnExit                   = $(".right_box .menu-item:nth-of-type(4) a");
+  //  private final SelenideElement btnExit                   = $(".right_box .menu-item:nth-of-type(4) a");
+    private final SelenideElement btnExit                   = $(".left-icon-item_exit");
     private final SelenideElement changeAccount             = $("#otherTileText");
 
     @Step
@@ -87,6 +88,9 @@ public class AuthorizationPage extends ParentPage {
             case DEV_TESTUSER15: authorization(Config.HostsData.METINVEST.value[1], Config.HostsData.METINVEST.value[2]); break;
             case DEV_TESTUSER14: authorization(Config.HostsData.METINVEST.value[3], Config.HostsData.METINVEST.value[4]); break;
             case DEV_TESTUSER4:  authorization(Config.HostsData.METINVEST.value[5], Config.HostsData.METINVEST.value[6]); break;
+            case DEV_TESTUSER12:  authorization(Config.HostsData.METINVEST.value[11], Config.HostsData.METINVEST.value[12]); break;
+            case DEV_TESTUSER10:  authorization(Config.HostsData.METINVEST.value[7], Config.HostsData.METINVEST.value[8]); break;
+
         }
     }
 }
