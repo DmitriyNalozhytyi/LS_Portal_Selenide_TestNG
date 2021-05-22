@@ -11,8 +11,6 @@ import pages.MainPage;
 import pages.recruiter.RecruiterPage;
 import parentTest.ParentTest;
 
-import static org.junit.Assume.assumeTrue;
-
 @Epic("Recruiter")
 public class DeleteRecruiterTest extends ParentTest {
 

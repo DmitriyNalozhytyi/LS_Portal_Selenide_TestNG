@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Store" thread-count="1" parallel="false">
+<suite name="Debug" thread-count="1" parallel="false">
 
-<!--    <listeners>
-        <listener class-name="com.asabix.autotests.core.utils.Listeners"/>
-    </listeners>-->
+    <listeners>
+        <listener class-name="utils.listeners.AnnotationTransformer"/>
+    </listeners>
 
-    <test name="General" group-by-instances="true">
+    <test name="Failed tests listener" group-by-instances="true">
         <classes>
-            <class name="" />
-            <class name="test.newstore.authentication.LogOutTest" />
+            <class name="FailedTests" />
         </classes>
     </test>
 
