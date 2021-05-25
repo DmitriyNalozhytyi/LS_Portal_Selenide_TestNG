@@ -11,7 +11,7 @@ import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -48,14 +48,14 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
 
@@ -65,19 +65,19 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .selectActionFor(vacancyNameCopied, VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
 
@@ -87,7 +87,7 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -117,14 +117,14 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("На утверждение", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("На утверждение", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

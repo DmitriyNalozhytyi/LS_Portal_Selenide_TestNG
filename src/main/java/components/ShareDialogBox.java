@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class ShareDialogBox {
-    private final SelenideElement container = $(".shared-dialog");
+    private final static SelenideElement container = $(".shared-dialog");
 
     private SelenideElement pageTitle() {
         return container.find(".shared-dialog__title");
@@ -17,6 +17,18 @@ public class ShareDialogBox {
 
     private SelenideElement getSenderField() {
         return $(".main-input.vacancy-input.ng-pristine.ng-invalid");
+    }
+
+    public static SelenideElement btnVacancySend() {
+        return container.find(".dynamic-form-button.mat-button.vacancy-publish-button");
+    }
+
+    public static SelenideElement tabVacancyShareByEmail() {
+        return container.find("#mat-tab-label-1-1");
+    }
+
+    public static SelenideElement inpVacancyShareEmail() {
+        return container.find(".main-input.vacancy-input");
     }
 
     /**

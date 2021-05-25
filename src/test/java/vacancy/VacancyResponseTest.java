@@ -1,6 +1,6 @@
 package vacancy;
 
-import constants.Button;
+import base.ParentTest;
 import constants.ResponseActions;
 import constants.Status;
 import constants.USERS;
@@ -12,7 +12,6 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -63,7 +62,7 @@ public class VacancyResponseTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .sendApplication()
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .checkForResponseStatus(Status.NEW);
     }
 
@@ -83,7 +82,7 @@ public class VacancyResponseTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .sendApplication()
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .closeResponseDetails()
                 .checkForResponseStatus(Status.VIEWED);
@@ -105,7 +104,7 @@ public class VacancyResponseTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .sendApplication()
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .checkForResponseStatus(Status.ON_APPROVAL);
@@ -127,7 +126,7 @@ public class VacancyResponseTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .sendApplication()
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .openResponseDetails()

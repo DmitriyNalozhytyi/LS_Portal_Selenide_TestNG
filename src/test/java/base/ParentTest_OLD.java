@@ -1,4 +1,4 @@
-package parentTest;
+package base;
 
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;

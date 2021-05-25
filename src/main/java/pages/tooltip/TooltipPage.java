@@ -7,13 +7,13 @@ import components.PagePreLoader;
 import components.Pagination;
 import components.Table;
 import constants.Button;
-import constants.Fields;
 import constants.Input;
 import constants.Language;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 import pages.MainPage;
+import pages.vacancy.VacancyDetailPage;
 
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -67,7 +67,7 @@ public class TooltipPage {
                 .isDialogBoxOpened()
                 .switchToLang(language)
                 .setTextFor("Наименование", Input.TOOLTIP_NAME, name)
-                .setTinyMCEText("Текст подсказки", text, Fields.ACCOMPANYING_TEXT)
+                .setTinyMCEText("Текст подсказки", text, TooltipDialogBox.fldAccompanyingText())
                 .clickButton(btnSave, "Сохранить");
         return this;
     }
@@ -127,7 +127,7 @@ public class TooltipPage {
                 .isDialogBoxOpened()
                 .switchToLang(language)
                 .setTextFor("Наименование", Input.TOOLTIP_NAME, newName )
-                .setTinyMCEText("Текст подсказки", text, Fields.ACCOMPANYING_TEXT)
+                .setTinyMCEText("Текст подсказки", text, TooltipDialogBox.fldAccompanyingText())
                 .clickButton(btnSave, "Сохранить");
         return this;
     }

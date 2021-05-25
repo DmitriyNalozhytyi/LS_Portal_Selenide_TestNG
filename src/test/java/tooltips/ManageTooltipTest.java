@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.tooltip.TooltipPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 import utils.CustomRandom;
 
 @Epic("Tooltip")

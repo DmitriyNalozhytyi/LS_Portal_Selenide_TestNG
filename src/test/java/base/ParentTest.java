@@ -1,4 +1,4 @@
-package parentTest;
+package base;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;

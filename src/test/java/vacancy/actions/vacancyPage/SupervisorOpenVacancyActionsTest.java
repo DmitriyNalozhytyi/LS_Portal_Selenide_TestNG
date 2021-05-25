@@ -11,7 +11,7 @@ import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
 import pages.vacancy.VacancyPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -46,14 +46,14 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("На утверждение", Button.SAVE_AND_PUBLISH_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("На утверждение", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -101,8 +101,8 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("На утверждение", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("На утверждение", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyPage();
 

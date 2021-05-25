@@ -16,13 +16,39 @@ import pages.MainPage;
 import static com.codeborne.selenide.Selenide.*;
 
 public class VacancyManagementPage {
-    private final SelenideElement pageContainer             = $(".news.reuse-wrapper");
+    private static final SelenideElement pageContainer             = $(".news.reuse-wrapper");
     private final SelenideElement pageTitle                 = pageContainer.find(".vacancies-header__title").waitUntil(Condition.appear,30000);
     private final SelenideElement searchElement             = pageContainer.find(".toggle-search__submit-wrapper");
     private final SelenideElement searchInput               = pageContainer.find(".toggle-search__input");
 
     private SelenideElement getActions(int item) {
         return $(".mat-menu-content").findAll("button").get(item);
+    }
+
+    public static SelenideElement tbVacancyArchive() {
+        return pageContainer.find("#mat-tab-label-0-3").waitUntil(Condition.appears, 10000);
+    }
+
+    public static SelenideElement tbVacancyArchive_VMP() {
+        return pageContainer.find("#mat-tab-label-1-3").waitUntil(Condition.appears, 10000);
+    }
+
+    public static SelenideElement tbVacancyOnApproval() {
+        return pageContainer.find("#mat-tab-label-0-1").waitUntil(Condition.appears, 10000);
+    }
+
+    public static SelenideElement tbVacancyOpened() {
+        return pageContainer.find("#mat-tab-label-0-0").waitUntil(Condition.appears, 10000);
+    }
+
+    public static SelenideElement tbVacancyDraft() {
+        SelenideElement tabVD = $("");
+        if (pageContainer.find("#mat-tab-label-0-2").exists()) {
+            tabVD =  pageContainer.find("#mat-tab-label-0-2");
+        } else if (pageContainer.find("#mat-tab-label-1-2").exists()) {
+            tabVD = pageContainer.find("#mat-tab-label-1-2");
+        }
+        return tabVD;
     }
 
     /**
@@ -142,21 +168,21 @@ public class VacancyManagementPage {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
                 .setValueFor("Тип вакансии", "Для всех", VacancyType.FOR_ALL)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
-                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция",Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
+                .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -167,19 +193,19 @@ public class VacancyManagementPage {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -189,7 +215,7 @@ public class VacancyManagementPage {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -202,22 +228,22 @@ public class VacancyManagementPage {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
-                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция", Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
-                .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);
+                .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -229,21 +255,21 @@ public class VacancyManagementPage {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
                 .setValueFor("Тип вакансии", "Для всех", VacancyType.FOR_ALL)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
-                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция",Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
+                .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -256,22 +282,22 @@ public class VacancyManagementPage {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
-                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция", Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
-                .clickButton("Сохранить и опубликовать", Button.SAVE_VACANCY);
+                .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновики", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
         return this;
@@ -283,21 +309,21 @@ public class VacancyManagementPage {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
-                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
-                .clickButton("Сохранить и опубликовать", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция", Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
+                .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновики", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -309,22 +335,22 @@ public class VacancyManagementPage {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
-                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция", Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция", Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
-                .clickButton("Сохранить и опубликовать", Button.SAVE_AND_PUBLISH_VACANCY);
+                .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
@@ -332,13 +358,13 @@ public class VacancyManagementPage {
         new VacancyEditPage()
                 .isPageOpens()
                 .changeStatus("Статус", statusName, status)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
@@ -353,7 +379,7 @@ public class VacancyManagementPage {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
@@ -361,13 +387,13 @@ public class VacancyManagementPage {
         new VacancyEditPage()
                 .isPageOpens()
                 .changeStatus("Статус", statusName, status)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
         return this;

@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class VacancyEditPage extends CreateVacancyPage{
-    private final SelenideElement pageContainer             = $(".news.reuse-wrapper.mat-card");
+    private final static SelenideElement pageContainer             = $(".news.reuse-wrapper.mat-card");
 
     private SelenideElement pageTitle() {
         return pageContainer.find(".vacancy-header__title").waitUntil(Condition.appears,10000);
@@ -20,6 +20,10 @@ public class VacancyEditPage extends CreateVacancyPage{
 
     private SelenideElement getStatusButton(int status) {
         return $$("app-radio-select-field").get(0).findAll("button").get(status).waitUntil(Condition.appear,10000);
+    }
+
+    public static SelenideElement btnSaveDraftVacancy() {
+        return pageContainer.findAll("..dynamic-form-button.mat-button.vacancy-publish-button").get(0);
     }
 
     /**

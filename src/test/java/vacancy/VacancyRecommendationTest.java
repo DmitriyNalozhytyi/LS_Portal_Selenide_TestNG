@@ -9,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -63,8 +63,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .checkForResponseStatus(Status.NEW);
     }
 
@@ -84,8 +84,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
                 .closeRecommendationDetails()
                 .checkForResponseStatus(Status.VIEWED);
@@ -107,8 +107,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .checkForResponseStatus(Status.ON_APPROVAL);
@@ -130,8 +130,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .openRecommendationDetails()

@@ -9,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyManagementPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -42,22 +42,22 @@ public class CreateDraftVacancyTest extends ParentTest {
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, user+vacancyName)
-                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), user+vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
+                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
+                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция",Function.AUDIT, CreateVacancyPage.ddFunction())
+                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
                 .selectResponsibleForSW(user, Data.RECRUITER_2)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновики", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновики", VacancyManagementPage.tbVacancyDraft())
                 .search(user+vacancyName)
                 .checkForVacancy(user+vacancyName);
     }

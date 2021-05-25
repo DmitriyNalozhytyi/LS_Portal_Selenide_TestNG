@@ -8,7 +8,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.recruiter.AddRecruiterPage;
 import pages.recruiter.RecruiterPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 
 @Epic("Recruiter")
 public class AddRecruiterTest extends ParentTest {

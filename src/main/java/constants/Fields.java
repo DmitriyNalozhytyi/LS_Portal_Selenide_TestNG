@@ -2,11 +2,10 @@ package constants;
 
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.List;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
+@Deprecated
 public interface Fields {
     SelenideElement VACANCY_COMPANY                 = $("#mat-select-0");
     SelenideElement VACANCY_CITY                    = $("#mat-select-1");

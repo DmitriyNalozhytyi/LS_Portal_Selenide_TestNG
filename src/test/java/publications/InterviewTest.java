@@ -1,7 +1,7 @@
 package publications;
 
 import org.junit.Test;
-import parentTest.ParentTest_OLD;
+import base.ParentTest_OLD;
 
 @Deprecated
 public class InterviewTest extends ParentTest_OLD {

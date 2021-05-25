@@ -1,8 +1,7 @@
 package feedbackTests;
 
 import org.junit.Test;
-import parentTest.ParentTest;
-import parentTest.ParentTest_OLD;
+import base.ParentTest_OLD;
 
 import static junit.framework.TestCase.assertTrue;
 

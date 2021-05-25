@@ -9,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import parentTest.ParentTest;
+import base.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -36,15 +36,15 @@ public class RecommendationSharingTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_2)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
-                .clickButton("Поделиться", Button.RESPONSE_SHARE);
+                .clickButton("Поделиться", VacancyDetailPage.btnResponseShare());
 
         new ShareDialogBox()
                 .isDialogOpened(WindowTitle.SHARE_RECOMMEND)
                 .selectUser(Data.RECRUITER_2, "ФИО получателя")
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.RESPONSE_SENT);
     }
 

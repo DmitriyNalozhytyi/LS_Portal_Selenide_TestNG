@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class VacancyDetailPage {
-    private final SelenideElement pageContainer = $(".vacancy");
+    private final static SelenideElement pageContainer = $(".vacancy");
     
     private final String vacancyName;
 
@@ -20,6 +20,72 @@ public class VacancyDetailPage {
         this.vacancyName = vacancyName;
         closeVacancyApplicationWindow();
         closeColleagueRecommendationWindow();
+    }
+
+    public static SelenideElement btnApplyWithoutResume() {
+        return pageContainer.find(".mat-slide-toggle-input").parent();
+    }
+
+    public static SelenideElement btnUploadCV() {
+        return pageContainer.find(".upload-element.mat-button");
+    }
+
+    public static SelenideElement btnSendApplication() {
+        return pageContainer.find(".response-dialog__button.vacancy-publish-button.mat-button");
+    }
+    
+    public static SelenideElement btnAgreement() {
+        return pageContainer.find(".mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin");
+    }
+
+    public static SelenideElement btnVacancyRespond() {
+        return pageContainer.find(".vacancy-buttons__respond");
+    }
+
+    public static SelenideElement btnVacancyResponses() {
+        return pageContainer.find(".vacancy-header__button.vacancy-header__button_share");
+    }
+
+    public static SelenideElement btnResponseShare() {
+        return pageContainer.findAll(".vacancy-cancel-button.response-dialog__button").get(0);
+    }
+
+    public static SelenideElement btnVacancyShare_VMP() {
+        return pageContainer.findAll(".vacancy-header__button.vacancy-header__button_share").get(1);
+    }
+
+    public static SelenideElement btnVacancyShare() {
+        return pageContainer.find(".vacancy-header__button.vacancy-header__button_share");
+    }
+
+    public static SelenideElement btnRecommendColleague() {
+        return pageContainer.find(".vacancy-buttons__recommend.vacancy-save-button.mat-button");
+    }
+
+    public static SelenideElement btnSendRecommendation() {
+        return pageContainer.find(".recommend-dialog__button.vacancy-publish-button.mat-button");
+    }
+
+    public static SelenideElement tabVacancyRecommendations() {
+        return pageContainer.find(".mat-tab-labels").findAll(".mat-tab-label").get(1);
+    }
+
+    //SelenideElement VACANCY_RECOMMENDATIONS         = $(".mat-tab-labels").findAll(".mat-tab-label").get(1);
+
+    public static SelenideElement inpRecommendColleagueName() {
+        return pageContainer.findAll(".main-input.vacancy-input").get(0);
+    }
+
+    public static SelenideElement inpJobApplicationPhone() {
+        return pageContainer.find(".form-element.form-element__first.vacancy-field").find("input");
+    }
+
+    public static SelenideElement fldAccompanyingTextValidation() {
+        return pageContainer.find(".vacancy-tinymce-field");
+    }
+
+    public static SelenideElement fldAccompanyingText() {
+        return pageContainer.find(".mce-tinymce.mce-container.mce-panel").find("iframe");
     }
 
     /**
@@ -44,9 +110,9 @@ public class VacancyDetailPage {
      */
     @Step("Send the application")
     public VacancyDetailPage sendApplication() {
-        clickButton("Откликнуться", Button.VACANCY_RESPOND);
+        clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond());
         fillTheForm();
-        clickButton("Отправить", Button.SEND_APPLICATION);
+        clickButton("Отправить", VacancyDetailPage.btnSendApplication());
         Assert.assertEquals(new MessageDialogBox().getMessage(), SuccessMessages.APPLICATION_SENT, "The message:");
         new MessageDialogBox().close();
         return this;
@@ -58,10 +124,10 @@ public class VacancyDetailPage {
     @Step("Fill in the application form")
     private VacancyDetailPage fillTheForm() {
         new Actions()
-                .enterText(Fields.JOB_APPLICANT_PHONE, "+380698956214", "Телефон")
-                .enterTextInTinyMCE(Fields.ACCOMPANYING_TEXT, "Сопроводительный текст", "Сопроводительный текст")
-                .click(Button.APPLY_WITHOUT_RESUME, "Откликнуться без резюме")
-                .click(Button.AGREEMENT, "Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных");
+                .enterText(VacancyDetailPage.inpJobApplicationPhone(), "+380698956214", "Телефон")
+                .enterTextInTinyMCE(VacancyDetailPage.fldAccompanyingText(), "Сопроводительный текст", "Сопроводительный текст")
+                .click(VacancyDetailPage.btnApplyWithoutResume(), "Откликнуться без резюме")
+                .click(VacancyDetailPage.btnAgreement(), "Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных");
         return this;
     }
 
@@ -154,7 +220,7 @@ public class VacancyDetailPage {
     private void declineResponse() {
         clickButton("Отклонить", Button.RESPONSE_DECLINE);
         new Actions().selectRadioButton(Button.MISMATCHED_QUALIFICATION, "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1","Выберите причину отклонения");
-        clickButton("Отправить", Button.SEND_APPLICATION);
+        clickButton("Отправить", VacancyDetailPage.btnSendApplication());
     }
 
     /**
@@ -163,13 +229,13 @@ public class VacancyDetailPage {
      */
     @Step("Recommend {0}")
     public VacancyDetailPage recommendColleague(String name) {
-        clickButton("Рекомендовать коллегу", Button.RECOMMEND_COLLEAGUE);
+        clickButton("Рекомендовать коллегу", VacancyDetailPage.btnRecommendColleague());
         new ColleagueRecommendationDialogBox()
                 .isPageOpens()
                 .selectColleague(name)
-                .setValueFor("Телефон", "+380985987421", Fields.JOB_APPLICANT_PHONE)
-                .setTextInMultiLine("Сопроводительный текст", "Сопроводительный текст", Fields.ACCOMPANYING_TEXT)
-                .clickButton("Отправить", Button.SEND_RECOMMENDATION);
+                .setValueFor("Телефон", "+380985987421", VacancyDetailPage.inpJobApplicationPhone())
+                .setTextInMultiLine("Сопроводительный текст", "Сопроводительный текст", VacancyDetailPage.fldAccompanyingText())
+                .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation());
 
         Assert.assertEquals(new MessageDialogBox().getMessage(), SuccessMessages.RECOMMENDATION_SENT, "The message");
         new MessageDialogBox().close();
@@ -183,8 +249,8 @@ public class VacancyDetailPage {
      */
     @Step("Check if recommendation added")
     public void checkIfRecommendationAdded(String name) {
-        clickButton("Отклики", Button.VACANCY_RESPONSES);
-        openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS);
+        clickButton("Отклики", VacancyDetailPage.btnVacancyResponses());
+        openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations());
         Assert.assertEquals(new Table().getCellValue(1,1), name, "The candidate ");
     }
 

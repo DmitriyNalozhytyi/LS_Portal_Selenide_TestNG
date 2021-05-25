@@ -10,11 +10,15 @@ import org.testng.Assert;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TooltipDialogBox {
-    private final SelenideElement container = $(".mat-dialog-container");
+    private final static SelenideElement container = $(".mat-dialog-container");
 
     public TooltipDialogBox isDialogBoxOpened() {
         Assert.assertTrue(container.exists(), "Tooltip dialog box");
         return this;
+    }
+
+    public static SelenideElement fldAccompanyingText() {
+        return container.find(".mce-tinymce.mce-container.mce-panel").find("iframe");
     }
 
     /**
