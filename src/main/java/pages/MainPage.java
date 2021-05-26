@@ -58,9 +58,10 @@ public class MainPage extends ParentPage {
         actions.click(btnAllAlbums);
     }
 
-    @Step
-    public void navigateToCreateNewFeedbackPage() {
-        webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/feedback");
+    @Step("Open create new feedback page")
+    public MainPage navigateToCreateNewFeedbackPage() {
+      open("https://metinvest-intranet-test.azurewebsites.net/ru/feedback");
+      return this;
     }
 
     @Step

@@ -1,6 +1,10 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import libs.Actions;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,11 +12,12 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.codeborne.selenide.Selenide.*;
 import static junit.framework.TestCase.assertTrue;
 
 public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
-   // @FindBy(id = "mat-option-11")
+    // @FindBy(id = "mat-option-11")
     @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
     private WebElement directionManagementCompany;
 
@@ -28,7 +33,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy(css = ".modern-option__title")
     private WebElement chooseSpeakerInPeoplePeackerField;
 
-    @FindBy (css = ".dark-border.feedback-placeholder.main-input.ng-invalid.ng-pristine.ng-untouched")
+    @FindBy(css = ".dark-border.feedback-placeholder.main-input.ng-invalid.ng-pristine.ng-untouched")
     private WebElement countOfPeopleField;
 
     @FindBy(css = "mat-option:nth-of-type(5) > .mat-option-text")
@@ -50,28 +55,61 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy(className = "mat-select-arrow-wrapper")
     public WebElement DDlist;
 
-    @FindBy(id = "mat-option-0")
-    public WebElement portalChannel;
+  /*  @FindBy(id = "mat-option-1")
+    public WebElement portalChannel;*/
+
+    private final SelenideElement portalChannel = $("#mat-option-0");
 
     @FindBy(id = "mat-option-3")
     public WebElement personalMeetings;
 
-    @FindBy(id = "mat-option-28")
-    public WebElement prodaction;
+ /*   @FindBy(id = "mat-option-28")
+    public WebElement prodaction;*/
+
+    private final SelenideElement prodaction = $("mat-option-29");
 
 
-    @FindBy(id = "tinymce")
-    public WebElement appealField;
+ /*   @FindBy(id = "tinymce")
+    public WebElement appealField;*/
 
-    @FindBy(className = "feedback-button")
-    public WebElement sendBtn;
+    private final SelenideElement appealField = $("#tinymce");
+
+   /* @FindBy(className = "feedback-button")
+    public WebElement sendBtn;*/
+
+    private final SelenideElement sendBtn = $(".feedback-button");
+
+
+    private SelenideElement communicationChannelField() {
+        return $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000);
+    }
+
+    private SelenideElement topicField() {
+        return $$(".mat-select-arrow-wrapper").get(2).waitUntil(Condition.appears,20000);
+    }
+
+    private SelenideElement production() {
+        return $$(".mat-option-text").get(2).waitUntil(Condition.appears,20000);
+    }
+
+
+
+
+
+
+
+
+
 
     Logger logger = Logger.getLogger(getClass());
 
 
-     String titleText2;
+    String titleText2;
 
-    @Step
+/*
+
+JUnit:
+@Step
     public void choose_CommunicationChannel_Portal() throws InterruptedException {
 
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -91,8 +129,37 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             //logger.info("!!! number of same elements '0'!!! ");
             logger.info("!!! number of same elements '0'");
         }
-    }
+    }*/
 
+ /*public Actions dropdown(String fieldName, String value, SelenideElement element) {
+        try {
+            element.click();
+            $(".mat-select-content").waitUntil(Condition.appear,10000).findAll(".ng-star-inserted").find(Condition.matchText(value)).click();
+            System.out.println("Element '" + value + "' selected for " + fieldName);
+        } catch (Exception e) {
+            Assert.fail("The element missing in the list" + e);
+        }
+        return this;
+    }
+*/
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_Portal()  {
+
+       // sleep(2000);
+//        $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000).click();
+        //abs().click();
+
+        actions
+                .click(communicationChannelField(), "CommunicationChannel DDField ")
+                .click(portalChannel, "Portal");
+
+        logger.info("portal Channel choosed");
+        return this;
+
+    }
+/*
+// JInit
     @Step
     public void choose_TopicField() throws InterruptedException {
 
@@ -130,60 +197,107 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             logger.info("!!! number of same elements '0'!!!");
 
         }
-    }
+    }*/
 
     @Step
-    public void enterTextInTo_AppealField(String text) {
-     /*   actions.switchTo1stFrameOf2(appealField);
-        actions.waitToBeVisible(appealField);
-*/
-        try {
-            List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
-           logger.info(frames.size() + " - number of frames AppealField byMainModerator");
+    public CreateNewFeedback_Page_MainModerator choose_TopicField() {
 
-            if (frames.size() == 1) {
-                actions.switchTo1stFrameOf1(appealField);
-            }else {
 
-                actions.switchTo1stFrameOf2(appealField);
-            }
-        }catch (Exception e){
-            logger.info("no frames");
-           actions.printErrorAndStopTest(e);
-            //Assert.fail("Can`t click on element " + e);
+        sleep(10000);
+          //  $$(".mat-select-arrow-wrapper").get(2).click();
+        //    $$(".mat-option-text").get(2).click();
+        actions
+                .click(topicField(),"Topic DDField")
+                .click(production(),"Production");
+                 logger.info("Production selected in DDTopicField");
 
-        }
-    //    actions.switchTo1stFrameOf2(appealField);
-        actions.waitToBeVisible(appealField);
-        actions.enterText(appealField, text);
-        actions.switchToDefaultContentFromFrame();
+
+
+            return this;
+
+       /* actions
+                .click(communicationChannelField(), "CommunicationChannel DDField ")
+                .click(portalChannel, "Portal");
+
+        logger.info("portal Channel choosed");
+        return this;*/
+
+
     }
 
+
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator enterTextInTo_AppealField(String text)  {
+
+        Selenide.switchTo().frame(0);
+        actions
+                .enterText(appealField, text + actions.currentTime(), "Feedback text");
+                 Selenide.switchTo().defaultContent();
+        return this;
+
+/*
+       List<SelenideElement> frames = $$(By.tagName("iframe"));
+       logger.info(frames.size() + " - number of frames AppealField byMainModerator");
+
+       if (frames.size() == 2) {
+           Selenide.switchTo().frame(frames.size() - 2);
+           logger.info("swiched to frame AppealField");
+           // Thread.sleep(3000);
+           new Actions().enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
+           Selenide.switchTo().defaultContent();
+           return this;
+       }else {
+           Selenide.switchTo().frame(frames.size() - 1);
+           logger.info("swiched to frame AppealField");
+           // Thread.sleep(3000);
+           new Actions().enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
+           Selenide.switchTo().defaultContent();
+           return this;*/
+       }
+
+
+
+
+
+
+
+
+  /*  JUnit
     @Step
     public void clickOnSendBtn() {
         actions.waitToBeVisible(sendBtn);
         actions.click(sendBtn);
 
-    }
+    }*/
 
     @Step
-    public void openTopicProductFAQ() throws InterruptedException {
-        Thread.sleep(5000);
-        List<WebElement> List = webDriver.findElements(By.className("accordion"));
+     public CreateNewFeedback_Page_MainModerator clickOnSendBtn() {
+        actions.click(sendBtn, "Send");
+        return this;
+    }
 
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        logger.info(List.size() + " - number of elements");
 
-        if (List.size() > 0) {
+    @Step
+    public CreateNewFeedback_Page_MainModerator openTopicProductFAQ()  {
+       // Thread.sleep(5000);
+
+        List<SelenideElement> list = $$(".accordion");
+        logger.info(list.size() + " - number of accordions");
+
+        $$(".accordion").get(2).click();
+        return this;
+
+ /*       logger.info("choosed 2nd frame");
+        return this;
+
+
+        if (list.size() > 0) {
             List.get(List.size() - 11).click();
             logger.info("last close btn clicked");
         } else {
             logger.info("!!! number of same elements '0'!!! ");
-        }
+        }*/
     }
 
     @Step
