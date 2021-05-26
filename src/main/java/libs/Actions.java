@@ -242,6 +242,8 @@ public class Actions {
 
     public void clickOnLastElementCloseBtn()  {
 
+
+
         List<SelenideElement> CommunicationChannelDDList = $$(".popup-feedback__close");
         logger.info(CommunicationChannelDDList.size() + " - number of closeBtn");
 
@@ -251,6 +253,23 @@ public class Actions {
         }catch (Exception e){
             logger.info("can not find " + CommunicationChannelDDList);
         }
+
+    }
+
+    public void clickOnLastElementOfList(List elements, String text )  {
+
+        List<SelenideElement> ListOfElements = elements;
+        try {
+            ListOfElements.get(elements.size() - 1).click();
+            logger.info(text + "last element clicked");
+        }catch (Exception e){
+            logger.info("can not find " + ListOfElements);
+        }
+
+       /* elements.get(elements.size()-1).
+          *//*      CommunicationChannelDDList.get(CommunicationChannelDDList.size() - 1).click();
+        return $$(".mat-select-arrow-wrapper").get(2).waitUntil(Condition.appears,20000);*/
+
 
 
     }
@@ -370,6 +389,7 @@ public class Actions {
         return this;
     }
 
+    //TODO change method to select option by selenide element dropdown(String fieldName, SelenideElement fieldElement, int index)
     /**
      * Select option from the dropdown menu
      * @param fieldName the name of field

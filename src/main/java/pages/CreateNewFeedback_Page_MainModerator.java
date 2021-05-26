@@ -1,6 +1,6 @@
 package pages;
 
-import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -80,6 +80,27 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     private final SelenideElement sendBtn = $(".feedback-button");
 
 
+    private SelenideElement communicationChannelField() {
+        return $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000);
+    }
+
+    private SelenideElement topicField() {
+        return $$(".mat-select-arrow-wrapper").get(2).waitUntil(Condition.appears,20000);
+    }
+
+    private SelenideElement production() {
+        return $$(".mat-option-text").get(2).waitUntil(Condition.appears,20000);
+    }
+
+
+
+
+
+
+
+
+
+
     Logger logger = Logger.getLogger(getClass());
 
 
@@ -123,13 +144,17 @@ JUnit:
 */
 
     @Step
-    public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_Portal() throws InterruptedException {
+    public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_Portal()  {
 
-       Thread.sleep(2000);
-        $$(".mat-select-arrow-wrapper").get(0).click();
+       // sleep(2000);
+//        $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000).click();
+        //abs().click();
 
-        new Actions().click(portalChannel, "Portal");
-        logger.info("portalChannel choosed");
+        actions
+                .click(communicationChannelField(), "CommunicationChannel DDField ")
+                .click(portalChannel, "Portal");
+
+        logger.info("portal Channel choosed");
         return this;
 
     }
@@ -175,60 +200,43 @@ JUnit:
     }*/
 
     @Step
-    public CreateNewFeedback_Page_MainModerator choose_TopicField() throws InterruptedException {
+    public CreateNewFeedback_Page_MainModerator choose_TopicField() {
+
+
+        sleep(10000);
+          //  $$(".mat-select-arrow-wrapper").get(2).click();
+        //    $$(".mat-option-text").get(2).click();
+        actions
+                .click(topicField(),"Topic DDField")
+                .click(production(),"Production");
+                 logger.info("Production selected in DDTopicField");
 
 
 
-         //   $$(".mat-select-arrow-wrapper").shouldHaveSize(3).get(2).click();
-        Thread.sleep(3000);
-            $$(".mat-select-arrow-wrapper").get(2).click();
-            logger.info("DDTopicField clicked");
-
-            $$(".mat-option-text").get(2).click();
-            logger.info("prodaction choosed");
             return this;
 
+       /* actions
+                .click(communicationChannelField(), "CommunicationChannel DDField ")
+                .click(portalChannel, "Portal");
+
+        logger.info("portal Channel choosed");
+        return this;*/
+
 
     }
 
-/*
-
-//JUnit
-    @Step
-    public void enterTextInTo_AppealField(String text) {
-     */
-/*   actions.switchTo1stFrameOf2(appealField);
-        actions.waitToBeVisible(appealField);
-*//*
-
-        try {
-            List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
-           logger.info(frames.size() + " - number of frames AppealField byMainModerator");
-
-            if (frames.size() == 1) {
-                actions.switchTo1stFrameOf1(appealField);
-            }else {
-
-                actions.switchTo1stFrameOf2(appealField);
-            }
-        }catch (Exception e){
-            logger.info("no frames");
-           actions.printErrorAndStopTest(e);
-            //Assert.fail("Can`t click on element " + e);
-
-        }
-    //    actions.switchTo1stFrameOf2(appealField);
-        actions.waitToBeVisible(appealField);
-        actions.enterText(appealField, text);
-        actions.switchToDefaultContentFromFrame();
-    }
-*/
 
 
     @Step
     public CreateNewFeedback_Page_MainModerator enterTextInTo_AppealField(String text)  {
 
+        Selenide.switchTo().frame(0);
+        actions
+                .enterText(appealField, text + actions.currentTime(), "Feedback text");
+                 Selenide.switchTo().defaultContent();
+        return this;
 
+/*
        List<SelenideElement> frames = $$(By.tagName("iframe"));
        logger.info(frames.size() + " - number of frames AppealField byMainModerator");
 
@@ -245,7 +253,7 @@ JUnit:
            // Thread.sleep(3000);
            new Actions().enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
            Selenide.switchTo().defaultContent();
-           return this;
+           return this;*/
        }
 
 
@@ -254,30 +262,6 @@ JUnit:
 
 
 
-      /*  try {
-          //  List<WebElement> frames = webDriver.findElements(By.tagName("iframe"));
-            logger.info(frames.size() + " - number of frames AppealField byMainModerator");
-
-            if (frames.size() == 1) {
-                actions.switchTo1stFrameOf1(appealField);
-                return this;
-            }else {
-
-                actions.switchTo1stFrameOf2(appealField);
-                return this;
-            }
-        }catch (Exception e){
-            logger.info("no frames");
-            actions.printErrorAndStopTest(e);
-            //Assert.fail("Can`t click on element " + e);
-
-        }
-        //    actions.switchTo1stFrameOf2(appealField);
-        actions.waitToBeVisible(appealField);
-        actions.enterText(appealField, text + actions.currentTime(), "Appeal Field");
-        actions.switchToDefaultContentFromFrame();
-        return this;*/
-    }
 
   /*  JUnit
     @Step
@@ -289,7 +273,7 @@ JUnit:
 
     @Step
      public CreateNewFeedback_Page_MainModerator clickOnSendBtn() {
-        actions.click(sendBtn);
+        actions.click(sendBtn, "Send");
         return this;
     }
 

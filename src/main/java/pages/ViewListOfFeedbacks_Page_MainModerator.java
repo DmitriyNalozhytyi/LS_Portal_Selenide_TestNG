@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -118,6 +119,10 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     private final SelenideElement appealField = $("#tinymce");
 
+    List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
+
+
+
     public static String titleText;
     public String titleText2;
 
@@ -131,13 +136,23 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         return this.titleText;
     }*/
 
-    public String  closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
+   /* public String  closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
     //public  ViewListOfFeedbacks_Page_MainModerator closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
         titleText= $(".popup-feedback_bold-text").getText();
         logger.info("text recoded" + titleText);
         actions.click(closePopUpAfterCreateFeedback);
         return this.titleText;
        // return this;
+    }*/
+
+   @Step("close FeedbackCreated PopUp And Remember FeedbackNumber")
+    public ViewListOfFeedbacks_Page_MainModerator  closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
+
+        titleText= $(".popup-feedback_bold-text").getText();
+        logger.info("text recoded" + titleText);
+        actions.click(closePopUpAfterCreateFeedback,"closePopUpAfterCreateFeedback");
+         this.titleText = titleText;
+         return this;
     }
 
     public void clickOnCreateBtn() {
@@ -152,7 +167,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }*/
     public ViewListOfFeedbacks_Page_MainModerator openLastCreatedFeedback() {
         open("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
-        logger.info("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
+        logger.info("site" + "https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText +" are opened");
         return this;
     }
 
@@ -185,15 +200,38 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public ViewListOfFeedbacks_Page_MainModerator clickOnSendBtn() {
-        actions.click(sendBtn);
+        actions.click(sendBtn, "Send");
         return this;
 
     }
 
-    public ViewListOfFeedbacks_Page_MainModerator closePopUp() throws InterruptedException {
-        Thread.sleep(2000);
+    public ViewListOfFeedbacks_Page_MainModerator closePopUp()  {
+        sleep(5000);
         actions.clickOnLastElementCloseBtn();
+
+      // actions.click(lastCloseBtn(),"Close last popUp!!!!!!!");
+
+      //  List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
+      //  actions.clickOnLastElementOfList(lastCloseBtn, "Close last popUp");
+
+
         return this;
+
+
+       /* public void clickOnLastElementCloseBtn()  {
+
+            List<SelenideElement> CommunicationChannelDDList = $$(".popup-feedback__close");
+            logger.info(CommunicationChannelDDList.size() + " - number of closeBtn");
+
+            try {
+                CommunicationChannelDDList.get(CommunicationChannelDDList.size() - 1).click();
+                logger.info("last close btn clicked");
+            }catch (Exception e){
+                logger.info("can not find " + CommunicationChannelDDList);
+            }*/
+
+
+
     }
 
     public ViewListOfFeedbacks_Page_MainModerator publishInFAQ() {
@@ -209,7 +247,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         return this;
     }
 
-    /*public void enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
+    /*public void enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower(String text) {
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
         logger.info(appealField+ "visible");
@@ -218,17 +256,16 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     }*/
 
-    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_AppealField_FeedbackCard_status_New_Apprower(String text) {
-        actions.switchTo2ndFrameOf2(appealField);
-     //   actions.enterText(appealField, text);
-        actions.enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
-        actions.switchToDefaultContentFromFrame();
+    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower(String text) {
 
+        Selenide.switchTo().frame(1);
+        actions.enterText(appealField, text + actions.currentTime(), "AppealField");
+        Selenide.switchTo().defaultContent();
         return this;
 
     }
 
-  /*     public String enterTextInTo_AppealField_FeedbackCard_status_New_Apprower() {
+  /*     public String enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower() {
                actions.switchTo2ndFrameOf2(appealField);
                actions.waitUntilBecomeVisible(appealField);
                System.out.println("visible");
@@ -253,8 +290,9 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         return this.titleText;
     }*/
 
-    public ViewListOfFeedbacks_Page_MainModerator closeFeedbackCard() throws InterruptedException {
-       Thread.sleep(2000);
+    public ViewListOfFeedbacks_Page_MainModerator closeFeedbackCard() {
+
+        sleep(2000);
         actions.clickOnLastElementCloseBtn();
         return this;
     }

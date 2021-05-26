@@ -19,7 +19,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
     @Story("create Feedback by Main Moderator")
     @Test(description = "createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ")
-    public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ() throws InterruptedException {
+    public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ()  {
 
 
         //    STEP 1 - create feedback and remember feedback number
@@ -32,15 +32,14 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn();
         new ViewListOfFeedbacks_Page_MainModerator()
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
-       /* new ViewListOfFeedbacks_Page_MainModerator()
-                .exitFromAccount();*/
         new AuthorizationPage()
                 .loginAs(USERS.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback()
                 .clickOnSendBtn()
-                .enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Text: Approve by MainModerator")
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Text: Approve by Aprover")
                 .clickOnSendBtn()
+                //
                 .closePopUp()
                 .closeFeedbackCard();
         new AuthorizationPage()
@@ -54,6 +53,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ();
 
+//
 
 
 
