@@ -16,7 +16,9 @@ import pages.MainPage;
 import static com.codeborne.selenide.Selenide.*;
 
 public class VacancyManagementPage {
-    private static final SelenideElement pageContainer             = $(".news.reuse-wrapper");
+    private static final String VACANCY_MANAGEMENT           = "Управление вакансиями";
+
+    private static final SelenideElement pageContainer      = $(".news.reuse-wrapper");
     private final SelenideElement pageTitle                 = pageContainer.find(".vacancies-header__title").waitUntil(Condition.appear,30000);
     private final SelenideElement searchElement             = pageContainer.find(".toggle-search__submit-wrapper");
     private final SelenideElement searchInput               = pageContainer.find(".toggle-search__input");
@@ -51,13 +53,17 @@ public class VacancyManagementPage {
         return tabVD;
     }
 
+    public static SelenideElement btnCreateVacancy() {
+        return pageContainer.find(".vacancies-header__button");
+    }
+
     /**
      * Check if Vacancy Management page opens
      */
     @Step("Verify that Vacancy Management page opens")
     public VacancyManagementPage isPageOpens() {
         new PagePreLoader().waitToLoad();
-        Assert.assertEquals(pageTitle.getText(),  WindowTitle.VACANCY_MANAGEMENT, "The page title" );
+        Assert.assertEquals(pageTitle.getText(),  VACANCY_MANAGEMENT, "The page title" );
         return this;
     }
 
@@ -164,12 +170,12 @@ public class VacancyManagementPage {
     @Step("Create and approve the vacancy {1}")
     public VacancyManagementPage createAndApproveVacancy(USERS admin, String vacancyName) {
 
-        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+        clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
-                .setValueFor("Тип вакансии", "Для всех", VacancyType.FOR_ALL)
+                .setValueFor("Тип вакансии", "Для всех", CreateVacancyPage.btnForAll())
                 .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
                 .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
                 .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
@@ -224,7 +230,7 @@ public class VacancyManagementPage {
 
     public VacancyManagementPage createVacancyASSupervisor(String vacancyName) {
 
-        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+        clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
@@ -251,12 +257,12 @@ public class VacancyManagementPage {
     }
 
     public VacancyManagementPage createVacancyAsRecruiter(String vacancyName) {
-        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+        clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
-                .setValueFor("Тип вакансии", "Для всех", VacancyType.FOR_ALL)
+                .setValueFor("Тип вакансии", "Для всех", CreateVacancyPage.btnForAll())
                 .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
                 .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
                 .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
@@ -278,7 +284,7 @@ public class VacancyManagementPage {
 
     public VacancyManagementPage createDraftVacancyAsSupervisor(String vacancyName) {
 
-        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+        clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
@@ -305,7 +311,7 @@ public class VacancyManagementPage {
 
     public VacancyManagementPage createDraftVacancyAsRecruiter(String vacancyName) {
 
-        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+        clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
@@ -331,7 +337,7 @@ public class VacancyManagementPage {
     }
 
     public VacancyManagementPage createVacancyForArchiveASSupervisor(String vacancyName, String statusName, int status) {
-        clickButton("Создать вакансию", Button.CREATE_VACANCY);
+        clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()

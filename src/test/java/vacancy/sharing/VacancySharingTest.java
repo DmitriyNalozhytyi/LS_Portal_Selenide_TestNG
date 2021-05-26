@@ -42,7 +42,7 @@ public class VacancySharingTest extends ParentTest {
                 .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare_VMP());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_1, "ФИО получателя")
                 .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.VACANCY_SENT);
@@ -74,7 +74,7 @@ public class VacancySharingTest extends ParentTest {
                 .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_1, "ФИО получателя")
                 .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.VACANCY_SENT);
@@ -99,7 +99,7 @@ public class VacancySharingTest extends ParentTest {
                 .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare_VMP());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
                 .openTab("Поделиться по почте", ShareDialogBox.tabVacancyShareByEmail())
                 .setTextFor("Электронная почта получателя", "test@asd.com", ShareDialogBox.inpVacancyShareEmail())
                 .clickButton("Отправить", ShareDialogBox.btnVacancySend())
@@ -132,7 +132,7 @@ public class VacancySharingTest extends ParentTest {
                 .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
                 .openTab("Поделиться по почте", ShareDialogBox.tabVacancyShareByEmail())
                 .setTextFor("Электронная почта получателя", "test@asd.com", ShareDialogBox.inpVacancyShareEmail())
                 .clickButton("Отправить", ShareDialogBox.btnVacancySend())

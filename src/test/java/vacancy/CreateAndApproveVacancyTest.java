@@ -30,7 +30,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .clickButton("Создать вакансию", Button.CREATE_VACANCY);
+                .clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
@@ -97,7 +97,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .clickButton("Создать вакансию", Button.CREATE_VACANCY);
+                .clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
@@ -132,7 +132,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .clickButton("Создать вакансию", Button.CREATE_VACANCY);
+                .clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()

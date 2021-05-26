@@ -41,7 +41,7 @@ public class ResponseSharingTest extends ParentTest {
                 .clickButton("Поделиться", VacancyDetailPage.btnResponseShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_RESPONSE)
+                .isDialogOpened(ShareDialogBox.SHARE_RESPONSE_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_2, "ФИО получателя")
                 .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.RESPONSE_SENT);

@@ -2,7 +2,6 @@ package pages.tooltip;
 
 import com.codeborne.selenide.SelenideElement;
 import constants.Language;
-import constants.Tabs;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
@@ -19,6 +18,10 @@ public class TooltipDialogBox {
 
     public static SelenideElement fldAccompanyingText() {
         return container.find(".mce-tinymce.mce-container.mce-panel").find("iframe");
+    }
+
+    public static SelenideElement tabTooltipRU() {
+        return container.find(".mat-tab-label-container .mat-tab-list"). findAll(".mat-tab-label").get(1);
     }
 
     /**
@@ -57,7 +60,7 @@ public class TooltipDialogBox {
 
     public TooltipDialogBox switchToLang(Language language) {
         switch (language) {
-            case RU: clickButton(Tabs.TOOLTIP_RU, "RU");
+            case RU: clickButton(tabTooltipRU(), "RU");
         }
         return this;
     }

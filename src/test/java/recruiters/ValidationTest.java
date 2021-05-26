@@ -24,11 +24,11 @@ public class ValidationTest extends ParentTest {
 
         new RecruiterPage()
                 .isPageOpens()
-                .clickButton("Добавить рекрутера", Button.ADD_RECRUITER);
+                .clickButton("Добавить рекрутера", RecruiterPage.btnAddRecruiter());
 
         new AddRecruiterPage()
                 .isPageOpens()
-                .clickButton("Сохранить", Button.SAVE_RECRUITER)
+                .clickButton("Сохранить", AddRecruiterPage.btnSaveVacancy())
                 .checkValidationMessage(ErrorMessage.FIELD_IS_REQUIRED);
 
 

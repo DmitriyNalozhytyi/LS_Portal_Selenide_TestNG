@@ -29,7 +29,7 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .clickButton("Создать вакансию", Button.CREATE_VACANCY);
+                .clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()

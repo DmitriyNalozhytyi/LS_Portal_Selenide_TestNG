@@ -6,25 +6,32 @@ import components.ConfirmDialogBox;
 import components.PagePreLoader;
 import components.Pagination;
 import components.Table;
-import constants.Button;
-import constants.Input;
 import constants.Language;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 import pages.MainPage;
-import pages.vacancy.VacancyDetailPage;
 
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class TooltipPage {
-    private final SelenideElement container = $("._b");
-    private final SelenideElement btnAdd  = Button.TOOLTIP_ADD;
-    private final SelenideElement btnSave = Button.TOOLTIP_SAVE;
+    private final static SelenideElement container = $("._b");
     int editElement                       = 0;
     int deleteElement                     = 1;
+
+    public static SelenideElement btnAddTooltip() {
+        return container.find(".tool-bar").find(".new_button");
+    }
+
+    public static SelenideElement btnSaveTooltip() {
+        return container.find(".dynamic-form-button-block").findAll("button").get(1);
+    }
+
+    public static SelenideElement inpTooltipName() {
+        return container.find(".main-input");
+    }
 
     private SelenideElement findTooltip(String name) {
         SelenideElement find = $(withText(name));
@@ -61,14 +68,14 @@ public class TooltipPage {
      */
     @Step("Add tooltip {1} for language {0}")
     public TooltipPage addTooltip(Language language, String name, String text) {
-        new Actions().click(btnAdd, "Добавить");
+        new Actions().click(btnAddTooltip(), "Добавить");
 
         new TooltipDialogBox()
                 .isDialogBoxOpened()
                 .switchToLang(language)
-                .setTextFor("Наименование", Input.TOOLTIP_NAME, name)
+                .setTextFor("Наименование", inpTooltipName(), name)
                 .setTinyMCEText("Текст подсказки", text, TooltipDialogBox.fldAccompanyingText())
-                .clickButton(btnSave, "Сохранить");
+                .clickButton(btnSaveTooltip(), "Сохранить");
         return this;
     }
 
@@ -126,9 +133,9 @@ public class TooltipPage {
         new TooltipDialogBox()
                 .isDialogBoxOpened()
                 .switchToLang(language)
-                .setTextFor("Наименование", Input.TOOLTIP_NAME, newName )
+                .setTextFor("Наименование", inpTooltipName(), newName )
                 .setTinyMCEText("Текст подсказки", text, TooltipDialogBox.fldAccompanyingText())
-                .clickButton(btnSave, "Сохранить");
+                .clickButton(btnSaveTooltip(), "Сохранить");
         return this;
     }
 

@@ -42,7 +42,7 @@ public class RecommendationSharingTest extends ParentTest {
                 .clickButton("Поделиться", VacancyDetailPage.btnResponseShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_RECOMMEND)
+                .isDialogOpened(ShareDialogBox.SHARE_RECOMMEND_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_2, "ФИО получателя")
                 .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.RESPONSE_SENT);

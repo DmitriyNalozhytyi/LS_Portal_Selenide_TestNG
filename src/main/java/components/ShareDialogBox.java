@@ -9,7 +9,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class ShareDialogBox {
-    private final static SelenideElement container = $(".shared-dialog");
+    public final static String SHARE_VACANCY_PAGE_TITLE     = "Поделиться вакансией";
+    public final static String SHARE_RESPONSE_PAGE_TITLE    = "Поделиться откликом";
+    public final static String SHARE_RECOMMEND_PAGE_TITLE   = "Поделиться откликом";
+
+    private final static SelenideElement container          = $(".shared-dialog");
 
     private SelenideElement pageTitle() {
         return container.find(".shared-dialog__title");

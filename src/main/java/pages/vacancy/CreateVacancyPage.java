@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.PagePreLoader;
 import constants.USERS;
-import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
@@ -12,6 +11,7 @@ import org.testng.Assert;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CreateVacancyPage {
+    private static final String NEW_VACANCY_PAGE             = "Новая вакансия";
     private static final SelenideElement pageContainer = $(".news.reuse-wrapper.mat-card");
     private final SelenideElement inptResponce = $(".main-input.vacancy-input.ng-pristine.ng-invalid");
 
@@ -35,6 +35,10 @@ public class CreateVacancyPage {
 
     public static SelenideElement btnForStaff() {
         return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(0).waitUntil(Condition.appear,10000);
+    }
+
+    public static SelenideElement btnForAll() {
+        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(1).waitUntil(Condition.appear,10000);
     }
 
     public static SelenideElement ddCompany() {
@@ -66,7 +70,7 @@ public class CreateVacancyPage {
      */
     public CreateVacancyPage isCreateVacancyPage() {
         new PagePreLoader().waitToLoad();
-        Assert.assertEquals(pageTitle().getText(),  WindowTitle.NEW_VACANCY_PAGE, WindowTitle.NEW_VACANCY_PAGE + "cannot be found" );
+        Assert.assertEquals(pageTitle().getText(),  NEW_VACANCY_PAGE, NEW_VACANCY_PAGE + "cannot be found" );
         return this;
     }
 

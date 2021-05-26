@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import constants.Button;
 import constants.Language;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
@@ -31,6 +30,10 @@ public class MainPage extends ParentPage {
 
     @FindBy(css = "[href='\\/photogallery'] ._link-dashboard")
     public WebElement btnAllAlbums;
+
+    public static SelenideElement portalLanguageRU() {
+        return $(".language-list").findAll(".language-option").get(1);
+    }
 
     public void goToAllNews(){
 
@@ -107,7 +110,7 @@ public class MainPage extends ParentPage {
     @Step("Switch the language of Portal to {0}")
     public void switchAppToLang(Language language) {
         switch (language) {
-            case RU: actions.click(selectLanguageElement, "Язык портала").click(Button.PORTAL_LANGUAGE_RU, "Русский");
+            case RU: actions.click(selectLanguageElement, "Язык портала").click(portalLanguageRU(), "Русский");
         }
     }
 }
