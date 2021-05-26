@@ -31,4 +31,14 @@ public interface Button {
     SelenideElement RESPONSE_SHARE                  = $$(".vacancy-cancel-button.response-dialog__button").get(0);
     SelenideElement VACANCY_APPLICATION_CANCEL      = $(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel");
     SelenideElement VACANCY_RECOMMENDATION_CANCEL   = $(".vacancy-cancel-button.recommend-dialog__button.recommend-dialog__button_cancel");
+    SelenideElement COPY_VACANCY_ON_VP              = $(".vacancy-item-header__info-title").findAll(".icon.icon-frame").get(0);
+    SelenideElement EDIT_VACANCY_ON_VP              = $(".vacancy-item-header__info-title").findAll(".icon.icon-frame").get(1);
+    SelenideElement DELETE_VACANCY_ON_VP            = $(".vacancy-item-header__info-title").findAll(".icon.icon-frame").get(2);
+    SelenideElement COPY_VACANCY_ON_VDP             = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(0);
+    SelenideElement EDIT_VACANCY_ON_VDP             = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
+    SelenideElement DELETE_VACANCY_ON_VDP           = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(2);
+    SelenideElement DELETE_CLOSED_VACANCY_ON_VDP    = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
+    SelenideElement TOOLTIP_ADD                     = $(".tool-bar").find(".new_button");
+    SelenideElement TOOLTIP_SAVE                    = $(".dynamic-form-button-block").findAll("button").get(1);
+    SelenideElement PORTAL_LANGUAGE_RU              = $(".language-list").findAll(".language-option").get(1);
 }

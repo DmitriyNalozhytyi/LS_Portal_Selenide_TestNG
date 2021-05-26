@@ -10,8 +10,14 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class PagePreLoader {
     private final SelenideElement container = $(".spinner-overlay.preloader");
+    private final SelenideElement container1 = $(".loading-shade.mat-spinner");
 
     public void waitToLoad() {
-        container.waitUntil(Condition.disappears,60000);
+        if(container.exists()) {
+            container.waitUntil(Condition.disappears, 60000);
+        } else if (container1.exists()) {
+            container1.waitUntil(Condition.disappears, 60000);
+        }
     }
 }
+//loading-shade

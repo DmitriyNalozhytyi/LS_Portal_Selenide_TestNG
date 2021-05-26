@@ -36,21 +36,40 @@
 
     <test name="Actions" enabled="true" group-by-instances="true">
         <classes>
-            <class name="vacancy.actions.archive.RecruiterCanceledVacancyActionsTest" />
-            <class name="vacancy.actions.archive.RecruiterClosedVacancyActionsTest" />
-            <class name="vacancy.actions.archive.RecruiterSuspendedVacancyActionsTest" />
-            <class name="vacancy.actions.archive.SupervisorCanceledVacancyActionsTest" />
-            <class name="vacancy.actions.archive.SupervisorClosedVacancyActionsTest" />
-            <class name="vacancy.actions.archive.SupervisorSuspendedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.archive.RecruiterCanceledVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.archive.RecruiterClosedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.archive.RecruiterSuspendedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.archive.SupervisorCanceledVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.archive.SupervisorClosedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.archive.SupervisorSuspendedVacancyActionsTest" />
 
-            <class name="vacancy.actions.draft.RecruiterDraftVacancyActionsTest" />
-            <class name="vacancy.actions.draft.SupervisorDraftVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.draft.RecruiterDraftVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.draft.SupervisorDraftVacancyActionsTest" />
 
-            <class name="vacancy.actions.onApproval.RecruiterOnApprovalVacancyActionsTest" />
-            <class name="vacancy.actions.onApproval.SupervisorOnApprovalVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.onApproval.RecruiterOnApprovalVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.onApproval.SupervisorOnApprovalVacancyActionsTest" />
 
-            <class name="vacancy.actions.open.RecruiterOpenVacancyActionsTest" />
-            <class name="vacancy.actions.open.SupervisorOpenVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.open.RecruiterOpenVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyManagementPage.open.SupervisorOpenVacancyActionsTest" />
+
+            <class name="vacancy.actions.vacancyDetailPage.archive.RecruiterCanceledVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.archive.RecruiterClosedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.archive.RecruiterSuspendedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.archive.SupervisorCanceledVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.archive.SupervisorClosedVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.archive.SupervisorSuspendedVacancyActionsTest" />
+
+            <class name="vacancy.actions.vacancyDetailPage.draft.RecruiterDraftVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.draft.SupervisorDraftVacancyActionsTest" />
+
+            <class name="vacancy.actions.vacancyDetailPage.onApproval.RecruiterOnApprovalVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.onApproval.SupervisorOnApprovalVacancyActionsTest" />
+
+            <class name="vacancy.actions.vacancyDetailPage.open.RecruiterOpenVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyDetailPage.open.SupervisorOpenVacancyActionsTest" />
+
+            <class name="vacancy.actions.vacancyPage.RecruiterOpenVacancyActionsTest" />
+            <class name="vacancy.actions.vacancyPage.SupervisorOpenVacancyActionsTest" />
         </classes>
     </test>
 

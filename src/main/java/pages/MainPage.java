@@ -1,12 +1,18 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
+import constants.Button;
+import constants.Language;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage extends ParentPage {
+
+    private final SelenideElement selectLanguageElement = $(".language-select");
 
     @FindBy(className = "_link-dashboard")
     public WebElement btnAllNews;
@@ -85,6 +91,25 @@ public class MainPage extends ParentPage {
     @Step("Open vacancy page")
     public void goToVacancyPage() {
         open("https://metinvest-intranet-test.azurewebsites.net/ru/vacancy");
+    }
+
+    /**
+     * Open tooltip page "/tooltips"
+     */
+    @Step("Open tooltip page")
+    public void goToTooltipPage() {
+        open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/tooltips");
+    }
+
+    /**
+     * Switch the language of app
+     * @param language language. List of language can be found there Language
+     */
+    @Step("Switch the language of Portal to {0}")
+    public void switchAppToLang(Language language) {
+        switch (language) {
+            case RU: actions.click(selectLanguageElement, "Язык портала").click(Button.PORTAL_LANGUAGE_RU, "Русский");
+        }
     }
 }
 

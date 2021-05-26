@@ -1,4 +1,4 @@
-package vacancy.actions.onApproval;
+package vacancy.actions.vacancyManagementPage.open;
 
 import constants.*;
 import io.qameta.allure.Epic;
@@ -14,18 +14,17 @@ import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**
- * supervisorCanCopyVacancy()       - verify that supervisor can create a copy of a vacancy<br>
- * supervisorCanDeleteVacancy()     - verify that supervisor can delete a vacancy<br>
- * supervisorCanEditVacancy()       - verify that supervisor can edit a vacancy<br>
+ * recruiterCanCopyVacancy()       - verify that recruiter can create a copy of a vacancy<br>
+ * recruiterCanEditVacancy()       - verify that recruiter can edit a vacancy<br>
  */
 @Epic("Vacancy")
-@Feature("Actions for vacancies in status ON APPROVAL")
-public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
+@Feature("Actions for vacancies in status OPENED")
+public class RecruiterOpenVacancyActionsTest extends ParentTest {
 
     @Story("Copy vacancy")
-    @Test(description = "Verify that supervisor can create a copy of a vacancy")
-    public void supervisorCanCopyVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_COPY_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+    @Test(description = "Verify that recruiter can create a copy of a vacancy")
+    public void recruiterCanCopyVacancy() {
+        String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
@@ -33,7 +32,27 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyAsRecruiter(vacancyName);
+                .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .selectActionFor(vacancyName, VacancyAction.COPY);
+
+        new CreateVacancyPage()
+                .isCreateVacancyPage()
+                .checkForVacancyName(vacancyName)
+                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
+                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .search(vacancyNameCopied)
+                .checkForVacancy(vacancyNameCopied);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
@@ -42,14 +61,22 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
         new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
-                .selectActionFor(vacancyName, VacancyAction.COPY);
+                .selectActionFor(vacancyNameCopied, VacancyAction.EDIT);
 
-        new CreateVacancyPage()
-                .isCreateVacancyPage()
-                .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
-                .clickButton("На утверждение", Button.SAVE_AND_PUBLISH_VACANCY);
+        new VacancyEditPage()
+                .isPageOpens()
+                .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
+
+        new MainPage().goToVacancyManagementPage();
+
+        new VacancyManagementPage()
+                .isPageOpens()
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .search(vacancyNameCopied)
+                .checkForVacancy(vacancyNameCopied);
+
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
         new MainPage().goToVacancyManagementPage();
 
@@ -60,33 +87,9 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
                 .checkForVacancy(vacancyNameCopied);
     }
 
-    @Story("Delete vacancy")
-    @Test(description = "Verify that supervisor can delete a vacancy")
-    public void supervisorCanDeleteVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
-
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
-
-        new VacancyManagementPage()
-                .isPageOpens()
-                .createVacancyAsRecruiter(vacancyName);
-
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-
-        new MainPage().goToVacancyManagementPage();
-
-        new VacancyManagementPage()
-                .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
-                .selectActionFor(vacancyName, VacancyAction.DELETE)
-                .search(vacancyName)
-                .checkForVacancyAbsence(vacancyName);
-    }
-
     @Story("Edit vacancy")
-    @Test(description = "Verify that supervisor can edit a vacancy")
-    public void supervisorCanEditVacancy() {
+    @Test(description = "Verify that recruiter can edit a vacancy")
+    public void recruiterCanEditVacancy() {
         String vacancyName          = USERS.DEV_TESTUSER14 + "_VACANCY_EDIT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
@@ -95,15 +98,12 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyAsRecruiter(vacancyName);
-
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+                .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
         new VacancyEditPage()
@@ -115,7 +115,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("Открытые", Tabs.VACANCY_OPENED)
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

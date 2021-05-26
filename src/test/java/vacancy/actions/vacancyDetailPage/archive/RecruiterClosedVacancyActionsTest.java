@@ -1,4 +1,4 @@
-package vacancy.actions.archive;
+package vacancy.actions.vacancyDetailPage.archive;
 
 import constants.*;
 import io.qameta.allure.Epic;
@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
+import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
@@ -16,8 +17,8 @@ import utils.CustomRandom;
  * recruiterCanCopyVacancy()       - verify that recruiter can create a copy of a vacancy<br>
  */
 @Epic("Vacancy")
-@Feature("Actions for vacancies in status CANCELED")
-public class RecruiterCanceledVacancyActionsTest extends ParentTest {
+@Feature("Actions for vacancies in status CLOSED on vacancy details page")
+public class RecruiterClosedVacancyActionsTest extends ParentTest {
 
     @Story("Copy vacancy")
     @Test(description = "Verify that recruiter can create a copy of a vacancy")
@@ -37,7 +38,11 @@ public class RecruiterCanceledVacancyActionsTest extends ParentTest {
         new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
-                .selectActionFor(vacancyName, VacancyAction.COPY);
+                .openVacancyDetails(vacancyName);
+
+        new VacancyDetailPage(vacancyName)
+                .isPageOpens()
+                .vacancyAction(VacancyAction.COPY);
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()

@@ -2,6 +2,7 @@ package parentTest;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import config.Config;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
@@ -15,12 +16,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import utils.TestListeners;
+import utils.listeners.JSListeners;
+import utils.listeners.TestListeners;
 
 import static com.codeborne.selenide.Selenide.open;
 
-@Listeners(TestListeners.class)
-public class ParentTest {
+@Listeners({TestListeners.class})
+public abstract class ParentTest {
     Logger logger = Logger.getLogger(getClass());
 
     public static void initDriver() {
@@ -28,9 +30,8 @@ public class ParentTest {
         WebDriverManager.chromedriver().clearDriverCache();
         WebDriverManager.chromedriver().setup();
 
-        Configuration.holdBrowserOpen = true;
-        Configuration.headless=false;
 
+        Configuration.headless=true;
         Configuration.browserSize = "1800x1080"; // or try "1280x1024";
         Configuration.startMaximized=false;
 
@@ -47,6 +48,8 @@ public class ParentTest {
 //        Configuration.browserCapabilities.setCapability("--disable-gpu", true);
 //        Configuration.browserCapabilities.setCapability("--no-sandbox", true);
         //        System.setProperty("--ignore-certificate-errors", "false");
+
+        SelenideLogger.addListener("JSErrorsListener", new JSListeners());
     }
 
     @Step("Open site page and close pop-ups if they appear")
@@ -61,10 +64,10 @@ public class ParentTest {
         openBrowser(Config.HostsData.METINVEST.value[0]);
     }
 
-   /* @AfterClass
+    @AfterClass
     public void tearsDown() {
         WebDriverRunner.getWebDriver().quit();
-    }*/
+    }
 
     @Rule
     public TestWatcher watchman = new TestWatcher() {

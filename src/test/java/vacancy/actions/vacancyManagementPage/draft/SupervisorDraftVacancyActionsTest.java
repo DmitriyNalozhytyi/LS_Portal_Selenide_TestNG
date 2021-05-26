@@ -1,4 +1,4 @@
-package vacancy.actions.archive;
+package vacancy.actions.vacancyManagementPage.draft;
 
 import constants.*;
 import io.qameta.allure.Epic;
@@ -19,8 +19,8 @@ import utils.CustomRandom;
  * supervisorCanEditVacancy()       - verify that supervisor can edit a vacancy<br>
  */
 @Epic("Vacancy")
-@Feature("Actions for vacancies in status SUSPENDED")
-public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
+@Feature("Actions for vacancies in status DRAFT")
+public class SupervisorDraftVacancyActionsTest extends ParentTest {
 
     @Story("Copy vacancy")
     @Test(description = "Verify that supervisor can create a copy of a vacancy")
@@ -33,13 +33,13 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
+                .createDraftVacancyAsSupervisor(vacancyName);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
                 .selectActionFor(vacancyName, VacancyAction.COPY);
 
         new CreateVacancyPage()
@@ -67,13 +67,13 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
+                .createDraftVacancyAsSupervisor(vacancyName);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
                 .selectActionFor(vacancyName, VacancyAction.DELETE)
                 .search(vacancyName)
                 .checkForVacancyAbsence(vacancyName);
@@ -90,25 +90,25 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
+                .createDraftVacancyAsSupervisor(vacancyName);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
                 .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", Button.SAVE_DRAFT_VACANCY);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

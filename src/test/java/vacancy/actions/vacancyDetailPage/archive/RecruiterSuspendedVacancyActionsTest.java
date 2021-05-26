@@ -1,4 +1,4 @@
-package vacancy.actions.onApproval;
+package vacancy.actions.vacancyDetailPage.archive;
 
 import constants.*;
 import io.qameta.allure.Epic;
@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
+import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
 import parentTest.ParentTest;
@@ -18,8 +19,8 @@ import utils.CustomRandom;
  * recruiterCanEditVacancy()       - verify that recruiter can edit a vacancy<br>
  */
 @Epic("Vacancy")
-@Feature("Actions for vacancies in status ON APPROVAL")
-public class RecruiterOnApprovalVacancyActionsTest extends ParentTest {
+@Feature("Actions for vacancies in status SUSPENDED on vacancy details page")
+public class RecruiterSuspendedVacancyActionsTest extends ParentTest {
 
     @Story("Copy vacancy")
     @Test(description = "Verify that recruiter can create a copy of a vacancy")
@@ -32,26 +33,30 @@ public class RecruiterOnApprovalVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyAsRecruiter(vacancyName);
+                .createVacancyForArchiveASRecruiter(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
-                .selectActionFor(vacancyName, VacancyAction.COPY);
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .openVacancyDetails(vacancyName);
+
+        new VacancyDetailPage(vacancyName)
+                .isPageOpens()
+                .vacancyAction(VacancyAction.COPY);
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
                 .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -67,25 +72,29 @@ public class RecruiterOnApprovalVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createVacancyAsRecruiter(vacancyName);
+                .createVacancyForArchiveASRecruiter(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
-                .selectActionFor(vacancyName, VacancyAction.EDIT);
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .openVacancyDetails(vacancyName);
+
+        new VacancyDetailPage(vacancyName)
+                .isPageOpens()
+                .vacancyAction(VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
                 .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("На утверждение", Button.SAVE_VACANCY);
+                .clickButton("Сохранить", Button.SAVE_VACANCY);
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

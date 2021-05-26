@@ -254,6 +254,18 @@ public class VacancyDetailPage {
     }
 
 
-
-
+    public void vacancyAction(VacancyAction action) {
+        switch (action) {
+            case COPY:      clickButton("Копироать Вакансию", Button.COPY_VACANCY_ON_VDP); break;
+            case EDIT:      clickButton("Копироать Вакансию", Button.EDIT_VACANCY_ON_VDP); break;
+            case DELETE:
+                clickButton("Удалить Вакансию", Button.DELETE_VACANCY_ON_VDP);
+                new ConfirmDialogBox().confirm(true);
+                break;
+            case DELETE_CLOSED_VACANCY:
+                clickButton("Удалить Вакансию", Button.DELETE_CLOSED_VACANCY_ON_VDP);
+                new ConfirmDialogBox().confirm(true);
+                break;
+        }
+    }
 }
