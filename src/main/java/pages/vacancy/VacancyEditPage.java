@@ -3,7 +3,6 @@ package pages.vacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.PagePreLoader;
-import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
@@ -12,7 +11,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class VacancyEditPage extends CreateVacancyPage{
-    private final SelenideElement pageContainer             = $(".news.reuse-wrapper.mat-card");
+    private final static String VACANCY_EDIT                       = "Редактирование вакансии";
+    
+    private final static SelenideElement pageContainer             = $(".news.reuse-wrapper.mat-card");
 
     private SelenideElement pageTitle() {
         return pageContainer.find(".vacancy-header__title").waitUntil(Condition.appears,10000);
@@ -22,12 +23,16 @@ public class VacancyEditPage extends CreateVacancyPage{
         return $$("app-radio-select-field").get(0).findAll("button").get(status).waitUntil(Condition.appear,10000);
     }
 
+    public static SelenideElement btnSaveDraftVacancy() {
+        return $$(".dynamic-form-button.mat-button.vacancy-publish-button").get(0);
+    }
+
     /**
      * Check if page opens
      */
     public VacancyEditPage isPageOpens() {
         new PagePreLoader().waitToLoad();
-        Assert.assertEquals(pageTitle().getText(),  WindowTitle.VACANCY_EDIT, WindowTitle.VACANCY_EDIT + "cannot be found" );
+        Assert.assertEquals(pageTitle().getText(),  VACANCY_EDIT, VACANCY_EDIT + "cannot be found" );
         return this;
     }
 

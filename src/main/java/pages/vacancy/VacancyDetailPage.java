@@ -8,11 +8,12 @@ import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 public class VacancyDetailPage {
-    private final SelenideElement pageContainer = $(".vacancy");
+    private final static String RECOMMENDATION_OF_CANDIDATE_PAGE_TITLE  = "Рекомендация кандидата:";
+    private final static String RESPONSE_OF_CANDIDATE_PAGE              = "Отклик кандидата:";
+    private final static SelenideElement pageContainer                  = $(".vacancy");
     
     private final String vacancyName;
 
@@ -20,6 +21,114 @@ public class VacancyDetailPage {
         this.vacancyName = vacancyName;
         closeVacancyApplicationWindow();
         closeColleagueRecommendationWindow();
+    }
+
+    public static SelenideElement btnApplyWithoutResume() {
+        return $(".mat-slide-toggle-input").parent();
+    }
+
+    public static SelenideElement btnUploadCV() {
+        return pageContainer.find(".upload-element.mat-button");
+    }
+
+    public static SelenideElement btnSendApplication() {
+        return $(".response-dialog__button.vacancy-publish-button.mat-button");
+    }
+    
+    public static SelenideElement btnAgreement() {
+        return $(".mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin");
+    }
+
+    public static SelenideElement btnVacancyRespond() {
+        return pageContainer.find(".vacancy-buttons__respond");
+    }
+
+    public static SelenideElement btnVacancyResponses() {
+        return pageContainer.find(".vacancy-header__button.vacancy-header__button_share");
+    }
+
+    public static SelenideElement btnResponseShare() {
+        return $$(".vacancy-cancel-button.response-dialog__button").get(0);
+    }
+
+    public static SelenideElement btnVacancyShare_VMP() {
+        return $$(".vacancy-header__button.vacancy-header__button_share").get(1);
+    }
+
+    public static SelenideElement btnVacancyShare() {
+        return $(".vacancy-header__button.vacancy-header__button_share");
+    }
+
+    public static SelenideElement btnRecommendColleague() {
+        return $(".vacancy-buttons__recommend.vacancy-save-button.mat-button");
+    }
+
+    public static SelenideElement btnSendRecommendation() {
+        return $(".recommend-dialog__button.vacancy-publish-button.mat-button");
+    }
+
+    public static SelenideElement btnVacancyManagement() {
+        return pageContainer.find(".vacancy-nav-menu").findAll(".vacancy-nav-menu__item").get(1);
+    }
+
+    public static SelenideElement btnResponseDecline() {
+        return pageContainer.find(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel.mat-button.ng-star-inserted");
+    }
+
+    public static SelenideElement btnMismatchedQualification() {
+        return pageContainer.find(".reject-card__radiobuttons.mat-radio-group").findAll("mat-radio-button").get(0);
+    }
+
+    public static SelenideElement btnResponseOnApproval() {
+        return $(".response-dialog__button.vacancy-publish-button");
+    }
+
+    public static SelenideElement btnResponseCandidateAccept() {
+        return $(".response-dialog__button.vacancy-publish-button");
+    }
+
+    public static SelenideElement btnVacancyApplicationCancel() {
+        return $(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel");
+    }
+
+    public static SelenideElement btnVacancyRecommendationCancel() {
+        return $(".vacancy-cancel-button.recommend-dialog__button.recommend-dialog__button_cancel");
+    }
+
+    public static SelenideElement btnCopyVacancy() {
+        return pageContainer.find(".vacancy-header__info-title").findAll(".icon.icon-frame").get(0);
+    }
+
+    public static SelenideElement btnEditVacancy() {
+        return pageContainer.find(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
+    }
+
+    public static SelenideElement btnDeleteVacancy() {
+        return pageContainer.find(".vacancy-header__info-title").findAll(".icon.icon-frame").get(2);
+    }
+
+    public static SelenideElement btnDeleteClosedVacancy() {
+        return pageContainer.find(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
+    }
+
+    public static SelenideElement tabVacancyRecommendations() {
+        return $(".mat-tab-labels").findAll(".mat-tab-label").get(1);
+    }
+
+    public static SelenideElement inpRecommendColleagueName() {
+        return $$(".main-input.vacancy-input").get(0);
+    }
+
+    public static SelenideElement inpJobApplicationPhone() {
+        return $(".form-element.form-element__first.vacancy-field").find("input");
+    }
+
+    public static SelenideElement fldAccompanyingTextValidation() {
+        return $(".vacancy-tinymce-field");
+    }
+
+    public static SelenideElement fldAccompanyingText() {
+        return $(".mce-tinymce.mce-container.mce-panel").find("iframe");
     }
 
     /**
@@ -44,9 +153,9 @@ public class VacancyDetailPage {
      */
     @Step("Send the application")
     public VacancyDetailPage sendApplication() {
-        clickButton("Откликнуться", Button.VACANCY_RESPOND);
+        clickButton("Откликнуться", btnVacancyRespond());
         fillTheForm();
-        clickButton("Отправить", Button.SEND_APPLICATION);
+        clickButton("Отправить", btnSendApplication());
         Assert.assertEquals(new MessageDialogBox().getMessage(), SuccessMessages.APPLICATION_SENT, "The message:");
         new MessageDialogBox().close();
         return this;
@@ -58,10 +167,10 @@ public class VacancyDetailPage {
     @Step("Fill in the application form")
     private VacancyDetailPage fillTheForm() {
         new Actions()
-                .enterText(Fields.JOB_APPLICANT_PHONE, "+380698956214", "Телефон")
-                .enterTextInTinyMCE(Fields.ACCOMPANYING_TEXT, "Сопроводительный текст", "Сопроводительный текст")
-                .click(Button.APPLY_WITHOUT_RESUME, "Откликнуться без резюме")
-                .click(Button.AGREEMENT, "Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных");
+                .enterText(inpJobApplicationPhone(), "+380698956214", "Телефон")
+                .enterTextInTinyMCE(fldAccompanyingText(), "Сопроводительный текст", "Сопроводительный текст")
+                .click(btnApplyWithoutResume(), "Откликнуться без резюме")
+                .click(btnAgreement(), "Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных");
         return this;
     }
 
@@ -81,7 +190,7 @@ public class VacancyDetailPage {
      */
     @Step("Go to vacancy management page")
     public void openVacancyManagementPage() {
-        clickButton("Управление вакансиями", Button.VACANCY_MANAGEMENT);
+        clickButton("Управление вакансиями", btnVacancyManagement());
     }
 
     /**
@@ -100,7 +209,7 @@ public class VacancyDetailPage {
     @Step("Open candidate response dialog box")
     public VacancyDetailPage openResponseDetails() {
         new Table().getElement(1,2).click();
-        Assert.assertTrue(new DialogBox().getTitle().contains(WindowTitle.RESPONSE_OF_CANDIDATE),"The window title "+ WindowTitle.RESPONSE_OF_CANDIDATE);
+        Assert.assertTrue(new DialogBox().getTitle().contains(RESPONSE_OF_CANDIDATE_PAGE),"The window title "+ RESPONSE_OF_CANDIDATE_PAGE);
         return this;
     }
 
@@ -119,7 +228,7 @@ public class VacancyDetailPage {
     @Step("Open candidate response dialog box")
     public VacancyDetailPage openRecommendationDetails() {
         new Table().getElement(1,2).click();
-        Assert.assertTrue(new DialogBox().getTitle().contains(WindowTitle.RECOMMENDATION_OF_CANDIDATE),"The window title "+ WindowTitle.RESPONSE_OF_CANDIDATE);
+        Assert.assertTrue(new DialogBox().getTitle().contains(RECOMMENDATION_OF_CANDIDATE_PAGE_TITLE),"The window title "+ RESPONSE_OF_CANDIDATE_PAGE);
         return this;
     }
 
@@ -140,8 +249,8 @@ public class VacancyDetailPage {
     public VacancyDetailPage responseActions(ResponseActions action) {
         switch (action) {
             case DECLINE:       declineResponse(); break;
-            case ON_APPROVAL:   clickButton("На рассмотрение", Button.RESPONSE_ON_APPROVAL); break;
-            case ACCEPT:        clickButton("Кандидат принят", Button.RESPONSE_CANDIDATE_ACCEPT); break;
+            case ON_APPROVAL:   clickButton("На рассмотрение", btnResponseOnApproval()); break;
+            case ACCEPT:        clickButton("Кандидат принят", btnResponseCandidateAccept()); break;
         }
 
         new DialogBox().waitForClose();
@@ -152,9 +261,9 @@ public class VacancyDetailPage {
      * Decline response
      */
     private void declineResponse() {
-        clickButton("Отклонить", Button.RESPONSE_DECLINE);
-        new Actions().selectRadioButton(Button.MISMATCHED_QUALIFICATION, "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1","Выберите причину отклонения");
-        clickButton("Отправить", Button.SEND_APPLICATION);
+        clickButton("Отклонить", btnResponseDecline());
+        new Actions().selectRadioButton(VacancyDetailPage.btnMismatchedQualification(), "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1","Выберите причину отклонения");
+        clickButton("Отправить", btnSendApplication());
     }
 
     /**
@@ -163,13 +272,13 @@ public class VacancyDetailPage {
      */
     @Step("Recommend {0}")
     public VacancyDetailPage recommendColleague(String name) {
-        clickButton("Рекомендовать коллегу", Button.RECOMMEND_COLLEAGUE);
+        clickButton("Рекомендовать коллегу", btnRecommendColleague());
         new ColleagueRecommendationDialogBox()
                 .isPageOpens()
                 .selectColleague(name)
-                .setValueFor("Телефон", "+380985987421", Fields.JOB_APPLICANT_PHONE)
-                .setTextInMultiLine("Сопроводительный текст", "Сопроводительный текст", Fields.ACCOMPANYING_TEXT)
-                .clickButton("Отправить", Button.SEND_RECOMMENDATION);
+                .setValueFor("Телефон", "+380985987421", inpJobApplicationPhone())
+                .setTextInMultiLine("Сопроводительный текст", "Сопроводительный текст", fldAccompanyingText())
+                .clickButton("Отправить", btnSendRecommendation());
 
         Assert.assertEquals(new MessageDialogBox().getMessage(), SuccessMessages.RECOMMENDATION_SENT, "The message");
         new MessageDialogBox().close();
@@ -183,8 +292,8 @@ public class VacancyDetailPage {
      */
     @Step("Check if recommendation added")
     public void checkIfRecommendationAdded(String name) {
-        clickButton("Отклики", Button.VACANCY_RESPONSES);
-        openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS);
+        clickButton("Отклики", btnVacancyResponses());
+        openTab("Рекомендации", tabVacancyRecommendations());
         Assert.assertEquals(new Table().getCellValue(1,1), name, "The candidate ");
     }
 
@@ -204,16 +313,16 @@ public class VacancyDetailPage {
      */
     public VacancyDetailPage closeVacancyApplicationWindow() {
         sleep(500);
-        if (Button.VACANCY_APPLICATION_CANCEL.exists()) {
-            new Actions().click(Button.VACANCY_APPLICATION_CANCEL, "Отменить");
+        if (btnVacancyApplicationCancel().exists()) {
+            new Actions().click(btnVacancyApplicationCancel(), "Отменить");
         }
         return this;
     }
 
     public VacancyDetailPage closeColleagueRecommendationWindow() {
         sleep(500);
-        if (Button.VACANCY_RECOMMENDATION_CANCEL.exists()) {
-            new Actions().click(Button.VACANCY_RECOMMENDATION_CANCEL, "Отменить");
+        if (btnVacancyRecommendationCancel().exists()) {
+            new Actions().click(btnVacancyRecommendationCancel(), "Отменить");
         }
         return this;
     }
@@ -256,14 +365,14 @@ public class VacancyDetailPage {
 
     public void vacancyAction(VacancyAction action) {
         switch (action) {
-            case COPY:      clickButton("Копироать Вакансию", Button.COPY_VACANCY_ON_VDP); break;
-            case EDIT:      clickButton("Копироать Вакансию", Button.EDIT_VACANCY_ON_VDP); break;
+            case COPY:      clickButton("Копироать Вакансию", btnCopyVacancy()); break;
+            case EDIT:      clickButton("Копироать Вакансию", btnEditVacancy()); break;
             case DELETE:
-                clickButton("Удалить Вакансию", Button.DELETE_VACANCY_ON_VDP);
+                clickButton("Удалить Вакансию", btnDeleteVacancy());
                 new ConfirmDialogBox().confirm(true);
                 break;
             case DELETE_CLOSED_VACANCY:
-                clickButton("Удалить Вакансию", Button.DELETE_CLOSED_VACANCY_ON_VDP);
+                clickButton("Удалить Вакансию", btnDeleteClosedVacancy());
                 new ConfirmDialogBox().confirm(true);
                 break;
         }

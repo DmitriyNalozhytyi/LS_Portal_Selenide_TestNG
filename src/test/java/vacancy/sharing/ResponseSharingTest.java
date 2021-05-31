@@ -36,14 +36,14 @@ public class ResponseSharingTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .sendApplication()
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
-                .clickButton("Поделиться", Button.RESPONSE_SHARE);
+                .clickButton("Поделиться", VacancyDetailPage.btnResponseShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_RESPONSE)
+                .isDialogOpened(ShareDialogBox.SHARE_RESPONSE_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_2, "ФИО получателя")
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.RESPONSE_SENT);
     }
 

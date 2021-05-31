@@ -1,9 +1,7 @@
 package feedbackTests;
 
 
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import parentTest.ParentTest;
 import parentTest.ParentTest_OLD;
 
 public class CheckFields extends ParentTest_OLD {

@@ -33,10 +33,10 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void phoneFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Откликнуться", Button.VACANCY_RESPOND)
-                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", Button.AGREEMENT)
-                .clickButton("Отправить", Button.SEND_APPLICATION)
-                .checkValidationMessage("Телефон", ValidationMessage.REQUIRED_FIELD, Fields.JOB_APPLICANT_PHONE)
+                .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
+                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
+                .clickButton("Отправить", VacancyDetailPage.btnSendApplication())
+                .checkValidationMessage("Телефон", ValidationMessage.REQUIRED_FIELD, VacancyDetailPage.inpJobApplicationPhone())
                 .closeVacancyApplicationWindow();
 
     }
@@ -46,10 +46,11 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void cvFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Откликнуться", Button.VACANCY_RESPOND)
-                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", Button.AGREEMENT)
-                .clickButton("Отправить", Button.SEND_APPLICATION)
-                .checkValidationMessage("Телефон", ValidationMessage.REQUIRED_FIELD, Fields.CV)
+                .closeVacancyApplicationWindow()
+                .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
+                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
+                .clickButton("Отправить", VacancyDetailPage.btnSendApplication())
+                .checkValidationMessage("Телефон", ValidationMessage.REQUIRED_FIELD, VacancyDetailPage.btnUploadCV())
                 .closeVacancyApplicationWindow();
     }
 
@@ -58,11 +59,12 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Откликнуться", Button.VACANCY_RESPOND)
-                .clickButton("Откликнуться без резюме", Button.APPLY_WITHOUT_RESUME)
-                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", Button.AGREEMENT)
-                .clickButton("Отправить", Button.SEND_APPLICATION)
-                .checkValidationMessage("Сопроводительный текст", ValidationMessage.REQUIRED_FIELD, Fields.ACCOMPANYING_TEXT_VALIDATION)
+                .closeVacancyApplicationWindow()
+                .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
+                .clickButton("Откликнуться без резюме", VacancyDetailPage.btnApplyWithoutResume())
+                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
+                .clickButton("Отправить", VacancyDetailPage.btnSendApplication())
+                .checkValidationMessage("Сопроводительный текст", ValidationMessage.REQUIRED_FIELD, VacancyDetailPage.fldAccompanyingTextValidation())
                 .closeVacancyApplicationWindow();
     }
 
@@ -71,12 +73,13 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_MaxNumber() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Откликнуться", Button.VACANCY_RESPOND)
-                .clickButton("Откликнуться без резюме", Button.APPLY_WITHOUT_RESUME)
-                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", Button.AGREEMENT)
-                .setTinyMCEText("Сопроводительный текст", CustomRandom.getText(5001), Fields.ACCOMPANYING_TEXT)
-                .clickButton("Отправить", Button.SEND_APPLICATION)
-                .checkValidationMessage("Сопроводительный текст", ValidationMessage.MAXIMUM_CHARACTERS_5000, Fields.ACCOMPANYING_TEXT_VALIDATION)
+                .closeVacancyApplicationWindow()
+                .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
+                .clickButton("Откликнуться без резюме", VacancyDetailPage.btnApplyWithoutResume())
+                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
+                .setTinyMCEText("Сопроводительный текст", CustomRandom.getText(5001), VacancyDetailPage.fldAccompanyingText())
+                .clickButton("Отправить", VacancyDetailPage.btnSendApplication())
+                .checkValidationMessage("Сопроводительный текст", ValidationMessage.MAXIMUM_CHARACTERS_5000, VacancyDetailPage.fldAccompanyingTextValidation())
                 .closeVacancyApplicationWindow();
     }
 
@@ -86,12 +89,13 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_LessThanMaxNumber() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Откликнуться", Button.VACANCY_RESPOND)
-                .clickButton("Откликнуться без резюме", Button.APPLY_WITHOUT_RESUME)
-                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", Button.AGREEMENT)
-                .setTinyMCEText("Сопроводительный текст", CustomRandom.getText(5000), Fields.ACCOMPANYING_TEXT)
-                .clickButton("Отправить", Button.SEND_APPLICATION)
-                .checkValidationMessageAbsence("Сопроводительный текст", Fields.ACCOMPANYING_TEXT_VALIDATION)
+                .closeVacancyApplicationWindow()
+                .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
+                .clickButton("Откликнуться без резюме", VacancyDetailPage.btnApplyWithoutResume())
+                .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
+                .setTinyMCEText("Сопроводительный текст", CustomRandom.getText(5000), VacancyDetailPage.fldAccompanyingText())
+                .clickButton("Отправить", VacancyDetailPage.btnSendApplication())
+                .checkValidationMessageAbsence("Сопроводительный текст", VacancyDetailPage.fldAccompanyingTextValidation())
                 .closeVacancyApplicationWindow();
     }
 

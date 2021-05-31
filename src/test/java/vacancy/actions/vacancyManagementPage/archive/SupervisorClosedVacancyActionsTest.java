@@ -37,20 +37,20 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .selectActionFor(vacancyName, VacancyAction.COPY);
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -71,7 +71,7 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .selectActionFor(vacancyName, VacancyAction.DELETE_CLOSED_VACANCY)
                 .search(vacancyName)
                 .checkForVacancyAbsence(vacancyName);

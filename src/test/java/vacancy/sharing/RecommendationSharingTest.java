@@ -35,16 +35,16 @@ public class RecommendationSharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .recommendColleague(Data.RECRUITER_2)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .recommendColleague(Data.RECRUITER_3)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
-                .clickButton("Поделиться", Button.RESPONSE_SHARE);
+                .clickButton("Поделиться", VacancyDetailPage.btnResponseShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_RECOMMEND)
+                .isDialogOpened(ShareDialogBox.SHARE_RECOMMEND_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_2, "ФИО получателя")
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.RESPONSE_SENT);
     }
 

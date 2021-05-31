@@ -40,7 +40,7 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -50,14 +50,14 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -78,7 +78,7 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -87,7 +87,7 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT_VMP)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyName)
                 .checkForVacancyAbsence(vacancyName);
     }
@@ -109,19 +109,19 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("Сохранить", Button.SAVE_DRAFT_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("Сохранить", VacancyEditPage.btnSaveDraftVacancy());
 
         new MainPage().goToVacancyManagementPage();
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }
