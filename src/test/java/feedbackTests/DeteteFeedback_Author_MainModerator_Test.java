@@ -1,7 +1,7 @@
 package feedbackTests;
 
 import org.junit.Test;
-import base.ParentTest_OLD;
+import parentTest.ParentTest_OLD;
 
 public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
@@ -95,7 +95,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -180,7 +180,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();

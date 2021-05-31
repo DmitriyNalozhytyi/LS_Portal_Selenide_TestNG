@@ -1,7 +1,7 @@
 package feedbackTests;
 
 import org.junit.Test;
-import base.ParentTest_OLD;
+import parentTest.ParentTest_OLD;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -101,6 +101,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
         mainPage.navigateToCreateNewFeedbackPage();
+
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -115,7 +116,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -174,7 +175,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -288,7 +289,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -348,7 +349,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -465,7 +466,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -526,7 +527,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -586,7 +587,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -920,7 +921,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
-        //  viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("test - Approver - approve - status New" + actions.currentTime());
+        //  viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("test - Approver - approve - status New" + actions.currentTime());
 
         //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
@@ -937,7 +938,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_AppealField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();

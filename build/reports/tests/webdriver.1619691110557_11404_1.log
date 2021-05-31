@@ -1,0 +1,223 @@
+[1619691111.763][INFO]: Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 35972
+[1619691111.764][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1619691112.861][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND InitSession {
+   "capabilities": {
+      "desiredCapabilities": {
+         "acceptInsecureCerts": true,
+         "acceptSslCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--start-maximized" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "C:\\LizardSoft\\build\\downloads\\1619691110338_11404_1",
+               "plugins.always_open_pdf_externally": true
+            }
+         },
+         "handlesAlerts": true,
+         "javascriptEnabled": true,
+         "pageLoadStrategy": "normal",
+         "takesScreenshot": true
+      },
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--start-maximized" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "C:\\LizardSoft\\build\\downloads\\1619691110338_11404_1",
+               "plugins.always_open_pdf_externally": true
+            }
+         },
+         "pageLoadStrategy": "normal"
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "acceptSslCerts": true,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--start-maximized" ],
+         "excludeSwitches": [ "enable-automation", "load-extension" ],
+         "extensions": [  ],
+         "prefs": {
+            "credentials_enable_service": false,
+            "download.default_directory": "C:\\LizardSoft\\build\\downloads\\1619691110338_11404_1",
+            "plugins.always_open_pdf_externally": true
+         }
+      },
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "pageLoadStrategy": "normal",
+      "takesScreenshot": true
+   }
+}
+[1619691112.867][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "credentials_enable_service": false,
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "C:\\LizardSoft\\build\\downloads\\1619691110338_11404_1"
+   },
+   "plugins": {
+      "always_open_pdf_externally": true
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1619691112.867][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1619691112.871][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-blink-features=ShadowDOMV0 --enable-logging --ignore-certificate-errors --log-level=0 --no-first-run --no-service-autorun --password-store=basic --proxy-bypass-list=<-loopback> --remote-debugging-port=0 --start-maximized --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\DMYTRO~1.NAL\AppData\Local\Temp\scoped_dir20960_1356192732" data:,
+[1619691114.008][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1619691114.014][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1619691114.115][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "90.0.4430.72",
+      "chrome": {
+         "chromedriverVersion": "90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429})",
+         "userDataDir": "C:\\Users\\DMYTRO~1.NAL\\AppData\\Local\\Temp\\scoped_dir20960_1356192732"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:49527"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:largeBlob": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "26f33ccadba8e6c9b60a775fd49fcdf1"
+}
+[1619691114.373][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND SetWindowRect {
+   "height": 1080,
+   "width": 1800
+}
+[1619691114.373][INFO]: Waiting for pending navigations...
+[1619691114.389][INFO]: Done waiting for pending navigations. Status: ok
+[1619691114.768][INFO]: Waiting for pending navigations...
+[1619691114.770][INFO]: Done waiting for pending navigations. Status: ok
+[1619691114.770][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE SetWindowRect {
+   "height": 1080,
+   "width": 1800,
+   "x": 10,
+   "y": 10
+}
+[1619691114.787][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND Navigate {
+   "url": "https://metinvest-intranet-test.azurewebsites.net"
+}
+[1619691114.787][INFO]: Waiting for pending navigations...
+[1619691114.788][INFO]: Done waiting for pending navigations. Status: ok
+[1619691116.101][INFO]: Waiting for pending navigations...
+[1619691118.499][INFO]: Done waiting for pending navigations. Status: ok
+[1619691118.499][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE Navigate
+[1619691119.449][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND GetTitle {
+
+}
+[1619691119.449][INFO]: Waiting for pending navigations...
+[1619691119.457][INFO]: Done waiting for pending navigations. Status: ok
+[1619691119.463][INFO]: Waiting for pending navigations...
+[1619691119.464][INFO]: Done waiting for pending navigations. Status: ok
+[1619691119.464][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE GetTitle "Вход в учетную запись"
+[1619691119.472][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND Navigate {
+   "url": "https://metinvest-intranet-test.azurewebsites.net/ru/feedback"
+}
+[1619691119.472][INFO]: Waiting for pending navigations...
+[1619691119.473][INFO]: Done waiting for pending navigations. Status: ok
+[1619691119.691][INFO]: Waiting for pending navigations...
+[1619691121.457][INFO]: Done waiting for pending navigations. Status: ok
+[1619691121.458][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE Navigate
+[1619691121.561][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND FindElements {
+   "using": "css selector",
+   "value": ".mat-select-arrow-wrapper"
+}
+[1619691121.561][INFO]: Waiting for pending navigations...
+[1619691121.563][INFO]: Done waiting for pending navigations. Status: ok
+[1619691121.582][INFO]: Waiting for pending navigations...
+[1619691121.584][INFO]: Done waiting for pending navigations. Status: ok
+[1619691121.584][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE FindElements [  ]
+[1619691121.619][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND FindElements {
+   "using": "css selector",
+   "value": ".mat-select-arrow-wrapper"
+}
+[1619691121.619][INFO]: Waiting for pending navigations...
+[1619691121.620][INFO]: Done waiting for pending navigations. Status: ok
+[1619691121.624][INFO]: Waiting for pending navigations...
+[1619691121.625][INFO]: Done waiting for pending navigations. Status: ok
+[1619691121.625][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE FindElements [  ]
+[1619691122.387][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] COMMAND Quit {
+
+}
+[1619691122.632][INFO]: [26f33ccadba8e6c9b60a775fd49fcdf1] RESPONSE Quit

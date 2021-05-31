@@ -43,6 +43,15 @@ public class Config {
 
                 getInstance().config.getProperty(ConfigType.DEV_TESTUSER4_LOGIN),
                 getInstance().config.getProperty(ConfigType.DEV_TESTUSER4_PASSWORD),
+
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER10_LOGIN),
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER10_PASSWORD),
+
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER11_LOGIN),
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER11_PASSWORD),
+
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER12_LOGIN),
+                getInstance().config.getProperty(ConfigType.DEV_TESTUSER12_PASSWORD),
             }
         );
 

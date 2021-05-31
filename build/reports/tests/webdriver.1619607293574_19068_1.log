@@ -1,0 +1,197 @@
+[1619607294.761][INFO]: Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 3716
+[1619607294.761][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1619607295.791][INFO]: [59a1711cd552f311e59619593bc27235] COMMAND InitSession {
+   "capabilities": {
+      "desiredCapabilities": {
+         "acceptInsecureCerts": true,
+         "acceptSslCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--headless", "--disable-gpu", "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--start-maximized" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "C:\\LizardSoft\\build\\downloads\\1619607293350_19068_1",
+               "plugins.always_open_pdf_externally": true
+            }
+         },
+         "handlesAlerts": true,
+         "javascriptEnabled": true,
+         "pageLoadStrategy": "normal",
+         "takesScreenshot": true
+      },
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--headless", "--disable-gpu", "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--start-maximized" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "C:\\LizardSoft\\build\\downloads\\1619607293350_19068_1",
+               "plugins.always_open_pdf_externally": true
+            }
+         },
+         "pageLoadStrategy": "normal"
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "acceptSslCerts": true,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--headless", "--disable-gpu", "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--start-maximized" ],
+         "excludeSwitches": [ "enable-automation", "load-extension" ],
+         "extensions": [  ],
+         "prefs": {
+            "credentials_enable_service": false,
+            "download.default_directory": "C:\\LizardSoft\\build\\downloads\\1619607293350_19068_1",
+            "plugins.always_open_pdf_externally": true
+         }
+      },
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "pageLoadStrategy": "normal",
+      "takesScreenshot": true
+   }
+}
+[1619607295.796][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "credentials_enable_service": false,
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "C:\\LizardSoft\\build\\downloads\\1619607293350_19068_1"
+   },
+   "plugins": {
+      "always_open_pdf_externally": true
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1619607295.797][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1619607295.801][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-gpu --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-blink-features=ShadowDOMV0 --enable-logging --headless --ignore-certificate-errors --log-level=0 --no-first-run --no-service-autorun --password-store=basic --proxy-bypass-list=<-loopback> --remote-debugging-port=0 --start-maximized --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\DMYTRO~1.NAL\AppData\Local\Temp\scoped_dir10492_1152109039" data:,
+[1619607296.397][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1619607296.401][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1619607296.411][INFO]: [59a1711cd552f311e59619593bc27235] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "90.0.4430.72",
+      "chrome": {
+         "chromedriverVersion": "90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429})",
+         "userDataDir": "C:\\Users\\DMYTRO~1.NAL\\AppData\\Local\\Temp\\scoped_dir10492_1152109039"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:55692"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:largeBlob": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "59a1711cd552f311e59619593bc27235"
+}
+[1619607296.511][INFO]: [59a1711cd552f311e59619593bc27235] COMMAND SetWindowRect {
+   "height": 1080,
+   "width": 1800
+}
+[1619607296.511][INFO]: Waiting for pending navigations...
+[1619607296.514][INFO]: Done waiting for pending navigations. Status: ok
+[1619607296.624][INFO]: Waiting for pending navigations...
+[1619607296.625][INFO]: Done waiting for pending navigations. Status: ok
+[1619607296.625][INFO]: [59a1711cd552f311e59619593bc27235] RESPONSE SetWindowRect {
+   "height": 1080,
+   "width": 1800,
+   "x": 0,
+   "y": 0
+}
+[1619607296.645][INFO]: [59a1711cd552f311e59619593bc27235] COMMAND Navigate {
+   "url": "https://metinvest-intranet-test.azurewebsites.net"
+}
+[1619607296.645][INFO]: Waiting for pending navigations...
+[1619607296.646][INFO]: Done waiting for pending navigations. Status: ok
+[1619607297.202][INFO]: Waiting for pending navigations...
+[1619607299.010][INFO]: Done waiting for pending navigations. Status: ok
+[1619607299.010][INFO]: [59a1711cd552f311e59619593bc27235] RESPONSE Navigate
+[1619607299.577][INFO]: [59a1711cd552f311e59619593bc27235] COMMAND Screenshot {
+
+}
+[1619607299.577][INFO]: Waiting for pending navigations...
+[1619607299.579][INFO]: Done waiting for pending navigations. Status: ok
+[1619607300.322][INFO]: Waiting for pending navigations...
+[1619607300.323][INFO]: Done waiting for pending navigations. Status: ok
+[1619607300.323][INFO]: [59a1711cd552f311e59619593bc27235] RESPONSE Screenshot "iVBORw0KGgoAAAANSUhEUgAABwgAAAQ4CAYAAAAdAYi2AAAAAXNSR0IArs4c6QAAIABJREFUeJzsvVuy7KqONipG/5u4K+Ls/7WqDcl5sAFJ6AbGt5z5xRpLU8bmIoQk2yid/ve//5NTAoAMAGfSAqU8f3J3fgKAjM5LaeNTQpcrfNdeFAPn5zxR/0IUcXF+jGZIk..."
+[1619607300.783][INFO]: [59a1711cd552f311e59619593bc27235] COMMAND Quit {
+
+}
+[1619607300.854][INFO]: [59a1711cd552f311e59619593bc27235] RESPONSE Quit

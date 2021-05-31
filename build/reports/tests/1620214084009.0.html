@@ -1,0 +1,56 @@
+<html lang="en"><head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>My Metinvest</title>
+	<base href="/">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<!-- <link href="https://unpkg.com/bootstrap-css-only@4.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<script>
+		if (window.parent && window.parent.AuthenticationContext && window.parent._adalInstance) {
+			var selfAdalInstance = window.parent._adalInstance;
+			var hash = window.location.hash;
+
+			if (selfAdalInstance.isCallback(hash)) {
+				var requestInfo = selfAdalInstance.getRequestInfo(hash);
+				selfAdalInstance.info('Returned from redirect url');
+				selfAdalInstance.saveTokenFromHash(requestInfo);
+				callback = window.parent.callBackMappedToRenewStates[requestInfo.stateResponse];
+				token = requestInfo.parameters[selfAdalInstance.CONSTANTS.ACCESS_TOKEN] || requestInfo.parameters[selfAdalInstance.CONSTANTS.ID_TOKEN];
+				try {
+					if (callback)
+						callback(selfAdalInstance._getItem(selfAdalInstance.CONSTANTS.STORAGE.ERROR_DESCRIPTION), token, selfAdalInstance._getItem(selfAdalInstance.CONSTANTS.STORAGE.ERROR));
+				} catch (err) {
+					selfAdalInstance.error('Error occurred in user defined callback function', err)
+				}
+				document.write('<style type="text/undefined">');
+				
+			}
+			
+		}
+	</script><style type="text/undefined">
+	
+	<link rel="stylesheet" href="styles.4bf2b9f1a13006434c69.css"></head>
+
+<body>
+	<app-root>
+		<div class="spinner-overlay preloader" id="preloader1">
+			<div class="sk-wave">
+				<div class="sk-rect sk-rect1" style="background-color: #ff0000"></div>
+				<div class="sk-rect sk-rect2" style="background-color: #ff0000"></div>
+				<div class="sk-rect sk-rect3" style="background-color: #ff0000"></div>
+				<div class="sk-rect sk-rect4" style="background-color: #ff0000"></div>
+				<div class="sk-rect sk-rect5" style="background-color: #ff0000"></div>
+			</div>
+		</div>
+	</app-root>
+<script type="text/javascript" src="runtime.a94ffbb820e770b4b988.js"></script><script type="text/javascript" src="polyfills.c0629eb8595e54401b09.js"></script><script type="text/javascript" src="main.30f859a6ffdb69808229.js"></script></body>
+
+</html></style></head><body></body></html>
