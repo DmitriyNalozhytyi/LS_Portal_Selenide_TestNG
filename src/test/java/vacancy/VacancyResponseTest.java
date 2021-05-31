@@ -1,6 +1,6 @@
 package vacancy;
 
-import base.ParentTest;
+import parentTest.ParentTest;
 import constants.ResponseActions;
 import constants.Status;
 import constants.USERS;

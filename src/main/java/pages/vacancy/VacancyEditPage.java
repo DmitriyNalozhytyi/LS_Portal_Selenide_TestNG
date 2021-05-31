@@ -24,7 +24,7 @@ public class VacancyEditPage extends CreateVacancyPage{
     }
 
     public static SelenideElement btnSaveDraftVacancy() {
-        return pageContainer.findAll("..dynamic-form-button.mat-button.vacancy-publish-button").get(0);
+        return $$(".dynamic-form-button.mat-button.vacancy-publish-button").get(0);
     }
 
     /**

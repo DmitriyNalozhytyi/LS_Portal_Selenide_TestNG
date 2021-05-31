@@ -9,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -35,7 +35,7 @@ public class RecommendationSharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .recommendColleague(Data.RECRUITER_2)
+                .recommendColleague(Data.RECRUITER_3)
                 .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()

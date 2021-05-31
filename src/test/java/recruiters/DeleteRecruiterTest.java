@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.recruiter.RecruiterPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 
 @Epic("Recruiter")
 public class DeleteRecruiterTest extends ParentTest {

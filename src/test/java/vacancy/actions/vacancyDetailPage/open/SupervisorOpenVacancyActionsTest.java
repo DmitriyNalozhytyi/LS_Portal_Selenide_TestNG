@@ -11,7 +11,7 @@ import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**
@@ -40,6 +40,7 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -77,6 +78,7 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -85,7 +87,7 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened_VMP())
                 .search(vacancyName)
                 .checkForVacancyAbsence(vacancyName);
     }
@@ -107,6 +109,7 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)

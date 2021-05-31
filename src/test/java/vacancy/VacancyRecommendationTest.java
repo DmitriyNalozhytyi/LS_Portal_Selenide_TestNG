@@ -9,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**

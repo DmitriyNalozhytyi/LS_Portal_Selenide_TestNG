@@ -1,6 +1,5 @@
 package recruiters;
 
-import constants.Button;
 import constants.ErrorMessage;
 import constants.USERS;
 import io.qameta.allure.Epic;
@@ -10,7 +9,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.recruiter.AddRecruiterPage;
 import pages.recruiter.RecruiterPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 
 @Epic("Recruiter")
 public class ValidationTest extends ParentTest {

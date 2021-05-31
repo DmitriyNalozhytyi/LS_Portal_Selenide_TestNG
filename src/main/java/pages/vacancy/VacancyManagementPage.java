@@ -36,11 +36,15 @@ public class VacancyManagementPage {
     }
 
     public static SelenideElement tbVacancyOnApproval() {
-        return pageContainer.find("#mat-tab-label-0-1").waitUntil(Condition.appears, 10000);
+        return $("#mat-tab-label-0-1").waitUntil(Condition.appears, 10000);
     }
 
     public static SelenideElement tbVacancyOpened() {
         return pageContainer.find("#mat-tab-label-0-0").waitUntil(Condition.appears, 10000);
+    }
+
+    public static SelenideElement tbVacancyOpened_VMP() {
+        return pageContainer.find("#mat-tab-label-1-0").waitUntil(Condition.appears, 10000);
     }
 
     public static SelenideElement tbVacancyDraft() {

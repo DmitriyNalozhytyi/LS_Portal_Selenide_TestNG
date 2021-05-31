@@ -8,8 +8,7 @@ import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 public class VacancyDetailPage {
     private final static String RECOMMENDATION_OF_CANDIDATE_PAGE_TITLE  = "Рекомендация кандидата:";
@@ -25,7 +24,7 @@ public class VacancyDetailPage {
     }
 
     public static SelenideElement btnApplyWithoutResume() {
-        return pageContainer.find(".mat-slide-toggle-input").parent();
+        return $(".mat-slide-toggle-input").parent();
     }
 
     public static SelenideElement btnUploadCV() {
@@ -33,11 +32,11 @@ public class VacancyDetailPage {
     }
 
     public static SelenideElement btnSendApplication() {
-        return pageContainer.find(".response-dialog__button.vacancy-publish-button.mat-button");
+        return $(".response-dialog__button.vacancy-publish-button.mat-button");
     }
     
     public static SelenideElement btnAgreement() {
-        return pageContainer.find(".mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin");
+        return $(".mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin");
     }
 
     public static SelenideElement btnVacancyRespond() {
@@ -49,23 +48,23 @@ public class VacancyDetailPage {
     }
 
     public static SelenideElement btnResponseShare() {
-        return pageContainer.findAll(".vacancy-cancel-button.response-dialog__button").get(0);
+        return $$(".vacancy-cancel-button.response-dialog__button").get(0);
     }
 
     public static SelenideElement btnVacancyShare_VMP() {
-        return pageContainer.findAll(".vacancy-header__button.vacancy-header__button_share").get(1);
+        return $$(".vacancy-header__button.vacancy-header__button_share").get(1);
     }
 
     public static SelenideElement btnVacancyShare() {
-        return pageContainer.find(".vacancy-header__button.vacancy-header__button_share");
+        return $(".vacancy-header__button.vacancy-header__button_share");
     }
 
     public static SelenideElement btnRecommendColleague() {
-        return pageContainer.find(".vacancy-buttons__recommend.vacancy-save-button.mat-button");
+        return $(".vacancy-buttons__recommend.vacancy-save-button.mat-button");
     }
 
     public static SelenideElement btnSendRecommendation() {
-        return pageContainer.find(".recommend-dialog__button.vacancy-publish-button.mat-button");
+        return $(".recommend-dialog__button.vacancy-publish-button.mat-button");
     }
 
     public static SelenideElement btnVacancyManagement() {
@@ -81,19 +80,19 @@ public class VacancyDetailPage {
     }
 
     public static SelenideElement btnResponseOnApproval() {
-        return pageContainer.find(".response-dialog__button.vacancy-publish-button");
+        return $(".response-dialog__button.vacancy-publish-button");
     }
 
     public static SelenideElement btnResponseCandidateAccept() {
-        return pageContainer.find(".response-dialog__button.vacancy-publish-button");
+        return $(".response-dialog__button.vacancy-publish-button");
     }
 
     public static SelenideElement btnVacancyApplicationCancel() {
-        return pageContainer.find(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel");
+        return $(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel");
     }
 
     public static SelenideElement btnVacancyRecommendationCancel() {
-        return pageContainer.find(".vacancy-cancel-button.recommend-dialog__button.recommend-dialog__button_cancel");
+        return $(".vacancy-cancel-button.recommend-dialog__button.recommend-dialog__button_cancel");
     }
 
     public static SelenideElement btnCopyVacancy() {
@@ -112,29 +111,24 @@ public class VacancyDetailPage {
         return pageContainer.find(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
     }
 
-    SelenideElement CopyVacancy             = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(0);
-    SelenideElement EditVacancy             = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
-    SelenideElement DELETE_VACANCY          = $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(2);
-    SelenideElement DELETE_CLOSED_VACANCY_ON= $(".vacancy-header__info-title").findAll(".icon.icon-frame").get(1);
-
     public static SelenideElement tabVacancyRecommendations() {
-        return pageContainer.find(".mat-tab-labels").findAll(".mat-tab-label").get(1);
+        return $(".mat-tab-labels").findAll(".mat-tab-label").get(1);
     }
 
     public static SelenideElement inpRecommendColleagueName() {
-        return pageContainer.findAll(".main-input.vacancy-input").get(0);
+        return $$(".main-input.vacancy-input").get(0);
     }
 
     public static SelenideElement inpJobApplicationPhone() {
-        return pageContainer.find(".form-element.form-element__first.vacancy-field").find("input");
+        return $(".form-element.form-element__first.vacancy-field").find("input");
     }
 
     public static SelenideElement fldAccompanyingTextValidation() {
-        return pageContainer.find(".vacancy-tinymce-field");
+        return $(".vacancy-tinymce-field");
     }
 
     public static SelenideElement fldAccompanyingText() {
-        return pageContainer.find(".mce-tinymce.mce-container.mce-panel").find("iframe");
+        return $(".mce-tinymce.mce-container.mce-panel").find("iframe");
     }
 
     /**

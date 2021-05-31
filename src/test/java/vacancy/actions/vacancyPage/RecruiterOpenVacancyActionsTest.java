@@ -11,7 +11,7 @@ import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyEditPage;
 import pages.vacancy.VacancyManagementPage;
 import pages.vacancy.VacancyPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**

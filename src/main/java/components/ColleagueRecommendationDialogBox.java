@@ -12,7 +12,7 @@ public class ColleagueRecommendationDialogBox {
     private final SelenideElement container                      = $(".recommend-dialog");
 
     private SelenideElement colleagueContainer() {
-        return container.findAll(".main-input.vacancy-input").get(0);
+        return container.findAll(".main-input.vacancy-input").get(0).waitUntil(Condition.appears, 10000);
     }
 
     private SelenideElement pageTitle() {

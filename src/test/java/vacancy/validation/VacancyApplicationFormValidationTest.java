@@ -8,7 +8,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 @Epic("Vacancy")
@@ -46,6 +46,7 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void cvFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeVacancyApplicationWindow()
                 .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
                 .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
                 .clickButton("Отправить", VacancyDetailPage.btnSendApplication())
@@ -58,6 +59,7 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeVacancyApplicationWindow()
                 .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
                 .clickButton("Откликнуться без резюме", VacancyDetailPage.btnApplyWithoutResume())
                 .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
@@ -71,6 +73,7 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_MaxNumber() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeVacancyApplicationWindow()
                 .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
                 .clickButton("Откликнуться без резюме", VacancyDetailPage.btnApplyWithoutResume())
                 .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())
@@ -86,6 +89,7 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_LessThanMaxNumber() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeVacancyApplicationWindow()
                 .clickButton("Откликнуться", VacancyDetailPage.btnVacancyRespond())
                 .clickButton("Откликнуться без резюме", VacancyDetailPage.btnApplyWithoutResume())
                 .clickButton("Отправляя отклик на вакансию, я даю согласие на обработку моих персональных данных", VacancyDetailPage.btnAgreement())

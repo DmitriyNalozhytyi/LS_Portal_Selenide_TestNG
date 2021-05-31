@@ -2,7 +2,7 @@ package feedbackTests;
 
 
 import org.testng.annotations.Test;
-import base.ParentTest_OLD;
+import parentTest.ParentTest_OLD;
 
 public class CheckFields extends ParentTest_OLD {
 

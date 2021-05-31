@@ -1,6 +1,6 @@
 package vacancy.validation;
 
-import base.ParentTest;
+import parentTest.ParentTest;
 import constants.USERS;
 import constants.ValidationMessage;
 import io.qameta.allure.*;
@@ -34,10 +34,11 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     public void phoneFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeColleagueRecommendationWindow()
                 .clickButton("Рекомендовать коллегу", VacancyDetailPage.btnRecommendColleague())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .checkValidationMessage("ФИО", ValidationMessage.REQUIRED_FIELD, VacancyDetailPage.inpRecommendColleagueName())
-                .closeVacancyApplicationWindow();
+                .closeColleagueRecommendationWindow();
     }
 
     @Story("Empty field validation for Colleague Recommendation form")
@@ -45,10 +46,11 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     public void cvFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeColleagueRecommendationWindow()
                 .clickButton("Рекомендовать коллегу", VacancyDetailPage.btnRecommendColleague())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .checkValidationMessage("Телефон", ValidationMessage.REQUIRED_FIELD, VacancyDetailPage.inpJobApplicationPhone())
-                .closeVacancyApplicationWindow();
+                .closeColleagueRecommendationWindow();
     }
 
     @Story("Empty field validation for Colleague Recommendation form")
@@ -56,10 +58,11 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_EmptyField() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeColleagueRecommendationWindow()
                 .clickButton("Рекомендовать коллегу", VacancyDetailPage.btnRecommendColleague())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .checkValidationMessage("Сопроводительный текст", ValidationMessage.REQUIRED_FIELD, VacancyDetailPage.fldAccompanyingTextValidation())
-                .closeVacancyApplicationWindow();
+                .closeColleagueRecommendationWindow();
     }
 
     @Story("Number of characters validation for Colleague Recommendation form")
@@ -67,12 +70,13 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_MaxNumber() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeColleagueRecommendationWindow()
                 .clickButton("Рекомендовать коллегу", VacancyDetailPage.btnRecommendColleague())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .setTinyMCEText("Сопроводительный текст", CustomRandom.getText(5001), VacancyDetailPage.fldAccompanyingText())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .checkValidationMessage("Сопроводительный текст", ValidationMessage.MAXIMUM_CHARACTERS_5000, VacancyDetailPage.fldAccompanyingTextValidation())
-                .closeVacancyApplicationWindow();
+                .closeColleagueRecommendationWindow();
     }
 
     @Story("Number of characters validation for Colleague Recommendation form")
@@ -81,12 +85,13 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     public void accompanyingFieldValidation_LessThanMaxNumber() {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
+                .closeColleagueRecommendationWindow()
                 .clickButton("Рекомендовать коллегу", VacancyDetailPage.btnRecommendColleague())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .setTinyMCEText("Сопроводительный текст", CustomRandom.getText(5000), VacancyDetailPage.fldAccompanyingText())
                 .clickButton("Отправить", VacancyDetailPage.btnSendRecommendation())
                 .checkValidationMessageAbsence("Сопроводительный текст", VacancyDetailPage.fldAccompanyingTextValidation())
-                .closeVacancyApplicationWindow();
+                .closeColleagueRecommendationWindow();
     }
 
 }

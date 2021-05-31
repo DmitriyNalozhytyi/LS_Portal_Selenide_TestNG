@@ -26,16 +26,17 @@ public class TooltipPage {
     }
 
     public static SelenideElement btnSaveTooltip() {
-        return container.find(".dynamic-form-button-block").findAll("button").get(1);
+        return $(".dynamic-form-button-block").findAll("button").get(1);
     }
 
     public static SelenideElement inpTooltipName() {
-        return container.find(".main-input");
+        return $(".main-input");
     }
 
     private SelenideElement findTooltip(String name) {
         SelenideElement find = $(withText(name));
         do {
+            new PagePreLoader().waitToLoad();
             if ($(withText(name)).isDisplayed()) {
                 find = new Table().getRowByValue(name);
                 break;

@@ -10,7 +10,7 @@ import pages.MainPage;
 import pages.vacancy.CreateVacancyPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
-import base.ParentTest;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 /**
