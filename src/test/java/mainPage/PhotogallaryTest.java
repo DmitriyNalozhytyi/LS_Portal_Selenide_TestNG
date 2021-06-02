@@ -1,7 +1,7 @@
 package mainPage;
 
 import org.junit.Test;
-import base.ParentTest_OLD;
+import parentTest.ParentTest_OLD;
 
 public class PhotogallaryTest extends ParentTest_OLD {
 

@@ -1,6 +1,7 @@
 package feedbackTests;
 
 
+import constants.SiteMenu;
 import org.testng.annotations.Test;
 import parentTest.ParentTest_OLD;
 
@@ -11,7 +12,7 @@ public class CheckFields extends ParentTest_OLD {
     @Test
     public void checkFieldValidation_CreateNewFeedback_Portal_ByMM() throws InterruptedException {
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         //check field  TopicField
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -25,7 +26,7 @@ public class CheckFields extends ParentTest_OLD {
     @Test
     public void checkFieldValidation_CreateNewFeedback_PersonalMeetings_ByMM() throws InterruptedException {
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         //check field Speaker
         createNewFeedback_Page_MainModerator.insertCountOfPeopleField("5");

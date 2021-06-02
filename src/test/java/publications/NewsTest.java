@@ -1,7 +1,7 @@
 package publications;
 
 import org.junit.Test;
-import base.ParentTest_OLD;
+import parentTest.ParentTest_OLD;
 
 @Deprecated
 public class NewsTest extends ParentTest_OLD {

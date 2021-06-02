@@ -1,6 +1,6 @@
 package mainPage;
 
-import base.ParentTest_OLD;
+import parentTest.ParentTest_OLD;
 
 
 public class MainPageTest extends ParentTest_OLD {

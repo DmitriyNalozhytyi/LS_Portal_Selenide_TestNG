@@ -5,6 +5,7 @@ import constants.Language;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.tooltip.TooltipDialogBox;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -35,6 +36,8 @@ public class MainPage extends ParentPage {
         return $(".language-list").findAll(".language-option").get(1);
     }
 
+
+
     public void goToAllNews(){
 
         actions.click(btnAllNews);
@@ -61,10 +64,11 @@ public class MainPage extends ParentPage {
         actions.click(btnAllAlbums);
     }
 
-    @Step("Open create new feedback page")
-    public MainPage navigateToCreateNewFeedbackPage() {
-      open("https://metinvest-intranet-test.azurewebsites.net/ru/feedback");
-      return this;
+    @Step("Open page {0}")
+    public MainPage goTo(String page) {
+        new TooltipDialogBox().close();
+        open(page);
+        return this;
     }
 
     @Step
@@ -72,37 +76,6 @@ public class MainPage extends ParentPage {
         webDriver.navigate().to("https://metinvest-intranet-tests.azurewebsites.net/feedback/list");
     }
 
-    /**
-     * Open recruiter page
-     */
-    @Step("Open recruiters page")
-    public void goToRecruiterPage() {
-        open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters");
-    }
-
-    /**
-     * Open vacancy management page "admin/vacancy"
-     */
-    @Step("Open Vacancy management page")
-    public void goToVacancyManagementPage() {
-        open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy");
-    }
-
-    /**
-     * Open vacancy page "/vacancy"
-     */
-    @Step("Open vacancy page")
-    public void goToVacancyPage() {
-        open("https://metinvest-intranet-test.azurewebsites.net/ru/vacancy");
-    }
-
-    /**
-     * Open tooltip page "/tooltips"
-     */
-    @Step("Open tooltip page")
-    public void goToTooltipPage() {
-        open("https://metinvest-intranet-test.azurewebsites.net/ru/admin/tooltips");
-    }
 
     /**
      * Switch the language of app
