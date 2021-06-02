@@ -20,7 +20,7 @@ public class VacancyApplicationFormValidationTest extends ParentTest {
     @BeforeClass(description = "Create a vacancy")
     public void createVacancyForFieldValidation() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

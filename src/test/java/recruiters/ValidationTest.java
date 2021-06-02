@@ -1,6 +1,7 @@
 package recruiters;
 
 import constants.ErrorMessage;
+import constants.SiteMenu;
 import constants.USERS;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
@@ -19,7 +20,7 @@ public class ValidationTest extends ParentTest {
     public void checkValidation() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToRecruiterPage();
+        new MainPage().goTo(SiteMenu.RECRUITER);
 
         new RecruiterPage()
                 .isPageOpens()

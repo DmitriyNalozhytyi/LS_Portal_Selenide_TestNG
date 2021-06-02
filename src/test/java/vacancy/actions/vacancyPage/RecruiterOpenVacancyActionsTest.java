@@ -29,13 +29,13 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
 
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -48,7 +48,7 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
                 .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -64,13 +64,13 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
 
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -82,7 +82,7 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
                 .clickButton("На утверждение", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()

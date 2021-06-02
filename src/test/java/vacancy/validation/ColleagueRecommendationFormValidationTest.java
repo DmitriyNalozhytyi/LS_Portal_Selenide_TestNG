@@ -1,6 +1,6 @@
 package vacancy.validation;
 
-import parentTest.ParentTest;
+import constants.SiteMenu;
 import constants.USERS;
 import constants.ValidationMessage;
 import io.qameta.allure.*;
@@ -10,6 +10,7 @@ import pages.AuthorizationPage;
 import pages.MainPage;
 import pages.vacancy.VacancyDetailPage;
 import pages.vacancy.VacancyManagementPage;
+import parentTest.ParentTest;
 import utils.CustomRandom;
 
 @Epic("Vacancy")
@@ -21,7 +22,7 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     @BeforeClass(description = "Create a vacancy")
     public void createVacancyForFieldValidation() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

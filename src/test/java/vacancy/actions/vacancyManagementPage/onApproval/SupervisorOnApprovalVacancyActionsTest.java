@@ -29,7 +29,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -37,7 +37,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -51,7 +51,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("На утверждение", CreateVacancyPage.btnSaveAndPublishVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -66,7 +66,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
         String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -74,14 +74,14 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .selectActionFor(vacancyName, VacancyAction.DELETE)
                 .search(vacancyName)
-                .checkForVacancyAbsence(vacancyName);
+                .checkForVacancyAbsence();
     }
 
     @Story("Edit vacancy")
@@ -91,7 +91,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -99,7 +99,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -111,7 +111,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
                 .clickButton("На утверждение", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
