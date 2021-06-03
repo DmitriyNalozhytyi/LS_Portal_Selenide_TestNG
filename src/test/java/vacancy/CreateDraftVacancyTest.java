@@ -44,12 +44,12 @@ public class CreateDraftVacancyTest extends ParentTest {
                 .isCreateVacancyPage()
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), user+vacancyName)
                 .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, CreateVacancyPage.ddCompany())
-                .selectFor("Город", City.VINNYTSIA, CreateVacancyPage.ddCity())
+                .selectFor("Предприятие", CreateVacancyPage.ddCompany(), 1)
+                .selectFor("Город", CreateVacancyPage.ddCity(), 1)
                 .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
                 .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
-                .selectFor("Функция",Function.AUDIT, CreateVacancyPage.ddFunction())
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, CreateVacancyPage.ddSchedule())
+                .selectFor("Функция", CreateVacancyPage.ddFunction(), 1)
+                .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
                 .selectResponsibleForSW(user, Data.RECRUITER_2)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 

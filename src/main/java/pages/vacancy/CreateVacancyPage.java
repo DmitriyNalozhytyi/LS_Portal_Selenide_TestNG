@@ -101,12 +101,12 @@ public class CreateVacancyPage {
     /**
      * Work with dropdown element
      * @param fieldName the name of the field
-     * @param value the value that should be selected
      * @param element selector to find this element
+     * @param index index of element in the list
      */
     @Step("Select {1} for {0}")
-    public CreateVacancyPage selectFor(String fieldName, String value, SelenideElement element) {
-        new Actions().dropdown(fieldName, value, element);
+    public CreateVacancyPage selectFor(String fieldName, SelenideElement element, int index) {
+        new Actions().dropdown(fieldName, element, index);
         return this;
     }
 
