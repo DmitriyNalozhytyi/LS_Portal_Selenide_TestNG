@@ -102,5 +102,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-simple:1.7.30" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-selenide:2.13.8" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:21.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.thedeanda:lorem:2.1" level="project" />
   </component>
 </module>

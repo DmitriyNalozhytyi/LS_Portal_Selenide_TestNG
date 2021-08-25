@@ -3,6 +3,8 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import constants.Language;
 import io.qameta.allure.Step;
+import libs.Actions;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.tooltip.TooltipDialogBox;
@@ -13,6 +15,10 @@ import static com.codeborne.selenide.Selenide.open;
 public class MainPage extends ParentPage {
 
     private final SelenideElement selectLanguageElement = $(".language-select");
+
+    private final SelenideElement inpSearch() {
+        return $(".header-search.large");
+    }
 
     @FindBy(className = "_link-dashboard")
     public WebElement btnAllNews;
@@ -34,6 +40,10 @@ public class MainPage extends ParentPage {
 
     public static SelenideElement portalLanguageRU() {
         return $(".language-list").findAll(".language-option").get(1);
+    }
+
+    public static SelenideElement portalLanguageUA() {
+        return $(".language-list").findAll(".language-option").get(0);
     }
 
 
@@ -82,10 +92,24 @@ public class MainPage extends ParentPage {
      * @param language language. List of language can be found there Language
      */
     @Step("Switch the language of Portal to {0}")
-    public void switchAppToLang(Language language) {
+    public MainPage switchAppToLang(Language language) {
         switch (language) {
-            case RU: actions.click(selectLanguageElement, "Язык портала").click(portalLanguageRU(), "Русский");
+            case RU: actions.click(selectLanguageElement, "Язык портала").click(portalLanguageRU(), "Русский"); break;
+            case UA: actions.click(selectLanguageElement, "Язык портала").click(portalLanguageUA(), "Украинский"); break;
         }
+
+        return this;
     }
+
+    /**
+     * Search on the portal
+     * @param text text that should be found
+     */
+    public void search(String text) {
+        new Actions().enterText(inpSearch(), text, "Поиск");
+        inpSearch().sendKeys(Keys.ENTER);
+    }
+
+
 }
 

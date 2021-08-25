@@ -18,7 +18,7 @@ public class AddRecruiterTest extends ParentTest {
     public void addRecruiter() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goTo(SiteMenu.RECRUITER);
+        new MainPage().goTo(Pages.RECRUITER);
 
         new RecruiterPage()
                 .isPageOpens()

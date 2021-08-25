@@ -1,6 +1,6 @@
 package feedbackTests;
 
-import constants.SiteMenu;
+import constants.Pages;
 import org.junit.Test;
 import parentTest.ParentTest_OLD;
 
@@ -60,7 +60,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -81,7 +81,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -117,7 +117,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -143,7 +143,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -165,7 +165,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -202,7 +202,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -229,7 +229,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -255,7 +255,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -279,7 +279,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -302,7 +302,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -328,7 +328,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -353,7 +353,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -377,7 +377,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -410,7 +410,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -440,7 +440,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -469,7 +469,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -501,7 +501,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");
@@ -531,7 +531,7 @@ public class DeteteFeedback_Author_MainModerator_Test extends ParentTest_OLD {
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Сокирко Елена Викторовна");

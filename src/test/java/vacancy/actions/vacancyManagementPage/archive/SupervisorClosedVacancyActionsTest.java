@@ -27,13 +27,13 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyForArchiveASSupervisor(vacancyName, "Закрытая", VacancyStatus.CLOSED);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -46,7 +46,7 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -61,13 +61,13 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
         String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyForArchiveASSupervisor(vacancyName, "Закрытая", VacancyStatus.CLOSED);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

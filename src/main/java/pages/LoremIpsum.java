@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class LoremIpsum extends ParentPage {
     public LoremIpsum() {
 

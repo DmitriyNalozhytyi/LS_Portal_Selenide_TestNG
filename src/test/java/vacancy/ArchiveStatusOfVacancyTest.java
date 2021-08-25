@@ -44,7 +44,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     public void moveOpenedVacancyToArchive(int vacancyStatus, String vacancyName) {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -62,7 +62,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
                 .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -73,7 +73,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -85,7 +85,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -99,7 +99,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Приостановлена", vacancyStatus)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -109,7 +109,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -123,7 +123,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     public void moveVacancyFromOnApprovalToArchive(int vacancyStatus, String vacancyName) {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -141,7 +141,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
                 .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -152,7 +152,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -164,7 +164,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .changeStatus("Статус", "Отменена", vacancyStatus)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -174,7 +174,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

@@ -25,7 +25,7 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
     public void addVacancyOnApprovalAsRecruiter() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -43,7 +43,7 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
                 .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
