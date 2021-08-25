@@ -29,30 +29,30 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createDraftVacancyAsSupervisor(vacancyName);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .selectActionFor(vacancyName, VacancyAction.COPY);
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -63,20 +63,20 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
         String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createDraftVacancyAsSupervisor(vacancyName);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .selectActionFor(vacancyName, VacancyAction.DELETE)
                 .search(vacancyName)
-                .checkForVacancyAbsence(vacancyName);
+                .checkForVacancyAbsence();
     }
 
     @Story("Edit vacancy")
@@ -86,29 +86,29 @@ public class SupervisorDraftVacancyActionsTest extends ParentTest {
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createDraftVacancyAsSupervisor(vacancyName);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("Сохранить", Button.SAVE_DRAFT_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("Сохранить", VacancyEditPage.btnSaveDraftVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

@@ -25,29 +25,29 @@ public class CreateOnApprovalVacancyTest extends ParentTest {
     public void addVacancyOnApprovalAsRecruiter() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .clickButton("Создать вакансию", Button.CREATE_VACANCY);
+                .clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyName)
-                .setValueFor("Тип вакансии", "Для сотрудников", VacancyType.FOR_STAFF)
-                .selectFor("Предприятие", Companies.METINVEST_KHOLDING, Fields.VACANCY_COMPANY)
-                .selectFor("Город", City.VINNYTSIA, Fields.VACANCY_CITY)
-                .setValueFor("Уровень позиции", "N-1", PositionLevel.N_1)
-                .setValueFor("Тип занятости", "Частичная занятость", EmploymentType.PART_TIME)
-                .selectFor("Функция",Function.AUDIT, Fields.VACANCY_FUNCTION)
-                .selectFor("График работы",Schedule.SHIFT_WORK_8_HOUR, Fields.VACANCY_SCHEDULE)
-                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyName)
+                .setValueFor("Тип вакансии", "Для сотрудников", CreateVacancyPage.btnForStaff())
+                .selectFor("Предприятие", CreateVacancyPage.ddCompany(), 1)
+                .selectFor("Город", CreateVacancyPage.ddCity(), 1)
+                .setValueFor("Уровень позиции", "N-1", CreateVacancyPage.btnLevelPosition_N1())
+                .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
+                .selectFor("Функция", CreateVacancyPage.ddFunction(), 1)
+                .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
+                .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .checkForVacancy(vacancyName);
 
     }

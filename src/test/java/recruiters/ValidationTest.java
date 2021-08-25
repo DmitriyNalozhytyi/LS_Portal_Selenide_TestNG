@@ -1,7 +1,7 @@
 package recruiters;
 
-import constants.Button;
 import constants.ErrorMessage;
+import constants.SiteMenu;
 import constants.USERS;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
@@ -20,15 +20,15 @@ public class ValidationTest extends ParentTest {
     public void checkValidation() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goToRecruiterPage();
+        new MainPage().goTo(SiteMenu.RECRUITER);
 
         new RecruiterPage()
                 .isPageOpens()
-                .clickButton("Добавить рекрутера", Button.ADD_RECRUITER);
+                .clickButton("Добавить рекрутера", RecruiterPage.btnAddRecruiter());
 
         new AddRecruiterPage()
                 .isPageOpens()
-                .clickButton("Сохранить", Button.SAVE_RECRUITER)
+                .clickButton("Сохранить", AddRecruiterPage.btnSaveVacancy())
                 .checkValidationMessage(ErrorMessage.FIELD_IS_REQUIRED);
 
 

@@ -29,29 +29,30 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyASSupervisor(vacancyName);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .selectActionFor(vacancyName, VacancyAction.COPY);
 
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("На утверждение", Button.SAVE_AND_PUBLISH_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("На утверждение", CreateVacancyPage.btnSaveAndPublishVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -62,19 +63,20 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
         String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyASSupervisor(vacancyName);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .selectActionFor(vacancyName, VacancyAction.DELETE)
                 .search(vacancyName)
-                .checkForVacancyAbsence(vacancyName);
+                .checkForVacancyAbsence();
     }
 
     @Story("Edit vacancy")
@@ -84,28 +86,29 @@ public class SupervisorOpenVacancyActionsTest extends ParentTest {
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyASSupervisor(vacancyName);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .selectActionFor(vacancyName, VacancyAction.EDIT);
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("На утверждение", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("На утверждение", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Открытые", Tabs.VACANCY_OPENED)
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

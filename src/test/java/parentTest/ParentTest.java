@@ -48,8 +48,6 @@ public abstract class ParentTest {
 //        Configuration.browserCapabilities.setCapability("--disable-gpu", true);
 //        Configuration.browserCapabilities.setCapability("--no-sandbox", true);
         //        System.setProperty("--ignore-certificate-errors", "false");
-
-        SelenideLogger.addListener("JSErrorsListener", new JSListeners());
     }
 
     @Step("Open site page and close pop-ups if they appear")
@@ -61,6 +59,7 @@ public abstract class ParentTest {
 
     @BeforeClass
     public static void openSite() {
+        SelenideLogger.addListener("JSErrorsListener", new JSListeners());
         openBrowser(Config.HostsData.METINVEST.value[0]);
     }
 

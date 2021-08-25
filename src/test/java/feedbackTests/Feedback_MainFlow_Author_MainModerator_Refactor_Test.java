@@ -24,7 +24,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().navigateToCreateNewFeedbackPage();
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_TopicField()
@@ -49,7 +49,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .navigateToCreateNewFeedbackPage();
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ();
 
@@ -88,13 +88,13 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
             String vacancyNameCopied = vacancyName + "_COPIED";
 
             new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-            new MainPage().goToVacancyManagementPage();
+            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
             new VacancyManagementPage()
                     .isPageOpens()
                     .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
 
-            new MainPage().goToVacancyManagementPage();
+            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
             new VacancyManagementPage()
                     .isPageOpens()
@@ -106,7 +106,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                     .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
                     .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
 
-            new MainPage().goToVacancyManagementPage();
+            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
             new VacancyManagementPage()
                     .isPageOpens()
@@ -116,7 +116,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
             new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-            new MainPage().goToVacancyManagementPage();
+            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
             new VacancyManagementPage()
                     .isPageOpens()
@@ -128,7 +128,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                     .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                     .clickButton("Сохранить", Button.SAVE_VACANCY);
 
-            new MainPage().goToVacancyManagementPage();
+            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
             new VacancyManagementPage()
                     .isPageOpens()
@@ -138,7 +138,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
             new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-            new MainPage().goToVacancyManagementPage();
+            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
             new VacancyManagementPage()
                     .isPageOpens()

@@ -3,21 +3,66 @@ package pages.vacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.PagePreLoader;
-import constants.Input;
 import constants.USERS;
-import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 
 public class CreateVacancyPage {
-    private final SelenideElement pageContainer = $(".news.reuse-wrapper.mat-card");
+    private static final String NEW_VACANCY_PAGE             = "Новая вакансия";
+    private static final SelenideElement pageContainer = $(".news.reuse-wrapper.mat-card");
     private final SelenideElement inptResponce = $(".main-input.vacancy-input.ng-pristine.ng-invalid");
 
     private SelenideElement pageTitle() {
         return pageContainer.find(".vacancy-header__title").waitUntil(Condition.appear,10000);
+    }
+
+    public static SelenideElement btnSaveVacancy() {
+        return pageContainer.find(".vacancy-save-button");
+    }
+    public static SelenideElement btnSaveAndPublishVacancy() {
+        return pageContainer.find(".vacancy-publish-button");
+    }
+    public static SelenideElement btnOnApprovalVacancy() {
+        return pageContainer.find(".vacancy-publish-button");
+    }
+
+    public static SelenideElement inpVacancyName() {
+        return pageContainer.find(".main-input.vacancy-input.ng-valid");
+    }
+
+    public static SelenideElement btnForStaff() {
+        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(0).waitUntil(Condition.appear,10000);
+    }
+
+    public static SelenideElement btnForAll() {
+        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(1).waitUntil(Condition.appear,10000);
+    }
+
+    public static SelenideElement ddCompany() {
+        return pageContainer.find("#mat-select-0");
+    }
+
+    public static SelenideElement ddCity() {
+        return pageContainer.find("#mat-select-1");
+    }
+
+    public static SelenideElement btnLevelPosition_N1() {
+        return pageContainer.findAll(".radio-field-wrapper").get(1).findAll("button").get(0).waitUntil(Condition.appear,10000);
+    }
+
+    public static SelenideElement btnEmployment_PartTime() {
+        return pageContainer.findAll(".radio-field-wrapper").get(2).findAll("button").get(1).waitUntil(Condition.appears,10000);
+    }
+
+    public static SelenideElement ddFunction() {
+        return pageContainer.find("#mat-select-2").waitUntil(Condition.appears,10000);
+    }
+
+    public static SelenideElement ddSchedule() {
+        return pageContainer.find("#mat-select-3").waitUntil(Condition.appears,10000);
     }
 
     /**
@@ -25,7 +70,7 @@ public class CreateVacancyPage {
      */
     public CreateVacancyPage isCreateVacancyPage() {
         new PagePreLoader().waitToLoad();
-        Assert.assertEquals(pageTitle().getText(),  WindowTitle.NEW_VACANCY_PAGE, WindowTitle.NEW_VACANCY_PAGE + "cannot be found" );
+        Assert.assertEquals(pageTitle().getText(),  NEW_VACANCY_PAGE, NEW_VACANCY_PAGE + "cannot be found" );
         return this;
     }
 
@@ -56,12 +101,12 @@ public class CreateVacancyPage {
     /**
      * Work with dropdown element
      * @param fieldName the name of the field
-     * @param value the value that should be selected
      * @param element selector to find this element
+     * @param index index of element in the list
      */
     @Step("Select {1} for {0}")
-    public CreateVacancyPage selectFor(String fieldName, String value, SelenideElement element) {
-        new Actions().dropdown(fieldName, value, element);
+    public CreateVacancyPage selectFor(String fieldName, SelenideElement element, int index) {
+        new Actions().dropdown(fieldName, element, index);
         return this;
     }
 
@@ -89,7 +134,7 @@ public class CreateVacancyPage {
     }
 
     public CreateVacancyPage checkForVacancyName(String expectedName) {
-        String actualName = Input.VACANCY_NAME.getValue();
+        String actualName = CreateVacancyPage.inpVacancyName().getValue();
         Assert.assertEquals(actualName, expectedName, expectedName);
         return this;
     }

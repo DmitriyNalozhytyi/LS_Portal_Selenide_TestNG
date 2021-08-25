@@ -1,7 +1,7 @@
 package feedbackTests;
 
+import constants.SiteMenu;
 import org.junit.Test;
-import parentTest.ParentTest;
 import parentTest.ParentTest_OLD;
 
 public class CreateNewFeedback_Test_MainModerator extends ParentTest_OLD {
@@ -10,7 +10,7 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest_OLD {
     public void createNewFeedback__Portal__Management_MH__Topic_Production() throws InterruptedException {
 
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -25,7 +25,7 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest_OLD {
     public void createNewFeedback__Portal__Management_MH__Topic_Rundom() throws InterruptedException {
 
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Rundom_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -53,7 +53,7 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest_OLD {
     @Test
     public void openFeedbackInFAQ () throws InterruptedException {
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
       //feedback visible in FAQ

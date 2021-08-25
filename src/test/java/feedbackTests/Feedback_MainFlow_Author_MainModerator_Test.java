@@ -1,9 +1,8 @@
 package feedbackTests;
 
+import constants.SiteMenu;
 import org.junit.Test;
 import parentTest.ParentTest_OLD;
-
-import static junit.framework.TestCase.assertTrue;
 
 public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD {
 
@@ -68,7 +67,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -84,7 +83,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - puplish in FAQ
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         //createNewPublicationPage.checkTextFromAppealFieldExistInFAQ();
@@ -100,7 +99,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
 
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -129,7 +128,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 5 - open and check last feedback in FAQ
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -142,7 +141,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -188,7 +187,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 7 - open and check last feedback in FAQ
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -202,7 +201,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());
@@ -231,7 +230,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - puplish in FAQ
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -244,7 +243,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -260,7 +259,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - puplish in FAQ
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -273,7 +272,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -302,7 +301,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 5 - open and check last feedback in FAQ
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -315,7 +314,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -362,7 +361,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 7 - open and check last feedback in FAQ
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -376,7 +375,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -406,7 +405,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - puplish in FAQ
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -419,7 +418,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback by Main Moderator (MMK) and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -437,7 +436,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - puplish in FAQ by Moderator
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -450,7 +449,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -479,7 +478,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 5 - open and check last feedback By Moderator and puplish in FAQ
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -492,7 +491,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -540,7 +539,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 7 - open and check last feedback in FAQ
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -553,7 +552,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -600,7 +599,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
 
         //   STEP 7 - open and check last feedback in FAQ by Moderator
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -613,7 +612,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -643,7 +642,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - puplish in FAQ
         viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
@@ -658,7 +657,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -685,7 +684,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -710,7 +709,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -734,7 +733,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -760,7 +759,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -786,7 +785,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -811,7 +810,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -839,7 +838,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_InfoConsLine();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -868,7 +867,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_CorpMassMedia();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
@@ -901,7 +900,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();
@@ -952,7 +951,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //   STEP 7 - open and check last feedback in FAQ
 
-        mainPage.navigateToCreateNewFeedbackPage();
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());

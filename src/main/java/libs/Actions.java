@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,9 +17,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import org.apache.log4j.Logger;
 
-import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Actions {
@@ -391,18 +390,18 @@ public class Actions {
         return this;
     }
 
-    //TODO change method to select option by selenide element dropdown(String fieldName, SelenideElement fieldElement, int index)
+
     /**
      * Select option from the dropdown menu
      * @param fieldName the name of field
-     * @param value value that should be selected
      * @param element selector to find this element
+     * @param itemIndex value that should be selected
      */
-    public Actions dropdown(String fieldName, String value, SelenideElement element) {
+    public Actions dropdown(String fieldName, SelenideElement element, int itemIndex) {
         try {
             element.click();
-            $(".mat-select-content").waitUntil(Condition.appear,10000).findAll(".ng-star-inserted").find(Condition.matchText(value)).click();
-            System.out.println("Element '" + value + "' selected for " + fieldName);
+            $(".mat-select-content").waitUntil(Condition.appear,10000).findAll(".ng-star-inserted").get(itemIndex).click();
+            System.out.println("Element '" + itemIndex + "' selected for " + fieldName);
         } catch (Exception e) {
             Assert.fail("The element missing in the list" + e);
         }

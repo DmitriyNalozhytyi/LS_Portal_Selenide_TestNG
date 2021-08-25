@@ -29,13 +29,13 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
 
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -45,14 +45,14 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -64,13 +64,13 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
 
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -79,10 +79,10 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("На утверждение", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("На утверждение", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()

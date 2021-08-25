@@ -34,7 +34,7 @@ public class VacancyRecommendationTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -53,7 +53,7 @@ public class VacancyRecommendationTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -63,8 +63,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .checkForResponseStatus(Status.NEW);
     }
 
@@ -74,7 +74,7 @@ public class VacancyRecommendationTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -84,8 +84,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
                 .closeRecommendationDetails()
                 .checkForResponseStatus(Status.VIEWED);
@@ -97,7 +97,7 @@ public class VacancyRecommendationTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -107,8 +107,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .checkForResponseStatus(Status.ON_APPROVAL);
@@ -120,7 +120,7 @@ public class VacancyRecommendationTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -130,8 +130,8 @@ public class VacancyRecommendationTest extends ParentTest {
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
                 .recommendColleague(Data.RECRUITER_1)
-                .clickButton("Отклики", Button.VACANCY_RESPONSES)
-                .openTab("Рекомендации", Tabs.VACANCY_RECOMMENDATIONS)
+                .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
+                .openTab("Рекомендации", VacancyDetailPage.tabVacancyRecommendations())
                 .openRecommendationDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
                 .openRecommendationDetails()

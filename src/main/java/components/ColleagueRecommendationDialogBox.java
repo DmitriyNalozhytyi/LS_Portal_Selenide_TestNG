@@ -2,17 +2,17 @@ package components;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import constants.WindowTitle;
 import libs.Actions;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class ColleagueRecommendationDialogBox {
-    private final SelenideElement container = $(".recommend-dialog");
+    private final static String RECOMMEND_COLLEAGUE_PAGE_TITLE   = "Рекомендовать коллегу";
+    private final SelenideElement container                      = $(".recommend-dialog");
 
     private SelenideElement colleagueContainer() {
-        return container.findAll(".main-input.vacancy-input").get(0);
+        return container.findAll(".main-input.vacancy-input").get(0).waitUntil(Condition.appears, 10000);
     }
 
     private SelenideElement pageTitle() {
@@ -25,7 +25,7 @@ public class ColleagueRecommendationDialogBox {
     }
 
     public ColleagueRecommendationDialogBox isPageOpens() {
-        Assert.assertEquals(pageTitle().getText(), WindowTitle.RECOMMEND_COLLEAGUE, "The title of the page" );
+        Assert.assertEquals(pageTitle().getText(), RECOMMEND_COLLEAGUE_PAGE_TITLE, "The title of the page" );
         return this;
     }
 

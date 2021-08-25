@@ -30,17 +30,17 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
         String vacancyNameCopied = vacancyName + "_COPIED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -50,14 +50,14 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
         new CreateVacancyPage()
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Черновик", Tabs.VACANCY_DRAFT)
+                .switchTo("Черновик", VacancyManagementPage.tbVacancyDraft())
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
     }
@@ -68,17 +68,17 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
         String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -87,9 +87,9 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE_VMP)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive_VMP())
                 .search(vacancyName)
-                .checkForVacancyAbsence(vacancyName);
+                .checkForVacancyAbsence();
     }
 
     @Story("Edit vacancy")
@@ -99,17 +99,17 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyForArchiveASSupervisor(vacancyName, "Приостановлена", VacancyStatus.SUSPENDED);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -118,14 +118,14 @@ public class SupervisorSuspendedVacancyActionsTest extends ParentTest {
 
         new VacancyEditPage()
                 .isPageOpens()
-                .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameEdited)
-                .clickButton("Сохранить", Button.SAVE_VACANCY);
+                .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameEdited)
+                .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Архив", Tabs.VACANCY_ARCHIVE)
+                .switchTo("Архив", VacancyManagementPage.tbVacancyArchive())
                 .search(vacancyNameEdited)
                 .checkForVacancy(vacancyNameEdited);
     }

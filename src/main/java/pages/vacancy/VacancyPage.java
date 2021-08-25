@@ -3,9 +3,7 @@ package pages.vacancy;
 import com.codeborne.selenide.SelenideElement;
 import components.ConfirmDialogBox;
 import components.PagePreLoader;
-import constants.Button;
 import constants.Filter;
-import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.openqa.selenium.Keys;
@@ -14,7 +12,8 @@ import org.testng.Assert;
 import static com.codeborne.selenide.Selenide.$;
 
 public class VacancyPage {
-    private final SelenideElement pageContainer = $(".vacancies-wrapper.reuse-wrapper");
+    private final static String VACANCY                = "Вакансии";
+    private final static SelenideElement pageContainer = $(".vacancies-wrapper.reuse-wrapper");
 
     private SelenideElement pageTitle() {
         return pageContainer.find(".vacancies-header__title");
@@ -36,13 +35,25 @@ public class VacancyPage {
         return this;
     }
 
+    public static SelenideElement btnCopyVacancy() {
+        return pageContainer.find(".vacancy-item-header__info-title").findAll(".icon.icon-frame").get(0);
+    }
+
+    public static SelenideElement btnEditVacancy() {
+        return pageContainer.find(".vacancy-item-header__info-title").findAll(".icon.icon-frame").get(1);
+    }
+
+    public static SelenideElement btnDeleteVacancy() {
+        return pageContainer.find(".vacancy-item-header__info-title").findAll(".icon.icon-frame").get(2);
+    }
+
     /**
      * Verify if page opens
      */
     @Step("Verify if page opens")
     public VacancyPage isPageOpens() {
         new PagePreLoader().waitToLoad();
-        Assert.assertEquals(pageTitle().getText(), WindowTitle.VACANCY, "The title");
+        Assert.assertEquals(pageTitle().getText(), VACANCY, "The title");
         return this;
     }
 
@@ -70,11 +81,11 @@ public class VacancyPage {
     }
 
     public void copyVacancy() {
-        new Actions().click(Button.COPY_VACANCY_ON_VP, "Копировать Вакансию");
+        new Actions().click(btnCopyVacancy(), "Копировать Вакансию");
     }
 
     public void editVacancy() {
-        new Actions().click(Button.EDIT_VACANCY_ON_VP, "Редактровать Вакансию");
+        new Actions().click(btnEditVacancy(), "Редактровать Вакансию");
     }
 
     public void checkForVacancy(String vacancyName) {
@@ -83,7 +94,7 @@ public class VacancyPage {
     }
 
     public VacancyPage deleteVacancy() {
-        new Actions().click(Button.DELETE_VACANCY_ON_VP, "Редактровать Вакансию");
+        new Actions().click(btnDeleteVacancy(), "Редактровать Вакансию");
         new ConfirmDialogBox().confirm(true);
         return this;
     }

@@ -6,7 +6,6 @@ import components.ConfirmDialogBox;
 import components.MessageDialogBox;
 import components.PagePreLoader;
 import components.Table;
-import constants.WindowTitle;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
@@ -15,14 +14,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class RecruiterPage {
+    private static final String LIST_OF_RECRUITERS           = "Список рекрутеров";
 
     private final SelenideElement pageTitle = $(".vacancies-header__title").waitUntil(Condition.appear,10000);
     private final SelenideElement pageHeaderContainer = $(".vacancies-header");
 
-    private final SelenideElement btnAddRecruiter = $(".vacancies-header__button");
 
-    public SelenideElement getBtnAddRecruiter() {
-        return btnAddRecruiter;
+    public static SelenideElement btnAddRecruiter() {
+        return $(".vacancies-header__button");
     }
 
     /**
@@ -30,7 +29,7 @@ public class RecruiterPage {
      */
     public RecruiterPage isPageOpens() {
         new PagePreLoader().waitToLoad();
-        Assert.assertEquals(pageTitle.getText(),  WindowTitle.LIST_OF_RECRUITERS, WindowTitle.LIST_OF_RECRUITERS + "cannot be found" );
+        Assert.assertEquals(pageTitle.getText(),  LIST_OF_RECRUITERS, LIST_OF_RECRUITERS + "cannot be found" );
         return this;
     }
 

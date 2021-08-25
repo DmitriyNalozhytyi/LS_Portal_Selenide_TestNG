@@ -30,7 +30,7 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -39,12 +39,12 @@ public class VacancySharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Поделиться", Button.VACANCY_SHARE_VMP);
+                .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare_VMP());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_1, "ФИО получателя")
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.VACANCY_SENT);
     }
 
@@ -55,14 +55,14 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -71,12 +71,12 @@ public class VacancySharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Поделиться", Button.VACANCY_SHARE);
+                .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
                 .selectUser(Data.RECRUITER_1, "ФИО получателя")
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.VACANCY_SENT);
     }
 
@@ -87,7 +87,7 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -96,13 +96,13 @@ public class VacancySharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Поделиться", Button.VACANCY_SHARE_VMP);
+                .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare_VMP());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
-                .openTab("Поделиться по почте", Tabs.VACANCY_SHARE_BY_EMAIL)
-                .setTextFor("Электронная почта получателя", "test@asd.com", Fields.VACANCY_SHARE_EMAIL)
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
+                .openTab("Поделиться по почте", ShareDialogBox.tabVacancyShareByEmail())
+                .setTextFor("Электронная почта получателя", "test@asd.com", ShareDialogBox.inpVacancyShareEmail())
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.VACANCY_SENT);
     }
 
@@ -113,14 +113,14 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goToVacancyManagementPage();
+        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
-        new MainPage().goToVacancyPage();
+        new MainPage().goTo(SiteMenu.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -129,13 +129,13 @@ public class VacancySharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .clickButton("Поделиться", Button.VACANCY_SHARE);
+                .clickButton("Поделиться", VacancyDetailPage.btnVacancyShare());
 
         new ShareDialogBox()
-                .isDialogOpened(WindowTitle.SHARE_VACANCY)
-                .openTab("Поделиться по почте", Tabs.VACANCY_SHARE_BY_EMAIL)
-                .setTextFor("Электронная почта получателя", "test@asd.com", Fields.VACANCY_SHARE_EMAIL)
-                .clickButton("Отправить", Button.VACANCY_SEND)
+                .isDialogOpened(ShareDialogBox.SHARE_VACANCY_PAGE_TITLE)
+                .openTab("Поделиться по почте", ShareDialogBox.tabVacancyShareByEmail())
+                .setTextFor("Электронная почта получателя", "test@asd.com", ShareDialogBox.inpVacancyShareEmail())
+                .clickButton("Отправить", ShareDialogBox.btnVacancySend())
                 .checkIfShared(SuccessMessages.VACANCY_SENT);
     }
 }

@@ -1,17 +1,43 @@
 package pages.tooltip;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import constants.Language;
-import constants.Tabs;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class TooltipDialogBox {
-    private final SelenideElement container = $(".mat-dialog-container");
+    private final static SelenideElement container = $(".mat-dialog-container");
 
+    /**
+     * Close tooltip dialog box
+     */
+    public static SelenideElement btnClose() {
+        return container.find(".mat-icon-button").waitUntil(Condition.appears, 10000);
+    }
+
+    /**
+     * Find MultiLine element
+     */
+    public static SelenideElement fldAccompanyingText() {
+        return container.find(".mce-tinymce.mce-container.mce-panel").find("iframe");
+    }
+
+    /**
+     * Find RU tab on the dialog box
+     */
+    public static SelenideElement tabTooltipRU() {
+        return container.find(".mat-tab-label-container .mat-tab-list"). findAll(".mat-tab-label").get(1);
+    }
+
+    /**
+     * Verify if tooltip dialog box opened
+     */
+    @Step("Verify if tooltip dialog box opened")
     public TooltipDialogBox isDialogBoxOpened() {
         Assert.assertTrue(container.exists(), "Tooltip dialog box");
         return this;
@@ -53,8 +79,20 @@ public class TooltipDialogBox {
 
     public TooltipDialogBox switchToLang(Language language) {
         switch (language) {
-            case RU: clickButton(Tabs.TOOLTIP_RU, "RU");
+            case RU: clickButton(tabTooltipRU(), "RU");
         }
         return this;
+    }
+
+    /**
+     * Close tooltip dialog box
+     */
+    @Step("Close tooltip dialog box")
+    public void close() {
+        sleep(5000);
+        if (container.exists()) {
+            new Actions().click(btnClose(), "Закрыть всплывающую подсказку");
+            container.waitUntil(Condition.disappears, 10000);
+        }
     }
 }
