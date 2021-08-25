@@ -1,6 +1,7 @@
 package libs;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.Assert;
@@ -256,14 +257,15 @@ public class Actions {
 
     }
 
-    public void clickOnLastElementOfList(List elements, String text )  {
+    public void clickOnLastElementOfList(ElementsCollection elements, String text )  {
 
-        List<SelenideElement> ListOfElements = elements;
+        //List<SelenideElement> ListOfElements = elements;
+    //    ElementsCollection ListOfElements = elements;
         try {
-            ListOfElements.get(elements.size() - 1).click();
+            elements.get(elements.size() - 1).click();
             logger.info(text + "last element clicked");
         }catch (Exception e){
-            logger.info("can not find " + ListOfElements);
+            logger.info("can not find " + elements);
         }
 
        /* elements.get(elements.size()-1).
