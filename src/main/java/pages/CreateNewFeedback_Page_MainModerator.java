@@ -279,14 +279,16 @@ JUnit:
 
 
     @Step
-    public CreateNewFeedback_Page_MainModerator openTopicProductFAQ()  {
-       // Thread.sleep(5000);
+    public CreateNewFeedback_Page_MainModerator openTopicProductFAQ() throws InterruptedException {
+     /*   Thread.sleep(3000);
+    List<SelenideElement> list = $$(".accordion");
+    logger.info(list.size() + " - number of accordions");
+        Thread.sleep(5000);*/
+    $$(".accordion").get(2).click();
+    logger.info("accordions choosed");
+    return this;
 
-        List<SelenideElement> list = $$(".accordion");
-        logger.info(list.size() + " - number of accordions");
 
-        $$(".accordion").get(2).click();
-        return this;
 
  /*       logger.info("choosed 2nd frame");
         return this;
@@ -301,17 +303,34 @@ JUnit:
     }
 
     @Step
-    public void openLastFeebbackInTopicProductFAQ() throws InterruptedException {
+    public CreateNewFeedback_Page_MainModerator openLastFeebbackInTopicProductFAQ() throws InterruptedException {
         Thread.sleep(3000);
         actions.waitUntilBecomeClickable(lastFeedbackInTopicProductFAQ);
         actions.click(lastFeedbackInTopicProductFAQ);
+        Thread.sleep(6000);
+        return this;
+    }
+
+    @Step
+    public boolean isFeedbackInFAQListOld() throws InterruptedException {
+        Thread.sleep(2000);
+        if (
+            webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
+            logger.info("TRUE");
+            return true;
+
+        }else {
+            logger.info("FALSEE");
+            return false;
+        }
+
     }
 
     @Step
     public boolean isFeedbackInFAQList() throws InterruptedException {
         Thread.sleep(2000);
         if (
-            webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
+                webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
             logger.info("TRUE");
             return true;
 
@@ -571,11 +590,10 @@ JUnit:
 
 
 
-   /* public boolean isFeedbackInFAQList() {
+  /*  public boolean isFeedbackInFAQListOld() {
 
        if (
         //webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
-
         titleText2.contains(webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText()))
         {
            System.out.println("TRUEEE");
@@ -586,9 +604,9 @@ JUnit:
            return false;
         }
 
-    }*/
-
-   /* public boolean isFeedbackInFAQList() {
+    }
+*/
+   /* public boolean isFeedbackInFAQListOld() {
        // return assertTrue(webDriver.findElement(By.cssSelector(".title")).getText().contains("text"));
        // assertTrue(driver.findElement(By.cssSelector(".title")).getText().contains("text"));
     }*/

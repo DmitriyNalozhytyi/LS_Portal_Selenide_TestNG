@@ -29,9 +29,8 @@ public abstract class ParentTest {
 
         WebDriverManager.chromedriver().clearDriverCache();
         WebDriverManager.chromedriver().setup();
-
-        Configuration.holdBrowserOpen=false;
-   //     Configuration.headless=true;
+        Configuration.holdBrowserOpen = true;
+        Configuration.headless=false;
         Configuration.browserSize = "1800x1080"; // or try "1280x1024";
         Configuration.startMaximized=false;
 

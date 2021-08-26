@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.CustomRandom;
 
 import java.util.List;
 
@@ -124,7 +125,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
 
     public static String titleText;
-    public String titleText2;
+    public static String answerText;
+ //   public String titleText2;
 
 
  /*   public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {
@@ -236,6 +238,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public ViewListOfFeedbacks_Page_MainModerator publishInFAQ() {
         actions.click(publishInFAQ, "publishInFAQ");
+        logger.info(publishInFAQ+ "clicked");
         return this;
     }
 
@@ -247,7 +250,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         return this;
     }
 
-    /*public void enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower(String text) {
+    /*public void enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old(String text) {
         actions.switchTo2ndFrameOf2(appealField);
         actions.waitToBeVisible(appealField);
         logger.info(appealField+ "visible");
@@ -256,7 +259,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     }*/
 
-    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower(String text) {
+    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old(String text) {
 
         Selenide.switchTo().frame(1);
         actions.enterText(appealField, text + actions.currentTime(), "AppealField");
@@ -265,7 +268,23 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     }
 
-  /*     public String enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower() {
+    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower(){
+        Selenide.switchTo().frame(1);
+        String answerText = CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE, 15);
+       // logger.info(AnswerText+"created");
+        actions.enterText(appealField,answerText,"AppealField");
+       // logger.info(answerText+"inserted");
+        Selenide.switchTo().defaultContent();
+       // logger.info("swiched to default content");
+        this.answerText = answerText;
+        return this;
+    }
+
+
+
+
+
+  /*     public String enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old() {
                actions.switchTo2ndFrameOf2(appealField);
                actions.waitUntilBecomeVisible(appealField);
                System.out.println("visible");

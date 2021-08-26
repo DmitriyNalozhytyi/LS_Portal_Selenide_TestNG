@@ -4,6 +4,7 @@ import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import libs.Actions;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.CreateNewFeedback_Page_MainModerator;
@@ -19,7 +20,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
     @Story("create Feedback by Main Moderator")
     @Test(description = "createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ")
-    public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ()  {
+    public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ() throws InterruptedException {
 
 
         //    STEP 1 - create feedback and remember feedback number
@@ -37,9 +38,9 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback()
                 .clickOnSendBtn()
-                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Text: Approve by Aprover")
+              //  .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Text: Approve by Aprover")
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
                 .clickOnSendBtn()
-                //
                 .closePopUp()
                 .closeFeedbackCard();
         new AuthorizationPage()
@@ -49,10 +50,15 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
-                .openTopicProductFAQ();
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+             //   .checkLastFeebbackInTopicProductFAQ();
 
+
+       // new Actions()
+         //       .checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
 //
 
 

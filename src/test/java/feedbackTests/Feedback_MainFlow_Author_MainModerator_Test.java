@@ -87,7 +87,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
         //createNewPublicationPage.checkTextFromAppealFieldExistInFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
        // assertTrue(webdriver.findElement(By.cssSelector(".title")).getText().contains("text"));
     }
 
@@ -115,7 +115,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -131,7 +131,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 3
@@ -174,7 +174,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -190,7 +190,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
 
@@ -233,7 +233,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 5
@@ -262,7 +262,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 6
@@ -288,7 +288,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -304,7 +304,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 7
@@ -348,7 +348,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -364,7 +364,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 8
@@ -408,7 +408,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 9
@@ -439,7 +439,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 10
@@ -465,7 +465,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         //    STEP 3 - approve feedback by Approver
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closeFeedbackCard();
@@ -481,7 +481,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
 //TEST-CASE 11
@@ -526,7 +526,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -542,7 +542,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 12
@@ -586,7 +586,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -602,7 +602,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //TEST-CASE 13
@@ -645,7 +645,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
     }
 
     //BLOCK 2: FLOW. AUTHOR - MM, DIFFERENT OF PORTAL, CHECK BTN DELETE VISIBLE(for MM)/NOT VISIBLE (for M)
@@ -920,7 +920,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
-        //  viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("test - Approver - approve - status New" + actions.currentTime());
+        //  viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("test - Approver - approve - status New" + actions.currentTime());
 
         //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
@@ -937,7 +937,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower("Main");
+        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
@@ -954,7 +954,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.openTopicProductFAQ();
         createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());
 
     }
 */

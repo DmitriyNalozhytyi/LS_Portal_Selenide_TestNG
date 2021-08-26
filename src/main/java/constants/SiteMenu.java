@@ -6,4 +6,5 @@ public interface SiteMenu {
     String VACANCY_MANAGEMENT   = "https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy";
     String RECRUITER            = "https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters";
     String CREATE_NEW_FEEDBACK  = "https://metinvest-intranet-test.azurewebsites.net/ru/feedback";
+    String FEEDBACK_LIST  = "https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list";
 }
