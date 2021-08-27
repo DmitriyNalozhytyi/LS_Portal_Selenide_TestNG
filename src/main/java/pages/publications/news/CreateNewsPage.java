@@ -13,6 +13,9 @@ import pages.ParentPage;
 
 import static com.codeborne.selenide.Selenide.$;
 
+/**
+ * Class to work the page to create a news
+ */
 public class CreateNewsPage extends ParentPage {
     private static final SelenideElement pageContainer = $("._b");
 
@@ -78,117 +81,14 @@ public class CreateNewsPage extends ParentPage {
         return pageContainer.find(".vacancy-publish-button");
     }
 
-/*
-
-
-
-    *//*  OLD CODE *//*
-    @FindBy(className = "date_icon")
-    private WebElement btnDateIcon;
-
-    @FindBy(className = "owl-dt-calendar-cell-content")
-    private WebElement btnChooseDay;
-
-    @FindBy(className = "owl-dt-control-button-content")
-    private WebElement btnConfirmDay;
-
-    @FindBy(css = "[formcontrolname='leadingParagrag']")
-    private WebElement inputTitle;
-
-    @FindBy(className = "form_cont_img")
-    private WebElement btnEditSlider;
-
-    @FindBy(css = "input[type='file']")
-    WebElement inputDownloadImage;
-    
-    @FindBy(css = "[frameborder]")
-    private WebElement inputDescription;
-
-    @FindBy(css = "input#mat-chip-list-input-1")
-    private WebElement inputTag;
-
-    @FindBy(css = ".button-save-close .mat-button-wrapper")
-    private WebElement btnSave;
-
-
-
-    @FindBy(css = "mat-radio-button:nth-of-type(1)  .mat-radio-label-content")
-    private WebElement rbtnContentType;
-
-    *//*@FindBy(css = ".img-buttons > button:nth-of-type(2)")
-    private WebElement btnSaveImage;*//*
-
-
-    SelenideElement btnSaveImage() {
-      return $(".img-buttons > button:nth-of-type(2)").waitUntil(Condition.appears, 10000);
-    }
-
-    @FindBy(css = "[formcontrolname='headline']")
-    public WebElement inputHeadline;
-
-    @FindBy(css = "[formcontrolname='rubric']")
-    public WebElement inputRubric;
-
-    @FindBy(css = "[formcontrolname='subRubric']")
-    public WebElement inputSubrubric;
-
-
-    public void chooseDate() {
-        btnDateIcon.click();
-        btnChooseDay.click();
-        btnConfirmDay.click();
-    }
-
-    public CreateNewsPage writeHeadline(String text) {
-        inputHeadline.sendKeys(text);
-        return this;
-    }
-
-    public void writeTitle(String text) {
-        inputTitle.sendKeys(text);
-    }
-
-
-
-    //!!!!!
-    public CreateNewsPage writeDescription(String text) {
-        new Actions().enterTextInTinyMCE();
-        webDriver.switchTo().frame(inputDescription);
-        webDriver.switchTo().activeElement().sendKeys(text);
-        webDriver.switchTo().defaultContent();
-        return this;
-    }
-
-
-
-    public void selectRandomRubric() throws InterruptedException {
-        inputRubric.click();
-        Thread.sleep(500);
-        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(" + actions.randomNumber(1, 6) + ") > span > div")).click();
-        Thread.sleep(500);
-    }
-
-    public void selectSubrubric() throws InterruptedException {
-        inputSubrubric.click();
-        Thread.sleep(500);
-        webDriver.findElement(By.cssSelector("mat-option:nth-of-type(2) > .mat-option-text")).click();
-    }
-
-
-
-    public void saveAndPublish() {
-        actions.click(btnSave);
-    }
-
-    */
-/**
- *  START A NEW CODE HERE
- */
-
     private boolean isTitleDisplay() {
-    return getTitleElement().isDisplayed();
-}
+        return getTitleElement().isDisplayed();
+    }
 
+    /**
+     * Verify if page to create news opened
+     */
+    @Step("Verify if page to create news opened")
     public CreateNewsPage isPageOpens() {
         new PagePreLoader().waitToLoad();
         Assert.assertTrue(isTitleDisplay(),"The news page");
@@ -245,6 +145,7 @@ public class CreateNewsPage extends ParentPage {
     /**
      * Add image to slider
      */
+    @Step("Add image to slider")
     public CreateNewsPage addImageToSlider(){
         clickButton(btnAddImage(),"Добавить илюстрацию");
         new AddPublicationImage().upload("1.jpg");
@@ -254,6 +155,7 @@ public class CreateNewsPage extends ParentPage {
     /**
      * Set Target Audience
      */
+    @Step("Select target audience")
     public CreateNewsPage selectTargetAudience(){
         new Actions().dropdown("Целевая аудитория", ddTargetAudience(), 2);
         return this;
@@ -263,6 +165,7 @@ public class CreateNewsPage extends ParentPage {
      * Select Content Type
      * @param type content type <br>CONTENT_TYPE.PHOTO <br>CONTENT_TYPE.MOVIE <br>CONTENT_TYPE.INFOGRAPHICS
      */
+    @Step("Select content type {0}")
     public CreateNewsPage selectContentType(int type){
         btnContent(type).click();
         return this;
@@ -272,9 +175,10 @@ public class CreateNewsPage extends ParentPage {
      * Enter list of tags
      * @param text tag name like "#tag1", "#tag2", "#tag3", "#tag4", "#tag5"
      */
+    @Step("Enter tags {0}")
     public CreateNewsPage enterTag(String... text) {
-        for (int i = 0; i < text.length; i++ ) {
-            inpTag().sendKeys(text[i]);
+        for (String s : text) {
+            inpTag().sendKeys(s);
             inpTag().sendKeys(Keys.ENTER);
         }
         return this;

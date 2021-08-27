@@ -31,7 +31,7 @@ public abstract class ParentTest {
         WebDriverManager.chromedriver().setup();
 
 
-        Configuration.headless=false;
+        Configuration.headless=true;
         Configuration.browserSize = "1800x1080"; // or try "1280x1024";
         Configuration.startMaximized=false;
 

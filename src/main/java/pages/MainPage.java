@@ -9,8 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.tooltip.TooltipDialogBox;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends ParentPage {
 
@@ -98,6 +97,7 @@ public class MainPage extends ParentPage {
             case UA: actions.click(selectLanguageElement, "Язык портала").click(portalLanguageUA(), "Украинский"); break;
         }
 
+        sleep(5000);
         return this;
     }
 

@@ -1,6 +1,7 @@
 package pages.publications;
 
 import com.codeborne.selenide.SelenideElement;
+import components.PagePreLoader;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,6 +19,7 @@ public class Search {
 
     public void isResultPresent(String expectedText) {
         String actualText = getSearchResultTitle().getText();
+        new PagePreLoader().waitToLoad();
         Assert.assertEquals(actualText, expectedText, "The search result");
     }
 

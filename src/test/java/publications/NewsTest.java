@@ -6,6 +6,7 @@ import com.thedeanda.lorem.LoremIpsum;
 import constants.*;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.publications.ViewPublicationPage;
 import pages.publications.news.AllNewsPage;
 import pages.publications.news.CreateNewsPage;
 import parentTest.ParentTest;
@@ -18,8 +19,8 @@ public class NewsTest extends ParentTest
     private final String newsNameRU            = "NEWS_RU_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
     private final String newsNameUA            = "NEWS_UA_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-    @Test(description = "Create a new article")
-    public void createNewArticle() {
+    @Test(description = "Create a new News")
+    public void createNews() {
 
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
@@ -43,49 +44,13 @@ public class NewsTest extends ParentTest
                 .enterTag("#ATest1", "#ATest2")
                 .clickButton(CreateNewsPage.btnSaveAndPublish(), "Сохранить и опубликовать");
 
+        new ViewPublicationPage()
+                .isPageOpened()
+                .isPublicationPresent(Language.RU, newsNameRU)
+                .isPublicationPresent(Language.UA, newsNameUA)
+                .clickButton("Return to the All News Page",ViewPublicationPage.btnBack());
+
         new AllNewsPage()
-                .isPageOpened(Language.RU)
-                .checkForNews(Language.RU, newsNameRU);
+                .isPageOpened(Language.RU);
     }
-
-/*
-    @Test
-    public void checkArticle() throws InterruptedException {
-        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.goToAllArticles();
-        articlesPageAll.selectRandomArticle();
-        newsPage.checkDate();
-        newsPage.checkTA();
-        newsPage.checkDeleteButton();
-        newsPage.checkEditButton();
-        newsPage.checkViews();
-        newsPage.checkTitle();
-        newsPage.checkImage();
-        newsPage.checkDescription();
-        newsPage.checkTag();
-        newsPage.checkNextNewsButton();
-        newsPage.checkPreviousNewsButton();
-        newsPage.checkLikes();
-        newsPage.checkComments();
-    }
-
-    @Test
-    public void writeComment() throws InterruptedException {
-        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.goToAllNews();
-        newsPageAll.selectRandomNews();
-        newsPage.writeComment(loremIpsum.getLorem(1, 2));
-        newsPage.btnSendComment.click();
-        newsPage.checkTitle();
-    }
-
-    @Test
-    public void writeCommentReply() throws InterruptedException {
-        authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.goToAllNews();
-        //allNewsPage.selectRandomNews();
-        //actions.selectNewsByCounter();
-        newsPage.writeCommentReply(loremIpsum.getLorem(1, 2));
-        newsPage.checkTitle();
-    }*/
 }

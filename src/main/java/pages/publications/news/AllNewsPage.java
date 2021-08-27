@@ -2,9 +2,9 @@ package pages.publications.news;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import components.PagePreLoader;
 import constants.Language;
 import constants.PUBLICATION;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import pages.MainPage;
 import pages.ParentPage;
@@ -13,6 +13,9 @@ import pages.publications.Search;
 
 import static com.codeborne.selenide.Selenide.$;
 
+/**
+ * Class to work with News Page
+ */
 public class AllNewsPage extends ParentPage {
     private static final String ALL_NEWS_PAGE_RU           = "Новости";
     private static final String ALL_NEWS_PAGE_UA           = "Новини";
@@ -37,6 +40,7 @@ public class AllNewsPage extends ParentPage {
      * Check if the Page All News opened
      * @param language interface language
      */
+    @Step("Check if News Page opens")
     public AllNewsPage isPageOpened(Language language) {
         String expectedTitle = "";
         switch (language) {
@@ -44,7 +48,7 @@ public class AllNewsPage extends ParentPage {
             case UA: expectedTitle = ALL_NEWS_PAGE_UA; break;
             default: expectedTitle = "";
         }
-        new PagePreLoader().waitToLoad();
+        new MainPage().switchAppToLang(language);
         Assert.assertEquals(getPageTitle().getText(),  expectedTitle, "The page title" );
         return this;
     }
@@ -54,6 +58,7 @@ public class AllNewsPage extends ParentPage {
      * @param language news language
      * @param name name of news
      */
+    @Step("Verify if news {1} was created on language {0}")
     public AllNewsPage checkForNews(Language language, String name) {
         new MainPage()
                 .switchAppToLang(language)
@@ -65,12 +70,12 @@ public class AllNewsPage extends ParentPage {
     }
 
     /**
-     *
+     * Open page to create a publication
      * @param publication type of publication: NEWS, ARTICLE, ANNOUNCEMENT, INTERVIEW
      */
+    @Step("Open create {0} page")
     public void openCreatePublicationPage(PUBLICATION publication) {
         new CreatePublicationPanel(pageContainer).openPageToCreate(publication);
     }
-
 
 }
