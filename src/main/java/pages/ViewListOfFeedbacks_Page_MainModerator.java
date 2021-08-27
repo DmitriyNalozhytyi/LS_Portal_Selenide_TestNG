@@ -119,8 +119,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     private final SelenideElement appealField = $("#tinymce");
 
-    List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
-
+ //   List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
+    ElementsCollection  lastCloseBtn = $$(".popup-feedback__close");
 
 
     public static String titleText;
@@ -207,12 +207,12 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public ViewListOfFeedbacks_Page_MainModerator closePopUp()  {
         sleep(5000);
-        actions.clickOnLastElementCloseBtn();
+       // actions.clickOnLastElementCloseBtn();
 
       // actions.click(lastCloseBtn(),"Close last popUp!!!!!!!");
 
       //  List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
-      //  actions.clickOnLastElementOfList(lastCloseBtn, "Close last popUp");
+        actions.clickOnLastElementOfList(lastCloseBtn, "Close last popUp");
 
 
         return this;
