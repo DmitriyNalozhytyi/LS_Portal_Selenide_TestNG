@@ -1,7 +1,7 @@
 package recruiters;
 
 import constants.Data;
-import constants.SiteMenu;
+import constants.Pages;
 import constants.SuccessMessages;
 import constants.USERS;
 import io.qameta.allure.Epic;
@@ -20,7 +20,7 @@ public class DeleteRecruiterTest extends ParentTest {
     public void deleteRecruiter() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
-        new MainPage().goTo(SiteMenu.RECRUITER);
+        new MainPage().goTo(Pages.RECRUITER);
 
         new RecruiterPage()
                 .delete(Data.RECRUITER_1)

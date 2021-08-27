@@ -4084,28 +4084,28 @@ Session ID: c26e1e4b4748e02b7488c70acc85e7e9
 2021-18-03 12:29:45   INFO [recruiters.AddRecruiterTest] : Finished test: recruiters.AddRecruiterTest::addRecruiter
 2021-18-03 13:55:00   INFO [mainPage.GridSliderTest] : Finished test: mainPage.GridSliderTest::addBlockWithImage
 2021-18-03 13:55:12   INFO [publications.InterviewTest] : Finished test: publications.InterviewTest::checkInterview
-2021-18-03 13:56:10   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::checkArticle
+2021-18-03 13:56:10   INFO [publications.NewsTest] : Finished test: publications.NewsTest::checkArticle
 2021-18-03 13:56:10   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM
 2021-18-03 13:56:10   INFO [mainPage.PhotogallaryTest] : Finished test: mainPage.PhotogallaryTest::createNewAlbum
-2021-18-03 13:56:10   INFO [publications.NewsTest] : Finished test: publications.NewsTest::writeComment
+2021-18-03 13:56:10   INFO [publications.NewsTest_OLD] : Finished test: publications.NewsTest_OLD::writeComment
 2021-18-03 13:56:10   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_CorpMassMedia_Management_MH__DeleteFeedbackByMM_StatusNew
 2021-18-03 13:57:12   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_Management_Company_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
 2021-18-03 13:57:13   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_MH__ApprovebyAp__ApprovebyMM_DeleteFeedbackByMM_StatusOnApproval
-2021-18-03 13:57:14   INFO [publications.NewsTest] : Finished test: publications.NewsTest::createNewNews
+2021-18-03 13:57:14   INFO [publications.NewsTest_OLD] : Finished test: publications.NewsTest_OLD::createNewNews
 2021-18-03 13:57:15   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
 2021-18-03 13:57:17   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM
-2021-18-03 13:57:17   INFO [publications.NewsTest] : Finished test: publications.NewsTest::checkNews
+2021-18-03 13:57:17   INFO [publications.NewsTest_OLD] : Finished test: publications.NewsTest_OLD::checkNews
 2021-18-03 13:57:18   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_MH__DeleteFeedbackByMM_StatusNew
 2021-18-03 13:57:18   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
-2021-18-03 13:57:19   INFO [publications.NewsTest] : Finished test: publications.NewsTest::writeCommentReply
+2021-18-03 13:57:19   INFO [publications.NewsTest_OLD] : Finished test: publications.NewsTest_OLD::writeCommentReply
 2021-18-03 13:57:19   INFO [publications.InterviewTest] : Finished test: publications.InterviewTest::createNewInterview
 2021-18-03 13:57:20   INFO [feedbackTests.DeteteFeedback_Author_MainModerator_Test] : Finished test: feedbackTests.DeteteFeedback_Author_MainModerator_Test::createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM_DeleteFeedbackByMM_StatusApproved
-2021-18-03 13:57:20   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::writeComment
+2021-18-03 13:57:20   INFO [publications.NewsTest] : Finished test: publications.NewsTest::writeComment
 2021-18-03 13:57:21   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ
 2021-18-03 13:57:24   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
-2021-18-03 13:57:24   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::createNewArticle
+2021-18-03 13:57:24   INFO [publications.NewsTest] : Finished test: publications.NewsTest::createNewArticle
 2021-18-03 13:57:25   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ
-2021-18-03 13:57:26   INFO [publications.ArticlesTest] : Finished test: publications.ArticlesTest::writeCommentReply
+2021-18-03 13:57:26   INFO [publications.NewsTest] : Finished test: publications.NewsTest::writeCommentReply
 2021-29-04 13:09:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : 0 - number of DD
 2021-29-04 13:09:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : !!! number of same elements '0'
 2021-29-04 13:11:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : 0 - number of DD

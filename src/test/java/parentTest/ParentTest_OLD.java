@@ -15,6 +15,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
+import pages.publications.news.AllNewsPage;
+import pages.publications.news.CreateNewsPage;
 import pages.recruiter.AddRecruiterPage;
 import pages.recruiter.RecruiterPage;
 
@@ -34,10 +36,10 @@ public class ParentTest_OLD {
     protected Actions actions;
     protected MainPage mainPage;
     protected NewsPageAll newsPageAll;
-    protected CreateNewPublicationPage createNewPublicationPage;
+    protected CreateNewsPage createNewPublicationPage;
     protected LoremIpsum loremIpsum;
-    protected NewsPage newsPage;
-    protected ArticlesPageAll articlesPageAll;
+    protected pages.NewsPage newsPage;
+    protected AllNewsPage articlesPageAll;
     protected InterviewPageAll interviewPageAll;
     protected GridSliderPageEdit gridSliderPageEdit;
     protected PhotogallaryPageAll photogallaryPageAll;
@@ -63,10 +65,10 @@ public class ParentTest_OLD {
         actions = new Actions();
         mainPage = new MainPage();
         newsPageAll = new NewsPageAll();
-        createNewPublicationPage = new CreateNewPublicationPage();
+        createNewPublicationPage = new CreateNewsPage();
         loremIpsum = new LoremIpsum();
-        newsPage = new NewsPage();
-        articlesPageAll = new ArticlesPageAll();
+        newsPage = new pages.NewsPage();
+        articlesPageAll = new AllNewsPage();
         interviewPageAll = new InterviewPageAll();
         gridSliderPageEdit = new GridSliderPageEdit();
         photogallaryPageAll = new PhotogallaryPageAll();

@@ -1,7 +1,7 @@
 package tooltips;
 
 import constants.Language;
-import constants.SiteMenu;
+import constants.Pages;
 import constants.USERS;
 import io.qameta.allure.Epic;
 import org.testng.annotations.Test;
@@ -21,7 +21,7 @@ public class ManageTooltipTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
 
-        new MainPage().goTo(SiteMenu.TOOLTIP);
+        new MainPage().goTo(Pages.TOOLTIP);
 
         new TooltipPage()
                 .isPageOpens()

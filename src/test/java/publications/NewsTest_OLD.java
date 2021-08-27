@@ -1,35 +1,33 @@
 package publications;
 
-import org.junit.Test;
 import parentTest.ParentTest_OLD;
 
 @Deprecated
-public class ArticlesTest extends ParentTest_OLD {
+public class NewsTest_OLD extends ParentTest_OLD {
+/*
     @Test
-    public void createNewArticle() throws InterruptedException {
+    public void createNewNews() throws InterruptedException {
         authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.goToAllArticles();
-        articlesPageAll.clickOnRBtnNewArticle();
-        articlesPageAll.clickOnBtnCreate();
-        createNewPublicationPage.writeHeadline("ATest " + actions.currentTime());
+        mainPage.goToAllNews();
+        newsPageAll.clickOnRBtnNewNews();
+        newsPageAll.clickOnBtnCreate();
+        //newNewsPage.chooseDate();
         createNewPublicationPage.writeTitle("ATest " + actions.currentTime());
         Thread.sleep(1000);
         createNewPublicationPage.addImageToSlider();
         createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));
-        createNewPublicationPage.selectRandomTA();
-        createNewPublicationPage.selectRandomContentType();
-        createNewPublicationPage.selectRandomRubric();
-        createNewPublicationPage.selectSubrubric();
+        createNewPublicationPage.selectTargetAudience();
+        createNewPublicationPage.selectContentType(CONTENT_TYPE.PHOTO);
         createNewPublicationPage.writeTag("#ATest");
         createNewPublicationPage.saveAndPublish();
         newsPage.checkTitle();
     }
 
     @Test
-    public void checkArticle() throws InterruptedException {
+    public void checkNews() throws InterruptedException {
         authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.goToAllArticles();
-        articlesPageAll.selectRandomArticle();
+        mainPage.goToAllNews();
+        newsPageAll.selectRandomNews();
         newsPage.checkDate();
         newsPage.checkTA();
         newsPage.checkDeleteButton();
@@ -63,5 +61,5 @@ public class ArticlesTest extends ParentTest_OLD {
         //actions.selectNewsByCounter();
         newsPage.writeCommentReply(loremIpsum.getLorem(1, 2));
         newsPage.checkTitle();
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 package vacancy.validation;
 
-import constants.SiteMenu;
+import constants.Pages;
 import constants.USERS;
 import constants.ValidationMessage;
 import io.qameta.allure.*;
@@ -22,7 +22,7 @@ public class ColleagueRecommendationFormValidationTest extends ParentTest {
     @BeforeClass(description = "Create a vacancy")
     public void createVacancyForFieldValidation() {
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

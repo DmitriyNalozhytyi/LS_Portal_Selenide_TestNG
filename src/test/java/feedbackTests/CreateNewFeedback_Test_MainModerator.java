@@ -1,6 +1,6 @@
 package feedbackTests;
 
-import constants.SiteMenu;
+import constants.Pages;
 import org.junit.Test;
 import parentTest.ParentTest_OLD;
 
@@ -25,7 +25,7 @@ public class CreateNewFeedback_Test_MainModerator extends ParentTest_OLD {
     public void createNewFeedback__Portal__Management_MH__Topic_Rundom() throws InterruptedException {
 
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua","Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(Pages.CREATE_NEW_FEEDBACK);;
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Rundom_TopicField();
         createNewFeedback_Page_MainModerator.enterTextInTo_AppealField("test" + actions.currentTime());

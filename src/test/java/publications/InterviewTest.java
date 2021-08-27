@@ -1,11 +1,10 @@
 package publications;
 
-import org.junit.Test;
 import parentTest.ParentTest_OLD;
 
 @Deprecated
 public class InterviewTest extends ParentTest_OLD {
-    @Test
+   /* @Test
     public void createNewInterview() throws InterruptedException {
         authorizationPage.authorization("dev-testuser3@dev.lizard.net.ua","Pa$$w0rd");
         mainPage.goToAllInterview();
@@ -15,8 +14,8 @@ public class InterviewTest extends ParentTest_OLD {
         Thread.sleep(1000);
         createNewPublicationPage.addImageToSlider();
         createNewPublicationPage.writeDescription(loremIpsum.getLorem(1, 5));
-        createNewPublicationPage.selectRandomTA();
-        createNewPublicationPage.selectRandomContentType();
+        createNewPublicationPage.selectTargetAudience();
+        createNewPublicationPage.selectContentType(CONTENT_TYPE.PHOTO);
         createNewPublicationPage.writeTag("#ATest");
         createNewPublicationPage.saveAndPublish();
         newsPage.checkTitle();
@@ -60,5 +59,5 @@ public class InterviewTest extends ParentTest_OLD {
         //actions.selectNewsByCounter();
         newsPage.writeCommentReply(loremIpsum.getLorem(1, 2));
         newsPage.checkTitle();
-    }
+    }*/
 }
