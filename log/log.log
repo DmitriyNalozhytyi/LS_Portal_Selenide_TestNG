@@ -47,3 +47,130 @@
 2021-26-08 17:15:45   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2428 are opened
 2021-26-08 17:15:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
 2021-26-08 17:15:54   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 09:19:51   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 09:20:02   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 09:20:46   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 09:20:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 09:20:57   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2430
+2021-27-08 09:21:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2430 are opened
+2021-27-08 09:21:13   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 09:21:15   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 09:21:15   INFO [libs.Actions] : last close btn clicked
+2021-27-08 09:21:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2430 are opened
+2021-27-08 09:21:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 09:21:32   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 09:30:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 09:30:16   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 09:30:17   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded
+2021-27-08 09:30:25   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/ are opened
+2021-27-08 09:31:08   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 09:31:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 09:31:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2432
+2021-27-08 09:31:25   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2432 are opened
+2021-27-08 09:31:32   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 09:31:34   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 09:31:34   INFO [libs.Actions] : last close btn clicked
+2021-27-08 09:31:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2432 are opened
+2021-27-08 09:31:41   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 09:31:49   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 09:31:56   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 09:32:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 10:41:49   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 10:41:59   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 10:42:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2433
+2021-27-08 10:42:10   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2433 are opened
+2021-27-08 10:42:47   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 10:42:58   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 10:42:58   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2434
+2021-27-08 10:43:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2434 are opened
+2021-27-08 10:43:13   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 10:43:15   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 10:43:15   INFO [libs.Actions] : last close btn clicked
+2021-27-08 10:43:22   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2434 are opened
+2021-27-08 10:43:23   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 10:43:30   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 10:43:37   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 10:43:44   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 10:54:44   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 10:54:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 10:54:56   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2435
+2021-27-08 10:55:01   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2435 are opened
+2021-27-08 10:55:08   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 10:55:10   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 10:55:10   INFO [libs.Actions] : last close btn clicked
+2021-27-08 10:55:16   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2435 are opened
+2021-27-08 10:55:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 10:55:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 10:55:32   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 10:55:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 11:44:28   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 11:44:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 11:44:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2436
+2021-27-08 11:44:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2436 are opened
+2021-27-08 11:44:54   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 11:44:56   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 11:44:56   INFO [libs.Actions] : last close btn clicked
+2021-27-08 11:45:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2436 are opened
+2021-27-08 11:45:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button" mat-button type="button" value>Опубликовать в ЧаВо</button>clicked
+2021-27-08 11:45:10   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 11:45:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 11:45:24   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 12:04:20   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:04:30   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:04:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2437
+2021-27-08 12:04:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2437 are opened
+2021-27-08 12:05:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:05:37   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:05:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2438
+2021-27-08 12:05:44   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2438 are opened
+2021-27-08 12:05:52   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 12:05:54   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 12:05:54   INFO [libs.Actions] : last close btn clicked
+2021-27-08 12:06:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2438 are opened
+2021-27-08 12:06:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 12:06:09   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 12:06:16   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 12:06:23   INFO [pages.CreateNewFeedback_Page_MainModerator] : TRUE
+2021-27-08 12:41:34   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:41:44   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:42:21   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:42:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:42:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2440
+2021-27-08 12:42:38   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2440 are opened
+2021-27-08 12:43:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:43:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:43:28   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2441
+2021-27-08 12:43:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2441 are opened
+2021-27-08 12:43:41   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 12:43:43   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 12:43:43   INFO [libs.Actions] : last close btn clicked
+2021-27-08 12:43:50   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2441 are opened
+2021-27-08 12:43:52   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 12:43:59   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 12:44:09   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-27-08 12:53:24   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:53:34   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:53:35   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded
+2021-27-08 12:53:43   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/ are opened
+2021-27-08 12:54:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:54:29   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:54:30   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2443
+2021-27-08 12:54:36   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2443 are opened
+2021-27-08 12:54:43   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 12:54:45   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 12:54:45   INFO [libs.Actions] : last close btn clicked
+2021-27-08 12:54:50   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2443 are opened
+2021-27-08 12:54:52   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 12:54:58   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 12:55:09   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-27-08 12:57:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-27-08 12:57:14   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-27-08 12:57:15   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2444
+2021-27-08 12:57:22   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2444 are opened
+2021-27-08 12:57:29   INFO [libs.Actions] : Close last popUplast element clicked
+2021-27-08 12:57:31   INFO [libs.Actions] : 1 - number of closeBtn
+2021-27-08 12:57:31   INFO [libs.Actions] : last close btn clicked
+2021-27-08 12:57:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2444 are opened
+2021-27-08 12:57:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-27-08 12:57:45   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-27-08 12:57:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ

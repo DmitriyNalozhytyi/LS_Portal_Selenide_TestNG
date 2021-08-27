@@ -126,7 +126,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public static String titleText;
     public static String answerText;
- //   public String titleText2;
+
 
 
  /*   public String closePopUpFeedbackCreated_And_RememberFeedbackNumber() throws InterruptedException {

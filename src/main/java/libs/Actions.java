@@ -57,6 +57,10 @@ public class Actions {
     }
 
 
+  /*  public void checkExpectedResult(String message, boolean actualResult){
+        Assert.assertEquals(message, true, actualResult);
+    }*/
+
     public void click(WebElement element) {
         try {
             //wait(element);
@@ -292,8 +296,12 @@ public class Actions {
     }
 
 
-    public void checkExpectedResult(String message, boolean actualResult){
+    /*public void checkExpectedResult(String message, boolean actualResult){
         Assert.assertEquals(message, true, actualResult);
+    }*/
+
+    public void checkExpectedResult(String message, boolean actualResult) {
+        Assert.assertTrue(message, actualResult);
     }
 
     public void switchTo1stFrameOf1(WebElement appealField) {

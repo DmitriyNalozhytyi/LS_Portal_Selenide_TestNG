@@ -54,11 +54,12 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
-             //   .checkLastFeebbackInTopicProductFAQ();
+            //    .isFeedbackInFAQList();
 
 
-       // new Actions()
-         //       .checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+
+        new Actions()
+               .checkExpectedResult("no feedback in FAQList", new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
 //
 
 

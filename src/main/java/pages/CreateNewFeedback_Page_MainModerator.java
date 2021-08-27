@@ -17,7 +17,6 @@ import static junit.framework.TestCase.assertTrue;
 
 public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
-    // @FindBy(id = "mat-option-11")
     @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
     private WebElement directionManagementCompany;
 
@@ -45,38 +44,19 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     @FindBy(css = "mat-option:nth-of-type(6) > .mat-option-text")
     private WebElement corpMassMedia;
 
-    /*public CreateNewFeedback_Page_MainModerator(WebDriver webDriver) {
-        super(webDriver);
-    }
-*/
-    @FindBy(css = "div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-item.single")
-    private WebElement lastFeedbackInTopicProductFAQ;
+    private final SelenideElement lastFeedbackInTopicProductFAQ = $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-item.single");
 
     @FindBy(className = "mat-select-arrow-wrapper")
     public WebElement DDlist;
-
-  /*  @FindBy(id = "mat-option-1")
-    public WebElement portalChannel;*/
 
     private final SelenideElement portalChannel = $("#mat-option-0");
 
     @FindBy(id = "mat-option-3")
     public WebElement personalMeetings;
 
- /*   @FindBy(id = "mat-option-28")
-    public WebElement prodaction;*/
 
     private final SelenideElement prodaction = $("mat-option-29");
-
-
- /*   @FindBy(id = "tinymce")
-    public WebElement appealField;*/
-
     private final SelenideElement appealField = $("#tinymce");
-
-   /* @FindBy(className = "feedback-button")
-    public WebElement sendBtn;*/
-
     private final SelenideElement sendBtn = $(".feedback-button");
 
 
@@ -92,18 +72,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         return $$(".mat-option-text").get(2).waitUntil(Condition.appears,20000);
     }
 
-
-
-
-
-
-
-
-
-
     Logger logger = Logger.getLogger(getClass());
-
-
     String titleText2;
 
 /*
@@ -145,17 +114,58 @@ JUnit:
 
     @Step
     public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_Portal()  {
-
-       // sleep(2000);
-//        $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000).click();
-        //abs().click();
-
         actions
                 .click(communicationChannelField(), "CommunicationChannel DDField ")
                 .click(portalChannel, "Portal");
-
         logger.info("portal Channel choosed");
         return this;
+    }
+
+ /*   public  CreateNewFeedback_Page_MainModerator checkLastFeebbackInTopicProductFAQ(){
+        actions
+                .checkExpectedResult("no feedback in FAQList", true);
+             // .checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
+
+return this;
+    }*/
+
+
+
+    @Step
+     public boolean isFeedbackInFAQList()  {
+     //   Thread.sleep(2000);
+
+        return $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p").getText().contains(ViewListOfFeedbacks_Page_MainModerator.answerText);
+
+
+
+    /*    if (
+                webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")) {
+            logger.info("TRUE++");
+            return true;
+            //  return this;
+        } else {
+            logger.info("FALSEE++");
+               return false;
+        }*/
+
+    }
+
+
+
+    @Step
+    public boolean isFeedbackInFAQListOld() throws InterruptedException {
+        Thread.sleep(2000);
+        if (
+                webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
+                // $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
+        logger.info("TRUE");
+            return true;
+
+        }else {
+            logger.info("FALSEE");
+            return false;
+        }
 
     }
 /*
@@ -304,42 +314,18 @@ JUnit:
 
     @Step
     public CreateNewFeedback_Page_MainModerator openLastFeebbackInTopicProductFAQ() throws InterruptedException {
-        Thread.sleep(3000);
-        actions.waitUntilBecomeClickable(lastFeedbackInTopicProductFAQ);
-        actions.click(lastFeedbackInTopicProductFAQ);
+
+        Thread.sleep(10000);
+        actions.click(lastFeedbackInTopicProductFAQ, "text");
+       // actions.click(lastFeedbackInTopicProductFAQ);
+        logger.info("opened last feedback in topic PRODUCT in FAQ");
         Thread.sleep(6000);
         return this;
     }
 
-    @Step
-    public boolean isFeedbackInFAQListOld() throws InterruptedException {
-        Thread.sleep(2000);
-        if (
-            webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
-            logger.info("TRUE");
-            return true;
 
-        }else {
-            logger.info("FALSEE");
-            return false;
-        }
 
-    }
 
-    @Step
-    public boolean isFeedbackInFAQList() throws InterruptedException {
-        Thread.sleep(2000);
-        if (
-                webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
-            logger.info("TRUE");
-            return true;
-
-        }else {
-            logger.info("FALSEE");
-            return false;
-        }
-
-    }
 
     @Step
     public void choose_Rundom_TopicField() throws InterruptedException {
