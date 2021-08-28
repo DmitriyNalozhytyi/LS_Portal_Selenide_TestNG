@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Deprecated
 public class NewsPage extends ParentPage {
     @FindBy(css = ".detail-wrapper__quote")
     public WebElement fieldNewsTitle;

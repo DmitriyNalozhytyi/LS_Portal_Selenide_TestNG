@@ -47,13 +47,26 @@ public class CreateNewsPage extends ParentPage {
         return getContentTypeContainer().findAll(".radio-field-block");
     }
 
+    private static ElementsCollection getAllDropDowns() {
+        return pageContainer.findAll(".mat-select-value");
+    }
+
     private SelenideElement btnContent(int i) {
         return getAllContentTypeButtons().get(i);
     }
 
-    private SelenideElement ddTargetAudience() {
-        return pageContainer.find(".mat-select-placeholder");
+    public static SelenideElement ddTargetAudience() {
+        return getAllDropDowns().get(0);
     }
+
+    public static SelenideElement ddHeading() {
+        return getAllDropDowns().get(1);
+    }
+
+    public static SelenideElement ddSubheading() {
+        return getAllDropDowns().get(2);
+    }
+
     private SelenideElement inpTag() {
         return pageContainer.find(".tags-input");
     }
@@ -66,8 +79,16 @@ public class CreateNewsPage extends ParentPage {
         return pageContainer.find(".image-box");
     }
 
+    public static ElementsCollection getAllHeaderPublicationInputs() {
+        return getGeneralInformationSection().findAll(".main-input.vacancy-input");
+    }
+
     public static SelenideElement inpTitleField() {
-        return getGeneralInformationSection().find(".main-input.vacancy-input");
+        return getAllHeaderPublicationInputs().get(0);
+    }
+
+    public static SelenideElement inpLeadingParagraph() {
+        return getAllHeaderPublicationInputs().get(1);
     }
 
     public static SelenideElement inpDescriptionField() {
@@ -153,11 +174,11 @@ public class CreateNewsPage extends ParentPage {
     }
 
     /**
-     * Set Target Audience
+     * Select a value from dropdown element
      */
-    @Step("Select target audience")
-    public CreateNewsPage selectTargetAudience(){
-        new Actions().dropdown("Целевая аудитория", ddTargetAudience(), 2);
+    @Step("Select {2} for {0}")
+    public CreateNewsPage selectValueFor(String name, SelenideElement element, int i){
+        new Actions().dropdown(name, element, i);
         return this;
     }
 

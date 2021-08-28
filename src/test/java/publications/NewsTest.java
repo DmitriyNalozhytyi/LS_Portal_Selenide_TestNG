@@ -40,7 +40,7 @@ public class NewsTest extends ParentTest
                 .setTinyMCEText("Описание новости", lorem.getWords(25), CreateNewsPage.inpDescriptionField())
                 .addImageToSlider()
                 .selectContentType(CONTENT_TYPE.PHOTO)
-                .selectTargetAudience()
+                .selectValueFor("Целевая аудитория", CreateNewsPage.ddTargetAudience(), 1)
                 .enterTag("#ATest1", "#ATest2")
                 .clickButton(CreateNewsPage.btnSaveAndPublish(), "Сохранить и опубликовать");
 
