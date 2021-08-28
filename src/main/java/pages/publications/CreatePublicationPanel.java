@@ -52,7 +52,8 @@ public class CreatePublicationPanel {
      */
     public void openPageToCreate(PUBLICATION publication) {
         switch (publication) {
-            case NEWS: getButtons().get(0).click();
+            case NEWS:      getButtons().get(0).click(); break;
+            case ARTICLES:  getButtons().get(1).click(); break;
         }
         getCreatePublicationButton().click();
     }

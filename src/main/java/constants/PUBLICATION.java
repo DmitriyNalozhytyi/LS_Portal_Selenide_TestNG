@@ -1,5 +1,6 @@
 package constants;
 
 public enum PUBLICATION {
-    NEWS
+    NEWS,
+    ARTICLES;
 }
