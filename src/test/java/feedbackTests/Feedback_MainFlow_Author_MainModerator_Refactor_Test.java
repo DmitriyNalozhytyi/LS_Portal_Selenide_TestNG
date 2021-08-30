@@ -36,17 +36,16 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new AuthorizationPage()
                 .loginAs(USERS.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
-                .openLastCreatedFeedback()
+                .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
-              //  .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Text: Approve by Aprover")
                 .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
                 .clickOnSendBtn()
-                .closePopUp()
-                .closeFeedbackCard();
+                .closePopUp() //need to refactor
+                .closeFeedbackCard(); //need to refactor
         new AuthorizationPage()
                 .loginAs(USERS.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
-                .openLastCreatedFeedback()
+                .openLastCreatedFeedback()//need to refactor url
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
@@ -54,10 +53,6 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
-            //    .isFeedbackInFAQList();
-
-
-
         new Actions()
                .checkExpectedResult("no feedback in FAQList", new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
 //

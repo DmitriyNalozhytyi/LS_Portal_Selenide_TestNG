@@ -82,6 +82,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     private WebElement sendBtn;*/
 
     private final SelenideElement sendBtn = $(".feedback-button");
+    private final SelenideElement numberOfCreatedFeedback = $(".popup-feedback_bold-text");
 
     @FindBy(className = "popup-feedback__close")
     private WebElement closePopUpBtn;
@@ -150,7 +151,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
    @Step("close FeedbackCreated PopUp And Remember FeedbackNumber")
     public ViewListOfFeedbacks_Page_MainModerator  closePopUpFeedbackCreated_And_RememberFeedbackNumber()  {
 
-        titleText= $(".popup-feedback_bold-text").getText();
+       $(".popup-feedback_bold-text").waitUntil(Condition.appear,15000);
+       titleText= $(".popup-feedback_bold-text").getText();
         logger.info("text recoded" + titleText);
         actions.click(closePopUpAfterCreateFeedback,"closePopUpAfterCreateFeedback");
          this.titleText = titleText;
@@ -204,19 +206,11 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public ViewListOfFeedbacks_Page_MainModerator clickOnSendBtn() {
         actions.click(sendBtn, "Send");
         return this;
-
     }
 
     public ViewListOfFeedbacks_Page_MainModerator closePopUp()  {
         sleep(5000);
-       // actions.clickOnLastElementCloseBtn();
-
-      // actions.click(lastCloseBtn(),"Close last popUp!!!!!!!");
-
-      //  List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
         actions.clickOnLastElementOfList(lastCloseBtn, "Close last popUp");
-
-
         return this;
 
 
@@ -243,7 +237,6 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
     public ViewListOfFeedbacks_Page_MainModerator exitFromAccount() {
-
         actions.click(accountBtn,"accountBtn");
         actions.click(exitFromAccount,"exitFromAccount");
         actions.click(changeAccount,"changeAccount");
@@ -270,12 +263,11 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower(){
         Selenide.switchTo().frame(1);
+        actions.waitUntilAppear_15000(appealField);
+     //   appealField.waitUntil(Condition.appear,15000);
         String answerText = CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE, 15);
-       // logger.info(AnswerText+"created");
         actions.enterText(appealField,answerText,"AppealField");
-       // logger.info(answerText+"inserted");
         Selenide.switchTo().defaultContent();
-       // logger.info("swiched to default content");
         this.answerText = answerText;
         return this;
     }

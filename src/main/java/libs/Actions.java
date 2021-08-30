@@ -339,6 +339,16 @@ public class Actions {
 
     }
 
+    public Actions waitUntilAppear_15000(SelenideElement element) {
+        element.waitUntil(Condition.appear,15000);
+        return this;
+    }
+
+    public Actions waitUntilVisible_15000(SelenideElement element) {
+        element.waitUntil(Condition.visible,15000);
+        return this;
+    }
+
     //====================== NEW ACTIONS
 
     /**

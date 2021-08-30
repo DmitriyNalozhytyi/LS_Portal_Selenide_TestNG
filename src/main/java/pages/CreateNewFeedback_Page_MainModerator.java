@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import libs.Actions;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -51,6 +50,10 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     private final SelenideElement portalChannel = $("#mat-option-0");
 
+    private final SelenideElement arrowChooseChannel = $(".create-feedback-select .mat-select-arrow");
+    private final SelenideElement arrowChooseTopic = $(".textarea-field-label");
+
+
     @FindBy(id = "mat-option-3")
     public WebElement personalMeetings;
 
@@ -60,45 +63,15 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     private final SelenideElement sendBtn = $(".feedback-button");
 
 
-    private SelenideElement communicationChannelField() {
-        return $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000);
-    }
-
-    private SelenideElement topicField() {
-        return $$(".mat-select-arrow-wrapper").get(2).waitUntil(Condition.appears,20000);
-    }
-
-    private SelenideElement production() {
-        return $$(".mat-option-text").get(2).waitUntil(Condition.appears,20000);
-    }
+    private SelenideElement communicationChannelField() {return $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000);}
+    private SelenideElement topicField() {return $$(".mat-select-arrow-wrapper").get(2).waitUntil(Condition.appears,20000);}
+    private SelenideElement production() {return $$(".mat-option-text").get(2).waitUntil(Condition.appears,20000);}
+    private SelenideElement productionTopicInFAQList() {return $$(".accordion").get(2).waitUntil(Condition.appears,20000);}
 
     Logger logger = Logger.getLogger(getClass());
     String titleText2;
 
 /*
-
-JUnit:
-@Step
-    public void choose_CommunicationChannel_Portal() throws InterruptedException {
-
-        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
-        actions.waitUntilVisibilityOfAllelements(DDlist);
-
-        logger.info(DDList.size() + " - number of DD");
-
-        if (DDList.size() > 0) {
-            Thread.sleep(3000);
-            actions.waitUntilBecomeClickable(DDlist);
-            DDList.get(DDList.size() - 3).click();
-            actions.waitUntilBecomeClickable(portalChannel);
-            actions.click(portalChannel);
-            logger.info("portalChannel choosed");
-            Thread.sleep(2000);
-        } else {
-            //logger.info("!!! number of same elements '0'!!! ");
-            logger.info("!!! number of same elements '0'");
-        }
-    }*/
 
  /*public Actions dropdown(String fieldName, String value, SelenideElement element) {
         try {
@@ -115,40 +88,18 @@ JUnit:
     @Step
     public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_Portal()  {
         actions
+             //   .waitUntilAppear_15000(communicationChannelField())
+                .waitUntilAppear_15000(arrowChooseChannel)
                 .click(communicationChannelField(), "CommunicationChannel DDField ")
+                .waitUntilAppear_15000(portalChannel)
                 .click(portalChannel, "Portal");
         logger.info("portal Channel choosed");
         return this;
     }
 
- /*   public  CreateNewFeedback_Page_MainModerator checkLastFeebbackInTopicProductFAQ(){
-        actions
-                .checkExpectedResult("no feedback in FAQList", true);
-             // .checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQList());
-
-return this;
-    }*/
-
-
-
     @Step
      public boolean isFeedbackInFAQList()  {
-     //   Thread.sleep(2000);
-
         return $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p").getText().contains(ViewListOfFeedbacks_Page_MainModerator.answerText);
-
-
-
-    /*    if (
-                webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")) {
-            logger.info("TRUE++");
-            return true;
-            //  return this;
-        } else {
-            logger.info("FALSEE++");
-               return false;
-        }*/
-
     }
 
 
@@ -211,28 +162,13 @@ return this;
 
     @Step
     public CreateNewFeedback_Page_MainModerator choose_TopicField() {
-
-
         sleep(10000);
-          //  $$(".mat-select-arrow-wrapper").get(2).click();
-        //    $$(".mat-option-text").get(2).click();
         actions
+                .waitUntilAppear_15000(topicField())
                 .click(topicField(),"Topic DDField")
                 .click(production(),"Production");
                  logger.info("Production selected in DDTopicField");
-
-
-
             return this;
-
-       /* actions
-                .click(communicationChannelField(), "CommunicationChannel DDField ")
-                .click(portalChannel, "Portal");
-
-        logger.info("portal Channel choosed");
-        return this;*/
-
-
     }
 
 
@@ -245,25 +181,6 @@ return this;
                 .enterText(appealField, text + actions.currentTime(), "Feedback text");
                  Selenide.switchTo().defaultContent();
         return this;
-
-/*
-       List<SelenideElement> frames = $$(By.tagName("iframe"));
-       logger.info(frames.size() + " - number of frames AppealField byMainModerator");
-
-       if (frames.size() == 2) {
-           Selenide.switchTo().frame(frames.size() - 2);
-           logger.info("swiched to frame AppealField");
-           // Thread.sleep(3000);
-           new Actions().enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
-           Selenide.switchTo().defaultContent();
-           return this;
-       }else {
-           Selenide.switchTo().frame(frames.size() - 1);
-           logger.info("swiched to frame AppealField");
-           // Thread.sleep(3000);
-           new Actions().enterText(appealField, "dsssssdss" + actions.currentTime(), "AppealField");
-           Selenide.switchTo().defaultContent();
-           return this;*/
        }
 
 
@@ -290,11 +207,8 @@ return this;
 
     @Step
     public CreateNewFeedback_Page_MainModerator openTopicProductFAQ() throws InterruptedException {
-     /*   Thread.sleep(3000);
-    List<SelenideElement> list = $$(".accordion");
-    logger.info(list.size() + " - number of accordions");
-        Thread.sleep(5000);*/
-    $$(".accordion").get(2).click();
+  //  $$(".accordion").get(2).click();
+        actions.click(productionTopicInFAQList());
     logger.info("accordions choosed");
     return this;
 
@@ -314,12 +228,12 @@ return this;
 
     @Step
     public CreateNewFeedback_Page_MainModerator openLastFeebbackInTopicProductFAQ() throws InterruptedException {
-
-        Thread.sleep(10000);
-        actions.click(lastFeedbackInTopicProductFAQ, "text");
-       // actions.click(lastFeedbackInTopicProductFAQ);
+      //  Thread.sleep(10000);
+        actions
+                .waitUntilAppear_15000(lastFeedbackInTopicProductFAQ)
+                .click(lastFeedbackInTopicProductFAQ, "text");
         logger.info("opened last feedback in topic PRODUCT in FAQ");
-        Thread.sleep(6000);
+      //  Thread.sleep(6000);
         return this;
     }
 
