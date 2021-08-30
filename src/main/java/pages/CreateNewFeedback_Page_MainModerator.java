@@ -52,6 +52,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     private final SelenideElement arrowChooseChannel = $(".create-feedback-select .mat-select-arrow");
     private final SelenideElement arrowChooseTopic = $(".textarea-field-label");
+    private final SelenideElement textInLastFeedbackInTopicProductFAQ = $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p");
 
 
     @FindBy(id = "mat-option-3")
@@ -99,7 +100,9 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     @Step
      public boolean isFeedbackInFAQList()  {
-        return $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p").getText().contains(ViewListOfFeedbacks_Page_MainModerator.answerText);
+        actions.waitUntilVisible_15000(textInLastFeedbackInTopicProductFAQ);//test
+        return textInLastFeedbackInTopicProductFAQ.getText().contains(ViewListOfFeedbacks_Page_MainModerator.answerText);//test
+      //  return $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p").getText().contains(ViewListOfFeedbacks_Page_MainModerator.answerText);
     }
 
 

@@ -26,8 +26,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
     BLOCK 1: FLOW. AUTHOR - MM, PORTAL, PUBLISH IN FAQ
 
-    TEST-CASE 1:  createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ
-    TEST-CASE 2:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApprovebyMM__PubFAQ
+    TEST-CASE 1:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ
+    TEST-CASE 2:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ
    - TEST-CASE 3:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
     TEST-CASE 4:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
 

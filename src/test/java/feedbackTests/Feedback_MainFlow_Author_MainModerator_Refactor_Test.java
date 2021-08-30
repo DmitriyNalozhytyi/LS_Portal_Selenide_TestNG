@@ -18,10 +18,11 @@ import parentTest.ParentTest;
 @Feature("MainFlow. Author - Main Moderator")
 public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends ParentTest {
 
+    //TestCase 1
     @Story("create Feedback by Main Moderator")
-    @Test(description = "createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ")
-    public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ() throws InterruptedException {
+    @Test(description = "createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ")
 
+    public void createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ() throws InterruptedException {
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
@@ -33,15 +34,17 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn();
         new ViewListOfFeedbacks_Page_MainModerator()
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver and approve
         new AuthorizationPage()
                 .loginAs(USERS.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
-                .clickOnSendBtn()
+                .clickOnSendBtn()//validate empty field "Response text field"
                 .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
                 .clickOnSendBtn()
                 .closePopUp() //need to refactor
                 .closeFeedbackCard(); //need to refactor
+      //  STEP 3 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
                 .loginAs(USERS.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
@@ -53,101 +56,13 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
+        //  STEP 4 - check last published feedback in FAQ
         new Actions()
-               .checkExpectedResult("no feedback in FAQList", new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+               .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
     }
 
+    //TEST-CASE 2
 
 
 
-
-
-    /*@Epic("Vacancy")
-    @Feature("Actions for vacancies in status OPENED")
-    public class RecruiterOpenVacancyActionsTest extends ParentTest {
-
-        @Story("Copy vacancy")
-        @Test(description = "Verify that recruiter can create a copy of a vacancy")
-        public void recruiterCanCopyVacancy() {
-            String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE, 5);
-            String vacancyNameCopied = vacancyName + "_COPIED";
-
-            new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
-
-            new VacancyManagementPage()
-                    .isPageOpens()
-                    .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
-
-            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
-
-            new VacancyManagementPage()
-                    .isPageOpens()
-                    .selectActionFor(vacancyName, VacancyAction.COPY);
-
-            new CreateVacancyPage()
-                    .isCreateVacancyPage()
-                    .checkForVacancyName(vacancyName)
-                    .setTextFor("Название вакансии", Input.VACANCY_NAME, vacancyNameCopied)
-                    .clickButton("На утверждение", Button.ON_APPROVAL_VACANCY);
-
-            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
-
-            new VacancyManagementPage()
-                    .isPageOpens()
-                    .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
-                    .search(vacancyNameCopied)
-                    .checkForVacancy(vacancyNameCopied);
-
-            new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
-
-            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
-
-            new VacancyManagementPage()
-                    .isPageOpens()
-                    .switchTo("На утверждении", Tabs.VACANCY_ON_APPROVAL)
-                    .selectActionFor(vacancyNameCopied, VacancyAction.EDIT);
-
-            new VacancyEditPage()
-                    .isPageOpens()
-                    .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
-                    .clickButton("Сохранить", Button.SAVE_VACANCY);
-
-            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
-
-            new VacancyManagementPage()
-                    .isPageOpens()
-                    .switchTo("Открытые", Tabs.VACANCY_OPENED)
-                    .search(vacancyNameCopied)
-                    .checkForVacancy(vacancyNameCopied);
-
-            new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
-
-            new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
-
-            new VacancyManagementPage()
-                    .isPageOpens()
-                    .switchTo("Открытые", Tabs.VACANCY_OPENED)
-                    .search(vacancyNameCopied)
-                    .checkForVacancy(vacancyNameCopied);
-        }
-
-    }*/
 }
