@@ -11,8 +11,8 @@ public class PhotogallaryTest extends ParentTest_OLD {
         mainPage.goToAllAlbums();
         photogallaryPageAll.createNewAlbum();
         photogallaryPageAll.writeTitle("ATest " + actions.currentTime());
-        photogallaryPageAll.writeShortDescription(loremIpsum.getLoremByBytes(50, 65));
-        photogallaryPageAll.writeDescription(loremIpsum.getLoremByBytes(50, 205));
+        photogallaryPageAll.writeShortDescription("loremIpsum.getLoremByBytes(50, 65)");
+        photogallaryPageAll.writeDescription("loremIpsum.getLoremByBytes(50, 205)");
         photogallaryPageAll.chooseTypeOfEvent();
         photogallaryPageAll.chooseTA();
         photogallaryPageAll.disableLikes();

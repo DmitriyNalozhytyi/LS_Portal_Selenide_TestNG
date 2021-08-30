@@ -11,7 +11,7 @@ public class GridSliderTest extends ParentTest_OLD {
         gridSliderPageEdit.deleteRandomBlock();
         gridSliderPageEdit.addNewColorBlock();
         gridSliderPageEdit.writeTitle("ATest " + actions.currentTime());
-        gridSliderPageEdit.writeDescription(loremIpsum.getLoremByBytes(50, 200));
+        gridSliderPageEdit.writeDescription("loremIpsum.getLoremByBytes(50, 200)");
         gridSliderPageEdit.writeLink("https://google.com");
         gridSliderPageEdit.selectRandomIcon();
         gridSliderPageEdit.selectColor();
@@ -26,7 +26,7 @@ public class GridSliderTest extends ParentTest_OLD {
         gridSliderPageEdit.deleteRandomBlock();
         gridSliderPageEdit.addNewBlockWithImage();
         gridSliderPageEdit.writeTitle("ATest " + actions.currentTime());
-        gridSliderPageEdit.writeDescription(loremIpsum.getLoremByBytes(50, 200));
+        gridSliderPageEdit.writeDescription("loremIpsum.getLoremByBytes(50, 200)");
         gridSliderPageEdit.writeLink("https://google.com");
         gridSliderPageEdit.addImage();
         gridSliderPageEdit.clickSaveBlock();

@@ -1,5 +1,6 @@
 package parentTest;
 
+import com.thedeanda.lorem.LoremIpsum;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import libs.Actions;
