@@ -154,8 +154,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to Main Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -164,8 +164,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
         authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.assignNewResponsible();
-        viewListOfFeedbacks_page_mainModerator.chooseNewApprover("Верезумская Ирина Викторовна");
+        viewListOfFeedbacks_page_mainModerator.assignNewResponsible2();
+        viewListOfFeedbacks_page_mainModerator.chooseNewApprover2("Верезумская Ирина Викторовна");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
 
         //    STEP 5 - open and approve feedback by New Approver
@@ -214,8 +214,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to Main Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -328,8 +328,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to Main Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -338,8 +338,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
         authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.assignNewResponsible();
-        viewListOfFeedbacks_page_mainModerator.chooseNewApprover("Цыганок Юрий Борисович");
+        viewListOfFeedbacks_page_mainModerator.assignNewResponsible2();
+        viewListOfFeedbacks_page_mainModerator.chooseNewApprover2("Цыганок Юрий Борисович");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
 
         //    STEP 5 - open and approve feedback by New Approver
@@ -389,8 +389,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to Main Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -505,8 +505,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to Main Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -515,8 +515,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
         authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.assignNewResponsible();
-        viewListOfFeedbacks_page_mainModerator.chooseNewApprover("Цыганок Юрий Борисович");
+        viewListOfFeedbacks_page_mainModerator.assignNewResponsible2();
+        viewListOfFeedbacks_page_mainModerator.chooseNewApprover2("Цыганок Юрий Борисович");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
 
 
@@ -566,8 +566,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to  Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -576,8 +576,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
         authorizationPage.ReAuthorization("dev-testuser11@dev.lizard.net.ua", "Pa$$w0rd");
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.assignNewResponsible();
-        viewListOfFeedbacks_page_mainModerator.chooseNewApprover("Цыганок Юрий Борисович");
+        viewListOfFeedbacks_page_mainModerator.assignNewResponsible2();
+        viewListOfFeedbacks_page_mainModerator.chooseNewApprover2("Цыганок Юрий Борисович");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
 
         //    STEP 5 - open and approve feedback by New Approver
@@ -626,8 +626,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
 
         //    STEP 3 - send feedback back to  Moderator by Approver
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -915,8 +915,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 3 - send feedback back to Main Moderator by Approver
 
-        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMM();
-        viewListOfFeedbacks_page_mainModerator.inputReasonForReturn();
+        viewListOfFeedbacks_page_mainModerator.chooseCheckBoxToBackMMOld();
+        viewListOfFeedbacks_page_mainModerator.inputReasonForReturnOld();
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
         viewListOfFeedbacks_page_mainModerator.closePopUp();
         Thread.sleep(2000);
@@ -926,8 +926,8 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
         viewListOfFeedbacks_page_mainModerator.exitFromAccount();
         authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
         viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.assignNewResponsible();
-        viewListOfFeedbacks_page_mainModerator.chooseNewApprover("Верезумская Ирина Викторовна");
+        viewListOfFeedbacks_page_mainModerator.assignNewResponsible2();
+        viewListOfFeedbacks_page_mainModerator.chooseNewApprover2("Верезумская Ирина Викторовна");
         viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
 
 

@@ -209,7 +209,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
 
     @Step
-    public CreateNewFeedback_Page_MainModerator openTopicProductFAQ() throws InterruptedException {
+    public CreateNewFeedback_Page_MainModerator openTopicProductFAQ()  {
   //  $$(".accordion").get(2).click();
         actions.click(productionTopicInFAQList());
     logger.info("accordions choosed");
@@ -230,7 +230,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     }
 
     @Step
-    public CreateNewFeedback_Page_MainModerator openLastFeebbackInTopicProductFAQ() throws InterruptedException {
+    public CreateNewFeedback_Page_MainModerator openLastFeebbackInTopicProductFAQ() {
       //  Thread.sleep(10000);
         actions
                 .waitUntilAppear_15000(lastFeedbackInTopicProductFAQ)
