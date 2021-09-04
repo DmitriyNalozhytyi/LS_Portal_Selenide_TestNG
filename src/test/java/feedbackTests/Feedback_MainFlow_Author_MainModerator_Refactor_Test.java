@@ -140,7 +140,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 //TEST-CASE 3
 
     @Test // (need add time in AppealField to Check real feedbak in FAQ)!!!!!!!!!!!!!!!!!!!
-    public void createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ(){
+    public void createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
@@ -161,7 +161,6 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .chooseCheckBoxToBackMM()
                 .inputReasonForReturn()
                 .clickOnSendBtn()
-            //    .closePopUp() //need to refactor
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
         new AuthorizationPage()
@@ -181,37 +180,20 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .closePopUp() //need to refactor
                 .closePopUp(); //need to refactor
-               // .closeFeedbackCard(); //need to refactor
-
-
-
-      /*  //    STEP 5 - open and approve feedback by New Approver
-        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
-        authorizationPage.ReAuthorization("dev-testuser14@dev.lizard.net.ua", "Pa$$w0rd");
-        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
-        Thread.sleep(2000);
-        viewListOfFeedbacks_page_mainModerator.enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower_Old("Main");
-        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
-        viewListOfFeedbacks_page_mainModerator.closePopUp();
-        viewListOfFeedbacks_page_mainModerator.closePopUp();
-
         //    STEP 6 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
-        viewListOfFeedbacks_page_mainModerator.exitFromAccount();
-        authorizationPage.ReAuthorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        viewListOfFeedbacks_page_mainModerator.openLastCreatedFeedback();
-        viewListOfFeedbacks_page_mainModerator.clickOnSendBtn();
-        viewListOfFeedbacks_page_mainModerator.publishInFAQ();
-
-        //   STEP 7 - open and check last feedback in FAQ
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
-        createNewFeedback_Page_MainModerator.openTopicProductFAQ();
-        createNewFeedback_Page_MainModerator.openLastFeebbackInTopicProductFAQ();
-        checkExpectedResult("no feedback in FAQList", createNewFeedback_Page_MainModerator.isFeedbackInFAQListOld());*/
-
-
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
     }
-
-
-
 }

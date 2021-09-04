@@ -11,6 +11,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import utils.CustomRandom;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static junit.framework.TestCase.assertTrue;
 
@@ -58,7 +59,9 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
    /* @FindBy(css = "mat-option#mat-option-0")
     private WebElement chooseApproverInPeoplePeackerField;*/
 
-    private final SelenideElement chooseApproverInPeoplePeackerField = $("mat-option#mat-option-0");
+  //  private final SelenideElement chooseApproverInPeoplePeackerField = $("mat-option#mat-option-0");
+    private final SelenideElement chooseApproverInPeoplePeackerField = $(".modern-option__title");
+
 
 
     @FindBy(css = "div[role='group']")
@@ -399,11 +402,21 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     }
 
-    public ViewListOfFeedbacks_Page_MainModerator chooseNewApprover(String text) {
+    public ViewListOfFeedbacks_Page_MainModerator chooseNewApprover(String text){
+       /* actions
+                .waitUntilAppear_15000(newApproverField)
+                .enterText(newApproverField,text,"chooseNewApprover");
+      //  Thread.sleep(5000);
+        actions
+                .waitUntilVisible_15000(chooseApproverInPeoplePeackerField)
+                .waitUntilAppear_15000(chooseApproverInPeoplePeackerField)
+                .click(chooseApproverInPeoplePeackerField);*/
+
         actions
                 .waitUntilAppear_15000(newApproverField)
-                .enterText(newApproverField,text,"chooseNewApprover")
-                .waitUntilAppear_15000(chooseApproverInPeoplePeackerField)
+                .enterText(newApproverField,text,"chooseNewApprover");
+        chooseApproverInPeoplePeackerField.shouldHave(text("Верезумская Ирина Викторовна"));
+        actions
                 .click(chooseApproverInPeoplePeackerField);
         return this;
     }
