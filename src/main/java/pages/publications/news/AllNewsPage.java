@@ -11,6 +11,8 @@ import pages.ParentPage;
 import pages.publications.CreatePublicationPanel;
 import pages.publications.Search;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 /**
@@ -18,7 +20,7 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class AllNewsPage extends ParentPage {
 
-    private final SelenideElement pageContainer() {
+    private SelenideElement pageContainer() {
         if ($("app-all-news").isDisplayed()) {
             return $("app-all-news");
         } else if ($("app-articles").isDisplayed()) {
@@ -47,7 +49,7 @@ public class AllNewsPage extends ParentPage {
     @Step("Check if News Page opens")
     public AllNewsPage isPageOpened(Language language) {
         new MainPage().switchAppToLang(language);
-        Assert.assertTrue(getPageTitle().isDisplayed(), "The page title" );
+        Assert.assertTrue(getPageTitle().should(Condition.appear, Duration.ofSeconds(60)).isDisplayed(), "The page title");
         return this;
     }
 
