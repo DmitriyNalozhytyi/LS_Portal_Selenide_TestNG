@@ -32,7 +32,7 @@ public class CreatePublicationPanel {
 
     /**
      *
-     * @return
+     * @return radio buttons
      */
     private ElementsCollection getButtons() {
         return getButtonsPanel().findAll("mat-radio-button");
@@ -55,6 +55,7 @@ public class CreatePublicationPanel {
             case NEWS:          getButtons().get(0).click(); break;
             case ARTICLES:      getButtons().get(1).click(); break;
             case ANNOUNCEMENT:  getButtons().get(2).click(); break;
+            case INTERVIEW:     getButtons().get(3).click(); break;
         }
         getCreatePublicationButton().click();
     }

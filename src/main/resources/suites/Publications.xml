@@ -12,6 +12,7 @@
             <class name="publications.NewsTest" />
             <class name="publications.ArticlesTest" />
             <class name="publications.AnnouncementTest" />
+            <class name="publications.InterviewTest" />
         </classes>
     </test>
 

@@ -21,7 +21,7 @@ public class AnnouncementTest extends ParentTest
     private final String announcementNameRU      = "ANNOUNCEMENT_RU_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
     private final String announcementNameUA      = "ANNOUNCEMENT_UA_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-    @Test(description = "Create a new News")
+    @Test(description = "Create a new Announcement")
     public void createNews() {
 
 

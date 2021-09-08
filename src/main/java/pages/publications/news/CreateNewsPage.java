@@ -111,6 +111,10 @@ public class CreateNewsPage extends ParentPage {
         return getAllDateFields().get(1);
     }
 
+    public static SelenideElement dtStartInterview() {
+        return getAllDateFields().get(2);
+    }
+
     private boolean isTitleDisplay() {
         return getTitleElement().isDisplayed();
     }
