@@ -8,6 +8,8 @@ import libs.Actions;
 import org.testng.Assert;
 import pages.MainPage;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 /**
@@ -46,7 +48,7 @@ public class ViewPublicationPage {
      */
     @Step("Verify if View Publication Page opened")
     public ViewPublicationPage isPageOpened() {
-        Assert.assertTrue(pageContainer.waitUntil(Condition.appears, 30000).isDisplayed());
+        Assert.assertTrue(pageContainer.should(Condition.appear, Duration.ofSeconds(60)).isDisplayed());
         return this;
     }
 

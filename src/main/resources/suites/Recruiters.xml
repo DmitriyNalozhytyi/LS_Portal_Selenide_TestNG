@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Store" thread-count="1" parallel="false">
+<suite name="Recruiters" thread-count="1" parallel="false">
 
 <!--
     <listeners>
@@ -9,7 +9,7 @@
     </listeners>
 -->
 
-    <test name="Auth" group-by-instances="false">
+    <test name="Recruites" group-by-instances="false">
         <classes>
             <class name="recruiters.ValidationTest" />
             <class name="recruiters.AddRecruiterTest" />

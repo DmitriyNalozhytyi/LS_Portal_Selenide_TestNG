@@ -3,6 +3,7 @@ package pages.publications.news;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import components.AddPublicationImage;
+import components.DateTimePicker;
 import components.PagePreLoader;
 import constants.Language;
 import io.qameta.allure.Step;
@@ -51,10 +52,14 @@ public class CreateNewsPage extends ParentPage {
         return pageContainer.findAll(".mat-select-value");
     }
 
+    private static ElementsCollection getAllDateFields() {
+        return pageContainer.findAll(".main-input.vacancy-input.ng-pristine");
+    }
+
+    /**    FIELDS     */
     private SelenideElement btnContent(int i) {
         return getAllContentTypeButtons().get(i);
     }
-
     public static SelenideElement ddTargetAudience() {
         return getAllDropDowns().get(0);
     }
@@ -100,6 +105,10 @@ public class CreateNewsPage extends ParentPage {
     }
     public static SelenideElement btnSaveAndPublish() {
         return pageContainer.find(".vacancy-publish-button");
+    }
+
+    public static SelenideElement dtStartPublication() {
+        return getAllDateFields().get(1);
     }
 
     private boolean isTitleDisplay() {
@@ -205,4 +214,16 @@ public class CreateNewsPage extends ParentPage {
         return this;
     }
 
+    /**
+     * Set data and time
+     * @param fieldName field name
+     * @param element element of
+     * @param dateTime date and time in format YYYY.MM.dd HH:mm
+     */
+    @Step("Set date {2} for {0}")
+    public CreateNewsPage setDateTimeFor(String fieldName, SelenideElement element, String dateTime) {
+        clickButton(element, fieldName);
+        new DateTimePicker().setDate(dateTime);
+        return this;
+    }
 }
