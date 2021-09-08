@@ -25,6 +25,8 @@ public class AllNewsPage extends ParentPage {
             return $("app-all-news");
         } else if ($("app-articles").isDisplayed()) {
             return $("app-articles");
+        } else if ($("app-interview").isDisplayed()) {
+            return $("app-interview");
         } else return null;
     }
 
@@ -32,14 +34,14 @@ public class AllNewsPage extends ParentPage {
      * Return the block where news are displayed
      */
     private SelenideElement getNewsContainer() {
-        return pageContainer().waitUntil(Condition.appears, 30000).find(".news.reuse-wrapper.mat-card").waitUntil(Condition.appear,30000);
+        return pageContainer().should(Condition.appear, Duration.ofSeconds(60)).find(".news.reuse-wrapper.mat-card").should(Condition.appear, Duration.ofSeconds(60));
     }
 
     /**
      * Return the title of news block
      */
     private SelenideElement getPageTitle() {
-        return getNewsContainer().find(".title").waitUntil(Condition.appear,30000);
+        return getNewsContainer().find(".title").should(Condition.appear, Duration.ofSeconds(60));
     }
 
     /**
