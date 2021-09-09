@@ -101,6 +101,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
 
     private final SelenideElement publishInFAQ = $(".dynamic-form-button.feedback-button.mat-button");
 
+
     /*@FindBy(className = "mat-button-wrapper")
     private WebElement accountBtn;*/
 
@@ -126,7 +127,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public WebElement appealField;*/
 
     private final SelenideElement appealField = $("#tinymce");
-
+    private final SelenideElement appealFieldForModerator = $("body#tinymce");
  //   List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
     ElementsCollection  lastCloseBtn = $$(".popup-feedback__close");
 
@@ -175,7 +176,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         webDriver.navigate().to("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
         logger.info("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
     }*/
-    public ViewListOfFeedbacks_Page_MainModerator openLastCreatedFeedback() {
+    public ViewListOfFeedbacks_Page_MainModerator openLastCreatedFeedback()  {
         open("https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText);
         logger.info("site" + "https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/" + titleText +" are opened");
         return this;
@@ -200,6 +201,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_AppealField_FeedbackCard_status_New_MM () {
 
         Selenide.switchTo().frame(0);
+        logger.info("switchedToFrame[0]");
         actions
                 .waitUntilAppear_15000(appealField);//test
                // .enterText(appealField, text + actions.currentTime(), "Feedback text");
@@ -209,19 +211,24 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         this.answerText = answerText;//test
 
         return this;
+    }
 
-        /*Selenide.switchTo().frame(1);
-        actions.waitUntilAppear_15000(appealField);
-        //   appealField.waitUntil(Condition.appear,15000);
-        String answerText = CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE, 15);
-        actions.enterText(appealField,answerText,"AppealField");
+    @Step
+    public ViewListOfFeedbacks_Page_MainModerator enterTextInTo_AppealField_FeedbackCard_status_New_M (){
+
+        /*actions.enterTextInTinyMCE($(".mce-tinymce.mce-container.mce-panel").find("iframe"),"ddsds","sdf");*/
+        ElementsCollection  frames = $$(By.tagName("iframe"));
+        logger.info(frames.size() + " - number of frames");
+        Selenide.switchTo().frame(1);
+        logger.info("switchedToFrame[1]");
+        actions
+                .waitUntilAppear_15000(appealField);//test
+        String answerText = CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE, 15);//test
+        actions.enterText(appealField,answerText,"AppealField");//test
         Selenide.switchTo().defaultContent();
-        this.answerText = answerText;
-        return this;*/
+        this.answerText = answerText;//test
 
-
-
-
+        return this;
     }
 
 
@@ -261,6 +268,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         logger.info(publishInFAQ+ "clicked");
         return this;
     }
+
+
 
     public ViewListOfFeedbacks_Page_MainModerator exitFromAccount() {
         actions.click(accountBtn,"accountBtn");

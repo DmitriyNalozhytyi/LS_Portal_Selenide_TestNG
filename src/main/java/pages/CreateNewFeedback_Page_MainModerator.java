@@ -16,8 +16,13 @@ import static junit.framework.TestCase.assertTrue;
 
 public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
-    @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
-    private WebElement directionManagementCompany;
+/*    @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
+    private WebElement directionManagementCompany;*/
+
+    private final SelenideElement openDDToChooseDirection = $(" ls-select-field .mat-select-arrow-wrapper");
+    private final SelenideElement chooseDirectionManagementCompanyInDD = $("mat-option:nth-of-type(1) > .mat-option-text");
+
+
 
     @FindBy(css = ".mat-datepicker-toggle > .mat-icon-button")
     private WebElement dateIcon;
@@ -280,7 +285,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
     }
 
-    @Step
+  /*  @Step
     public void choose_Direction_ManagementCompany_Field() throws InterruptedException {
 
         List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
@@ -298,7 +303,20 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         } else {
             logger.info("!!! number of same elements '0'!!! ");
         }
+    }*/
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator choose_Direction_ManagementCompany_Field()  {
+
+        actions
+                .waitUntilAppear_15000(openDDToChooseDirection)
+                .click(openDDToChooseDirection);
+        actions
+                .waitUntilAppear_15000(chooseDirectionManagementCompanyInDD)
+                .click(chooseDirectionManagementCompanyInDD);
+        return this;
     }
+  //  ls-select-field .mat-select-arrow-wrapper
 
     @Step
     public void choose_CommunicationChannel_PersMeet() throws InterruptedException {

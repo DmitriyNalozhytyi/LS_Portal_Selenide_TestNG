@@ -28,7 +28,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
     TEST-CASE 1:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ
     TEST-CASE 2:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ
-   - TEST-CASE 3:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
+   - TEST-CASE 3: createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
     TEST-CASE 4:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
 
     TEST-CASE 5:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
@@ -418,7 +418,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback by Main Moderator (MMK) and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_Portal();
         createNewFeedback_Page_MainModerator.choose_Direction_ManagementCompany_Field();
         createNewFeedback_Page_MainModerator.choose_TopicField();

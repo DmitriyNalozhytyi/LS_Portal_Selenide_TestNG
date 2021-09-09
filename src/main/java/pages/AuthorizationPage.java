@@ -89,6 +89,7 @@ public class AuthorizationPage extends ParentPage {
             case DEV_TESTUSER14: authorization(Config.HostsData.METINVEST.value[3], Config.HostsData.METINVEST.value[4]); break;
             case DEV_TESTUSER4:  authorization(Config.HostsData.METINVEST.value[5], Config.HostsData.METINVEST.value[6]); break;
             case DEV_TESTUSER12:  authorization(Config.HostsData.METINVEST.value[11], Config.HostsData.METINVEST.value[12]); break;
+            case DEV_TESTUSER11:  authorization(Config.HostsData.METINVEST.value[9], Config.HostsData.METINVEST.value[10]); break;
             case DEV_TESTUSER10:  authorization(Config.HostsData.METINVEST.value[7], Config.HostsData.METINVEST.value[8]); break;
 
         }

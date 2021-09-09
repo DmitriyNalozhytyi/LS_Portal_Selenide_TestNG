@@ -29,21 +29,21 @@ import parentTest.ParentTest;
 
     BLOCK 1: FLOW. AUTHOR - MM, PORTAL, PUBLISH IN FAQ
 
-    +TEST-CASE 1:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ
-    +TEST-CASE 2: createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ
-   - TEST-CASE 3:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
-    TEST-CASE 4:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
+   +TEST-CASE 1:  createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ
+   +TEST-CASE 2: createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ
+   +TEST-CASE 3:  createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
+   +TEST-CASE 4:   createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ
 
-    TEST-CASE 5:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
-    TEST-CASE 6:  createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyMM__PubFAQ
-   - TEST-CASE 7:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
-    TEST-CASE 8:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ
+   +TEST-CASE 5:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
+   +TEST-CASE 6:  createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyMM__PubFAQ
+   BUG TEST-CASE 7:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ
+   +TEST-CASE 8:  createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ
 
-    TEST-CASE 9:  createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ
-    TEST-CASE 10: createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyM__PubFAQ
-   - TEST-CASE 11: createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ
-   - TEST-CASE 12: createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByM__ApproveByNewAp_ApprovebyM__PubFAQ
-   - TEST-CASE 13: createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ
+   +TEST-CASE 9:     createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ
+   +TEST-CASE 10:    createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyM__PubFAQ
+   BUG TEST-CASE 11: createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ
+   BUG TEST-CASE 12: createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByM__ApproveByNewAp_ApprovebyM__PubFAQ
+   ??? TEST-CASE 13:   createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ
 
    BLOCK 2: FLOW. AUTHOR - MM, DIFFERENT OF PORTAL, CHECK BTN DELETE VISIBLE(for MM)/NOT VISIBLE (for M)
 
@@ -66,9 +66,9 @@ import parentTest.ParentTest;
 public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends ParentTest {
 
     //TEST-CASE 1
+
     @Story("create Feedback by Main Moderator")
     @Test(description = "createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ")
-
     public void createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
@@ -109,7 +109,9 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     }
 
     //TEST-CASE 2
-    @Test  //ok (need add time in AppealField to Check real feedbak in FAQ)
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ")
     public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
@@ -137,9 +139,11 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new Actions()
                 .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
     }
-//TEST-CASE 3
 
-    @Test // (need add time in AppealField to Check real feedbak in FAQ)!!!!!!!!!!!!!!!!!!!
+    //TEST-CASE 3
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ")
     public void createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
@@ -196,4 +200,545 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new Actions()
                 .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
     }
+
+    //TEST-CASE 4
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 4 - open feedback backed from Approver to Main Moderator  and approve by Main Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //  TEST-CASE 5:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+                //    STEP 2 - open last created feedback by Main Moderator and approve and publish in FAQ
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 3 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",!new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //TEST-CASE 6
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApproveByMM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApproveByMM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver and approve
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()//validate empty field "Response text field"
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp() //need to refactor
+                .closeFeedbackCard(); //need to refactor
+        //  STEP 3 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback()//need to refactor url
+                .clickOnSendBtn()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 4 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //TEST-CASE 7
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .assignNewResponsible()
+                .chooseNewApprover("Верезумская Ирина Викторовна")
+                .clickOnSendBtn();
+        //    STEP 5 - open and approve feedback by New Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER14);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp() //need to refactor
+                .closePopUp(); //need to refactor
+        //    STEP 6 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //TEST-CASE 8
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = " createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 4 - open feedback backed from Approver to Main Moderator  and approve by Main Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //  TEST-CASE 9:  createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback and approve By Moderator MMK
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //.enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .enterTextInTo_AppealField_FeedbackCard_status_New_M()
+                .clickOnSendBtn()
+                .closePopUp()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 3 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+   //TEST-CASE 10
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver and approve
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()//validate empty field "Response text field"
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp() //need to refactor
+                .closeFeedbackCard(); //need to refactor
+        //  STEP 3 - open last approved by Approver feedback and approve by  Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback()//need to refactor url
+                .clickOnSendBtn()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 4 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //TEST-CASE 11
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .assignNewResponsible()
+                .chooseNewApprover("Верезумская Ирина Викторовна")
+                .clickOnSendBtn();
+        //    STEP 5 - open and approve feedback by New Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER14);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp() //need to refactor
+                .closePopUp(); //need to refactor
+        //    STEP 6 - open last approved by Approver feedback and approve by  Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //TEST-CASE 12
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByM__ApproveByNewAp_ApprovebyM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByM__ApproveByNewAp_ApprovebyM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 4 - open feedback backed from Approver to  Moderator and Assign To new Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .assignNewResponsible()
+                .chooseNewApprover("Верезумская Ирина Викторовна")
+                .clickOnSendBtn();
+        //    STEP 5 - open and approve feedback by New Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER14);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp() //need to refactor
+                .closePopUp(); //need to refactor
+        //    STEP 6 - open last approved by Approver feedback and approve by  Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .clickOnSendBtn()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+    //TEST-CASE 13
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ")
+             public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 3 - open last returned feedback by Approver  and approve by  Moderator
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+           //     .closePopUp()
+                .clickOnSendBtn();
+//    STEP 3 - open last approwed feedback by Moderator  and approve by Main Moderator in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+               // .closePopUp()
+                .clickOnSendBtn()
+                .closePopUp()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }
+
+
+/*
+
+
+    //TEST-CASE 8
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = " createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ")
+    public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_Portal()
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+        //    STEP 2 - open last created feedback by Approver
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER10);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                //    STEP 3 - send feedback back to Main Moderator by Approver
+                .chooseCheckBoxToBackMM()
+                .inputReasonForReturn()
+                .clickOnSendBtn()
+                .closeFeedbackCard(); //need to refactor
+        //    STEP 4 - open feedback backed from Approver to Main Moderator  and approve by Main Moderator and publish in FAQ
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER12);
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
+                .clickOnSendBtn()
+                .closePopUp()
+                .publishInFAQ();
+        new MainPage()
+                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .openTopicProductFAQ()
+                .openLastFeebbackInTopicProductFAQ();
+        //  STEP 7 - check last published feedback in FAQ
+        new Actions()
+                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
+    }*/
+
+
 }

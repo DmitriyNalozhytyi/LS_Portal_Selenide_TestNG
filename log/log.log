@@ -1029,3 +1029,611 @@
 2021-04-09 15:53:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value displayed:StaleElementReferenceException: stale element reference: element is not attached to the page document>StaleElementReferenceException: stale element reference: element is not attached to the page document</StaleElementReferenceException: stale element reference: element is not attached to the page document>clicked
 2021-04-09 15:53:21   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
 2021-04-09 15:53:21   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-06-09 12:11:32   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 12:11:42   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 12:11:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2559
+2021-06-09 12:11:54   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2559 are opened
+2021-06-09 12:12:12   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 12:12:14   INFO [libs.Actions] : 1 - number of closeBtn
+2021-06-09 12:12:14   INFO [libs.Actions] : last close btn clicked
+2021-06-09 12:12:20   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2559 are opened
+2021-06-09 12:12:25   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-06-09 12:12:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-06-09 12:12:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-06-09 12:12:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 12:12:59   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 12:13:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2560
+2021-06-09 12:13:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2560 are opened
+2021-06-09 12:13:10   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 12:13:10   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-06-09 12:13:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-06-09 12:13:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-06-09 12:13:43   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 12:13:54   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 12:13:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2561
+2021-06-09 12:14:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2561 are opened
+2021-06-09 12:14:06   INFO [libs.Actions] : 1 - number of closeBtn
+2021-06-09 12:14:06   INFO [libs.Actions] : last close btn clicked
+2021-06-09 12:14:11   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2561 are opened
+2021-06-09 12:14:14   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c33 class="dynamic-form-button mat-button feedback-button ng-star-inserted cdk-focused cdk-mouse-focused" mat-button type="submit" value>Отправить</button>clicked
+2021-06-09 12:39:12   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 12:39:23   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 12:39:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2562
+2021-06-09 12:39:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2562 are opened
+2021-06-09 12:39:35   INFO [libs.Actions] : 1 - number of closeBtn
+2021-06-09 12:39:35   INFO [libs.Actions] : last close btn clicked
+2021-06-09 12:39:41   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2562 are opened
+2021-06-09 12:39:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2562 are opened
+2021-06-09 12:39:58   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 12:40:03   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 12:40:09   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2562 are opened
+2021-06-09 12:40:10   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-06-09 12:40:16   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-06-09 12:40:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-06-09 12:40:49   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 12:40:59   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 12:41:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2563
+2021-06-09 12:41:06   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2563 are opened
+2021-06-09 12:41:10   INFO [libs.Actions] : 1 - number of closeBtn
+2021-06-09 12:41:10   INFO [libs.Actions] : last close btn clicked
+2021-06-09 12:41:15   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2563 are opened
+2021-06-09 12:41:17   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button displayed:StaleElementReferenceException: stale element reference: element is not attached to the page document>StaleElementReferenceException: stale element reference: element is not attached to the page document</StaleElementReferenceException: stale element reference: element is not attached to the page document>clicked
+2021-06-09 12:42:50   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 12:43:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 12:43:01   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2564
+2021-06-09 12:43:06   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2564 are opened
+2021-06-09 12:43:10   INFO [libs.Actions] : 1 - number of closeBtn
+2021-06-09 12:43:10   INFO [libs.Actions] : last close btn clicked
+2021-06-09 12:43:16   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2564 are opened
+2021-06-09 12:43:23   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 12:43:23   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-06-09 12:43:29   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-06-09 12:43:30   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-06-09 12:55:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 13:07:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 13:07:43   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 13:07:45   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2565
+2021-06-09 13:07:45   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2565 are opened
+2021-06-09 13:08:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 13:08:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 13:08:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2566
+2021-06-09 13:08:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2566 are opened
+2021-06-09 13:08:49   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 13:08:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-06-09 13:08:56   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-06-09 13:08:56   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-06-09 13:09:40   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-06-09 13:09:52   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-06-09 13:09:53   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2567
+2021-06-09 13:09:53   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2567 are opened
+2021-06-09 13:10:01   INFO [libs.Actions] : Close last popUplast element clicked
+2021-06-09 13:10:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-06-09 13:10:08   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-06-09 13:10:08   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 09:01:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:01:15   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:01:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2568
+2021-08-09 09:01:28   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2568 are opened
+2021-08-09 09:02:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:02:50   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:02:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2569
+2021-08-09 09:03:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2569 are opened
+2021-08-09 09:11:35   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:12:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:13:07   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:13:08   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2570
+2021-08-09 09:13:18   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2570 are opened
+2021-08-09 09:20:43   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:20:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:20:56   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2571
+2021-08-09 09:21:07   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2571 are opened
+2021-08-09 09:25:51   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:26:04   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:26:05   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2572
+2021-08-09 09:26:16   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2572 are opened
+2021-08-09 09:26:24   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 09:26:26   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 09:26:26   INFO [libs.Actions] : last close btn clicked
+2021-08-09 09:26:35   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2572 are opened
+2021-08-09 09:26:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : Ups, failed to described the element [caused by: StaleElementReferenceException: stale element reference: element is not attached to the page document]clicked
+2021-08-09 09:26:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 09:26:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 09:42:52   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:43:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:43:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2574
+2021-08-09 09:43:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2574 are opened
+2021-08-09 09:43:17   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 09:43:17   INFO [libs.Actions] : last close btn clicked
+2021-08-09 09:43:23   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2574 are opened
+2021-08-09 09:43:33   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2574 are opened
+2021-08-09 09:44:23   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:44:35   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:44:35   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2575
+2021-08-09 09:44:41   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2575 are opened
+2021-08-09 09:44:45   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 09:44:45   INFO [libs.Actions] : last close btn clicked
+2021-08-09 09:44:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2575 are opened
+2021-08-09 09:44:59   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2575 are opened
+2021-08-09 09:55:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:55:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:55:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2576
+2021-08-09 09:55:38   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2576 are opened
+2021-08-09 09:55:42   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 09:55:43   INFO [libs.Actions] : last close btn clicked
+2021-08-09 09:55:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2576 are opened
+2021-08-09 09:55:59   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2576 are opened
+2021-08-09 09:57:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 09:57:50   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 09:57:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2577
+2021-08-09 09:57:57   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2577 are opened
+2021-08-09 09:58:01   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 09:58:01   INFO [libs.Actions] : last close btn clicked
+2021-08-09 09:58:07   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2577 are opened
+2021-08-09 09:58:18   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2577 are opened
+2021-08-09 09:58:25   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 09:58:30   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 09:58:43   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2577 are opened
+2021-08-09 09:58:48   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 09:58:54   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 09:58:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 10:01:10   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:01:21   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:01:22   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2578
+2021-08-09 10:01:28   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2578 are opened
+2021-08-09 10:01:32   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 10:01:32   INFO [libs.Actions] : last close btn clicked
+2021-08-09 10:01:38   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2578 are opened
+2021-08-09 10:01:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2578 are opened
+2021-08-09 10:24:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:25:08   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:25:12   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2580
+2021-08-09 10:25:18   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2580 are opened
+2021-08-09 10:25:24   INFO [libs.Actions] : 1 - number of closeBtn
+2021-08-09 10:25:25   INFO [libs.Actions] : last close btn clicked
+2021-08-09 10:25:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2580 are opened
+2021-08-09 10:25:39   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 10:25:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 10:25:46   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 10:25:47   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 10:46:34   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:46:45   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:46:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2581
+2021-08-09 10:46:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2581 are opened
+2021-08-09 10:46:54   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 10:46:54   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 10:47:02   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 10:47:02   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 10:48:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:48:12   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:48:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2582
+2021-08-09 10:48:14   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2582 are opened
+2021-08-09 10:49:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:49:11   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:49:12   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2583
+2021-08-09 10:49:12   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2583 are opened
+2021-08-09 10:49:20   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 10:49:20   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 10:49:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 10:49:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 10:51:53   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:52:04   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:52:05   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2584
+2021-08-09 10:52:05   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2584 are opened
+2021-08-09 10:52:13   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 10:52:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 10:52:20   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 10:52:20   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 10:53:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:53:11   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:54:04   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:54:16   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:54:16   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2586
+2021-08-09 10:54:23   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2586 are opened
+2021-08-09 10:54:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:55:09   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:55:09   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2587
+2021-08-09 10:55:10   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2587 are opened
+2021-08-09 10:55:41   INFO [libs.Actions] : can not find [WebDriverException: chrome not reachable]
+2021-08-09 10:57:53   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 10:58:05   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 10:58:05   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2588
+2021-08-09 10:58:06   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2588 are opened
+2021-08-09 10:58:13   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 10:58:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 10:58:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 10:58:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 11:00:21   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 11:00:32   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 11:00:33   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2589
+2021-08-09 11:00:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2589 are opened
+2021-08-09 11:00:41   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 11:00:41   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 11:00:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 11:00:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 11:45:14   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 11:45:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 11:45:29   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2590
+2021-08-09 11:45:35   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2590 are opened
+2021-08-09 11:46:08   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 11:46:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 11:46:20   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2591
+2021-08-09 11:46:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2591 are opened
+2021-08-09 11:46:30   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 11:53:16   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Driver for screenshot not found
+2021-08-09 11:53:16   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ
+2021-08-09 11:53:16  ERROR [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : java.lang.NullPointerException
+2021-08-09 11:54:21   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Driver for screenshot not found
+2021-08-09 11:54:21   INFO [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : Finished test: feedbackTests.Feedback_MainFlow_Author_MainModerator_Test::createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ
+2021-08-09 11:54:21  ERROR [feedbackTests.Feedback_MainFlow_Author_MainModerator_Test] : java.lang.NullPointerException
+2021-08-09 11:55:46   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 11:55:58   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 11:55:59   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2592
+2021-08-09 11:56:05   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2592 are opened
+2021-08-09 11:57:10   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 11:57:21   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 11:57:22   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2593
+2021-08-09 11:57:29   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2593 are opened
+2021-08-09 12:10:09   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 12:10:20   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 12:10:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2595
+2021-08-09 12:10:27   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2595 are opened
+2021-08-09 12:46:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 12:46:51   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 12:46:52   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2596
+2021-08-09 12:47:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2596 are opened
+2021-08-09 12:49:51   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 12:50:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 12:50:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2597
+2021-08-09 12:50:11   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2597 are opened
+2021-08-09 12:50:11   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchToFrame[0]
+2021-08-09 12:55:29   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 12:55:40   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 12:55:41   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2598
+2021-08-09 12:55:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2598 are opened
+2021-08-09 12:55:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[0]
+2021-08-09 13:02:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:02:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:02:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2599
+2021-08-09 13:02:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2599 are opened
+2021-08-09 13:02:48   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[0]
+2021-08-09 13:02:53   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:02:53   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:03:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:03:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:04:01   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:04:13   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:04:14   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2600
+2021-08-09 13:04:20   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2600 are opened
+2021-08-09 13:05:43   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:05:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:05:56   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2601
+2021-08-09 13:06:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2601 are opened
+2021-08-09 13:06:03   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[0]
+2021-08-09 13:07:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:07:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:07:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2602
+2021-08-09 13:07:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2602 are opened
+2021-08-09 13:07:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[0]
+2021-08-09 13:07:54   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:07:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:08:01   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:08:01   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:10:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:10:37   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:10:38   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2603
+2021-08-09 13:10:44   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2603 are opened
+2021-08-09 13:10:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[0]
+2021-08-09 13:10:55   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:10:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:11:01   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:11:02   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:13:45   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:13:56   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:13:57   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2604
+2021-08-09 13:14:03   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2604 are opened
+2021-08-09 13:18:05   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:18:16   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:18:17   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2605
+2021-08-09 13:18:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2605 are opened
+2021-08-09 13:18:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 13:18:26   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[0]
+2021-08-09 13:18:31   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:18:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:18:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:18:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:24:12   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:24:23   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:24:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2606
+2021-08-09 13:24:30   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2606 are opened
+2021-08-09 13:24:30   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 13:24:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-08-09 13:24:37   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:24:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:24:44   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:24:44   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:26:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:26:42   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:26:43   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2607
+2021-08-09 13:26:50   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2607 are opened
+2021-08-09 13:27:43   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:27:54   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:27:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2608
+2021-08-09 13:28:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2608 are opened
+2021-08-09 13:28:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 13:28:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-08-09 13:28:10   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:28:10   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:28:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:28:17   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:32:15   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:32:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:32:27   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2609
+2021-08-09 13:32:33   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2609 are opened
+2021-08-09 13:32:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 2 - number of frames
+2021-08-09 13:32:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-08-09 13:32:40   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:32:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:32:46   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:32:47   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 13:35:33   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:35:45   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:35:46   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2610
+2021-08-09 13:35:53   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2610 are opened
+2021-08-09 13:35:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 2 - number of frames
+2021-08-09 13:36:52   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 13:37:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 13:37:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2611
+2021-08-09 13:37:10   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2611 are opened
+2021-08-09 13:37:12   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 13:37:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-08-09 13:37:18   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 13:37:18   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-08-09 13:37:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-08-09 13:37:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-08-09 15:15:35   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:15:47   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:15:54   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2612
+2021-08-09 15:16:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2612 are opened
+2021-08-09 15:17:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:17:36   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:17:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2613
+2021-08-09 15:17:43   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2613 are opened
+2021-08-09 15:19:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:19:38   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:19:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2614
+2021-08-09 15:19:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2614 are opened
+2021-08-09 15:19:55   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 15:22:41   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:22:53   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:22:54   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2615
+2021-08-09 15:23:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2615 are opened
+2021-08-09 15:28:12   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:28:23   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:28:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2616
+2021-08-09 15:28:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2616 are opened
+2021-08-09 15:34:23   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:34:35   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:34:36   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2617
+2021-08-09 15:34:44   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2617 are opened
+2021-08-09 15:34:44   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 15:38:52   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 15:39:03   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 15:39:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2618
+2021-08-09 15:39:20   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2618 are opened
+2021-08-09 15:39:20   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 15:39:23   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-08-09 16:10:34   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 16:10:47   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 16:10:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2619
+2021-08-09 16:11:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2619 are opened
+2021-08-09 16:11:04   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 17:52:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-08-09 17:52:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-08-09 17:52:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2621
+2021-08-09 17:52:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2621 are opened
+2021-08-09 17:52:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-08-09 17:52:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-08-09 17:52:40   INFO [libs.Actions] : Close last popUplast element clicked
+2021-08-09 17:53:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:15:08   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:15:20   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:15:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2622
+2021-09-09 15:15:27   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2622 are opened
+2021-09-09 15:15:27   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-09-09 15:15:28   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-09-09 15:15:34   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:15:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:15:34   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2622 are opened
+2021-09-09 15:17:44   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:17:59   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:18:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:19:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:19:07   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2623
+2021-09-09 15:19:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2623 are opened
+2021-09-09 15:19:13   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-09-09 15:19:15   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-09-09 15:19:21   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:19:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:19:28   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-09-09 15:19:28   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-09-09 15:20:28   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:20:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:20:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2624
+2021-09-09 15:20:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2624 are opened
+2021-09-09 15:20:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-09-09 15:21:30   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:21:42   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:21:42   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2625
+2021-09-09 15:21:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2625 are opened
+2021-09-09 15:21:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : 1 - number of frames
+2021-09-09 15:21:52   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : switchedToFrame[1]
+2021-09-09 15:21:58   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:21:58   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:22:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-09-09 15:22:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-09-09 15:26:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:26:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:26:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2626
+2021-09-09 15:26:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2626 are opened
+2021-09-09 15:26:44   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:26:46   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:26:46   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:27:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:27:59   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:28:00   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2627
+2021-09-09 15:28:05   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2627 are opened
+2021-09-09 15:28:12   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:28:14   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:28:14   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:28:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2627 are opened
+2021-09-09 15:28:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:28:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-09-09 15:28:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-09-09 15:29:15   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:29:26   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:29:27   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2628
+2021-09-09 15:29:33   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2628 are opened
+2021-09-09 15:29:40   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:29:42   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:29:42   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:29:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2628 are opened
+2021-09-09 15:29:51   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:29:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-09-09 15:29:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-09-09 15:32:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:33:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:33:07   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2629
+2021-09-09 15:33:12   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2629 are opened
+2021-09-09 15:33:19   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:33:21   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:33:22   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:33:27   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2629 are opened
+2021-09-09 15:33:29   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:33:35   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-09-09 15:33:36   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-09-09 15:51:34   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:51:45   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:51:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2630
+2021-09-09 15:51:53   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2630 are opened
+2021-09-09 15:52:00   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 15:52:02   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:52:02   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:52:09   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2630 are opened
+2021-09-09 15:52:11   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c32 class="dynamic-form-button feedback-button mat-button cdk-focused cdk-mouse-focused" mat-button type="button" value>Снять с публикации в ЧаВо</button>clicked
+2021-09-09 15:52:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : accordions choosed
+2021-09-09 15:52:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : opened last feedback in topic PRODUCT in FAQ
+2021-09-09 15:53:02   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:53:14   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:53:14   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2631
+2021-09-09 15:53:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2631 are opened
+2021-09-09 15:53:25   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:53:26   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:53:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2631 are opened
+2021-09-09 15:53:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2631 are opened
+2021-09-09 15:54:55   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 15:55:07   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 15:55:07   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2632
+2021-09-09 15:55:14   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2632 are opened
+2021-09-09 15:55:17   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 15:55:17   INFO [libs.Actions] : last close btn clicked
+2021-09-09 15:55:23   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2632 are opened
+2021-09-09 15:55:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2632 are opened
+2021-09-09 16:13:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:13:36   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:13:38   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2633
+2021-09-09 16:13:45   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2633 are opened
+2021-09-09 16:13:51   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:13:51   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:13:58   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2633 are opened
+2021-09-09 16:14:48   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:15:00   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:15:01   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2634
+2021-09-09 16:15:09   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2634 are opened
+2021-09-09 16:15:13   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:15:13   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:15:21   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2634 are opened
+2021-09-09 16:15:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2634 are opened
+2021-09-09 16:24:06   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:24:18   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:24:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2635
+2021-09-09 16:24:26   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2635 are opened
+2021-09-09 16:24:30   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:24:30   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:24:38   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2635 are opened
+2021-09-09 16:24:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c33 class="dynamic-form-button mat-button feedback-button ng-star-inserted cdk-focused cdk-mouse-focused" mat-button type="submit" value>Отправить</button>clicked
+2021-09-09 16:27:57   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:28:10   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:28:11   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2636
+2021-09-09 16:28:17   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2636 are opened
+2021-09-09 16:28:21   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:28:21   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:28:28   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2636 are opened
+2021-09-09 16:28:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : <button _ngcontent-c33 class="dynamic-form-button mat-button feedback-button ng-star-inserted cdk-focused cdk-mouse-focused" mat-button type="submit" value>Отправить</button>clicked
+2021-09-09 16:30:04   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:30:15   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:30:17   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2637
+2021-09-09 16:30:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2637 are opened
+2021-09-09 16:30:28   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:30:28   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:30:35   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2637 are opened
+2021-09-09 16:30:43   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 16:31:35   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:31:47   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:31:48   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2638
+2021-09-09 16:31:55   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2638 are opened
+2021-09-09 16:31:59   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:32:00   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:32:06   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2638 are opened
+2021-09-09 16:32:13   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 16:33:20   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:33:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:33:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2639
+2021-09-09 16:33:39   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2639 are opened
+2021-09-09 16:33:43   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:33:43   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:33:50   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2639 are opened
+2021-09-09 16:33:57   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 16:40:56   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:41:07   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:41:08   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2640
+2021-09-09 16:41:14   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2640 are opened
+2021-09-09 16:41:18   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:41:18   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:41:24   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2640 are opened
+2021-09-09 16:41:31   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 16:45:49   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:46:01   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:46:02   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2641
+2021-09-09 16:46:08   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2641 are opened
+2021-09-09 16:46:12   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:46:12   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:46:19   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2641 are opened
+2021-09-09 16:53:19   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:53:31   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:53:31   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2642
+2021-09-09 16:53:37   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2642 are opened
+2021-09-09 16:53:41   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:53:41   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:53:48   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2642 are opened
+2021-09-09 16:55:13   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:55:25   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:55:25   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2643
+2021-09-09 16:55:32   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2643 are opened
+2021-09-09 16:55:35   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:55:36   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:55:42   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2643 are opened
+2021-09-09 16:55:49   INFO [libs.Actions] : Close last popUplast element clicked
+2021-09-09 16:56:30   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:56:42   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:56:43   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2644
+2021-09-09 16:56:49   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2644 are opened
+2021-09-09 16:56:53   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:56:53   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:56:59   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2644 are opened
+2021-09-09 16:58:27   INFO [pages.CreateNewFeedback_Page_MainModerator] : portal Channel choosed
+2021-09-09 16:58:39   INFO [pages.CreateNewFeedback_Page_MainModerator] : Production selected in DDTopicField
+2021-09-09 16:58:40   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : text recoded2645
+2021-09-09 16:58:47   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2645 are opened
+2021-09-09 16:58:51   INFO [libs.Actions] : 1 - number of closeBtn
+2021-09-09 16:58:51   INFO [libs.Actions] : last close btn clicked
+2021-09-09 16:58:57   INFO [pages.ViewListOfFeedbacks_Page_MainModerator] : sitehttps://metinvest-intranet-test.azurewebsites.net/ru/feedback/list/2645 are opened
