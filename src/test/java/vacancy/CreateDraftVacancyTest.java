@@ -34,7 +34,7 @@ public class CreateDraftVacancyTest extends ParentTest {
     public void addDraftVacancy(USERS user, String vacancyName) {
         new AuthorizationPage().loginAs(user);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -53,7 +53,7 @@ public class CreateDraftVacancyTest extends ParentTest {
                 .selectResponsibleForSW(user, Data.RECRUITER_2)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

@@ -1,13 +1,12 @@
 package pages;
 
-import libs.Actions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@Deprecated
 public class NewsPageAll extends ParentPage {
 
     @FindBy(css = "[for='mat-radio-2-input'] .mat-radio-label-content")

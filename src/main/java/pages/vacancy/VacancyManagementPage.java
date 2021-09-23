@@ -188,7 +188,7 @@ public class VacancyManagementPage {
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
                 .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -199,7 +199,7 @@ public class VacancyManagementPage {
 
         new AuthorizationPage().loginAs(admin);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -211,7 +211,7 @@ public class VacancyManagementPage {
                 .changeStatus("Статус", "Открытая", VacancyStatus.OPEN)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -221,7 +221,7 @@ public class VacancyManagementPage {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -249,7 +249,7 @@ public class VacancyManagementPage {
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -275,7 +275,7 @@ public class VacancyManagementPage {
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
                 .clickButton("На утверждение", CreateVacancyPage.btnOnApprovalVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -303,7 +303,7 @@ public class VacancyManagementPage {
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -329,7 +329,7 @@ public class VacancyManagementPage {
                 .selectFor("График работы",CreateVacancyPage.ddSchedule(), 1)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -356,7 +356,7 @@ public class VacancyManagementPage {
                 .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -370,7 +370,7 @@ public class VacancyManagementPage {
                 .changeStatus("Статус", statusName, status)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -385,7 +385,7 @@ public class VacancyManagementPage {
 
         createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -399,7 +399,7 @@ public class VacancyManagementPage {
                 .changeStatus("Статус", statusName, status)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

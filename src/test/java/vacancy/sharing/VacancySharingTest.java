@@ -30,7 +30,7 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -55,14 +55,14 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
-        new MainPage().goTo(SiteMenu.VACANCY);
+        new MainPage().goTo(Pages.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()
@@ -87,7 +87,7 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
@@ -113,14 +113,14 @@ public class VacancySharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
-        new MainPage().goTo(SiteMenu.VACANCY);
+        new MainPage().goTo(Pages.VACANCY);
 
         new VacancyPage()
                 .isPageOpens()

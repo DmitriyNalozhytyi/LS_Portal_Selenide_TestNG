@@ -26,7 +26,7 @@ public class RecommendationSharingTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
 
-        new MainPage().goTo(SiteMenu.VACANCY_MANAGEMENT);
+        new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()

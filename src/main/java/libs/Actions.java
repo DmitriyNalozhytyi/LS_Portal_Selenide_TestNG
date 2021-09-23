@@ -436,7 +436,6 @@ public class Actions {
      * @param element selector to find this element
      * @param value value that should be selected
      * @param fieldName the name of field
-     * @return
      */
     public Actions enterTextInTinyMCE(SelenideElement element, String value, String fieldName) {
         try {

@@ -73,7 +73,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_TopicField()
@@ -99,7 +99,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -116,7 +116,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_TopicField()
@@ -131,7 +131,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -148,7 +148,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_TopicField()
@@ -192,7 +192,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -209,7 +209,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_TopicField()
@@ -237,7 +237,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -254,7 +254,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -270,7 +270,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -287,7 +287,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -314,7 +314,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -331,7 +331,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -376,7 +376,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -393,7 +393,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -422,7 +422,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -439,7 +439,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -459,7 +459,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -476,7 +476,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -503,7 +503,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -520,7 +520,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -565,7 +565,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -582,7 +582,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -627,7 +627,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -644,7 +644,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
                 .choose_Direction_ManagementCompany_Field()
@@ -673,7 +673,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp()
                 .publishInFAQ();
         new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+                .goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .openTopicProductFAQ()
                 .openLastFeebbackInTopicProductFAQ();
@@ -707,7 +707,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_PersonalMeeting()
                 .chooseDate()
@@ -737,7 +737,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_InfoConsLine()
                 .chooseDate()
@@ -767,7 +767,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_CorpMassMedia()
                 .chooseDate()
@@ -796,7 +796,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_PersonalMeeting()
                 .chooseDate()
@@ -826,7 +826,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_InfoConsLine()
                 .chooseDate()
@@ -856,7 +856,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_CorpMassMedia()
                 .chooseDate()
@@ -885,7 +885,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_PersonalMeeting()
                 .chooseDate()
@@ -920,7 +920,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_InfoConsLine()
                 .chooseDate()
@@ -955,7 +955,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
-        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_CorpMassMedia()
                 .chooseDate()

@@ -1,19 +1,17 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import io.qameta.allure.Step;
 import utils.CustomRandom;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static junit.framework.TestCase.assertTrue;
 
 
 public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
@@ -129,7 +127,7 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     private final SelenideElement appealField = $("#tinymce");
     private final SelenideElement appealFieldForModerator = $("body#tinymce");
  //   List<SelenideElement> lastCloseBtn = $$(".popup-feedback__close");
-    ElementsCollection  lastCloseBtn = $$(".popup-feedback__close");
+    ElementsCollection lastCloseBtn = $$(".popup-feedback__close");
 
 
     private final SelenideElement deleteFeedbackBtnAlternativeChannels = $(".dynamic-form-button.feedback-button__gray.mat-button");
