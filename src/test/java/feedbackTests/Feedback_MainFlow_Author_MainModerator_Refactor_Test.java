@@ -669,14 +669,6 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
-           //     .closePopUp()
-                .clickOnSendBtn();
-//    STEP 3 - open last approwed feedback by Moderator  and approve by Main Moderator in FAQ
-        new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
-        new ViewListOfFeedbacks_Page_MainModerator()
-                .openLastCreatedFeedback() //need to refactor url
-               // .closePopUp()
                 .clickOnSendBtn()
                 .closePopUp()
                 .publishInFAQ();
@@ -691,54 +683,307 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     }
 
 
-/*
+   /* BLOCK 2: FLOW. AUTHOR - MM, DIFFERENT OF PORTAL, CHECK BTN DELETE VISIBLE(for MM)/NOT VISIBLE (for M)
 
+    TEST-CASE 14:  createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM
+    TEST-CASE 15: createFeedbackByMM_InfoConsLine_Management_MH__ApprovebyMM
+    TEST-CASE 16: createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM
 
-    //TEST-CASE 8
+    TEST-CASE 17:  createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyMM
+    TEST-CASE 18: createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM
+    TEST-CASE 19: createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyMM
+
+    TEST-CASE 20:  createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyM
+    TEST-CASE 21: createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyM
+    TEST-CASE 22: createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyM
+
+    */
+
+    //  TEST-CASE 14:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
 
     @Story("create Feedback by Main Moderator")
-    @Test(description = " createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ")
-    public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ() {
+    @Test(description = "createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM")
+    public void createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
         new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
-                .choose_CommunicationChannel_Portal()
+                .choose_CommunicationChannel_PersonalMeeting()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .insertCountOfPeopleField("5")
+            //    .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+         //    STEP 2 - open last created feedback by Main Moderator and approve
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+
+    //  TEST-CASE 15:  createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_InfoConsLine_Management_MH__ApprovebyMM")
+    public void createFeedbackByMM_InfoConsLine_Management_MH__ApprovebyMM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_InfoConsLine()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .insertPhoneNumber("067 777 77 77")
+              //  .insertCountOfPeopleField("5")
+              //  .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+                //    STEP 2 - open last created feedback by Main Moderator and approve
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+    //  TEST-CASE 16:   createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = " createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM")
+    public void  createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_CorpMassMedia()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                //  .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+                //    STEP 2 - open last created feedback by Main Moderator and approve
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+
+    //  TEST-CASE 17:  createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyMM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyMM")
+    public void createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyMM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_PersonalMeeting()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .insertCountOfPeopleField("5")
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+                //    STEP 2 - open last created feedback by Main Moderator and approve
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+
+    //  TEST-CASE 18:  createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM")
+    public void createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_InfoConsLine()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .insertPhoneNumber("067 777 77 77")
+                //  .insertCountOfPeopleField("5")
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+                //    STEP 2 - open last created feedback by Main Moderator and approve
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+    //  TEST-CASE 19:   createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyMM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = " createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyMM")
+    public void  createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyMM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_CorpMassMedia()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber()
+                //    STEP 2 - open last created feedback by Main Moderator and approve
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+
+    //  TEST-CASE 20:  createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyM")
+    public void createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_PersonalMeeting()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .insertCountOfPeopleField("5")
                 .choose_Direction_ManagementCompany_Field()
                 .choose_TopicField()
                 .enterTextInTo_AppealField("textInAppealField")
                 .clickOnSendBtn();
         new ViewListOfFeedbacks_Page_MainModerator()
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
-        //    STEP 2 - open last created feedback by Approver
+
+        //    STEP 2 - open last created feedback by  Moderator and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USERS.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
+
                 .openLastCreatedFeedback() //need to refactor url
-                //    STEP 3 - send feedback back to Main Moderator by Approver
-                .chooseCheckBoxToBackMM()
-                .inputReasonForReturn()
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
                 .clickOnSendBtn()
-                .closeFeedbackCard(); //need to refactor
-        //    STEP 4 - open feedback backed from Approver to Main Moderator  and approve by Main Moderator and publish in FAQ
-        new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
-        new ViewListOfFeedbacks_Page_MainModerator()
-                .openLastCreatedFeedback() //need to refactor url
-                .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
-                .clickOnSendBtn()
-                .closePopUp()
-                .publishInFAQ();
-        new MainPage()
-                .goTo(SiteMenu.CREATE_NEW_FEEDBACK);
-        new CreateNewFeedback_Page_MainModerator()
-                .openTopicProductFAQ()
-                .openLastFeebbackInTopicProductFAQ();
-        //  STEP 7 - check last published feedback in FAQ
+                .closePopUp();
         new Actions()
-                .checkExpectedResult("no feedback in FAQList",new CreateNewFeedback_Page_MainModerator().isFeedbackInFAQList());
-    }*/
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+
+    //  TEST-CASE 21:  createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = "createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyM")
+    public void createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_InfoConsLine()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .insertPhoneNumber("067 777 77 77")
+                //  .insertCountOfPeopleField("5")
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback by  Moderator and approve
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+    //  TEST-CASE 22:   createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyM
+
+    @Story("create Feedback by Main Moderator")
+    @Test(description = " createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyM")
+    public void  createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyM() {
+
+        //    STEP 1 - create feedback and remember feedback number
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new MainPage().goTo(SiteMenu.CREATE_NEW_FEEDBACK);
+        new CreateNewFeedback_Page_MainModerator()
+                .choose_CommunicationChannel_CorpMassMedia()
+                .chooseDate()
+                .chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович")
+                .choose_Direction_ManagementCompany_Field()
+                .choose_TopicField()
+                .enterTextInTo_AppealField("textInAppealField")
+                .clickOnSendBtn();
+        new ViewListOfFeedbacks_Page_MainModerator()
+                .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
+
+        //    STEP 2 - open last created feedback by  Moderator and approve
+        new AuthorizationPage()
+                .loginAs(USERS.DEV_TESTUSER11);
+        new ViewListOfFeedbacks_Page_MainModerator()
+
+                .openLastCreatedFeedback() //need to refactor url
+                .enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
+                .clickOnSendBtn()
+                .closePopUp();
+        new Actions()
+                .checkExpectedResult("feedback isn't answered",new ViewListOfFeedbacks_Page_MainModerator().isFeedback_AlternativeChannels_Answered());
+    }
+
+
+
+
+
 
 
 }

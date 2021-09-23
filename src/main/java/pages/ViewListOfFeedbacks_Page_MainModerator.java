@@ -132,6 +132,9 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     ElementsCollection  lastCloseBtn = $$(".popup-feedback__close");
 
 
+    private final SelenideElement deleteFeedbackBtnAlternativeChannels = $(".dynamic-form-button.feedback-button__gray.mat-button");
+
+
     public static String titleText;
     public static String answerText;
 
@@ -431,6 +434,8 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
     }
 
 
+
+
     public void enterTextInTo_AppealField_FeedbackCard_status_New_BackFromAp_ByMM(String text) throws InterruptedException {
 
         Thread.sleep(3000);
@@ -487,6 +492,21 @@ public class ViewListOfFeedbacks_Page_MainModerator extends ParentPage {
         actions.click(approveDeletingFeedbackBtnStatusNew);
         Thread.sleep(2000);
     }
+
+    public boolean isFeedback_AlternativeChannels_Answered() {
+        actions.waitUntilVisible_15000(deleteFeedbackBtnAlternativeChannels);
+        return deleteFeedbackBtnAlternativeChannels.isDisplayed();
+    }
+
+/*    @Step
+    public boolean isFeedbackInFAQList()  {
+        actions.waitUntilVisible_15000(textInLastFeedbackInTopicProductFAQ);//test
+        return textInLastFeedbackInTopicProductFAQ.getText().contains(ViewListOfFeedbacks_Page_MainModerator.answerText);
+        }
+        */
+
+
+
 
 //    find last created feedback in list of reedbacks
 

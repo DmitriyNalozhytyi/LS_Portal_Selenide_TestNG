@@ -8,45 +8,34 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static junit.framework.TestCase.assertTrue;
+
 
 public class CreateNewFeedback_Page_MainModerator extends ParentPage {
 
-/*    @FindBy(css = "mat-option:nth-of-type(1) > .mat-option-text")
-    private WebElement directionManagementCompany;*/
-
     private final SelenideElement openDDToChooseDirection = $(" ls-select-field .mat-select-arrow-wrapper");
     private final SelenideElement chooseDirectionManagementCompanyInDD = $("mat-option:nth-of-type(1) > .mat-option-text");
+    private final SelenideElement dateIcon = $(".date_icon.ng-star-inserted");
+//    private final SelenideElement dateInCalendar = $("tr:nth-of-type(3) > .ng-star-inserted.owl-dt-calendar-cell.owl-dt-day-4 > .owl-dt-calendar-cell-content > font > font");
+    private final SelenideElement dateInCalendar = $("tr:nth-of-type(3) > .ng-star-inserted.owl-dt-calendar-cell.owl-dt-day-4 > .owl-dt-calendar-cell-content");
+
+
+    private final SelenideElement speakerPeoplePickerField = $("input[role='combobox']");
+    private final SelenideElement chooseSpeakerInPeoplePeackerField = $(".modern-option__title");
+    private final SelenideElement countOfPeopleField = $(".dark-border.feedback-placeholder.main-input.ng-invalid.ng-pristine.ng-untouched");
+    private final SelenideElement infoConsLine = $("mat-option:nth-of-type(5) > .mat-option-text");
+    private final SelenideElement phoneField = $("[placeholder='Введите номер телефона']");
+    private final SelenideElement chooseDateBtnInDataPeacker = $("[class] [tabindex='0']:nth-of-type(2) font:nth-of-type(1) font");
+    private final SelenideElement dateTitle = $(".datepicker-field-label font:nth-of-type(1) font");
+    private final SelenideElement corpMassMedia = $("mat-option:nth-of-type(6) > .mat-option-text");
 
 
 
-    @FindBy(css = ".mat-datepicker-toggle > .mat-icon-button")
-    private WebElement dateIcon;
-
-    @FindBy(css = "tr:nth-of-type(2) > td:nth-of-type(1) > .mat-calendar-body-cell-content")
-    private WebElement dateInCalendar;
-
-    @FindBy(css = "input[role='combobox']")
-    private WebElement speakerPeoplePickekField;
-
-    @FindBy(css = ".modern-option__title")
-    private WebElement chooseSpeakerInPeoplePeackerField;
-
-    @FindBy(css = ".dark-border.feedback-placeholder.main-input.ng-invalid.ng-pristine.ng-untouched")
-    private WebElement countOfPeopleField;
-
-    @FindBy(css = "mat-option:nth-of-type(5) > .mat-option-text")
-    private WebElement infoConsLine;
-
-    @FindBy(css = "[placeholder='Введите номер телефона']")
-    private WebElement phoneField;
-
-    @FindBy(css = "mat-option:nth-of-type(6) > .mat-option-text")
-    private WebElement corpMassMedia;
+    /*@FindBy(css = "mat-option:nth-of-type(6) > .mat-option-text")
+    private WebElement corpMassMedia;*/
 
     private final SelenideElement lastFeedbackInTopicProductFAQ = $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-item.single");
 
@@ -54,21 +43,13 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     public WebElement DDlist;
 
     private final SelenideElement portalChannel = $("#mat-option-0");
-
     private final SelenideElement arrowChooseChannel = $(".create-feedback-select .mat-select-arrow");
     private final SelenideElement arrowChooseTopic = $(".textarea-field-label");
     private final SelenideElement textInLastFeedbackInTopicProductFAQ = $("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p");
-
-
-    @FindBy(id = "mat-option-3")
-    public WebElement personalMeetings;
-
-
+    private final SelenideElement personalMeetings = $("#mat-option-3");
     private final SelenideElement prodaction = $("mat-option-29");
     private final SelenideElement appealField = $("#tinymce");
     private final SelenideElement sendBtn = $(".feedback-button");
-
-
     private SelenideElement communicationChannelField() {return $$(".mat-select-arrow-wrapper").get(0).waitUntil(Condition.appears,10000);}
     private SelenideElement topicField() {return $$(".mat-select-arrow-wrapper").get(2).waitUntil(Condition.appears,20000);}
     private SelenideElement production() {return $$(".mat-option-text").get(2).waitUntil(Condition.appears,20000);}
@@ -77,19 +58,7 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
     Logger logger = Logger.getLogger(getClass());
     String titleText2;
 
-/*
 
- /*public Actions dropdown(String fieldName, String value, SelenideElement element) {
-        try {
-            element.click();
-            $(".mat-select-content").waitUntil(Condition.appear,10000).findAll(".ng-star-inserted").find(Condition.matchText(value)).click();
-            System.out.println("Element '" + value + "' selected for " + fieldName);
-        } catch (Exception e) {
-            Assert.fail("The element missing in the list" + e);
-        }
-        return this;
-    }
-*/
 
     @Step
     public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_Portal()  {
@@ -102,6 +71,45 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         logger.info("portal Channel choosed");
         return this;
     }
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_PersonalMeeting()  {
+        actions
+                //   .waitUntilAppear_15000(communicationChannelField())
+                .waitUntilAppear_15000(arrowChooseChannel)
+                .click(arrowChooseChannel, "CommunicationChannel DDField ")
+                .waitUntilAppear_15000(personalMeetings)
+                .click(personalMeetings, "personalMeetings");
+        logger.info("personalMeetings Channel choosed");
+        return this;
+    }
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_InfoConsLine(){
+        actions
+                //   .waitUntilAppear_15000(communicationChannelField())
+                .waitUntilAppear_15000(arrowChooseChannel)
+                .click(arrowChooseChannel, "CommunicationChannel DDField ")
+                .waitUntilAppear_15000(infoConsLine)
+                .click(infoConsLine, "infoConsLine");
+        logger.info("infoConsLine Channel choosed");
+        return this;
+    }
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator choose_CommunicationChannel_CorpMassMedia()  {
+
+        actions
+                .waitUntilAppear_15000(arrowChooseChannel)
+                .click(arrowChooseChannel, "CommunicationChannel DDField ")
+                .waitUntilAppear_15000(corpMassMedia)
+                .click(corpMassMedia, "corpMassMedia");
+        logger.info("corpMassMedia Channel choosed");
+        return this;
+    }
+
+
+
 
     @Step
      public boolean isFeedbackInFAQList()  {
@@ -192,20 +200,6 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
        }
 
 
-
-
-
-
-
-
-  /*  JUnit
-    @Step
-    public void clickOnSendBtn() {
-        actions.waitToBeVisible(sendBtn);
-        actions.click(sendBtn);
-
-    }*/
-
     @Step
      public CreateNewFeedback_Page_MainModerator clickOnSendBtn() {
         actions.click(sendBtn, "Send");
@@ -219,20 +213,32 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         actions.click(productionTopicInFAQList());
     logger.info("accordions choosed");
     return this;
+    }
 
 
+    @Step
+    public CreateNewFeedback_Page_MainModerator chooseDate(){
+        actions
+                .waitUntilAppear_15000(dateIcon)
+                .click(dateIcon);
+        actions
+                .waitUntilAppear_15000(dateInCalendar)
+                .waitUntilVisible_15000(dateInCalendar)
+                .click(dateInCalendar);
+        /*actions
+                .waitUntilAppear_15000(dateIcon)
+                .click(dateIcon);*/
 
- /*       logger.info("choosed 2nd frame");
+        /*actions
+                .click(chooseDateBtnInDataPeacker);*/
+
+       /* actions
+                .click(dateIcon);*/
+
         return this;
 
+        }
 
-        if (list.size() > 0) {
-            List.get(List.size() - 11).click();
-            logger.info("last close btn clicked");
-        } else {
-            logger.info("!!! number of same elements '0'!!! ");
-        }*/
-    }
 
     @Step
     public CreateNewFeedback_Page_MainModerator openLastFeebbackInTopicProductFAQ() {
@@ -339,26 +345,11 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
         }
     }
 
-    @Step
-    public void chooseDate() {
-        actions.click(dateIcon);
-        actions.click(dateInCalendar);
 
-    }
-
-    @Step
-    public void chooseSpeakerOrInitiatorInPeolePeakerField(String text) throws InterruptedException {
-
-        actions.enterText(speakerPeoplePickekField, text);
-        Thread.sleep(1000);
-        actions.click(chooseSpeakerInPeoplePeackerField);
-        Thread.sleep(2000);
-    }
-
-    @Step
+   /* @Step
     public void insertCountOfPeopleField(String text) {
         actions.enterText(countOfPeopleField,text);
-    }
+    }*/
 
     @Step
     public boolean isBtnDeleteIsPresent() {
@@ -382,53 +373,11 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
        }
     }
 
-    @Step
-    public void choose_CommunicationChannel_InfoConsLine() throws InterruptedException {
 
-        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
-        actions.waitUntilVisibilityOfAllelements(DDlist);
 
-        logger.info(DDList.size() + " - number of DD");
 
-        if (DDList.size() > 0) {
-            actions.waitUntilBecomeClickable(DDlist);
-            DDList.get(DDList.size() - 3).click();
-            actions.waitUntilBecomeClickable(infoConsLine);
-            actions.click(infoConsLine);
-            logger.info("personal meetings Channel choosed");
-            Thread.sleep(2000);
-        } else {
-            //logger.info("!!! number of same elements '0'!!! ");
-           logger.info("!!! number of same elements '0'!!!");
-        }
 
-    }
 
-    @Step
-    public void insertPhoneNumber(String text) {
-        actions.enterText(phoneField, text);
-    }
-
-    @Step
-    public void choose_CommunicationChannel_CorpMassMedia() throws InterruptedException {
-        List<WebElement> DDList = webDriver.findElements(By.className("mat-select-arrow-wrapper"));
-        actions.waitUntilVisibilityOfAllelements(DDlist);
-
-        logger.info(DDList.size() + " - number of DD");
-
-        if (DDList.size() > 0) {
-            actions.waitUntilBecomeClickable(DDlist);
-            DDList.get(DDList.size() - 3).click();
-            actions.waitUntilBecomeClickable(corpMassMedia);
-            actions.click(corpMassMedia);
-            logger.info("personal meetings Channel choosed");
-            Thread.sleep(2000);
-        } else {
-            //logger.info("!!! number of same elements '0'!!! ");
-            logger.info("!!! number of same elements '0'!!!");
-        }
-
-    }
 
     @Step
     public boolean isField_TopicField_Required() throws InterruptedException {
@@ -507,28 +456,47 @@ public class CreateNewFeedback_Page_MainModerator extends ParentPage {
             return false;
         }
     }
-
-
-
-
-  /*  public boolean isFeedbackInFAQListOld() {
-
-       if (
-        //webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText().contains("Main")){
-        titleText2.contains(webDriver.findElement(By.cssSelector("div:nth-of-type(3) > app-faq-topic .ng-star-inserted > div:nth-of-type(1) > .accordion-item-container > .accordion-content > .accordion-content-wrapper > .feedback-answer > p")).getText()))
-        {
-           System.out.println("TRUEEE");
-           return true;
-
-       }else {
-           System.out.println("FALSEE");
-           return false;
-        }
-
+    public CreateNewFeedback_Page_MainModerator chooseSpeakerOrInitiatorInPeolePeakerField(String text) {
+        actions
+                .waitUntilAppear_15000(speakerPeoplePickerField)
+                .enterText(speakerPeoplePickerField,text,"choose speakerPeoplePickerField");
+        actions
+                .click(chooseSpeakerInPeoplePeackerField);
+        return this;
     }
-*/
-   /* public boolean isFeedbackInFAQListOld() {
-       // return assertTrue(webDriver.findElement(By.cssSelector(".title")).getText().contains("text"));
-       // assertTrue(driver.findElement(By.cssSelector(".title")).getText().contains("text"));
+    public CreateNewFeedback_Page_MainModerator insertCountOfPeopleField(String text) {
+        actions
+                .waitUntilAppear_15000(countOfPeopleField)
+                .enterText(countOfPeopleField,text,"(countOfPeopleField");
+        return this;
+    }
+
+
+
+    @Step
+    public CreateNewFeedback_Page_MainModerator insertPhoneNumber(String text) {
+        actions
+                .waitUntilAppear_15000(phoneField)
+                .enterText(phoneField,text,"phoneField");
+        return this;
+
+
+        /*actions.enterText(phoneField, text);*/
+    }
+
+
+
+
+
+
+/*    public ViewListOfFeedbacks_Page_MainModerator chooseNewApprover(String text){
+        actions
+                .waitUntilAppear_15000(newApproverField)
+                .enterText(newApproverField,text,"chooseNewApprover");
+        chooseApproverInPeoplePeackerField.shouldHave(text("Верезумская Ирина Викторовна"));
+        actions
+                .click(chooseApproverInPeoplePeackerField);
+        return this;
     }*/
+
 }

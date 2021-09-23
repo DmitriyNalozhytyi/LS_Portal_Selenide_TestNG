@@ -657,7 +657,7 @@ public class Feedback_MainFlow_Author_MainModerator_Test extends ParentTest_OLD 
 
         //    STEP 1 - create feedback and remember feedback number
         authorizationPage.authorization("dev-testuser12@dev.lizard.net.ua", "Pa$$w0rd");
-        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);;
+        mainPage.goTo(SiteMenu.CREATE_NEW_FEEDBACK);
         createNewFeedback_Page_MainModerator.choose_CommunicationChannel_PersMeet();
         createNewFeedback_Page_MainModerator.chooseDate();
         createNewFeedback_Page_MainModerator.chooseSpeakerOrInitiatorInPeolePeakerField("Цыганок Юрий Борисович");
