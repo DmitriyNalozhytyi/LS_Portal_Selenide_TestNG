@@ -17,11 +17,14 @@ public class Search {
         return getMainSearchResult().find(".search-result__title");
     }
 
-    public void isResultPresent(String expectedText) {
+    public Search isResultPresent(String expectedText) {
         String actualText = getSearchResultTitle().getText();
         new PagePreLoader().waitToLoad();
         Assert.assertEquals(actualText, expectedText, "The search result");
+        return this;
     }
 
-
+    public void openToView() {
+        getSearchResultTitle().click();
+    }
 }

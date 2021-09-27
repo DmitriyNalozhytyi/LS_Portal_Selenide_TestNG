@@ -4,8 +4,10 @@ package publications;
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
 import constants.*;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.AuthorizationPage;
+import pages.MainPage;
 import pages.publications.ViewPublicationPage;
 import pages.publications.news.AllNewsPage;
 import pages.publications.news.CreateNewsPage;
@@ -52,5 +54,14 @@ public class NewsTest extends ParentTest
 
         new AllNewsPage()
                 .isPageOpened(Language.RU);
+    }
+
+    @AfterClass(description = "Delete created by autotest news")
+    public void deleteNews() {
+        new MainPage().goTo(Pages.NEWS);
+
+        new AllNewsPage()
+                .isPageOpened(Language.RU)
+                .deleteNews(Language.RU, newsNameRU);
     }
 }

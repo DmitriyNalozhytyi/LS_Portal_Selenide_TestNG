@@ -1,6 +1,7 @@
 package pages.publications;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import constants.Language;
 import io.qameta.allure.Step;
@@ -27,11 +28,27 @@ public class ViewPublicationPage {
     }
 
     /**
+     * Delete publication button
+     * @return Selenide element of delete publication button
+     */
+    public static SelenideElement btnDeletePublication() {
+        return panelOfPublicationActions().get(2);
+    }
+
+    /**
+     * The panel of publication actions: DELETE, EDIT
+     * @return Element Collection of publication actions
+     */
+    private static ElementsCollection panelOfPublicationActions() {
+        return getInfoContainer().find(".detail-wrapper_hed-right-edite").findAll("mat-icon");
+    }
+
+    /**
      * Publication Title
      * @return Selenide element of publication title
      */
     private SelenideElement publicationTitle() {
-        return getInfoContainer().waitUntil(Condition.appears, 30000).find(".detail-wrapper__headline");
+        return getInfoContainer().should(Condition.appear, Duration.ofSeconds(30)).find(".detail-wrapper__headline");
     }
 
     /**
@@ -44,7 +61,6 @@ public class ViewPublicationPage {
 
     /**
      * Verify if View Publication Page opened
-     * @return
      */
     @Step("Verify if View Publication Page opened")
     public ViewPublicationPage isPageOpened() {
@@ -70,9 +86,9 @@ public class ViewPublicationPage {
      * @param name - name of button
      * @param element - path to element in DOM
      */
+    @Step("Click the button {name}")
     public void clickButton(String name, SelenideElement element) {
         new Actions().click(element, name);
     }
-
 
 }
