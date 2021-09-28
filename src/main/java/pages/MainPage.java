@@ -110,6 +110,8 @@ public class MainPage extends ParentPage {
         inpSearch().sendKeys(Keys.ENTER);
     }
 
-
+    public void switchToTab(int i) {
+        switchTo().window(i);
+    }
 }
 

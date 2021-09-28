@@ -1,4 +1,4 @@
-package publications;
+package publications.create;
 
 
 import com.thedeanda.lorem.Lorem;
@@ -8,7 +8,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
-import pages.publications.ViewPublicationPage;
+import pages.publications.PublicationViewPage;
+import pages.publications.Search;
 import pages.publications.news.AllNewsPage;
 import pages.publications.news.CreateNewsPage;
 import parentTest.ParentTest;
@@ -24,8 +25,7 @@ public class NewsTest extends ParentTest
     @Test(description = "Create a new News")
     public void createNews() {
 
-
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+       new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
         new MainPage().goTo(Pages.NEWS);
 
         new AllNewsPage()
@@ -46,11 +46,11 @@ public class NewsTest extends ParentTest
                 .enterTag("#ATest1", "#ATest2")
                 .clickButton(CreateNewsPage.btnSaveAndPublish(), "Сохранить и опубликовать");
 
-        new ViewPublicationPage()
+        new PublicationViewPage()
                 .isPageOpened()
                 .isPublicationPresent(Language.RU, newsNameRU)
                 .isPublicationPresent(Language.UA, newsNameUA)
-                .clickButton("Return to the All News Page",ViewPublicationPage.btnBack());
+                .clickButton("Return to All News Page",PublicationViewPage.btnBack());
 
         new AllNewsPage()
                 .isPageOpened(Language.RU);
@@ -58,10 +58,14 @@ public class NewsTest extends ParentTest
 
     @AfterClass(description = "Delete created by autotest news")
     public void deleteNews() {
-        new MainPage().goTo(Pages.NEWS);
+        new MainPage().goTo(Pages.NEWS).search(newsNameRU);
 
-        new AllNewsPage()
-                .isPageOpened(Language.RU)
-                .deleteNews(Language.RU, newsNameRU);
+        new Search()
+                .isPublicationExists(newsNameRU)
+                .openToView();
+
+        new PublicationViewPage()
+                .isPublicationPresent(Language.RU, newsNameRU)
+                .deleteNews();
     }
 }

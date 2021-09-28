@@ -9,10 +9,10 @@
 
     <test name="Publications" group-by-instances="true">
         <classes>
-            <class name="publications.NewsTest" />
-            <class name="publications.ArticlesTest" />
-            <class name="publications.AnnouncementTest" />
-            <class name="publications.InterviewTest" />
+            <class name="publications.create.NewsTest" />
+            <class name="publications.create.ArticlesTest" />
+            <class name="publications.create.AnnouncementTest" />
+            <class name="publications.create.InterviewTest" />
         </classes>
     </test>
 

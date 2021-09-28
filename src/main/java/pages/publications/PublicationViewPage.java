@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.$;
 /**
  * ViewPublicationPage - class to work with View Publication Page
  */
-public class ViewPublicationPage {
+public class PublicationViewPage {
     private static final SelenideElement pageContainer = $(".detail-wrapper");
 
     /**
@@ -32,7 +32,7 @@ public class ViewPublicationPage {
      * @return Selenide element of delete publication button
      */
     public static SelenideElement btnDeletePublication() {
-        return panelOfPublicationActions().get(2);
+        return panelOfPublicationActions().get(1);
     }
 
     /**
@@ -63,7 +63,7 @@ public class ViewPublicationPage {
      * Verify if View Publication Page opened
      */
     @Step("Verify if View Publication Page opened")
-    public ViewPublicationPage isPageOpened() {
+    public PublicationViewPage isPageOpened() {
         Assert.assertTrue(pageContainer.should(Condition.appear, Duration.ofSeconds(60)).isDisplayed());
         return this;
     }
@@ -73,8 +73,8 @@ public class ViewPublicationPage {
      * @param language - publication language
      * @param expectedPublicationName - name of publication
      */
-    @Step("Verify that publication {1} was created for language {0}")
-    public ViewPublicationPage isPublicationPresent(Language language, String expectedPublicationName) {
+    @Step("Verify that publication {1} exists for language {0}")
+    public PublicationViewPage isPublicationPresent(Language language, String expectedPublicationName) {
         new MainPage().switchAppToLang(language);
         String actualPublicationName = publicationTitle().getText();
         Assert.assertEquals(actualPublicationName,expectedPublicationName, "The publication title is");
@@ -89,6 +89,12 @@ public class ViewPublicationPage {
     @Step("Click the button {name}")
     public void clickButton(String name, SelenideElement element) {
         new Actions().click(element, name);
+    }
+
+    @Step("Delete publication")
+    public void deleteNews() {
+        clickButton("Delete News", btnDeletePublication());
+        new ConfirmPublicationDialogBox().isDialogOpen().confirm(true);
     }
 
 }

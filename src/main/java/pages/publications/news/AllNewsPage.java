@@ -2,7 +2,6 @@ package pages.publications.news;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import components.ConfirmDialogBox;
 import constants.Language;
 import constants.PUBLICATION;
 import io.qameta.allure.Step;
@@ -11,11 +10,11 @@ import pages.MainPage;
 import pages.ParentPage;
 import pages.publications.CreatePublicationPanel;
 import pages.publications.Search;
-import pages.publications.ViewPublicationPage;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
+
 
 /**
  * Class to work with News Page
@@ -69,7 +68,7 @@ public class AllNewsPage extends ParentPage {
                 .search(name);
 
         new Search()
-                .isResultPresent(name);
+                .isPublicationExists(name);
         return this;
     }
 
@@ -80,23 +79,5 @@ public class AllNewsPage extends ParentPage {
     @Step("Open create {0} page")
     public void openCreatePublicationPage(PUBLICATION publication) {
         new CreatePublicationPanel(pageContainer()).openPageToCreate(publication);
-    }
-
-    /**
-     *
-     * @param language
-     * @param newsName
-     */
-    @Step("Delete {1}")
-    public void deleteNews(Language language, String newsName) {
-        new MainPage().switchAppToLang(language).search(newsName);
-
-        new Search().isResultPresent(newsName).openToView();
-
-        new ViewPublicationPage()
-                .isPublicationPresent(language,newsName)
-                .clickButton("Delete News", ViewPublicationPage.btnDeletePublication());
-
-        new ConfirmDialogBox().isDialogOpen().confirm(true);
     }
 }

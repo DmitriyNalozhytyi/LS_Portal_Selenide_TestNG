@@ -1,4 +1,4 @@
-package publications;
+package publications.create;
 
 
 import com.thedeanda.lorem.Lorem;
@@ -7,7 +7,7 @@ import constants.*;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
-import pages.publications.ViewPublicationPage;
+import pages.publications.PublicationViewPage;
 import pages.publications.news.AllNewsPage;
 import pages.publications.news.CreateNewsPage;
 import parentTest.ParentTest;
@@ -51,11 +51,11 @@ public class InterviewTest extends ParentTest
                 .enterTag("#ATest1", "#ATest2")
                 .clickButton(CreateNewsPage.btnSaveAndPublish(), "Сохранить и опубликовать");
 
-        new ViewPublicationPage()
+        new PublicationViewPage()
                 .isPageOpened()
                 .isPublicationPresent(Language.RU, interviewNameRU)
                 .isPublicationPresent(Language.UA, interviewNameUA)
-                .clickButton("Return to the All News Page",ViewPublicationPage.btnBack());
+                .clickButton("Return to the All News Page", PublicationViewPage.btnBack());
 
         new AllNewsPage()
                 .isPageOpened(Language.RU);

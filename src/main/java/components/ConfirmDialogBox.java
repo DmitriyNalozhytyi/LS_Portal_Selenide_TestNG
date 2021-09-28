@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class ConfirmDialogBox {
@@ -20,14 +22,14 @@ public class ConfirmDialogBox {
     }
 
     public ConfirmDialogBox isDialogOpen() {
-        Assert.assertTrue(container.waitUntil(Condition.appears,60000).isDisplayed());
+        Assert.assertTrue(container.should(Condition.appear, Duration.ofSeconds(60)).isDisplayed());
         return this;
     }
 
     public void confirm(boolean isConfirm) {
         if (isConfirm) {
             confirmButton().click();
-            container.waitUntil(Condition.disappears,25000);
+            container.should(Condition.disappear,Duration.ofSeconds(25));
         }
     }
 
