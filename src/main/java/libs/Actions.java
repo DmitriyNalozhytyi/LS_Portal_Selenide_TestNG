@@ -57,6 +57,10 @@ public class Actions {
     }
 
 
+  /*  public void checkExpectedResult(String message, boolean actualResult){
+        Assert.assertEquals(message, true, actualResult);
+    }*/
+
     public void click(WebElement element) {
         try {
             //wait(element);
@@ -291,6 +295,15 @@ public class Actions {
         }
     }
 
+
+    /*public void checkExpectedResult(String message, boolean actualResult){
+        Assert.assertEquals(message, true, actualResult);
+    }*/
+
+    public void checkExpectedResult(String message, boolean actualResult) {
+        Assert.assertTrue(message, actualResult);
+    }
+
     public void switchTo1stFrameOf1(WebElement appealField) {
      /*   try {
             webDriver.switchTo().defaultContent();
@@ -324,6 +337,16 @@ public class Actions {
             printErrorAndStopTest(e);
         }
 
+    }
+
+    public Actions waitUntilAppear_15000(SelenideElement element) {
+        element.waitUntil(Condition.appear,15000);
+        return this;
+    }
+
+    public Actions waitUntilVisible_15000(SelenideElement element) {
+        element.waitUntil(Condition.visible,15000);
+        return this;
     }
 
     //====================== NEW ACTIONS

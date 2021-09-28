@@ -7,4 +7,5 @@ public interface Pages {
     String RECRUITER            = "https://metinvest-intranet-test.azurewebsites.net/ru/admin/vacancy/recruiters";
     String CREATE_NEW_FEEDBACK  = "https://metinvest-intranet-test.azurewebsites.net/ru/feedback";
     String NEWS                 = "https://metinvest-intranet-test.azurewebsites.net/ru/news";
+    String FEEDBACK_LIST  = "https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list";
 }
