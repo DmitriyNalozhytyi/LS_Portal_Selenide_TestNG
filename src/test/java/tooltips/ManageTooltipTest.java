@@ -1,7 +1,7 @@
 package tooltips;
 
 import constants.Language;
-import constants.Pages;
+import constants.TOOLTIPS;
 import constants.USERS;
 import io.qameta.allure.Epic;
 import org.testng.annotations.Test;
@@ -10,6 +10,9 @@ import pages.MainPage;
 import pages.tooltip.TooltipPage;
 import parentTest.ParentTest;
 import utils.CustomRandom;
+
+import static constants.Pages.TOOLTIP;
+
 
 @Epic("Tooltip")
 public class ManageTooltipTest extends ParentTest {
@@ -21,11 +24,11 @@ public class ManageTooltipTest extends ParentTest {
 
         new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
 
-        new MainPage().goTo(Pages.TOOLTIP);
+        new MainPage().goTo(TOOLTIP);
 
         new TooltipPage()
                 .isPageOpens()
-                .addTooltip(Language.RU, tooltipName, CustomRandom.getText(500))
+                .addTooltip(Language.RU, TOOLTIPS.INFORMATION_SLIDE, tooltipName, CustomRandom.getText(500))
                 .checkIfTooltipCreated(Language.RU,tooltipName);
     }
 

@@ -1,4 +1,4 @@
-package publications;
+package publications.create;
 
 
 import com.thedeanda.lorem.Lorem;
