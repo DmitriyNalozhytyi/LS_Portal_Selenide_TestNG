@@ -7,6 +7,8 @@ import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
@@ -17,7 +19,7 @@ public class TooltipDialogBox {
      * Close tooltip dialog box
      */
     public static SelenideElement btnClose() {
-        return container.find(".mat-icon-button").waitUntil(Condition.appears, 10000);
+        return container.find(".mat-icon-button").should(Condition.appear, Duration.ofSeconds(10));
     }
 
     /**
@@ -39,7 +41,7 @@ public class TooltipDialogBox {
      */
     @Step("Verify if tooltip dialog box opened")
     public TooltipDialogBox isDialogBoxOpened() {
-        Assert.assertTrue(container.exists(), "Tooltip dialog box");
+        Assert.assertTrue(container.should(Condition.appear, Duration.ofSeconds(60)).exists(), "Tooltip dialog box");
         return this;
     }
 
@@ -92,7 +94,7 @@ public class TooltipDialogBox {
         sleep(5000);
         if (container.exists()) {
             new Actions().click(btnClose(), "Закрыть всплывающую подсказку");
-            container.waitUntil(Condition.disappears, 10000);
+            container.should(Condition.disappear, Duration.ofSeconds(10));
         }
     }
 }
