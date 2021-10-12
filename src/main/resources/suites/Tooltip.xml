@@ -6,6 +6,7 @@
     <test name="ToolTip" group-by-instances="false">
         <classes>
             <class name="tooltips.ManageTooltipTest" />
+            <class name="tooltips.SubscriptionSlideTest" />
         </classes>
     </test>
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Polls" thread-count="1" parallel="false">
+
+    <test name="Field Validation" group-by-instances="false">
+        <classes>
+            <class name="polls.fieldVerification.FieldValidationTest" />
+        </classes>
+    </test>
+
+
+</suite>

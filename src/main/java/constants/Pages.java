@@ -9,4 +9,5 @@ public interface Pages {
     String NEWS                     = "https://metinvest-intranet-test.azurewebsites.net/ru/news";
     String FEEDBACK_LIST            = "https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list";
     String SUBSCRIPTION_SETTINGS    = "https://metinvest-intranet-test.azurewebsites.net/ru/settings";
+    String POLLS                    = "https://metinvest-intranet-test.azurewebsites.net/ru/admin/polls";
 }
