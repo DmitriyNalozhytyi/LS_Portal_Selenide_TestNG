@@ -11,5 +11,6 @@
         <suite-file path="Vacancy.xml"/>
         <suite-file path="Tooltip.xml"/>
         <suite-file path="Publications.xml"/>
+        <suite-file path="Polls.xml"/>
     </suite-files>
 </suite>

@@ -8,6 +8,8 @@ import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,7 +25,7 @@ public class AddRecruiterPage {
     }
 
     private SelenideElement errorContainer() {
-        return dialogContainer.find("mat-error").waitUntil(Condition.appear,10000);
+        return dialogContainer.find("mat-error").should(Condition.appear, Duration.ofSeconds(10));
     }
 
     public static SelenideElement btnSaveVacancy() {

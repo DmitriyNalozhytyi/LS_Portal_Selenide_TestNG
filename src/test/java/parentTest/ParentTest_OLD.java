@@ -36,10 +36,8 @@ public class ParentTest_OLD {
     protected AuthorizationPage authorizationPage;
     protected Actions actions;
     protected MainPage mainPage;
-    protected NewsPageAll newsPageAll;
     protected CreateNewsPage createNewPublicationPage;
     protected LoremIpsum loremIpsum;
-    protected pages.NewsPage newsPage;
     protected AllNewsPage articlesPageAll;
     protected InterviewPageAll interviewPageAll;
     protected GridSliderPageEdit gridSliderPageEdit;
@@ -65,10 +63,8 @@ public class ParentTest_OLD {
         authorizationPage = new AuthorizationPage();
         actions = new Actions();
         mainPage = new MainPage();
-        newsPageAll = new NewsPageAll();
         createNewPublicationPage = new CreateNewsPage();
         loremIpsum = new LoremIpsum();
-        newsPage = new pages.NewsPage();
         articlesPageAll = new AllNewsPage();
         interviewPageAll = new InterviewPageAll();
         gridSliderPageEdit = new GridSliderPageEdit();
