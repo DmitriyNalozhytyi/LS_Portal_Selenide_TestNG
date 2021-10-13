@@ -123,7 +123,7 @@ public class TooltipPage {
      * @param language the language of the portal
      * @param tooltipName the name of tooltip
      */
-    @Step("Check if tooltip was created")
+    @Step("Check if tooltip was created {1}")
     public TooltipPage checkIfTooltipCreated(Language language, String tooltipName) {
         new MainPage().switchAppToLang(language);
         new PagePreLoader().waitToLoad();
