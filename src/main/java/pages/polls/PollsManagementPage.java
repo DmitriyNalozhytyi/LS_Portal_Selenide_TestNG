@@ -53,7 +53,7 @@ public class PollsManagementPage extends ParentPage {
      */
     @Step("Check if page opened")
     public PollsManagementPage isPageOpened() {
-        Assert.assertTrue(container.should(Condition.appear, Duration.ofSeconds(120)).isDisplayed(), "Polls Management Page");
+        Assert.assertTrue(container.should(Condition.appear, Duration.ofMinutes(5)).isDisplayed(), "Polls Management Page");
         return this;
     }
 

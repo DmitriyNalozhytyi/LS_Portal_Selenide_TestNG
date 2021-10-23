@@ -1,5 +1,7 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import constants.Language;
 import io.qameta.allure.Step;
@@ -7,17 +9,27 @@ import libs.Actions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import pages.tooltip.TooltipDialogBox;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends ParentPage {
 
+    private int answerPosition;
+    
     private final SelenideElement selectLanguageElement = $(".language-select");
 
-    private final SelenideElement inpSearch() {
+    public static SelenideElement getPollsContainer() {
+        return $(".polls-widget__wrapper");
+    }
+
+    private SelenideElement inpSearch() {
         return $(".header-search.large");
     }
+    private final ElementsCollection listOfAnswers = getPollsContainer().findAll(".body-progress-info");
 
     @FindBy(className = "_link-dashboard")
     public WebElement btnAllNews;
@@ -105,11 +117,73 @@ public class MainPage extends ParentPage {
      * Search on the portal
      * @param text text that should be found
      */
+    @Step("Search {0}")
     public void search(String text) {
         new Actions().enterText(inpSearch(), text, "Поиск");
         inpSearch().sendKeys(Keys.ENTER);
     }
 
+    /**
+     * Scroll to the block on Main Page
+     * @param container Selenide element of block on page
+     */
+    @Step("Scroll to {0}")
+    public MainPage scrollTo(SelenideElement container) {
+        container.should(Condition.appear, Duration.ofSeconds(60)).scrollIntoView(true);
+        return this;
+    }
 
+    /**
+     * Search the poll in Polls block
+     * @param name the name of poll
+     */
+    @Step("Search the {0}")
+    public MainPage searchPoll(String name) {
+        SelenideElement pollTitle = getPollsContainer().find(".body-title");
+        SelenideElement btnNextPoll = getPollsContainer().find(".polls-widget__arrows").find("mat-icon").should(Condition.appear, Duration.ofMinutes(1));
+
+        // Go to the first poll
+        while(getPollsContainer().find(".polls-widget__arrows").find(".mirrorY").isDisplayed()) {
+            getPollsContainer().find(".polls-widget__arrows").find(".mirrorY").click();
+        }
+
+        // Go to the poll which need processing
+        while(!pollTitle.getText().equals(name)) {
+            btnNextPoll.click();
+            btnNextPoll = getPollsContainer().find(".polls-widget__arrows").findAll("mat-icon").get(1);
+        }
+        return this;
+    }
+
+    /**
+     * Select an answer by position
+     * @param i the position of answer in the list
+     */
+    @Step("Select answer {0}")
+    public MainPage selectAnswerByPosition(int i) {
+        this.answerPosition = i-1;
+        listOfAnswers.get(answerPosition).click();
+        return this;
+    }
+
+    /**
+     * Send answers
+     */
+    @Step("Send answer")
+    public MainPage sendAnswer() {
+        SelenideElement btnSendAnswer = $(".mat-but.send-comment");
+        new Actions().click(btnSendAnswer,"Отправить");
+        return this;
+    }
+
+    /**
+     * Check if selected answer is marked as passed
+     */
+    @Step("Check if selected answer is marked as passed")
+    public MainPage checkIfAnswerSelected() {
+        SelenideElement markedAnswer = listOfAnswers.get(answerPosition).find("span");
+        Assert.assertTrue(markedAnswer.should(Condition.appear, Duration.ofMinutes(5)).isDisplayed());
+        return this;
+    }
 }
 
