@@ -6,8 +6,8 @@
     <test name="Field Validation" group-by-instances="false">
         <classes>
             <class name="polls.fieldVerification.FieldValidationTest" />
+            <class name="polls.manage.CreatePollTest" />
+            <class name="polls.takingPolls.TakingPollTest" />
         </classes>
     </test>
-
-
 </suite>

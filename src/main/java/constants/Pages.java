@@ -10,4 +10,6 @@ public interface Pages {
     String FEEDBACK_LIST            = "https://metinvest-intranet-test.azurewebsites.net/ru/feedback/list";
     String SUBSCRIPTION_SETTINGS    = "https://metinvest-intranet-test.azurewebsites.net/ru/settings";
     String POLLS                    = "https://metinvest-intranet-test.azurewebsites.net/ru/admin/polls";
+    String MAIN                     = "https://metinvest-intranet-test.azurewebsites.net/ru";
+    String ALL_POLLS                = "https://metinvest-intranet-test.azurewebsites.net/ru/polls";
 }
