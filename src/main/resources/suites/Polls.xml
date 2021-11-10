@@ -3,6 +3,10 @@
 
 <suite name="Polls" thread-count="1" parallel="false">
 
+    <listeners>
+        <listener class-name="utils.listeners.AnnotationTransformer"/>
+    </listeners>
+
     <test name="Field Validation" group-by-instances="false">
         <classes>
             <class name="polls.fieldVerification.FieldValidationTest" />

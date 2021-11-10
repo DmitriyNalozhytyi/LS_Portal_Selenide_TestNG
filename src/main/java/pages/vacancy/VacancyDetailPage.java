@@ -10,6 +10,9 @@ import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.*;
 
+/**
+ * Class to work with Vacancy detail Page like https://metinvest-intranet-test.azurewebsites.net/ru/vacancy/0be36181-5a55-422e-d15a-08d9a362dbaa
+ */
 public class VacancyDetailPage {
     private final static String RECOMMENDATION_OF_CANDIDATE_PAGE_TITLE  = "Рекомендация кандидата:";
     private final static String RESPONSE_OF_CANDIDATE_PAGE              = "Отклик кандидата:";
@@ -366,7 +369,7 @@ public class VacancyDetailPage {
     public void vacancyAction(VacancyAction action) {
         switch (action) {
             case COPY:      clickButton("Копироать Вакансию", btnCopyVacancy()); break;
-            case EDIT:      clickButton("Копироать Вакансию", btnEditVacancy()); break;
+            case EDIT:      clickButton("Редактировать Вакансию", btnEditVacancy()); break;
             case DELETE:
                 clickButton("Удалить Вакансию", btnDeleteVacancy());
                 new ConfirmDialogBox().confirm(true);
