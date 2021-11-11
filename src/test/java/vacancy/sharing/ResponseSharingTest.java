@@ -35,7 +35,7 @@ public class ResponseSharingTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .sendApplication()
+                .sendRespond()
                 .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .clickButton("Поделиться", VacancyDetailPage.btnResponseShare());
