@@ -26,6 +26,9 @@ public interface ConfigType {
     String DEV_TESTUSER12_LOGIN               = "Dev_TestUser12_Login";
     String DEV_TESTUSER12_PASSWORD            = "Dev_TestUser12_Password";
 
+    String DEV_TESTUSER13_LOGIN               = "Dev_TestUser13_Login";
+    String DEV_TESTUSER13_PASSWORD            = "Dev_TestUser13_Password";
+
 
 
 }

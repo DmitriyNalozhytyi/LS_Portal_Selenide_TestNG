@@ -1,12 +1,19 @@
 package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import components.*;
-import constants.*;
+import config.Config;
+import constants.ResponseActions;
+import constants.SuccessMessages;
+import constants.USERS;
+import constants.VacancyAction;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -18,12 +25,15 @@ public class VacancyDetailPage {
     private final static String RESPONSE_OF_CANDIDATE_PAGE              = "Отклик кандидата:";
     private final static SelenideElement pageContainer                  = $(".vacancy");
     
-    private final String vacancyName;
+    private String vacancyName;
 
     public VacancyDetailPage(String vacancyName) {
         this.vacancyName = vacancyName;
         closeVacancyApplicationWindow();
         closeColleagueRecommendationWindow();
+    }
+
+    public VacancyDetailPage() {
     }
 
     public static SelenideElement btnApplyWithoutResume() {
@@ -134,11 +144,19 @@ public class VacancyDetailPage {
         return $(".mce-tinymce.mce-container.mce-panel").find("iframe");
     }
 
+    private ElementsCollection getData() {
+        return $$(".info-card__field-value");
+    }
+
+    private SelenideElement getEmail() {
+        return getData().get(1);
+    }
+
     /**
      * Get page title
      */
     private SelenideElement pageTitle() {
-        return pageContainer.find(".vacancy-header__info-title").waitUntil(Condition.appears,10000);
+        return pageContainer.find(".vacancy-header__info-title").should(Condition.appear, Duration.ofSeconds(10));
     }
 
     /**
@@ -155,7 +173,7 @@ public class VacancyDetailPage {
      * Send the filled out application form
      */
     @Step("Send the application")
-    public VacancyDetailPage sendApplication() {
+    public VacancyDetailPage sendRespond() {
         clickButton("Откликнуться", btnVacancyRespond());
         fillTheForm();
         clickButton("Отправить", btnSendApplication());
@@ -366,6 +384,11 @@ public class VacancyDetailPage {
     }
 
 
+    /**
+     * Action on vacancy
+     * @param action action for vacancy COPY, DELETE, EDIT, DELETE_CLOSED_VACANCY
+     */
+    @Step("{0} vacancy")
     public void vacancyAction(VacancyAction action) {
         switch (action) {
             case COPY:      clickButton("Копироать Вакансию", btnCopyVacancy()); break;
@@ -380,4 +403,21 @@ public class VacancyDetailPage {
                 break;
         }
     }
+
+    /**
+     * Check if opened response contains email of relevant user
+     * @param user user which email should be checked
+     */
+    @Step("Verify that response dialog display the user {0} ")
+    public void checkForOpenedResponse(USERS user) {
+        String actualEmail = getEmail().getText();
+        String expectedEmail = "";
+        switch (user) {
+            case DEV_TESTUSER13: expectedEmail = Config.HostsData.METINVEST.value[13];
+        }
+        Assert.assertEquals(actualEmail, expectedEmail, expectedEmail);
+        closeResponseDetails();
+    }
+
+
 }

@@ -13,13 +13,15 @@ import org.testng.Assert;
 import pages.AuthorizationPage;
 import pages.MainPage;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class VacancyManagementPage {
     private static final String VACANCY_MANAGEMENT           = "Управление вакансиями";
 
     private static final SelenideElement pageContainer      = $(".news.reuse-wrapper");
-    private final SelenideElement pageTitle                 = pageContainer.find(".vacancies-header__title").waitUntil(Condition.appear,30000);
+    private final SelenideElement pageTitle                 = pageContainer.find(".vacancies-header__title").should(Condition.appear, Duration.ofSeconds(30));
     private final SelenideElement searchElement             = pageContainer.find(".toggle-search__submit-wrapper");
     private final SelenideElement searchInput               = pageContainer.find(".toggle-search__input");
 
@@ -28,23 +30,23 @@ public class VacancyManagementPage {
     }
 
     public static SelenideElement tbVacancyArchive() {
-        return pageContainer.find("#mat-tab-label-0-3").waitUntil(Condition.appears, 10000);
+        return pageContainer.find("#mat-tab-label-0-3").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement tbVacancyArchive_VMP() {
-        return pageContainer.find("#mat-tab-label-1-3").waitUntil(Condition.appears, 10000);
+        return pageContainer.find("#mat-tab-label-1-3").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement tbVacancyOnApproval() {
-        return $("#mat-tab-label-0-1").waitUntil(Condition.appears, 10000);
+        return $("#mat-tab-label-0-1").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement tbVacancyOpened() {
-        return pageContainer.find("#mat-tab-label-0-0").waitUntil(Condition.appears, 10000);
+        return pageContainer.find("#mat-tab-label-0-0").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement tbVacancyOpened_VMP() {
-        return pageContainer.find("#mat-tab-label-1-0").waitUntil(Condition.appears, 10000);
+        return pageContainer.find("#mat-tab-label-1-0").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement tbVacancyDraft() {
@@ -119,8 +121,8 @@ public class VacancyManagementPage {
         sleep(3000);
 
         switch (action) {
-            case COPY   : vacancyMenu().selectAction(getActions(0)); break;
-            case EDIT   : vacancyMenu().selectAction(getActions(1)); break;
+            case COPY   : vacancyMenu().selectAction(getActions(1)); break;
+            case EDIT   : vacancyMenu().selectAction(getActions(0)); break;
             case DELETE :
                 vacancyMenu().selectAction(getActions(2));
                 new ConfirmDialogBox().isDialogOpen().confirm(true); break;

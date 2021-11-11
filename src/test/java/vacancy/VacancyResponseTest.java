@@ -44,7 +44,7 @@ public class VacancyResponseTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .sendApplication();
+                .sendRespond();
     }
 
     @Test(description = "Check the status NEW")
@@ -62,7 +62,7 @@ public class VacancyResponseTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .sendApplication()
+                .sendRespond()
                 .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .checkForResponseStatus(Status.NEW);
     }
@@ -82,7 +82,7 @@ public class VacancyResponseTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .sendApplication()
+                .sendRespond()
                 .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .closeResponseDetails()
@@ -104,7 +104,7 @@ public class VacancyResponseTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .sendApplication()
+                .sendRespond()
                 .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)
@@ -126,7 +126,7 @@ public class VacancyResponseTest extends ParentTest {
 
         new VacancyDetailPage(vacancyName)
                 .isPageOpens()
-                .sendApplication()
+                .sendRespond()
                 .clickButton("Отклики", VacancyDetailPage.btnVacancyResponses())
                 .openResponseDetails()
                 .responseActions(ResponseActions.ON_APPROVAL)

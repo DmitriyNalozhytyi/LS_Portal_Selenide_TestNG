@@ -2,10 +2,8 @@ package notifications.vacancy;
 
 import constants.Pages;
 import constants.USERS;
-import constants.VacancyAction;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
@@ -17,7 +15,7 @@ import parentTest.ParentTest;
 import utils.CustomRandom;
 
 @Epic("Notifications")
-public class SupervisorNotificationsTest extends ParentTest {
+public class SupervisorNotificationsNewVacancyTest extends ParentTest {
     String vacancyName_1 = USERS.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
     String vacancyName_2 = USERS.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
@@ -99,22 +97,23 @@ public class SupervisorNotificationsTest extends ParentTest {
         new NotificationPage()
                 .isPageOpened()
                 .checkIfNotificationIsPresent(vacancyName_2)
-                .openVacancy(vacancyName_2);
+                .clickOnNotification(vacancyName_2);
 
         new VacancyDetailPage(vacancyName_2)
                 .isPageOpens();
     }
-
+/*
     @AfterClass
     public void cleanUp() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
+                .switchTo("На утверждении", VacancyManagementPage.tbVacancyOnApproval())
                 .selectActionFor(vacancyName_1, VacancyAction.DELETE)
                 .selectActionFor(vacancyName_2, VacancyAction.DELETE);
-    }
+    }*/
 
 }

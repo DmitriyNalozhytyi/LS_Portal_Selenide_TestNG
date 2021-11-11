@@ -6,6 +6,8 @@ import config.Config;
 import constants.USERS;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorizationPage extends ParentPage {
@@ -74,7 +76,7 @@ public class AuthorizationPage extends ParentPage {
         if (btnAccount.exists()) {
             actions.click(btnAccount, "User account")
                     .click(btnExit, "Exit")
-                    .click(changeAccount.waitUntil(Condition.appears,10000), "Change account");
+                    .click(changeAccount.should(Condition.appear, Duration.ofSeconds(10)), "Change account");
         }
     }
 
@@ -91,6 +93,7 @@ public class AuthorizationPage extends ParentPage {
             case DEV_TESTUSER12:  authorization(Config.HostsData.METINVEST.value[11], Config.HostsData.METINVEST.value[12]); break;
             case DEV_TESTUSER11:  authorization(Config.HostsData.METINVEST.value[9], Config.HostsData.METINVEST.value[10]); break;
             case DEV_TESTUSER10:  authorization(Config.HostsData.METINVEST.value[7], Config.HostsData.METINVEST.value[8]); break;
+            case DEV_TESTUSER13:  authorization(Config.HostsData.METINVEST.value[13], Config.HostsData.METINVEST.value[14]); break;
 
         }
     }

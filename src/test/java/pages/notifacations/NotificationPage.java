@@ -55,11 +55,12 @@ public class NotificationPage {
     }
 
     /**
-     * Open vacancy
-     * @param name the name of the vacancy
+     * Click on the notification
+     * @param text the text of the notification
      */
     @Step("Open vacancy {0}")
-    public void openVacancy(String name) {
-        searchNotification(name).click();
+    public void clickOnNotification(String text) {
+        searchNotification(text).click();
     }
+
 }

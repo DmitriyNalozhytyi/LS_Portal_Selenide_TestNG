@@ -8,6 +8,8 @@ import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class CreateVacancyPage {
@@ -16,7 +18,7 @@ public class CreateVacancyPage {
     private final SelenideElement inptResponce = $(".main-input.vacancy-input.ng-pristine.ng-invalid");
 
     private SelenideElement pageTitle() {
-        return pageContainer.find(".vacancy-header__title").waitUntil(Condition.appear,10000);
+        return pageContainer.find(".vacancy-header__title").should(Condition.appear, Duration.ofSeconds(10));
     }
 
     public static SelenideElement btnSaveVacancy() {
@@ -34,11 +36,11 @@ public class CreateVacancyPage {
     }
 
     public static SelenideElement btnForStaff() {
-        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(0).waitUntil(Condition.appear,10000);
+        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(0).should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement btnForAll() {
-        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(1).waitUntil(Condition.appear,10000);
+        return pageContainer.findAll("app-radio-select-field").get(0).findAll("button").get(1).should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement ddCompany() {
@@ -50,19 +52,19 @@ public class CreateVacancyPage {
     }
 
     public static SelenideElement btnLevelPosition_N1() {
-        return pageContainer.findAll(".radio-field-wrapper").get(1).findAll("button").get(0).waitUntil(Condition.appear,10000);
+        return pageContainer.findAll(".radio-field-wrapper").get(1).findAll("button").get(0).should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement btnEmployment_PartTime() {
-        return pageContainer.findAll(".radio-field-wrapper").get(2).findAll("button").get(1).waitUntil(Condition.appears,10000);
+        return pageContainer.findAll(".radio-field-wrapper").get(2).findAll("button").get(1).should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement ddFunction() {
-        return pageContainer.find("#mat-select-2").waitUntil(Condition.appears,10000);
+        return pageContainer.find("#mat-select-2").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     public static SelenideElement ddSchedule() {
-        return pageContainer.find("#mat-select-3").waitUntil(Condition.appears,10000);
+        return pageContainer.find("#mat-select-3").should(Condition.appear,Duration.ofSeconds(10));
     }
 
     /**
@@ -138,4 +140,5 @@ public class CreateVacancyPage {
         Assert.assertEquals(actualName, expectedName, expectedName);
         return this;
     }
+
 }
