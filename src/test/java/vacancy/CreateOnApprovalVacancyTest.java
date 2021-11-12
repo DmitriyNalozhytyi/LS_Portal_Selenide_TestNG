@@ -17,13 +17,13 @@ import utils.CustomRandom;
 
 @Epic("Vacancy")
 public class CreateOnApprovalVacancyTest extends ParentTest {
-    private final String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+    private final String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
 
     @Story("Create vacancy")
     @Test(description = "Create and publish a vacancy")
     public void addVacancyOnApprovalAsRecruiter() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 

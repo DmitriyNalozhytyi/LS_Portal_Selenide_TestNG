@@ -23,15 +23,15 @@ public class CreateDraftVacancyTest extends ParentTest {
     public Object[][] checkSingleFilter() {
 
         return new Object[][]{
-                {USERS.DEV_TESTUSER15, "_VACANCY_DRAFT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
-                {USERS.DEV_TESTUSER14, "_VACANCY_DRAFT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {USER.DEV_TESTUSER15, "_VACANCY_DRAFT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {USER.DEV_TESTUSER14, "_VACANCY_DRAFT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
         };
     }
 
 
     @Story("Create vacancy")
     @Test(description = "Create draft vacancy", dataProvider = "listOfUsers")
-    public void addDraftVacancy(USERS user, String vacancyName) {
+    public void addDraftVacancy(USER user, String vacancyName) {
         new AuthorizationPage().loginAs(user);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);

@@ -72,7 +72,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_MH__ApproveByAp_ApproveByMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -83,7 +83,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()//validate empty field "Response text field"
@@ -93,7 +93,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
       //  STEP 3 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback()//need to refactor url
                 .clickOnSendBtn()
@@ -115,7 +115,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_MH__ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -147,7 +147,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_MH__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -158,7 +158,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
         //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -168,7 +168,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .assignNewResponsible()
@@ -176,7 +176,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn();
         //    STEP 5 - open and approve feedback by New Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER14);
+                .loginAs(USER.DEV_TESTUSER14);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -186,7 +186,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp(); //need to refactor
         //    STEP 6 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -208,7 +208,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_MH__BackToMMByAp__ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -219,7 +219,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -229,7 +229,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to Main Moderator  and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
@@ -253,7 +253,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -286,7 +286,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApproveByMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);;
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -298,7 +298,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()//validate empty field "Response text field"
@@ -308,7 +308,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //  STEP 3 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback()//need to refactor url
                 .clickOnSendBtn()
@@ -330,7 +330,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -342,7 +342,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -352,7 +352,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .assignNewResponsible()
@@ -360,7 +360,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn();
         //    STEP 5 - open and approve feedback by New Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER14);
+                .loginAs(USER.DEV_TESTUSER14);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -370,7 +370,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp(); //need to refactor
         //    STEP 6 - open last approved by Approver feedback and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -392,7 +392,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyMM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -404,7 +404,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -414,7 +414,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to Main Moderator  and approve by Main Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
@@ -438,7 +438,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__ApprovebyM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -450,7 +450,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback and approve By Moderator MMK
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //.enterTextInTo_AppealField_FeedbackCard_status_New_MM()//test
@@ -475,7 +475,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__ApproveByAp_ApprovebyM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -487,7 +487,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()//validate empty field "Response text field"
@@ -497,7 +497,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //  STEP 3 - open last approved by Approver feedback and approve by  Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback()//need to refactor url
                 .clickOnSendBtn()
@@ -519,7 +519,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByMM__ApproveByNewAp_ApprovebyM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -531,7 +531,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -541,7 +541,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to Main Moderator and Assign To new Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER12);
+                .loginAs(USER.DEV_TESTUSER12);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .assignNewResponsible()
@@ -549,7 +549,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn();
         //    STEP 5 - open and approve feedback by New Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER14);
+                .loginAs(USER.DEV_TESTUSER14);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -559,7 +559,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp(); //need to refactor
         //    STEP 6 - open last approved by Approver feedback and approve by  Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -581,7 +581,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__SendToNewApByM__ApproveByNewAp_ApprovebyM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -593,7 +593,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -603,7 +603,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 4 - open feedback backed from Approver to  Moderator and Assign To new Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .assignNewResponsible()
@@ -611,7 +611,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .clickOnSendBtn();
         //    STEP 5 - open and approve feedback by New Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER14);
+                .loginAs(USER.DEV_TESTUSER14);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -621,7 +621,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUp(); //need to refactor
         //    STEP 6 - open last approved by Approver feedback and approve by  Moderator and publish in FAQ
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .clickOnSendBtn()
@@ -643,7 +643,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
              public void createFeedbackByMM_Portal_Management_Company__BackToMMByAp__ApprovebyM__PubFAQ() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_Portal()
@@ -655,7 +655,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closePopUpFeedbackCreated_And_RememberFeedbackNumber();
         //    STEP 2 - open last created feedback by Approver
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER10);
+                .loginAs(USER.DEV_TESTUSER10);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 //    STEP 3 - send feedback back to Main Moderator by Approver
@@ -665,7 +665,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
                 .closeFeedbackCard(); //need to refactor
         //    STEP 3 - open last returned feedback by Approver  and approve by  Moderator
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
                 .openLastCreatedFeedback() //need to refactor url
                 .enterTextInTo_ResponceTextField_FeedbackCard_status_New_Apprower()
@@ -706,7 +706,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_PersonalMeetings_Management_MH__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_PersonalMeeting()
@@ -736,7 +736,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_InfoConsLine_Management_MH__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_InfoConsLine()
@@ -766,7 +766,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void  createFeedbackByMM_CorpMassMedia_Management_MH__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_CorpMassMedia()
@@ -795,7 +795,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_PersonalMeeting()
@@ -825,7 +825,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_InfoConsLine()
@@ -855,7 +855,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void  createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyMM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_CorpMassMedia()
@@ -884,7 +884,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_PersonalMeetings_Management_Company__ApprovebyM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_PersonalMeeting()
@@ -900,7 +900,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 2 - open last created feedback by  Moderator and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
 
                 .openLastCreatedFeedback() //need to refactor url
@@ -919,7 +919,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void createFeedbackByMM_InfoConsLine_Management_Company__ApprovebyM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_InfoConsLine()
@@ -936,7 +936,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 2 - open last created feedback by  Moderator and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
 
                 .openLastCreatedFeedback() //need to refactor url
@@ -954,7 +954,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
     public void  createFeedbackByMM_CorpMassMedia_Management_Company__ApprovebyM() {
 
         //    STEP 1 - create feedback and remember feedback number
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER12);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER12);
         new MainPage().goTo(Pages.CREATE_NEW_FEEDBACK);
         new CreateNewFeedback_Page_MainModerator()
                 .choose_CommunicationChannel_CorpMassMedia()
@@ -969,7 +969,7 @@ public class Feedback_MainFlow_Author_MainModerator_Refactor_Test extends Parent
 
         //    STEP 2 - open last created feedback by  Moderator and approve
         new AuthorizationPage()
-                .loginAs(USERS.DEV_TESTUSER11);
+                .loginAs(USER.DEV_TESTUSER11);
         new ViewListOfFeedbacks_Page_MainModerator()
 
                 .openLastCreatedFeedback() //need to refactor url

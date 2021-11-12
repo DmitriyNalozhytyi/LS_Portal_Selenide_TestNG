@@ -1,6 +1,6 @@
 package constants;
 
-public enum USERS {
+public enum USER {
     /** Supervisor */               DEV_TESTUSER15,
     /** Recruiter, Moderator*/      DEV_TESTUSER14,
     /** Recruiter*/                 DEV_TESTUSER13,

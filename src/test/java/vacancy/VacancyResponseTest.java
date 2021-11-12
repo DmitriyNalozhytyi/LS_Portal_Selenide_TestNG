@@ -3,7 +3,7 @@ package vacancy;
 import constants.ResponseActions;
 import constants.Pages;
 import constants.Status;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -31,15 +31,15 @@ public class VacancyResponseTest extends ParentTest {
 
    @Test(description = "Send application")
     public void sendApplication() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_SEND_APPLICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_RESPONSE_SEND_APPLICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -49,15 +49,15 @@ public class VacancyResponseTest extends ParentTest {
 
     @Test(description = "Check the status NEW")
     public void checkForStatusNew() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_NEW_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_NEW_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -69,15 +69,15 @@ public class VacancyResponseTest extends ParentTest {
 
     @Test(description = "Check the status VIEWED")
     public void checkForStatusViewed() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_VIEWED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_VIEWED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -91,15 +91,15 @@ public class VacancyResponseTest extends ParentTest {
 
     @Test(description = "Check the status DECLINED")
     public void checkForStatusOnApproval() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -113,15 +113,15 @@ public class VacancyResponseTest extends ParentTest {
 
     @Test(description = "Check the status ACCEPTED")
     public void checkForStatusAccepted() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_ACCEPTED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_RESPONSE_STATUS_ACCEPTED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)

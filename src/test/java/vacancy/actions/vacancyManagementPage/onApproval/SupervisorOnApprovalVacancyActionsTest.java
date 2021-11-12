@@ -25,17 +25,17 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
     @Story("Copy vacancy")
     @Test(description = "Verify that supervisor can create a copy of a vacancy")
     public void supervisorCanCopyVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_COPY_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName       = USER.DEV_TESTUSER14 + "_VACANCY_COPY_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameCopied = vacancyName + "_COPIED";
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyAsRecruiter(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -48,7 +48,7 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
                 .isCreateVacancyPage()
                 .checkForVacancyName(vacancyName)
                 .setTextFor("Название вакансии", CreateVacancyPage.inpVacancyName(), vacancyNameCopied)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .selectResponsibleForSW(USER.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("На утверждение", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
@@ -63,16 +63,16 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
     @Story("Delete vacancy")
     @Test(description = "Verify that supervisor can delete a vacancy")
     public void supervisorCanDeleteVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName       = USER.DEV_TESTUSER14 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyAsRecruiter(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -87,17 +87,17 @@ public class SupervisorOnApprovalVacancyActionsTest extends ParentTest {
     @Story("Edit vacancy")
     @Test(description = "Verify that supervisor can edit a vacancy")
     public void supervisorCanEditVacancy() {
-        String vacancyName          = USERS.DEV_TESTUSER14 + "_VACANCY_EDIT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName          = USER.DEV_TESTUSER14 + "_VACANCY_EDIT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
                 .createVacancyAsRecruiter(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 

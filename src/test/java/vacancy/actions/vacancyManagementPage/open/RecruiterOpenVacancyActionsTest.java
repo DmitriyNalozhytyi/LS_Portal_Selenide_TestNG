@@ -24,15 +24,15 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
     @Story("Copy vacancy")
     @Test(description = "Verify that recruiter can create a copy of a vacancy")
     public void recruiterCanCopyVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName       = USER.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameCopied = vacancyName + "_COPIED";
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
+                .createAndApproveVacancy(USER.DEV_TESTUSER15,vacancyName);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -54,7 +54,7 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -76,7 +76,7 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
                 .search(vacancyNameCopied)
                 .checkForVacancy(vacancyNameCopied);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -90,15 +90,15 @@ public class RecruiterOpenVacancyActionsTest extends ParentTest {
     @Story("Edit vacancy")
     @Test(description = "Verify that recruiter can edit a vacancy")
     public void recruiterCanEditVacancy() {
-        String vacancyName          = USERS.DEV_TESTUSER14 + "_VACANCY_EDIT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName          = USER.DEV_TESTUSER14 + "_VACANCY_EDIT_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameEdited    = vacancyName + "_EDITED";
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15,vacancyName);
+                .createAndApproveVacancy(USER.DEV_TESTUSER15,vacancyName);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 

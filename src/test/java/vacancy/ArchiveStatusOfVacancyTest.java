@@ -25,9 +25,9 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     public Object[][] listOfStatusesOfOpened() {
 
         return new Object[][]{
-                {VacancyStatus.SUSPENDED, USERS.DEV_TESTUSER14+"_SUSPENDED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
-                {VacancyStatus.CLOSED, USERS.DEV_TESTUSER14+"_CLOSED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
-                {VacancyStatus.CANCELED_ON_OPENED, USERS.DEV_TESTUSER14+"_CANCELED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {VacancyStatus.SUSPENDED, USER.DEV_TESTUSER14+"_SUSPENDED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {VacancyStatus.CLOSED, USER.DEV_TESTUSER14+"_CLOSED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {VacancyStatus.CANCELED_ON_OPENED, USER.DEV_TESTUSER14+"_CANCELED_VACANCY_FROM_OPENED_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
         };
     }
 
@@ -35,14 +35,14 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     public Object[][] listOfStatusesOnApproval() {
 
         return new Object[][]{
-                {VacancyStatus.CANCELED_ON_APPROVAL, USERS.DEV_TESTUSER14+"_CANCELED_VACANCY_FROM_ON_APPROVAL_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
+                {VacancyStatus.CANCELED_ON_APPROVAL, USER.DEV_TESTUSER14+"_CANCELED_VACANCY_FROM_ON_APPROVAL_TO_ARCHIVE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5)},
         };
     }
 
     @Story("Move vacancy to archive")
     @Test(description = "Move opened vacancy to archive", dataProvider = "listOfStatusesOfOpened")
     public void moveOpenedVacancyToArchive(int vacancyStatus, String vacancyName) {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -71,7 +71,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .checkForVacancy(vacancyName);
 
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -107,7 +107,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -121,7 +121,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
     @Story("Move vacancy to archive")
     @Test(description = "Move vacancy from on approval to archive", dataProvider = "listOfStatusesOnApproval")
     public void moveVacancyFromOnApprovalToArchive(int vacancyStatus, String vacancyName) {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -150,7 +150,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .checkForVacancy(vacancyName);
 
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -172,7 +172,7 @@ public class ArchiveStatusOfVacancyTest extends ParentTest {
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 

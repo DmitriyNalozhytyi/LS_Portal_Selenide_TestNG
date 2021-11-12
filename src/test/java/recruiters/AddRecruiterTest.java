@@ -16,7 +16,7 @@ public class AddRecruiterTest extends ParentTest {
     @Story("Add Recruiter")
     @Test(description = "Check adding of recruiter")
     public void addRecruiter() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.RECRUITER);
 

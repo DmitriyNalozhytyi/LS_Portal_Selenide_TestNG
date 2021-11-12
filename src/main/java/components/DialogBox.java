@@ -3,6 +3,8 @@ package components;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class DialogBox {
@@ -18,10 +20,10 @@ public class DialogBox {
 
     public void close() {
         closeButton().click();
-        container.waitUntil(Condition.disappears,10000);
+        container.should(Condition.disappear, Duration.ofSeconds(10));
     }
 
     public void waitForClose() {
-        container.waitUntil(Condition.disappears, 10000);
+        container.should(Condition.disappear, Duration.ofSeconds(10));
     }
 }

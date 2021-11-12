@@ -3,7 +3,7 @@ package pages.vacancy;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.PagePreLoader;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Step;
 import libs.Actions;
 import org.testng.Assert;
@@ -128,8 +128,8 @@ public class CreateVacancyPage {
      * @param responsibleUser  the user who is response for hire
      */
     @Step("Select responsible user {1}")
-    public CreateVacancyPage selectResponsibleForSW(USERS user, String responsibleUser) {
-        if (user.equals(USERS.DEV_TESTUSER15)) {
+    public CreateVacancyPage selectResponsibleForSW(USER user, String responsibleUser) {
+        if (user.equals(USER.DEV_TESTUSER15)) {
             new Actions().picketUser(inptResponce,responsibleUser, "Введите Ф.И.О. руководителя");
         }
         return this;

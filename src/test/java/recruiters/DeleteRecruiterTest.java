@@ -3,7 +3,7 @@ package recruiters;
 import constants.Data;
 import constants.Pages;
 import constants.SuccessMessages;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
@@ -18,7 +18,7 @@ public class DeleteRecruiterTest extends ParentTest {
     @Story("Delete recruiter")
     @Test(description = "Verify deleting of recruiter")
     public void deleteRecruiter() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.RECRUITER);
 

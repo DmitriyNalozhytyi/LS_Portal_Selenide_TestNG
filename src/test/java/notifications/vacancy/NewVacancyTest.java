@@ -1,7 +1,7 @@
 package notifications.vacancy;
 
 import constants.Pages;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
@@ -15,14 +15,14 @@ import parentTest.ParentTest;
 import utils.CustomRandom;
 
 @Epic("Notifications")
-public class SupervisorNotificationsNewVacancyTest extends ParentTest {
-    String vacancyName_1 = USERS.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
-    String vacancyName_2 = USERS.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+public class NewVacancyTest extends ParentTest {
+    String vacancyName_1 = USER.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+    String vacancyName_2 = USER.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
     @Feature("Supervisor")
     @Test(description = "Check the notification for the vacancy in status awaiting publication")
     public void checkNotificationAwaitingPublication() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -50,7 +50,7 @@ public class SupervisorNotificationsNewVacancyTest extends ParentTest {
                 .search(vacancyName_1)
                 .checkForVacancy(vacancyName_1);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.NOTIFICATIONS);
 
@@ -62,7 +62,7 @@ public class SupervisorNotificationsNewVacancyTest extends ParentTest {
     @Feature("Supervisor")
     @Test(description = "Check that supervisor is able to open tha vacancy from the notification")
     public void checkOpenVacancyFromNotification() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -90,7 +90,7 @@ public class SupervisorNotificationsNewVacancyTest extends ParentTest {
                 .search(vacancyName_2)
                 .checkForVacancy(vacancyName_2);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.NOTIFICATIONS);
 

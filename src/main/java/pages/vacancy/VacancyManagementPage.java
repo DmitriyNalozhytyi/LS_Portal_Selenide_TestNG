@@ -174,7 +174,7 @@ public class VacancyManagementPage {
      * @param vacancyName the name of vacancy
      */
     @Step("Create and approve the vacancy {1}")
-    public VacancyManagementPage createAndApproveVacancy(USERS admin, String vacancyName) {
+    public VacancyManagementPage createAndApproveVacancy(USER admin, String vacancyName) {
 
         clickButton("Создать вакансию", VacancyManagementPage.btnCreateVacancy());
 
@@ -221,7 +221,7 @@ public class VacancyManagementPage {
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -248,7 +248,7 @@ public class VacancyManagementPage {
                 .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
                 .selectFor("Функция", CreateVacancyPage.ddFunction(), 1)
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .selectResponsibleForSW(USER.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
@@ -302,7 +302,7 @@ public class VacancyManagementPage {
                 .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
                 .selectFor("Функция", CreateVacancyPage.ddFunction(), 1)
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .selectResponsibleForSW(USER.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
@@ -355,7 +355,7 @@ public class VacancyManagementPage {
                 .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
                 .selectFor("Функция", CreateVacancyPage.ddFunction(), 1)
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .selectResponsibleForSW(USER.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
@@ -385,7 +385,7 @@ public class VacancyManagementPage {
 
     public VacancyManagementPage createVacancyForArchiveASRecruiter(String vacancyName, String statusName, int status) {
 
-        createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
+        createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
