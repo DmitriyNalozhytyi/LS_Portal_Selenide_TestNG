@@ -23,8 +23,8 @@ public class CreateAndApproveVacancyTest extends ParentTest {
     @Story("Create vacancy")
     @Test(description = "Create vacancy as recruiter and approve as admin")
     public void addVacancyAsRecruiterAndPublish() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -53,7 +53,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .checkForVacancy(vacancyName);
 
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -75,7 +75,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .search(vacancyName)
                 .checkForVacancy(vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -89,9 +89,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
     @Story("Create vacancy")
     @Test(description = "Create vacancy as admin and approve as admin")
     public void addVacancyAsAdminAndPublish() {
-        String vacancyName = USERS.DEV_TESTUSER15 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER15 + "_VACANCY_OPEN_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -109,7 +109,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
                 .selectFor("Функция", CreateVacancyPage.ddFunction(), 1)
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .selectResponsibleForSW(USER.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить и опубликовать", CreateVacancyPage.btnSaveAndPublishVacancy());
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
@@ -124,9 +124,9 @@ public class CreateAndApproveVacancyTest extends ParentTest {
     @Story("Create vacancy")
     @Test(description = "Create vacancy as supervisor and save")
     public void addVacancyAsSupervisorAndPublish() {
-        String vacancyName = USERS.DEV_TESTUSER15 + "_VACANCY_Draft_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER15 + "_VACANCY_Draft_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
@@ -144,7 +144,7 @@ public class CreateAndApproveVacancyTest extends ParentTest {
                 .setValueFor("Тип занятости", "Частичная занятость", CreateVacancyPage.btnEmployment_PartTime())
                 .selectFor("Функция",  CreateVacancyPage.ddFunction(), 1)
                 .selectFor("График работы", CreateVacancyPage.ddSchedule(), 1)
-                .selectResponsibleForSW(USERS.DEV_TESTUSER15, Data.RECRUITER_2)
+                .selectResponsibleForSW(USER.DEV_TESTUSER15, Data.RECRUITER_2)
                 .clickButton("Сохранить", CreateVacancyPage.btnSaveVacancy());
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);

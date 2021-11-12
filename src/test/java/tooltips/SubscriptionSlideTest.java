@@ -17,7 +17,7 @@ public class SubscriptionSlideTest extends ParentTest {
 
     @Test(description = "Check subscription on Tags while adding the slide")
     public void checkSubscriptionOnTag() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
         new MainPage().goTo(Pages.SUBSCRIPTION_SETTINGS);
 
         List<String> tags = new SubscriptionPage()
@@ -25,7 +25,7 @@ public class SubscriptionSlideTest extends ParentTest {
                 .switchTo(SUBSCRIPTION.TAGS)
                 .getAllTags();
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
 
         new MainPage().goTo(Pages.TOOLTIP);
 
@@ -37,7 +37,7 @@ public class SubscriptionSlideTest extends ParentTest {
                 .checkIfTooltipCreated(Language.RU,"Слайд подписок")
                 .action(TooltipPage.ACTION.RESET_TOOLTIP_VIEW);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new TooltipPopup()
                 .isDialogOpened()

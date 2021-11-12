@@ -2,7 +2,7 @@ package polls.takingPolls;
 
 import constants.Language;
 import constants.Pages;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.AfterClass;
@@ -26,7 +26,7 @@ public class TakingPollTest extends ParentTest {
     @Test(description = "Check if selected answer is marked as passed")
     public void checkIfSelectedAnswerMarkedAsPassed() {
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
 
         new MainPage().goTo(Pages.POLLS);
 
@@ -65,7 +65,7 @@ public class TakingPollTest extends ParentTest {
     @Test(description = "Check if passed poll in the list of passed")
     public void checkIfPassedPollInTheListOfPassed() {
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
 
         new MainPage().goTo(Pages.POLLS);
 
@@ -110,7 +110,7 @@ public class TakingPollTest extends ParentTest {
     @Test(description = "Check if not passed poll in the list of not passed")
     public void checkIfNotPassedPollInTheListOfNotPassed() {
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
 
         new MainPage().goTo(Pages.POLLS);
 
@@ -150,7 +150,7 @@ public class TakingPollTest extends ParentTest {
 
     @AfterClass(description = "Clean up")
     public void cleanUp() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.POLLS);
         new PollsManagementPage()
                 .isPageOpened()

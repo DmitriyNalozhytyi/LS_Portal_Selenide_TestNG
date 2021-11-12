@@ -2,7 +2,7 @@ package tooltips;
 
 import constants.Language;
 import constants.TOOLTIPS;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
@@ -22,7 +22,7 @@ public class ManageTooltipTest extends ParentTest {
     @Test(description = "Create Tooltip")
     public void createTooltip() {
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
 
         new MainPage().goTo(TOOLTIP);
 

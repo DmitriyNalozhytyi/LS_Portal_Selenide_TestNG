@@ -1,13 +1,10 @@
 package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import components.*;
-import config.Config;
 import constants.ResponseActions;
 import constants.SuccessMessages;
-import constants.USERS;
 import constants.VacancyAction;
 import io.qameta.allure.Step;
 import libs.Actions;
@@ -144,13 +141,14 @@ public class VacancyDetailPage {
         return $(".mce-tinymce.mce-container.mce-panel").find("iframe");
     }
 
-    private ElementsCollection getData() {
-        return $$(".info-card__field-value");
+    private SelenideElement getDialogBoxTitle() {
+        return $(".info-card__title");
     }
 
-    private SelenideElement getEmail() {
-        return getData().get(1);
+    private SelenideElement getUserContainer() {
+        return getDialogBoxTitle().find("a");
     }
+
 
     /**
      * Get page title
@@ -409,15 +407,10 @@ public class VacancyDetailPage {
      * @param user user which email should be checked
      */
     @Step("Verify that response dialog display the user {0} ")
-    public void checkForOpenedResponse(USERS user) {
-        String actualEmail = getEmail().getText();
-        String expectedEmail = "";
-        switch (user) {
-            case DEV_TESTUSER13: expectedEmail = Config.HostsData.METINVEST.value[13];
-        }
-        Assert.assertEquals(actualEmail, expectedEmail, expectedEmail);
+    public void checkForUserInCard(String user) {
+        String actualUser = getUserContainer().should(Condition.appear, Duration.ofMinutes(1)).getText();
+        Assert.assertEquals(actualUser, user, user);
         closeResponseDetails();
     }
-
-
+ 
 }

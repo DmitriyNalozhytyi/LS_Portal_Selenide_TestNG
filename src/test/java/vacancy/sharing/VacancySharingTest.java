@@ -26,15 +26,15 @@ public class VacancySharingTest extends ParentTest {
     @Story("Share Vacancy with recruiters")
     @Test(description = "Verify that vacancy sharing with recruiter from the Vacancy Management page")
     public void vacancySharingFromVacancyManagementPage() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -51,17 +51,17 @@ public class VacancySharingTest extends ParentTest {
     @Story("Share Vacancy with recruiters")
     @Test(description = "Verify vacancy sharing with recruiter from the Vacancy page")
     public void vacancySharingFromVacancyPage() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.VACANCY);
 
         new VacancyPage()
@@ -83,15 +83,15 @@ public class VacancySharingTest extends ParentTest {
     @Story("Share Vacancy by email")
     @Test(description = "Verify that vacancy sharing from the Vacancy Management page")
     public void vacancySharingByEmailFromVacancyManagementPage() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -109,17 +109,17 @@ public class VacancySharingTest extends ParentTest {
     @Story("Share Vacancy by email")
     @Test(description = "Verify vacancy sharing from the Vacancy page")
     public void vacancySharingByEmailFromVacancyPage() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName);
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.VACANCY);
 
         new VacancyPage()

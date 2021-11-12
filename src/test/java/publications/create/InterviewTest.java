@@ -27,7 +27,7 @@ public class InterviewTest extends ParentTest
     public void createNews() {
 
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.NEWS);
 
         new AllNewsPage()

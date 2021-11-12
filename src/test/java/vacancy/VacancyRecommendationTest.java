@@ -30,15 +30,15 @@ public class VacancyRecommendationTest extends ParentTest {
 
    @Test(description = "Send recommendation for colleague")
     public void sendRecommendation() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -49,15 +49,15 @@ public class VacancyRecommendationTest extends ParentTest {
 
     @Test(description = "Check the status NEW")
     public void checkForStatusNew() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_NEW_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_NEW_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -70,15 +70,15 @@ public class VacancyRecommendationTest extends ParentTest {
 
     @Test(description = "Check the status VIEWED")
     public void checkForStatusViewed() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_VIEWED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_VIEWED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -93,15 +93,15 @@ public class VacancyRecommendationTest extends ParentTest {
 
     @Test(description = "Check the status ON APPROVAL")
     public void checkForStatusOnApproval() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_ON_APPROVAL_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)
@@ -116,15 +116,15 @@ public class VacancyRecommendationTest extends ParentTest {
 
     @Test(description = "Check the status ACCEPTED")
     public void checkForStatusAccepted() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_ACCEPTED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_RECOMMEND_COLLEAGUE_STATUS_ACCEPTED_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)

@@ -1,10 +1,10 @@
 package notifications.vacancy;
 
-import constants.Filter;
-import constants.Pages;
-import constants.USERS;
+import components.DialogBox;
+import constants.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
 import pages.MainPage;
@@ -16,22 +16,22 @@ import parentTest.ParentTest;
 import utils.CustomRandom;
 
 @Epic("Notifications")
-public class SupervisorNotificationsNewResponseTest extends ParentTest {
-    String vacancyName_1 = USERS.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
-    String vacancyName_2 = USERS.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+public class NewResponseTest extends ParentTest {
+    String vacancyName_1 = USER.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+    String vacancyName_2 = USER.DEV_TESTUSER14 + "_NOTIFICATION_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
     @Feature("Recruiter")
     @Test(description = "Check the notification for a new response to his vacancy")
     public void checkNotificationNewResponseOnVacancy() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName_1);
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName_1);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER13);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER13);
 
         new MainPage().goTo(Pages.VACANCY);
 
@@ -44,7 +44,7 @@ public class SupervisorNotificationsNewResponseTest extends ParentTest {
                 .isPageOpens()
                 .sendRespond();
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.NOTIFICATIONS);
 
@@ -56,15 +56,15 @@ public class SupervisorNotificationsNewResponseTest extends ParentTest {
     @Feature("Recruiter")
     @Test(description = "Check that recruiter can open response from notification")
     public void checkOpenResponseFromNotification() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName_2);
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName_2);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER13);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER13);
 
         new MainPage().goTo(Pages.VACANCY);
 
@@ -77,7 +77,7 @@ public class SupervisorNotificationsNewResponseTest extends ParentTest {
                 .isPageOpens()
                 .sendRespond();
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.NOTIFICATIONS);
 
@@ -87,22 +87,24 @@ public class SupervisorNotificationsNewResponseTest extends ParentTest {
                 .clickOnNotification(vacancyName_2);
 
         new VacancyDetailPage()
-                .checkForOpenedResponse(USERS.DEV_TESTUSER13);
+                .checkForUserInCard(Data.RECRUITER_2);
     }
-/*
+
 
     @AfterClass
     public void cleanUp() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
+
+        new DialogBox().close();
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .switchTo("Open", VacancyManagementPage.tbVacancyOpened())
+                .switchTo("Открытые", VacancyManagementPage.tbVacancyOpened())
                 .selectActionFor(vacancyName_1, VacancyAction.DELETE)
                 .selectActionFor(vacancyName_2, VacancyAction.DELETE);
     }
-*/
+
 
 }

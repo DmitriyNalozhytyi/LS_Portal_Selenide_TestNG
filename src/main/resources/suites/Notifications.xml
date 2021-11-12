@@ -9,8 +9,9 @@
 
     <test name="Notifications" group-by-instances="true">
         <classes>
-            <class name="notifications.vacancy.SupervisorNotificationsNewVacancyTest" />
-            <class name="notifications.vacancy.SupervisorNotificationsNewResponseTest" />
+            <class name="notifications.vacancy.NewVacancyTest" />
+            <class name="notifications.vacancy.NewResponseTest" />
+            <class name="notifications.vacancy.NewRecommendationTest" />
         </classes>
     </test>
 

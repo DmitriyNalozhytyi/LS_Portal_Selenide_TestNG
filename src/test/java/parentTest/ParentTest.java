@@ -15,6 +15,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import utils.listeners.JSListeners;
 import utils.listeners.TestListeners;
@@ -61,6 +62,12 @@ public abstract class ParentTest {
     public static void openSite() {
         SelenideLogger.addListener("JSErrorsListener", new JSListeners());
         openBrowser(Config.HostsData.METINVEST.value[0]);
+    }
+
+    @BeforeMethod
+    public void clearCache() {
+        WebDriverManager.chromedriver().clearDriverCache();
+        WebDriverManager.chromedriver().setup();
     }
 
     @AfterClass

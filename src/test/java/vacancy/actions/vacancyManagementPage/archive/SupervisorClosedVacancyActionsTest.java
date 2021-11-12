@@ -23,10 +23,10 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
     @Story("Copy vacancy")
     @Test(description = "Verify that supervisor can create a copy of a vacancy")
     public void supervisorCanCopyVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_COPY_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName       = USER.DEV_TESTUSER15 + "_VACANCY_COPY_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
         String vacancyNameCopied = vacancyName + "_COPIED";
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
@@ -58,9 +58,9 @@ public class SupervisorClosedVacancyActionsTest extends ParentTest {
     @Story("Delete vacancy")
     @Test(description = "Verify that supervisor can delete a vacancy")
     public void supervisorCanDeleteVacancy() {
-        String vacancyName       = USERS.DEV_TESTUSER15 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName       = USER.DEV_TESTUSER15 + "_VACANCY_DELETE_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()

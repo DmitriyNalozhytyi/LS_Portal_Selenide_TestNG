@@ -26,7 +26,7 @@ public class ArticlesTest extends ParentTest
     public void createArticle() {
 
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.NEWS);
 
         new AllNewsPage()

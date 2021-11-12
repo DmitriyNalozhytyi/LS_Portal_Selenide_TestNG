@@ -22,15 +22,15 @@ public class ResponseSharingTest extends ParentTest {
     @Story("Share application with recruiters")
     @Test(description = "Verify that vacancy sharing with recruiter from the Vacancy Management page")
     public void responseSharingFromVacancyManagementPage() {
-        String vacancyName = USERS.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
+        String vacancyName = USER.DEV_TESTUSER14 + "_VACANCY_SHARING_" + CustomRandom.getText(CustomRandom.ALPHABET_UPPER_CASE,5);
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER14);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER14);
 
         new MainPage().goTo(Pages.VACANCY_MANAGEMENT);
 
         new VacancyManagementPage()
                 .isPageOpens()
-                .createAndApproveVacancy(USERS.DEV_TESTUSER15, vacancyName)
+                .createAndApproveVacancy(USER.DEV_TESTUSER15, vacancyName)
                 .openVacancyDetails(vacancyName);
 
         new VacancyDetailPage(vacancyName)

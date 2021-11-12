@@ -2,7 +2,7 @@ package polls.manage;
 
 import constants.Language;
 import constants.Pages;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.AfterClass;
@@ -24,7 +24,7 @@ public class CreatePollTest extends ParentTest {
     @Test(description = "Create poll with one answer")
     public void createOneAnswerPoll() {
 
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.POLLS);
 
         new PollsManagementPage().isPageOpened().clickButton("Создать опрос",PollsManagementPage.btnCreatePoll());
@@ -65,7 +65,7 @@ public class CreatePollTest extends ParentTest {
 
     @AfterClass(description = "Clean up")
     public void cleanUp() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER4);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER4);
         new MainPage().goTo(Pages.POLLS);
         new PollsManagementPage()
                 .isPageOpened()

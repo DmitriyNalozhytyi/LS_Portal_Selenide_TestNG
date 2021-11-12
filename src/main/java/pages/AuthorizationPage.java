@@ -3,7 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import config.Config;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -82,11 +82,11 @@ public class AuthorizationPage extends ParentPage {
 
     /**
      * To login to the system
-     * @param users The value of user's login name and password that are used for authorisation in the system (e.g DEV_TESTUSER15)
+     * @param USER The value of user's login name and password that are used for authorisation in the system (e.g DEV_TESTUSER15)
      */
     @Step("Login as {0}")
-    public void loginAs(USERS users) {
-        switch (users){
+    public void loginAs(USER USER) {
+        switch (USER){
             case DEV_TESTUSER15: authorization(Config.HostsData.METINVEST.value[1], Config.HostsData.METINVEST.value[2]); break;
             case DEV_TESTUSER14: authorization(Config.HostsData.METINVEST.value[3], Config.HostsData.METINVEST.value[4]); break;
             case DEV_TESTUSER4:  authorization(Config.HostsData.METINVEST.value[5], Config.HostsData.METINVEST.value[6]); break;

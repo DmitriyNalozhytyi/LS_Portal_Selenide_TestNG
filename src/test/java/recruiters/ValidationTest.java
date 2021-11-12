@@ -2,7 +2,7 @@ package recruiters;
 
 import constants.ErrorMessage;
 import constants.Pages;
-import constants.USERS;
+import constants.USER;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
@@ -18,7 +18,7 @@ public class ValidationTest extends ParentTest {
     @Story("Field validation")
     @Test(description = "Verify if empty field leads to the validation")
     public void checkValidation() {
-        new AuthorizationPage().loginAs(USERS.DEV_TESTUSER15);
+        new AuthorizationPage().loginAs(USER.DEV_TESTUSER15);
 
         new MainPage().goTo(Pages.RECRUITER);
 
