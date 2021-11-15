@@ -19,8 +19,10 @@ public class DialogBox {
     }
 
     public void close() {
-        closeButton().click();
-        container.should(Condition.disappear, Duration.ofSeconds(10));
+        if (container.isDisplayed()) {
+            closeButton().click();
+            container.should(Condition.disappear, Duration.ofSeconds(10));
+        }
     }
 
     public void waitForClose() {
