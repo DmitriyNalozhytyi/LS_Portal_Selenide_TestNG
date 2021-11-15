@@ -8,7 +8,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DialogBox {
-    private final SelenideElement container = $(".info-card");
+    private final SelenideElement container = $(".info-card").should(Condition.appear, Duration.ofSeconds(10));
 
     private SelenideElement closeButton() {
         return container.find(".closeImg.mat-button.info-card__button-close");
@@ -21,8 +21,8 @@ public class DialogBox {
     public void close() {
         if (container.isDisplayed()) {
             closeButton().click();
-            container.should(Condition.disappear, Duration.ofSeconds(10));
         }
+        waitForClose();
     }
 
     public void waitForClose() {
