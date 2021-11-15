@@ -32,7 +32,9 @@ public class NotificationPage {
     }
 
     private SelenideElement searchNotification(String text) {
-        return getAllNotificationFor(Period.TODAY).findAll(".notification-description__subtext").find(Condition.exactText(text));
+        return getAllNotificationFor(Period.TODAY).findAll(".notification-description__subtext").find(Condition.exactText(text)).isDisplayed()
+                ? getAllNotificationFor(Period.TODAY).findAll(".notification-description__subtext").find(Condition.exactText(text))
+                : getAllNotificationFor(Period.TODAY).findAll(".notification-description__text").find(Condition.exactText(text));
     }
 
     /**

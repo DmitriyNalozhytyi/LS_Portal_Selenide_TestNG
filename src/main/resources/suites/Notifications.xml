@@ -12,6 +12,8 @@
             <class name="notifications.vacancy.NewVacancyTest" />
             <class name="notifications.vacancy.NewResponseTest" />
             <class name="notifications.vacancy.NewRecommendationTest" />
+            <class name="notifications.vacancy.ResponseViewedTest" />
+            <class name="notifications.vacancy.RecommendViewedTest" />
         </classes>
     </test>
 
