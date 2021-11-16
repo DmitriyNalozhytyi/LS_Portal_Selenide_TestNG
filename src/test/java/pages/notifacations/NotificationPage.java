@@ -5,9 +5,11 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.testng.Assert;
+import pages.notification.REJECTION_REASON;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class NotificationPage {
@@ -37,6 +39,10 @@ public class NotificationPage {
                 : getAllNotificationFor(Period.TODAY).findAll(".notification-description__text").find(Condition.exactText(text));
     }
 
+    private ElementsCollection searchNotifications(String text) {
+        return getAllNotificationFor(Period.TODAY).findAll(withText(text));
+    }
+
     /**
      * Check if page opened
      */
@@ -63,6 +69,44 @@ public class NotificationPage {
     @Step("Open vacancy {0}")
     public void clickOnNotification(String text) {
         searchNotification(text).click();
+    }
+
+    public NotificationPage checkNotificationForDeclinedResponse(String name, REJECTION_REASON rejectionReason) {
+        String  expectedReason = "";
+        boolean find = false;
+
+        switch (rejectionReason) {
+            case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности.";
+        }
+
+        for (int i = 0; i <= searchNotifications(name).size(); i++) {
+            if (searchNotifications(name).get(i).parent().find(".notification-description__text.notification-comment")
+                    .getText().contains(expectedReason)) {
+                find = true;
+                break;
+            }
+        }
+
+        Assert.assertTrue(find, expectedReason);
+
+        return this;
+    }
+
+    public void openRejectedVacancy(String name, REJECTION_REASON rejectionReason) {
+        String  expectedReason = "";
+
+        switch (rejectionReason) {
+            case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности.";
+        }
+
+        for (int i = 0; i <= searchNotifications(name).size(); i++) {
+            if (searchNotifications(name).get(i).parent()
+                    .find(".notification-description__text.notification-comment")
+                    .getText().contains(expectedReason)) {
+                searchNotifications(name).get(i).click();
+                break;
+            }
+        }
     }
 
 }
