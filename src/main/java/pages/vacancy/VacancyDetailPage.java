@@ -1,6 +1,7 @@
 package pages.vacancy;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import components.*;
 import constants.ResponseActions;
@@ -88,12 +89,20 @@ public class VacancyDetailPage {
         return $(".vacancy-cancel-button.response-dialog__button.response-dialog__button_cancel.mat-button.ng-star-inserted");
     }
 
+    public static ElementsCollection rejectedButtons() {
+        return $(".reject-card__radiobuttons.mat-radio-group").findAll(".mat-radio-container");
+    }
+
     public static SelenideElement btnMismatchedQualification() {
-        return $(".reject-card__radiobuttons.mat-radio-group").findAll("mat-radio-button").get(0);
+        return rejectedButtons().get(0);
     }
 
     public static SelenideElement btnAnotherCandidate() {
-        return $(".reject-card__radiobuttons.mat-radio-group").findAll("mat-radio-button").get(1);
+        return rejectedButtons().get(1);
+    }
+
+    public static SelenideElement btnAnotherReason() {
+        return rejectedButtons().get(2);
     }
 
     public static SelenideElement btnResponseOnApproval() {
@@ -297,11 +306,13 @@ public class VacancyDetailPage {
      * Decline response
      */
     @Step("Decline response due to {0}")
-    public VacancyDetailPage declineResponse(REJECTION_REASON reason) {
+    public VacancyDetailPage declineResponse(REJECTION_REASON reason, String otherReason) {
         clickButton("Отклонить", btnResponseDecline());
         switch (reason) {
-            case MISMATCHED_QUALIFICATION: new Actions().selectRadioButton(VacancyDetailPage.btnMismatchedQualification(), "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1", "Выберите причину отклонения"); break;
-            case ANOTHER_CANDIDATE: new Actions().selectRadioButton(VacancyDetailPage.btnAnotherCandidate(), "Принято решение в пользу другого кандидата", "Выберите причину отклонения"); break;
+            case MISMATCHED_QUALIFICATION:  new Actions().selectRadioButton(VacancyDetailPage.btnMismatchedQualification(), "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1", "Выберите причину отклонения"); break;
+            case ANOTHER_CANDIDATE:         new Actions().selectRadioButton(VacancyDetailPage.btnAnotherCandidate(), "Принято решение в пользу другого кандидата", "Выберите причину отклонения"); break;
+            case OTHER_REASON:              new Actions().selectRadioButton(VacancyDetailPage.btnAnotherReason(), "Другое", "Выберите причину отклонения");
+                                                setTinyMCEText("Введите полный текст ответа автору отклика...", otherReason,fldAccompanyingText()); break;
         }
         clickButton("Отправить", btnSendApplication());
         return this;

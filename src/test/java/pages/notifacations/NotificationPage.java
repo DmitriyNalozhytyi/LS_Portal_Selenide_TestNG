@@ -71,12 +71,19 @@ public class NotificationPage {
         searchNotification(text).click();
     }
 
-    public NotificationPage checkNotificationForDeclinedResponse(String name, REJECTION_REASON rejectionReason) {
+    /**
+     * Check notification for declined response
+     * @param name name of notification
+     * @param rejectionReason reason why it was rejected
+     * @param text text in notification
+     */
+    public NotificationPage checkNotificationForDeclinedResponse(String name, REJECTION_REASON rejectionReason, String text) {
         String  expectedReason = "";
         boolean find = false;
 
         switch (rejectionReason) {
-            case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности.";
+            case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности."; break;
+            case OTHER_REASON:             expectedReason = text; break;
         }
 
         for (int i = 0; i <= searchNotifications(name).size(); i++) {
@@ -92,16 +99,17 @@ public class NotificationPage {
         return this;
     }
 
-    public void openRejectedVacancy(String name, REJECTION_REASON rejectionReason) {
+    public void openRejectedVacancy(String name, REJECTION_REASON rejectionReason, String text) {
         String  expectedReason = "";
 
         switch (rejectionReason) {
             case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности.";
+            case OTHER_REASON: expectedReason = text;
         }
 
         for (int i = 0; i <= searchNotifications(name).size(); i++) {
             if (searchNotifications(name).get(i).parent()
-                    .find(".notification-description__text.notification-comment")
+                    .find(".notification-description__text.notification-comment").should(Condition.appear, Duration.ofMinutes(1))
                     .getText().contains(expectedReason)) {
                 searchNotifications(name).get(i).click();
                 break;

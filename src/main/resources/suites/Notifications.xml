@@ -14,7 +14,7 @@
             <class name="notifications.vacancy.NewRecommendationTest" />
             <class name="notifications.vacancy.ResponseViewedTest" />
             <class name="notifications.vacancy.RecommendViewedTest" />
-            <class name="notifications.vacancy.ResponseCanceledDoesNotFit" />
+            <class name="notifications.vacancy.ResponseRejectedTest" />
         </classes>
     </test>
 
