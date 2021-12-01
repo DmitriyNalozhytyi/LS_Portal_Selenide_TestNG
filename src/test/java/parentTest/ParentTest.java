@@ -60,7 +60,7 @@ public abstract class ParentTest {
 
     @BeforeClass
     public static void openSite() {
-        SelenideLogger.addListener("JSErrorsListener", new JSListeners());
+       // SelenideLogger.addListener("JSErrorsListener", new JSListeners());
         openBrowser(Config.HostsData.METINVEST.value[0]);
     }
 
