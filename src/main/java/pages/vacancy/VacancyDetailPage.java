@@ -309,7 +309,7 @@ public class VacancyDetailPage {
     public VacancyDetailPage declineResponse(REJECTION_REASON reason, String otherReason) {
         clickButton("Отклонить", btnResponseDecline());
         switch (reason) {
-            case MISMATCHED_QUALIFICATION:  new Actions().selectRadioButton(VacancyDetailPage.btnMismatchedQualification(), "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности1", "Выберите причину отклонения"); break;
+            case MISMATCHED_QUALIFICATION:  new Actions().selectRadioButton(VacancyDetailPage.btnMismatchedQualification(), "Опыт и квалификация кандидата не соответствуют заявленным требованиям к должности", "Выберите причину отклонения"); break;
             case ANOTHER_CANDIDATE:         new Actions().selectRadioButton(VacancyDetailPage.btnAnotherCandidate(), "Принято решение в пользу другого кандидата", "Выберите причину отклонения"); break;
             case OTHER_REASON:              new Actions().selectRadioButton(VacancyDetailPage.btnAnotherReason(), "Другое", "Выберите причину отклонения");
                                                 setTinyMCEText("Введите полный текст ответа автору отклика...", otherReason,fldAccompanyingText()); break;

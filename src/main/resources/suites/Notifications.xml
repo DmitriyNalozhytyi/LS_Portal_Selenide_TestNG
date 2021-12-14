@@ -15,8 +15,8 @@
             <class name="notifications.vacancy.ResponseViewedTest" />
             <class name="notifications.vacancy.RecommendViewedTest" />
             <class name="notifications.vacancy.ResponseRejectedTest" />
+            <class name="notifications.vacancy.RecommendationRejectedTest" />
         </classes>
     </test>
-
 
 </suite>
