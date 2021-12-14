@@ -103,8 +103,9 @@ public class NotificationPage {
         String  expectedReason = "";
 
         switch (rejectionReason) {
-            case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности.";
-            case OTHER_REASON: expectedReason = text;
+            case MISMATCHED_QUALIFICATION: expectedReason = "На данный момент мы не готовы предложить Вам данную вакансию, поскольку Ваш опыт и квалификация, к сожалению, не соответствуют заявленным требованиям к должности."; break;
+            case OTHER_REASON: expectedReason = text; break;
+            case ANOTHER_CANDIDATE: expectedReason = "На данный момент мы не готовы предложить данную вакансию рекомендованному Вами кандидату, поскольку принято решение в пользу другого кандидата."; break;
         }
 
         for (int i = 0; i <= searchNotifications(name).size(); i++) {
